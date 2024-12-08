@@ -1,0 +1,25 @@
+#scroll {
+  --hidden: rgba(212, 179, 179, 0);
+  --visible: rgba(0, 0, 0, 1);
+  display: flex;
+  z-index: 69;
+  position: absolute;
+  top: 0;
+  left: 0;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  padding-bottom: 64px;
+  backdrop-filter: blur(16px);
+  background-color: var(--main-80);
+  mask: linear-gradient(var(--hidden) 50%, var(--visible) 94%);
+  pointer-events: none;
+  transition: all 0.5s;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}

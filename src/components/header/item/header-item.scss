@@ -1,0 +1,65 @@
+.header-item {
+  padding: 2px;
+  border-radius: 100px;
+  background: linear-gradient(
+    var(--direction-top),
+    var(--invert-05),
+    var(--invert-10)
+  );
+  list-style: none;
+  cursor: pointer;
+
+  &.active {
+    // background: linear-gradient(
+    //   to bottom left,
+    //   rgba(var(--invert), 0.2),
+    //   rgba(var(--invert), 0.4)
+    // );
+    // background: linear-gradient(
+    //   to bottom left,
+    //   rgba(var(--invert), 0.8),
+    //   rgba(var(--invert), 1)
+    // );
+    background: linear-gradient(
+      var(--direction-top),
+      var(--invert-50),
+      var(--invert-10)
+    );
+  }
+
+  button {
+    padding: 12px 28px;
+    border-radius: 100px;
+    background: var(--main-80);
+    color: var(--text-color-secondary);
+  }
+
+  &.active button {
+    background: linear-gradient(
+      var(--direction-top),
+      var(--main-25),
+      var(--main-50)
+    );
+    color: var(--text-color);
+    font-weight: bold;
+  }
+
+  &:hover {
+    &.active {
+      background: linear-gradient(
+        to bottom left,
+        rgba(var(--invert), 0.25),
+        rgba(var(--invert), 0.5)
+      );
+    }
+
+    button {
+      background: linear-gradient(
+        to top right,
+        rgba(var(--main), 0.25),
+        rgba(var(--main), 0.5)
+      );
+      color: rgba(var(--invert), 0.8);
+    }
+  }
+}

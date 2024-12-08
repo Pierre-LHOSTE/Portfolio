@@ -1,0 +1,41 @@
+kbd {
+  display: inline-flex;
+  padding-bottom: 2px;
+  border-radius: 4px;
+  background: linear-gradient(
+    var(--direction-top),
+    var(--invert-25),
+    var(--invert-10)
+  );
+  // background: linear-gradient(var(--direction), var(--invert)50, var(--invert)25);
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 16px;
+
+  > span {
+    display: flex;
+    padding: 2px;
+    border-radius: 4px;
+    // background: linear-gradient(
+    //   var(--direction),
+    //   rgba(var(--invert), 0.25),
+    //   rgba(var(--invert), 0.1)
+    // );
+    background: linear-gradient(
+      var(--direction-top),
+      rgba(#fff, 0.2),
+      rgba(#fff, 0.1)
+    );
+    > span {
+      display: flex;
+      padding: 0 8px;
+      border-radius: 2px;
+      background: linear-gradient(
+        var(--direction-top),
+        var(--main-80),
+        var(--main-50)
+      );
+      color: var(--text-color);
+    }
+  }
+}

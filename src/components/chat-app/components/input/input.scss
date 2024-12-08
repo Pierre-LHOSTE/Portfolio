@@ -1,0 +1,48 @@
+#chat-input {
+  padding: 16px;
+
+  > div {
+    display: flex;
+    // height: 64px;
+    padding: 2px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: linear-gradient(
+      var(--direction-top),
+      var(--invert-10),
+      var(--invert-05)
+    );
+
+    > div {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 14px;
+      background: linear-gradient(
+        var(--direction-top),
+        var(--main-80),
+        var(--main)
+      );
+
+      textarea {
+        resize: none;
+        flex: 1;
+        height: 100%;
+        padding: 24px 16px;
+        background: transparent;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button {
+        --size: 32px;
+        width: var(--size);
+        height: var(--size);
+        margin-right: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+#details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  p {
+    color: var(--text-color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+}

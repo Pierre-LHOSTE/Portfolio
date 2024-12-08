@@ -1,0 +1,119 @@
+#chat-app-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 64px;
+}
+
+// #chat-app {
+//   width: 1200px;
+//   height: 800px;
+//   // background: linear-gradient(
+//   //   var(--direction-bottom),
+//   //   var(--invert-02),
+//   //   var(--invert-05)
+//   // );
+//   border-radius: 24px;
+//   backdrop-filter: blur(4px);
+//   padding: 24px;
+//   box-shadow: 0 0 250px 10px rgba(var(--invert), 0.15);
+
+//   > div {
+//     // background: linear-gradient(
+//     //   var(--direction-bottom),
+//     //   var(--invert-05),
+//     //   var(--invert-10)
+//     // );
+//     height: 100%;
+//     width: 100%;
+//     border-radius: 18px;
+//     padding: 2px;
+//     // box-shadow: 0 0 20px 5px rgba(var(--invert), 0.1);
+
+//     > div {
+//       background: rgba(var(--main), 0.1);
+//       height: 100%;
+//       width: 100%;
+//       border-radius: 16px;
+//       overflow: hidden;
+//     }
+//   }
+
+//   header {
+//     // height: calc(69px / 2);
+//     // background: var(--invert)50;
+//     // outline: white solid 2px;
+//   }
+// }
+
+#chat-app {
+  display: flex;
+  position: relative;
+  width: 1200px;
+  height: 800px;
+  // background: linear-gradient(
+  //   var(--direction-bottom),
+  //   var(--invert-05),
+  //   var(--invert-25)
+  // );
+  padding: 2px;
+  border-radius: 24px;
+  // overflow: hidden;
+  text-align: start;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    padding: 2px;
+    border-radius: 24px;
+    background: linear-gradient(
+      var(--direction-bottom),
+      var(--invert-10),
+      var(--invert-10),
+      var(--invert-10),
+      var(--invert-10),
+      var(--invert-10),
+      var(--invert-25)
+    );
+    content: "";
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  aside {
+    width: 256px;
+    height: 100%;
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+    backdrop-filter: blur(8px);
+    background: linear-gradient(
+      var(--direction-bottom),
+      var(--invert-05),
+      var(--invert-10)
+    );
+  }
+
+  > main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+    backdrop-filter: blur(8px);
+    background: linear-gradient(
+      var(--direction-bottom),
+      var(--main-05),
+      var(--main-25)
+    );
+
+    #chat-content {
+      flex: 1;
+    }
+  }
+}

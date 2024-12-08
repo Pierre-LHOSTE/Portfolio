@@ -1,0 +1,113 @@
+:root {
+  --main: #000;
+  --invert: #fff;
+
+  --main-rgb: 0, 0, 0;
+  --invert-rgb: 255, 255, 255;
+
+  --direction: to bottom left;
+  --direction-top: to top right;
+  --direction-bottom: to top left;
+  color-scheme: light dark;
+
+  font-family: system-ui, Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+:root .light-theme {
+  --main: #fff;
+  --invert: #000;
+  --main-rgb: 255, 255, 255;
+  --invert-rgb: 0, 0, 0;
+
+  --main-80: rgba(var(--main-rgb), 0.8);
+  --main-50: rgba(var(--main-rgb), 0.5);
+  --main-33: rgba(var(--main-rgb), 0.33);
+  --main-25: rgba(var(--main-rgb), 0.25);
+  --main-10: rgba(var(--main-rgb), 0.1);
+  --main-05: rgba(var(--main-rgb), 0.05);
+  --main-02: rgba(var(--main-rgb), 0.02);
+
+  --invert-80: rgba(var(--invert-rgb), 0.4);
+  --invert-50: rgba(var(--invert-rgb), 0.15);
+  --invert-33: rgba(var(--invert-rgb), 0.165);
+  --invert-25: rgba(var(--invert-rgb), 0.125);
+  --invert-10: rgba(var(--invert-rgb), 0.05);
+  --invert-05: rgba(var(--invert-rgb), 0.025);
+  --invert-02: rgba(var(--invert-rgb), 0.01);
+
+  --text-color: rgba(var(--invert-rgb), 0.8);
+  --text-color-secondary: rgba(var(--invert-rgb), 0.5);
+}
+
+:root .dark-theme {
+  --main: #000;
+  --invert: #fff;
+
+  --main-rgb: 0, 0, 0;
+  --invert-rgb: 255, 255, 255;
+
+  --main-80: rgba(var(--main-rgb), 0.8);
+  --main-50: rgba(var(--main-rgb), 0.5);
+  --main-33: rgba(var(--main-rgb), 0.33);
+  --main-25: rgba(var(--main-rgb), 0.25);
+  --main-10: rgba(var(--main-rgb), 0.1);
+  --main-05: rgba(var(--main-rgb), 0.05);
+  --main-02: rgba(var(--main-rgb), 0.02);
+
+  --invert-80: rgba(var(--invert-rgb), 0.8);
+  --invert-50: rgba(var(--invert-rgb), 0.5);
+  --invert-33: rgba(var(--invert-rgb), 0.33);
+  --invert-25: rgba(var(--invert-rgb), 0.25);
+  --invert-10: rgba(var(--invert-rgb), 0.1);
+  --invert-05: rgba(var(--invert-rgb), 0.05);
+  --invert-02: rgba(var(--invert-rgb), 0.02);
+
+  --text-color: rgba(var(--invert-rgb), 0.8);
+  --text-color-secondary: rgba(var(--invert-rgb), 0.5);
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  height: 200vh;
+  background-color: var(--main);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+#root > * {
+  z-index: 1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+.os-scrollbar .os-scrollbar-handle {
+  --os-handle-bg: var(--invert-25);
+  --os-handle-bg-hover: var(--invert-33);
+  --os-handle-bg-active: var(--invert-50);
+}
