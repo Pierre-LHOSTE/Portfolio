@@ -1,6 +1,6 @@
 import "./chat-app.scss";
 import { useChat } from "ai/react";
-import { motion } from "framer-motion";
+import { motion, useDragControls } from "framer-motion";
 import ChatAside from "./components/aside/ChatAside";
 import ChatContent from "./components/content/ChatContent";
 import ChatHeader from "./components/header/ChatHeader";
@@ -8,6 +8,8 @@ import ChatInput from "./components/input/ChatInput";
 
 export default function ChatApp() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
+
+  const controls = useDragControls();
 
   const initMessages = [
     {
@@ -54,6 +56,15 @@ export default function ChatApp() {
           amount: "all",
           margin: "50px",
         }}
+        drag
+        dragControls={controls}
+        dragListener={false}
+        dragConstraints={{
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+        }}
       >
         <ChatAside
           chatList={[
@@ -80,7 +91,7 @@ export default function ChatApp() {
           ]}
         />
         <main>
-          <ChatHeader />
+          <ChatHeader controls={controls} />
           <ChatContent chat={[...initMessages, ...messages]} />
           <ChatInput
             input={input}

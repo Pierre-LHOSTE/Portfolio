@@ -5,7 +5,8 @@
   padding: 2px;
   border-radius: 100px;
 
-  &.primary {
+  &.primary,
+  &.submit {
     // background: linear-gradient(var(--direction), var(--invert25), var(--invert50));
     background: linear-gradient(
       var(--direction-top),
@@ -33,7 +34,8 @@
     line-height: 0;
   }
 
-  &.primary span {
+  &.primary span,
+  &.submit span {
     // background: linear-gradient(var(--direction), var(--main50), var(--main25));
     background: linear-gradient(
       var(--direction-top),

@@ -11,11 +11,11 @@ export default function Button({
   text?: string;
   // biome-ignore lint/style/useNamingConvention: <explanation>
   Icon?: ForwardRefExoticComponent<IconProps & RefAttributes<Icon>>;
-  type?: "primary" | "secondary";
+  type?: "primary" | "secondary" | "submit";
   props?: unknown;
 }) {
   return (
-    <button className={`button ${type}`} type="button" {...props}>
+    <button className={`button ${type}`} type={type === "submit" ? "submit" : "button"} {...props}>
       <span>
         {Icon && <Icon size={18} strokeWidth={3} />}
         {text}

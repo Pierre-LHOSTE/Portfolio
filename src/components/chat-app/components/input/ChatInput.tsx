@@ -1,5 +1,7 @@
 import { type ChangeEvent, useRef } from "react";
 import "./input.scss";
+import Button from "@/components/button/Button";
+import { IconArrowBigUpFilled } from "@tabler/icons-react";
 
 export default function ChatInput({
   input,
@@ -19,8 +21,6 @@ export default function ChatInput({
     textarea.style.height = `${textarea.scrollHeight + 0}px`;
   };
 
-  // <Button Icon={IconArrowBigUpFilled} type="primary" />
-
   return (
     <form id="chat-input" onSubmit={handleSubmit}>
       <div>
@@ -37,7 +37,7 @@ export default function ChatInput({
               height: "auto",
             }}
           />
-          {input !== "" && <button type="submit">Submit</button>}
+          {input !== "" && <Button type="submit" Icon={IconArrowBigUpFilled} />}
         </div>
       </div>
     </form>
