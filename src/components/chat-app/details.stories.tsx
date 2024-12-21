@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import ChatApp from "./ChatApp";
 
 const meta = {
-  title: "ChatApp",
+  title: "App/App",
   component: ChatApp,
   parameters: {
     layout: "centered",

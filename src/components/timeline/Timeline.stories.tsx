@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Hero from "./Hero";
+import Timeline from "./Timeline";
 
 const meta = {
-  title: "Hero/Hero",
-  component: Hero,
+  title: "Timeline",
+  component: Timeline,
   parameters: {
-    layout: "centered",
+    // layout: "centered",
   },
-} satisfies Meta<typeof Hero>;
+} satisfies Meta<typeof Timeline>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -1,0 +1,45 @@
+.timeline-element {
+  width: calc(50% - 32px);
+  display: flex;
+
+  > div {
+    --radius: 8px;
+    padding: 2px;
+    border-radius: var(--radius);
+    background: linear-gradient(
+      var(--direction-top),
+      var(--invert-10),
+      var(--invert-05)
+    );
+    text-align: left;
+
+    > div {
+      padding: 16px;
+      border-radius: calc(var(--radius) - 2px);
+      background: linear-gradient(
+        var(--direction-top),
+        var(--main-50),
+        var(--main)
+      );
+      color: var(--invert);
+      display: flex;
+      gap: 12px;
+      flex-direction: column;
+
+      h3 {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      p {
+        color: var(--invert-80);
+
+        &.status {
+          display: flex;
+          gap: 6px;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

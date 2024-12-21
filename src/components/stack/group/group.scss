@@ -1,0 +1,43 @@
+.stack-group {
+  --radius: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  gap: 16px;
+  border-radius: var(--radius);
+  backdrop-filter: blur(16px);
+  background: linear-gradient(
+    var(--direction-top),
+    var(--invert-05),
+    var(--invert-10)
+  );
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+    border-radius: calc(var(--radius) - 2px);
+    background: linear-gradient(
+      var(--direction-top),
+      var(--main-50),
+      var(--main-80)
+    );
+
+    h3 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+      font-size: 24px;
+      font-size: 18px;
+      color: var(--text-color-secondary);
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+}

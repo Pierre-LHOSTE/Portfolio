@@ -26,12 +26,10 @@ export default function ChatApp() {
     <motion.div
       id="chat-app-wrapper"
       initial={{
-        scale: 1.2,
         opacity: 0,
         translateY: 80,
       }}
       animate={{
-        scale: 1,
         opacity: 1,
         translateY: 0,
         transition: {
@@ -43,19 +41,6 @@ export default function ChatApp() {
     >
       <motion.section
         id="chat-app"
-        initial={{
-          scale: 0.9,
-        }}
-        whileInView={{
-          scale: 1,
-          transition: {
-            type: "tween",
-          },
-        }}
-        viewport={{
-          amount: "all",
-          margin: "50px",
-        }}
         drag
         dragControls={controls}
         dragListener={false}

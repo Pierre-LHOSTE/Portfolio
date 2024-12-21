@@ -1,17 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Hero from "./Hero";
+import ChatHeader from "./ChatHeader";
 
 const meta = {
-  title: "Hero/Hero",
-  component: Hero,
+  title: "App/Content/ChatHeader",
+  component: ChatHeader,
   parameters: {
     layout: "centered",
   },
-} satisfies Meta<typeof Hero>;
+} satisfies Meta<typeof ChatHeader>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    controls: {},
+  },
 };

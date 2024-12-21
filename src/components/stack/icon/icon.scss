@@ -1,0 +1,10 @@
+.stack-icon {
+  img {
+    --size: 48px;
+    width: var(--size);
+    height: var(--size);
+    object-fit: contain;
+    pointer-events: none;
+    transition: all 0.25s ease;
+  }
+}

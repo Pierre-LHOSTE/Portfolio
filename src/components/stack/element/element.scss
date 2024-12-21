@@ -1,0 +1,80 @@
+.stack {
+  --radius: 12px;
+  padding: 2px;
+  border-radius: var(--radius);
+  text-align: initial;
+
+  &:hover {
+    background: linear-gradient(
+      var(--direction-top),
+      var(--invert-05),
+      var(--invert-10)
+    );
+    cursor: pointer;
+
+    > div {
+      background: linear-gradient(
+        var(--direction-top),
+        var(--main-25),
+        var(--main-50)
+      );
+    }
+  }
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px;
+    padding-right: 16px;
+    gap: 16px;
+    border-radius: calc(var(--radius) - 2px);
+
+    > .content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
+
+  h4 {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-color);
+    font-size: 16px;
+    height: 26px;
+
+    > span {
+      &.name {
+        flex: 1;
+      }
+
+      &.icons {
+        opacity: 0.5;
+        display: flex;
+        gap: 4px;
+        // position: absolute;
+        top: 50%;
+        right: 0;
+        align-items: center;
+        justify-content: center;
+        padding: 2px;
+        border: 2px solid var(--invert-10);
+        border-radius: 8px;
+        background-color: var(--invert-05);
+        top: 50%;
+        transform: translate(12%, -12%);
+      }
+    }
+  }
+
+  p {
+    max-width: 240px;
+    // color: rgba(var(--invert-rgb), 0.5);
+    color: var(--text-color-secondary);
+    font-size: 14px;
+  }
+}

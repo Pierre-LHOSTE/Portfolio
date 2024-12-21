@@ -3,7 +3,7 @@ import { IconDownload } from "@tabler/icons-react";
 import Button from "./Button";
 
 const meta = {
-  title: "Button",
+  title: "Base/Button",
   component: Button,
   parameters: {
     layout: "centered",

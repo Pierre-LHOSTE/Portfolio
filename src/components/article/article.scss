@@ -1,0 +1,26 @@
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 96px;
+  margin-top: 192px;
+
+  .article-header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    h2 {
+      color: var(--text-color);
+    }
+
+    p {
+      max-width: 800px;
+      color: var(--text-color-secondary);
+    }
+  }
+
+  .article-content {
+    display: flex;
+  }
+}

@@ -12,6 +12,14 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "qg007gk6n2popinf.public.blob.vercel-storage.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

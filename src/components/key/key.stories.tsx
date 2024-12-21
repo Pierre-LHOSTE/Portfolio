@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Key from "./Key";
 
 const meta = {
-  title: "Key",
+  title: "Base/Key",
   component: Key,
   parameters: {
     layout: "centered",
