@@ -31,7 +31,6 @@ export const app: TimelineElementType = {
   name: "Apprentissage",
   status: "in-progress",
   startDate: "2024",
-  endDate: "2025",
   location: "Remote",
   school: "3W Academy",
 };

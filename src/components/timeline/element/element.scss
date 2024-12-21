@@ -1,8 +1,60 @@
 .timeline-element {
   width: calc(50% - 32px);
   display: flex;
+  position: relative;
+  align-items: flex-end;
 
-  > div {
+  &::after {
+    content: "";
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.75)
+    );
+  }
+
+  &:nth-child(2n + 1)::after {
+    right: -34px;
+    left: auto;
+    background: linear-gradient(-90deg, var(--invert-25), #000);
+  }
+
+  &:nth-child(2n)::after {
+    left: -32px;
+    right: auto;
+    background: linear-gradient(90deg, var(--invert-25), #000);
+  }
+
+  > .dates {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    padding: 24px 0;
+    color: var(--text-color-secondary);
+    transition: opacity 0.5s;
+  }
+
+  &:hover .dates {
+    opacity: 1;
+  }
+
+  &:nth-child(2n) > .dates {
+    left: calc(-64px - 16px);
+  }
+
+  &:nth-child(2n + 1) > .dates {
+    right: calc(-64px - 16px);
+  }
+
+  > .content {
     --radius: 8px;
     padding: 2px;
     border-radius: var(--radius);
