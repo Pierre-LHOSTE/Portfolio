@@ -1,8 +1,12 @@
-h1 {
-  font-size: 64px;
-  color: var(--invert);
-}
+#hero {
+  h1 {
+    color: var(--invert);
+    font-size: 64px;
+    text-align: center;
+  }
 
-h2 {
-  font-size: 36px;
+  h2 {
+    font-size: 36px;
+    text-align: center;
+  }
 }
