@@ -12,9 +12,7 @@ export default function StackIcon({
     name,
     styles: { icon, iconLight, background, transform, iconHovered, invert },
   } = stack;
-  console.log("🚀 ~ invert:", invert);
   const theme = useSettingsStore((state) => state.activeTheme);
-  console.log("🚀 ~ theme:", theme);
   const baseIcon = theme === "light" ? iconLight || icon : icon;
 
   let filter = undefined;

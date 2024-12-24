@@ -3,10 +3,10 @@ import StackGroup from "./group/Group";
 import { stackList } from "./list";
 import "./stack.scss";
 
-export default function Stack() {
+export default function Stacks() {
   return (
     <Article
-      title="Ma Stack Technique"
+      title="Ma stack technique"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       id="stack"
     >

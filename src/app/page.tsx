@@ -9,7 +9,7 @@ import "@/styles/app.css";
 import type { SavedTheme } from "@/types/settings";
 import "overlayscrollbars/overlayscrollbars.css";
 import Footer from "@/components/footer/Footer";
-import Stack from "@/components/stack/Stack";
+import Stacks from "@/components/stack/Stacks";
 import Timeline from "@/components/timeline/Timeline";
 import { useSettingsStore } from "@/stores/settings.store";
 
@@ -67,7 +67,7 @@ export default function Home() {
       <Hero />
       <Scroll />
       <ChatApp />
-      <Stack />
+      <Stacks />
       <Timeline />
       <Footer />
     </>

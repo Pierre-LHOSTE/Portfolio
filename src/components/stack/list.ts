@@ -2,6 +2,22 @@ import { IconBraces, IconBrush, IconServer, IconSettings } from "@tabler/icons-r
 import type { StackGroupType, StackType } from "./stack.d";
 
 export const stackItem = {
+  figma: {
+    name: "Figma",
+    description:
+      "Figma is the leading collaborative design tool for building meaningful products. Seamlessly design, prototype, develop, and collect feedback in a single platform.",
+    reason: "Lorem ipsum dolor sit amet",
+    category: "tools",
+    homepage: "https://www.figma.com/",
+    tags: ["active"],
+
+    styles: {
+      icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/figma.svg",
+      color: "#0acf83",
+      background: "#24272f",
+    },
+  },
+
   nextJs: {
     name: "Next.js",
     description: "A full-stack React framework for the web.",
@@ -43,6 +59,7 @@ export const stackItem = {
     reason: "Lorem ipsum dolor sit amet",
     category: "tools",
     homepage: "https://vite.dev/",
+    tags: [],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/vite.svg",
@@ -188,6 +205,7 @@ export const stackItem = {
     category: "language",
     homepage: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     replacement: { name: "typescript", reason: "For better type safety" },
+    tags: [],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/javascript.svg",
@@ -204,6 +222,7 @@ export const stackItem = {
     category: "language",
     homepage: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     replacement: { name: "dartSass", reason: "For better maintainability" },
+    tags: [],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/css.svg",
@@ -267,6 +286,7 @@ export const stackItem = {
     category: "framework",
     homepage: "https://fastify.dev/",
     replacement: { name: "nextJs", reason: "Integrated backend" },
+    tags: [],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/fastify.svg",
@@ -282,6 +302,7 @@ export const stackItem = {
     reason: "Lorem ipsum dolor sit amet",
     category: "backend",
     homepage: "https://authjs.dev/",
+    tags: [],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/authjs.png",
@@ -297,6 +318,7 @@ export const stackItem = {
     reason: "Lorem ipsum dolor sit amet",
     category: "backend",
     homepage: "https://www.bcrypt.io/",
+    tags: [],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/bcrypt.svg",
@@ -312,6 +334,7 @@ export const stackItem = {
     reason: "Lorem ipsum dolor sit amet",
     category: "tools",
     homepage: "https://www.notion.com/",
+    tags: [],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/notion.svg",
@@ -359,6 +382,7 @@ export const stackItem = {
     category: "tools",
     homepage: "https://code.visualstudio.com/",
     replacement: { name: "vscodium", reason: "Open-source and debloated" },
+    tags: [],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/vscode.svg",
@@ -406,6 +430,7 @@ export const stackItem = {
     reason: "Lorem ipsum dolor sit amet",
     category: "tools",
     homepage: "https://hoppscotch.io/",
+    tags: [],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/hoppscotch.svg",
@@ -423,6 +448,7 @@ export const stackItem = {
     category: "tools",
     homepage: "https://www.postman.com/",
     replacement: { name: "hoppscotch", reason: "Open-source" },
+    tags: [],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/postman.svg",
@@ -439,6 +465,7 @@ export const stackItem = {
     category: "database",
     homepage: "https://www.mongodb.com/",
     replacement: { name: "prisma", reason: "Feels better" },
+    tags: [],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/mongodb.png",
@@ -453,6 +480,7 @@ export const stackItem = {
     reason: "Lorem ipsum dolor sit amet",
     category: "database",
     homepage: "https://www.postgresql.org/",
+    tags: [],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/postgresql.png",

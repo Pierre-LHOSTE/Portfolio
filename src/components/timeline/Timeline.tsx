@@ -12,7 +12,7 @@ export default function Timeline() {
 
   return (
     <Article
-      title="Mon Parcours"
+      title="Mon parcours"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       id="timeline"
     >

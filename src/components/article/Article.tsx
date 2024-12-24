@@ -7,7 +7,7 @@ export default function Article({
   description,
   id,
 }: {
-  children: ReactNode;
+  children?: ReactNode;
   title: string;
   description: string;
   id?: string;
