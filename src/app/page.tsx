@@ -9,6 +9,7 @@ import "@/styles/app.css";
 import type { SavedTheme } from "@/types/settings";
 import "overlayscrollbars/overlayscrollbars.css";
 import Footer from "@/components/footer/Footer";
+import Projects from "@/components/projects/ProjectsList";
 import Stacks from "@/components/stack/Stacks";
 import Timeline from "@/components/timeline/Timeline";
 import { useSettingsStore } from "@/stores/settings.store";
@@ -69,6 +70,7 @@ export default function Home() {
       <ChatApp />
       <Stacks />
       <Timeline />
+      <Projects />
       <Footer />
     </>
   );

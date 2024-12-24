@@ -1,0 +1,54 @@
+.project {
+  --radius: 12px;
+  padding: 2px;
+  border-radius: var(--radius);
+  background: linear-gradient(
+    var(--direction-top),
+    var(--invert-05),
+    var(--invert-10)
+  );
+
+  > div {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+    border-radius: calc(var(--radius) - 2px);
+    background: linear-gradient(
+      var(--direction-top),
+      var(--main-25),
+      var(--main-50)
+    );
+
+    h4 {
+      color: var(--text-color);
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    > img {
+      border-radius: 8px;
+    }
+
+    .content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 16px;
+
+      p {
+        flex: 1;
+        max-width: 512px;
+        color: var(--text-color-secondary);
+      }
+
+      .tags {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+    }
+  }
+}
