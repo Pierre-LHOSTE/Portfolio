@@ -1,5 +1,8 @@
 import type { IconProps } from "@tabler/icons-react";
 import type { ForwardRefExoticComponent } from "react";
+import type { stackItem } from "./list";
+
+export type StackIdType = keyof typeof stackItem;
 
 export type CategoryType =
   | "framework"
@@ -26,7 +29,7 @@ export interface StackType {
   reason: string;
   category: CategoryType;
   homepage: string;
-  tags?: ("active" | "love" | "learning")[];
+  tags: ("active" | "love" | "learning")[];
   replacement?: {
     name: string;
     reason: string;

@@ -1,6 +1,6 @@
-import { IconAlertSquareRounded, IconLivePhoto, IconWritingSign } from "@tabler/icons-react";
+import { IconAlertTriangle, IconLivePhoto, IconWritingSign } from "@tabler/icons-react";
 import StackIcon from "../icon/StackIcon";
-import type { StackType } from "../stack.d";
+import type { StackIdType, StackType } from "../stack.d";
 import "./element.scss";
 import type { ReactElement } from "react";
 import { stackItem } from "../list";
@@ -15,16 +15,31 @@ export default function Stack({
   const icons: ReactElement[] = [];
 
   if (stack.tags?.includes("learning"))
-    icons.push(<IconWritingSign size={ICON_SIZE} key="love" title="Actually learning" />);
+    icons.push(
+      <IconWritingSign
+        color="MediumSeaGreen"
+        size={ICON_SIZE}
+        key="love"
+        title="Actually learning"
+      />
+    );
 
   if (stack.tags?.includes("active"))
-    icons.push(<IconLivePhoto size={ICON_SIZE} key="active" title="Used on this website" />);
+    icons.push(
+      <IconLivePhoto
+        color="DeepSkyBlue"
+        size={ICON_SIZE}
+        key="active"
+        title="Used on this website"
+      />
+    );
 
   if (stack.replacement) {
-    const replacement = stackItem[stack.replacement.name as keyof typeof stackItem];
+    const replacement = stackItem[stack.replacement.name as StackIdType];
     icons.push(
-      <IconAlertSquareRounded
+      <IconAlertTriangle
         size={ICON_SIZE}
+        color="orange"
         key="replacement"
         title={`Replaced by ${replacement.name} because "${stack.replacement.reason}"`}
       />
