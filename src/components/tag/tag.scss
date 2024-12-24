@@ -1,0 +1,12 @@
+span.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 2px 6px;
+  background-color: var(--invert-10);
+  text-transform: capitalize;
+  border-radius: 6px;
+  font-size: 16px;
+  color: var(--text-color);
+}
