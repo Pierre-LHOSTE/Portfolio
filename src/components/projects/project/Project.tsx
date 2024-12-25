@@ -1,8 +1,8 @@
 import Button from "@/components/button/Button";
 import Tag from "@/components/tag/Tag";
-import Image from "next/image";
 import type { ProjectType } from "../project";
 import "./project.scss";
+import Album from "../album/Album";
 
 const IMG_MAX_WIDTH = 512;
 
@@ -17,12 +17,7 @@ export default function Project({
         <header>
           <h4>{project.name}</h4>
         </header>
-        <Image
-          src={project.thumbnail}
-          alt={`${project.name}'s preview`}
-          width={IMG_MAX_WIDTH}
-          height={IMG_MAX_WIDTH}
-        />
+        <Album images={[...new Set([project.thumbnail, ...project.images])]} />
         <div className="content">
           <div className="tags">
             {project.tags.map((tag) => (

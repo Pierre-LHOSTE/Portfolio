@@ -1,0 +1,73 @@
+.project-album {
+  --height: 288px;
+  --width: 512px;
+  --border-radius: 8px;
+  --padding: 8px;
+  display: flex;
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  padding: var(--padding);
+  border-radius: calc(var(--border-radius) + var(--padding));
+
+  &:hover > .images {
+    outline-width: var(--padding);
+  }
+
+  &:hover {
+    .arrows > button {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+
+  > .images {
+    overflow: hidden;
+    border-radius: calc(var(--border-radius));
+    outline: 0px solid var(--invert-05);
+    transition: outline-width 0.2s;
+  }
+
+  .arrows > button {
+    --size: 48px;
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: calc(-1 * (var(--size) / 3));
+    align-items: center;
+    justify-content: center;
+    width: var(--size);
+    min-width: var(--size);
+    height: var(--size);
+    min-height: var(--size);
+    overflow: show;
+    translate: 0 -50%;
+    scale: 0.8;
+    border-radius: 50%;
+    backdrop-filter: blur(16px);
+    background-color: var(--invert-50);
+    content: "a";
+    opacity: 0;
+    transition: all 0.2s;
+
+    svg {
+      stroke: var(--main);
+      stroke-width: 2;
+    }
+  }
+
+  .arrows > button:last-child {
+    right: calc(-1 * (var(--size) / 3));
+    left: auto;
+  }
+
+  img {
+    width: var(--width);
+    min-width: var(--width);
+    height: var(--height);
+    min-height: var(--height);
+    object-fit: cover;
+    border-radius: calc(var(--border-radius));
+  }
+}
