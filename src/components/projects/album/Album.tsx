@@ -9,6 +9,11 @@ const IMG_MAX_SIZE = 512;
 const ARROW_SIZE = 24;
 const darkThemeRegex = /-dark(\.\w+)$/;
 
+const tapAnimation = {
+  whileTap: { scale: 0.9 },
+  transition: { duration: 0.01 },
+};
+
 export default function Album({
   images,
 }: {
@@ -16,6 +21,7 @@ export default function Album({
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const theme = useSettingsStore((state) => state.activeTheme);
+  const setImagePreview = useSettingsStore((state) => state.setImagePreview);
 
   const imagesList: string[] = [];
 
@@ -59,12 +65,12 @@ export default function Album({
           display: imagesList.length > 1 ? "flex" : "none",
         }}
       >
-        <button type="button" onClick={handlePrev}>
+        <motion.button type="button" onClick={handlePrev} {...tapAnimation}>
           <IconArrowLeft size={ARROW_SIZE} />
-        </button>
-        <button type="button" onClick={handleNext}>
+        </motion.button>
+        <motion.button type="button" onClick={handleNext} {...tapAnimation}>
           <IconArrowRight size={ARROW_SIZE} />
-        </button>
+        </motion.button>
       </div>
       <div className="images">
         <motion.div
@@ -84,6 +90,12 @@ export default function Album({
               alt={`Project image ${index + 1}`}
               width={IMG_MAX_SIZE}
               height={IMG_MAX_SIZE}
+              onClick={() =>
+                setImagePreview({
+                  images: imagesList,
+                  index: currentIndex,
+                })
+              }
             />
           ))}
         </motion.div>

@@ -9,6 +9,7 @@ import "@/styles/app.css";
 import type { SavedTheme } from "@/types/settings";
 import "overlayscrollbars/overlayscrollbars.css";
 import Footer from "@/components/footer/Footer";
+import ImagePreview from "@/components/image-preview/ImagePreview";
 import Projects from "@/components/projects/ProjectsList";
 import Stacks from "@/components/stack/Stacks";
 import Timeline from "@/components/timeline/Timeline";
@@ -71,6 +72,7 @@ export default function Home() {
       <Stacks />
       <Timeline />
       <Projects />
+      <ImagePreview />
       <Footer />
     </>
   );

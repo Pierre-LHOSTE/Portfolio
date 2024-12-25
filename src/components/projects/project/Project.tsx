@@ -16,8 +16,8 @@ export default function Project({
       <div>
         <header>
           <h4>{project.name}</h4>
+          <Album images={[...new Set([project.thumbnail, ...project.images])]} />
         </header>
-        <Album images={[...new Set([project.thumbnail, ...project.images])]} />
         <div className="content">
           <div className="tags">
             {project.tags.map((tag) => (

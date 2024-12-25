@@ -1,3 +1,4 @@
+import type { ImagePreviewType } from "@/components/image-preview/type";
 import type { ActiveTheme, SavedTheme } from "@/types/settings";
 import { create } from "zustand";
 
@@ -15,6 +16,9 @@ interface SettingsStoreType {
 
   activeLanguage: string;
   setActiveLanguage: SetStateFunction<string>;
+
+  imagePreview: ImagePreviewType | null;
+  setImagePreview: SetStateFunction<ImagePreviewType | null>;
 }
 
 export const useSettingsStore = create<SettingsStoreType>((set) => ({
@@ -29,4 +33,7 @@ export const useSettingsStore = create<SettingsStoreType>((set) => ({
 
   activeLanguage: "en",
   setActiveLanguage: (activeLanguage) => set({ activeLanguage }),
+
+  imagePreview: null,
+  setImagePreview: (imagePreview) => set({ imagePreview }),
 }));

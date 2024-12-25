@@ -1,17 +1,13 @@
 .project-album {
   --height: 288px;
   --width: 512px;
-  --border-radius: 8px;
-  --padding: 8px;
   display: flex;
   position: relative;
   width: var(--width);
   height: var(--height);
-  padding: var(--padding);
-  border-radius: calc(var(--border-radius) + var(--padding));
 
   &:hover > .images {
-    outline-width: var(--padding);
+    outline-width: 8px;
   }
 
   &:hover {
@@ -23,9 +19,13 @@
 
   > .images {
     overflow: hidden;
-    border-radius: calc(var(--border-radius));
+    border-radius: 8px;
     outline: 0px solid var(--invert-05);
     transition: outline-width 0.2s;
+
+    img {
+      cursor: pointer;
+    }
   }
 
   .arrows > button {
@@ -47,9 +47,12 @@
     border-radius: 50%;
     backdrop-filter: blur(16px);
     background-color: var(--invert-50);
-    content: "a";
     opacity: 0;
     transition: all 0.2s;
+
+    &:hover {
+      background-color: var(--invert-80);
+    }
 
     svg {
       stroke: var(--main);
