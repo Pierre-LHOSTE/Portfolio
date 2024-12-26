@@ -1,0 +1,42 @@
+.tooltip {
+  position: relative;
+
+  .tap-area {
+    --padding: 8px;
+    position: absolute;
+    top: calc(-1 * var(--padding));
+    left: calc(-1 * var(--padding));
+    width: calc(100% + 2 * var(--padding));
+    height: calc(100% + 2 * var(--padding));
+    border-radius: 8px;
+
+    &:hover {
+      background-color: var(--invert-10);
+    }
+  }
+
+  .content {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    padding: 8px;
+    border-radius: 8px;
+    translate: -50% 0;
+    background-color: var(--invert-25);
+
+    .tooltip-arrow {
+      --size: 16px;
+      position: absolute;
+      bottom: calc(var(--size) * -0.5 + 0px);
+      height: var(--size);
+      width: var(--size);
+      clip-path: path(
+        "M 0 8 A 4 4 0 0 0 2.82842712474619 6.82842712474619 L 6.585786437626905 3.0710678118654755 A 2 2 0 0 1 9.414213562373096 3.0710678118654755 L 13.17157287525381 6.82842712474619 A 4 4 0 0 0 16 8 Z"
+      );
+      rotate: 180deg;
+      translate: -50% 0;
+      left: 50%;
+      background-color: var(--invert-25);
+    }
+  }
+}
