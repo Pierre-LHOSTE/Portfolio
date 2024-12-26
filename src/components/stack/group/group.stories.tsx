@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { backend, frontend, language, tools } from "../list";
+import { stackGroup } from "../list";
 import Group from "./Group";
 
 const meta = {
@@ -15,24 +15,24 @@ type Story = StoryObj<typeof meta>;
 
 export const FrontendStack: Story = {
   args: {
-    group: frontend,
+    group: stackGroup.frontend,
   },
 };
 
 export const BackendStack: Story = {
   args: {
-    group: backend,
+    group: stackGroup.backend,
   },
 };
 
-export const DevOpsStack: Story = {
+export const DeploymentStack: Story = {
   args: {
-    group: tools,
+    group: stackGroup.deployment,
   },
 };
 
 export const LanguageStack: Story = {
   args: {
-    group: language,
+    group: stackGroup.tools,
   },
 };

@@ -1,0 +1,22 @@
+.project-stacks {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  h5 {
+    text-transform: capitalize;
+    color: var(--text-color-secondary);
+  }
+
+  > div {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+
+    .stacks-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+  }
+}
