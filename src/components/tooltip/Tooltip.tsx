@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { type ReactNode, useState } from "react";
+import { type ReactNode, useEffect, useRef, useState } from "react";
 import "./tooltip.scss";
 
 export default function Tooltip({
@@ -10,24 +10,36 @@ export default function Tooltip({
   content: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
+  const tooltipRef = useRef<HTMLDivElement>(null);
 
   function handleOpen() {
     setOpen(true);
   }
 
-  function handleClose() {
-    setOpen(false);
-  }
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (tooltipRef.current && !tooltipRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+
+    if (open) document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]);
 
   return (
     <div className="tooltip">
       {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
       {/* biome-ignore lint/a11y/noNoninteractiveTabindex: <explanation> */}
       {/* biome-ignore lint/nursery/noStaticElementInteractions: <explanation> */}
-      <div className="tap-area" onClick={handleOpen} onBlur={handleClose} tabIndex={0} />
+      <div className="tap-area" onClick={handleOpen} tabIndex={0} />
       <AnimatePresence>
         {open && (
           <motion.div
+            ref={tooltipRef}
             className="content"
             initial={{ opacity: 0, scale: 0.95, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
