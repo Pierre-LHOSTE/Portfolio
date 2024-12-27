@@ -12,11 +12,14 @@
     display: flex;
     gap: 4px;
     flex-direction: column;
+    flex: 1;
 
     .stacks-group {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
+      max-width: 512px;
+      flex: 1;
     }
   }
 }

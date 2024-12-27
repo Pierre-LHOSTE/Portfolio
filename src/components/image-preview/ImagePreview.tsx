@@ -14,9 +14,7 @@ const tapAnimation = {
 
 export default function ImagePreview() {
   const props = useSettingsStore((state) => state.imagePreview);
-  console.log("🚀 ~ props:", props);
   const [index, setIndex] = useState(0);
-  console.log("🚀 ~ index:", index);
   const { images } = props || { images: [] };
 
   useEffect(() => {

@@ -1,4 +1,5 @@
 .tooltip {
+  display: inline;
   position: relative;
 
   .tap-area {
@@ -19,24 +20,28 @@
     position: absolute;
     bottom: 32px;
     left: 50%;
-    padding: 8px;
-    border-radius: 8px;
+    width: max-content;
+    padding: 16px;
     translate: -50% 0;
-    background-color: var(--invert-25);
+    border-radius: 8px;
+    backdrop-filter: blur(32px);
+    background-color: var(--main-05);
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.25);
 
     .tooltip-arrow {
       --size: 16px;
       position: absolute;
       bottom: calc(var(--size) * -0.5 + 0px);
-      height: var(--size);
+      left: 50%;
       width: var(--size);
+      height: var(--size);
+      translate: -50% 0;
+      rotate: 180deg;
+      backdrop-filter: blur(16px);
+      background-color: var(--main-25);
       clip-path: path(
         "M 0 8 A 4 4 0 0 0 2.82842712474619 6.82842712474619 L 6.585786437626905 3.0710678118654755 A 2 2 0 0 1 9.414213562373096 3.0710678118654755 L 13.17157287525381 6.82842712474619 A 4 4 0 0 0 16 8 Z"
       );
-      rotate: 180deg;
-      translate: -50% 0;
-      left: 50%;
-      background-color: var(--invert-25);
     }
   }
 }
