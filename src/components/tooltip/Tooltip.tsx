@@ -13,6 +13,7 @@ export default function Tooltip({
 }) {
   const [open, setOpen] = useState(false);
   const tooltipRef = useRef<HTMLDivElement>(null);
+  const tooltipContentRef = useRef<HTMLDivElement>(null);
   const [translate, setTranslate] = useState({ x: 0, y: 0 });
 
   function handleOpen() {
@@ -47,6 +48,12 @@ export default function Tooltip({
       }
     }
 
+    if (tooltipContentRef.current) {
+      const tooltipContentTop = tooltipContentRef.current.getBoundingClientRect().height;
+      console.log("🚀 ~ tooltipContentTop:", tooltipContentTop);
+      setTranslate((prev) => ({ ...prev, y: -(tooltipContentTop / 2) }));
+    }
+
     return () => {
       setTranslate({ x: 0, y: 0 });
     };
@@ -57,7 +64,7 @@ export default function Tooltip({
       {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
       {/* biome-ignore lint/a11y/noNoninteractiveTabindex: <explanation> */}
       {/* biome-ignore lint/nursery/noStaticElementInteractions: <explanation> */}
-      <div className="tap-area" onClick={handleOpen} tabIndex={0} />
+      <div className="tap-area" onClick={handleOpen} tabIndex={0} ref={tooltipContentRef} />
       <AnimatePresence>
         {open && (
           <motion.div
@@ -68,20 +75,19 @@ export default function Tooltip({
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.4, type: "spring", stiffness: 400, damping: 20 }}
             style={{
-              translate: `calc(-50% + ${translate.x}px) 0.1px`,
+              translate: `calc(-50% + ${translate.x}px) ${translate.y}px`,
             }}
           >
             {content}
             <div
               className="tooltip-arrow"
               style={{
-                translate: `calc(-50% - ${translate.x}px) 0.1px`,
+                translate: `calc(-50% - ${translate.x}px) ${0}px`,
               }}
             />
           </motion.div>
         )}
       </AnimatePresence>
-
       {children}
     </div>
   );
