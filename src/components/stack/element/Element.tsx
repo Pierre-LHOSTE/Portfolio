@@ -65,7 +65,7 @@ export default function Stack({
     >
       {/* biome-ignore lint/nursery/noStaticElementInteractions: <explanation> */}
       {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-      <div className="stack" onClick={handleOpen}>
+      <div className={`stack${open ? " opened" : ""}`} onClick={handleOpen}>
         <div>
           <StackIcon stack={stack} />
           <div className="content">

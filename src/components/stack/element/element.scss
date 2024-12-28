@@ -3,7 +3,8 @@
   padding: 2px;
   border-radius: var(--radius);
 
-  &:hover {
+  &:hover,
+  &.opened {
     background: linear-gradient(
       var(--direction-top),
       var(--invert-05),
