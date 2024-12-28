@@ -302,7 +302,7 @@ export const stackItem = {
     reason: "Lorem ipsum dolor sit amet",
     category: "backend",
     homepage: "https://authjs.dev/",
-    tags: [],
+    tags: ["learning"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/authjs.png",

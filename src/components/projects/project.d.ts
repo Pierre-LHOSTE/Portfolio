@@ -1,8 +1,17 @@
 import type { StackIdType } from "../stack/stack";
+import type { projectsList } from "./list";
+
+export type ProjectIdType = keyof typeof projectsList;
 
 export type ProjectType = {
-  name: string;
-  description: string;
+  name: {
+    en: string;
+    fr: string;
+  };
+  description: {
+    en: string;
+    fr: string;
+  };
   technologies: StackIdType[];
   endDate: string;
   images: string[];

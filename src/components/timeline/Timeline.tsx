@@ -3,9 +3,11 @@ import Article from "../article/Article";
 import TimelineElement from "./element/TimelineElement";
 import { timelineList } from "./timeline-data";
 import "./timeline.scss";
+import { useI18nContext } from "@/i18n/i18n-react";
 
 export default function Timeline() {
   const ref = useSectionObserver("timeline");
+  const { LL } = useI18nContext();
 
   const durations = timelineList.map((element) =>
     calculateDurationInMonths(element.startDate, element.endDate ?? new Date().toISOString())
@@ -15,8 +17,8 @@ export default function Timeline() {
 
   return (
     <Article
-      title="Mon parcours"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      title={LL.section.timeline.title()}
+      description={LL.section.timeline.description()}
       id="timeline"
       ref={ref}
     >

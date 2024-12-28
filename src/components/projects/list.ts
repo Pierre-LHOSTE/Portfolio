@@ -3,58 +3,16 @@ import type { StackType } from "../stack/stack";
 import type { ProjectType } from "./project";
 
 export const projectsList = {
-  // secret: {
-  //   name: "Coming Soon ...",
-  //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  //   technologies: [
-  //     "ai",
-  //     "antDesign",
-  //     "authJs",
-  //     "bcrypt",
-  //     "biome",
-  //     "chatgpt",
-  //     "dartSass",
-  //     "dndKit",
-  //     "figma",
-  //     "git",
-  //     "github",
-  //     "localForage",
-  //     "nextJs",
-  //     "notion",
-  //     "overlayscrollbars",
-  //     "postgresql",
-  //     "prisma",
-  //     "react",
-  //     "recharts",
-  //     "storybook",
-  //     "tablerIcons",
-  //     "typesafeI18n",
-  //     "typescript",
-  //     "vercel",
-  //     "vscodium",
-  //     "zod",
-  //     "zustand",
-  //   ],
-  //   images: [
-  //     "https://qg007gk6n2popinf.public.blob.vercel-storage.com/project-thumbnail/coming/coming.png",
-  //   ],
-  //   thumbnail:
-  //     "https://qg007gk6n2popinf.public.blob.vercel-storage.com/project-thumbnail/coming/coming.png",
-  //   url: "",
-  //   repo: "",
-  //   tags: ["web-app", "fullstack"],
-  //   endDate: "2025",
-  // },
-
   portfolio: {
-    name: "Actual Portfolio",
+    name: { en: "Actual Portfolio", fr: "Portfolio actuel" },
     technologies: Object.keys(stackItem).filter((stackName) => {
       const stack: StackType = stackItem[stackName as keyof typeof stackItem];
       return stack.tags.includes("active");
     }) as (keyof typeof stackItem)[],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description: {
+      en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      fr: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
     images: [
       "https://qg007gk6n2popinf.public.blob.vercel-storage.com/project-thumbnail/portfolio/main.png",
     ],
@@ -67,9 +25,11 @@ export const projectsList = {
   },
 
   "212-colors": {
-    name: "212-Colors",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    name: { en: "212-Colors", fr: "212-Colors" },
+    description: {
+      en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      fr: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
     technologies: [
       "react",
       "dartSass",
@@ -113,9 +73,11 @@ export const projectsList = {
   },
 
   "first-portfolio": {
-    name: "Old Portfolio",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    name: { en: "Old Portfolio", fr: "Ancien Portfolio" },
+    description: {
+      en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      fr: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
     technologies: [
       "html",
       "dartSass",

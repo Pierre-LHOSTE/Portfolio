@@ -1,3 +1,4 @@
+import generateProjectTranslations from "@/utils/generateProjectTranslations";
 import type { Translation } from "../i18n-types";
 
 const en = {
@@ -35,6 +36,7 @@ const en = {
     },
   },
   scroll: "Scroll down to chat with AI-ME!",
+  projects: generateProjectTranslations("en"),
 } satisfies Translation;
 
 export default en;

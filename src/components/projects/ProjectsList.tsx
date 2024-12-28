@@ -3,19 +3,26 @@ import Article from "../article/Article";
 import { projectsList } from "./list";
 import Project from "./project/Project";
 import "./projects.scss";
+import { useI18nContext } from "@/i18n/i18n-react";
+import type { ProjectIdType } from "./project";
 
 export default function Projects() {
   const ref = useSectionObserver("projects");
+  const { LL } = useI18nContext();
 
   return (
     <Article
-      title="Mes projets"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      title={LL.section.projects.title()}
+      description={LL.section.projects.description()}
       id="projects"
       ref={ref}
     >
-      {Object.values(projectsList).map((project) => (
-        <Project key={project.name} project={project} />
+      {(Object.keys(projectsList) as ProjectIdType[]).map((projectId) => (
+        <Project
+          key={projectsList[projectId].name.en}
+          project={projectsList[projectId]}
+          id={projectId}
+        />
       ))}
     </Article>
   );
