@@ -22,7 +22,7 @@ const variants = {
 
 const animation = {
   initial: "hidden",
-  whileInView: "visible",
+  animate: "visible",
   variants,
   viewport: {
     margin: "-200px",

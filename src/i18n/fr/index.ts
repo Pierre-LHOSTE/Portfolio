@@ -14,8 +14,8 @@ const fr = {
     subtitle: {
       passionate: "Passionné",
       responsible: "Responsable",
-      french: "Français",
-      sentence: "{french: string} – {passionate: string} & {responsible: string}",
+      french: "",
+      sentence: "{french: string}{passionate: string} et {responsible: string} en tant que",
     },
     title: {
       developer: "Développeur",

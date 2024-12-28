@@ -1,15 +1,18 @@
 import { useSettingsStore } from "@/stores/settings.store";
 import "./header-item.scss";
+import { useI18nContext } from "@/i18n/i18n-react";
+import type { LabelType } from "../type";
 
 export default function HeaderItem({
   label,
   active,
 }: {
-  label: string;
+  label: LabelType;
   active: boolean;
 }) {
   const setActiveSection = useSettingsStore((state) => state.setActiveSection);
-  const children = label.charAt(0).toUpperCase() + label.slice(1);
+  const { LL } = useI18nContext();
+  const children = LL.navigation[label]();
 
   function scrollToSection() {
     if (label === "home") {

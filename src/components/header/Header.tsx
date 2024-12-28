@@ -2,8 +2,9 @@ import ListItem from "./item/HeaderItem";
 import "./header.scss";
 import { useSettingsStore } from "@/stores/settings.store";
 import { useEffect } from "react";
+import type { LabelType } from "./type";
 
-const list = ["home", "chat", "stacks", "timeline", "projects", "contact"];
+const list: LabelType[] = ["home", "chat", "stacks", "timeline", "projects", "contact"];
 
 export default function Header() {
   const activeSection = useSettingsStore((state) => state.activeSection);

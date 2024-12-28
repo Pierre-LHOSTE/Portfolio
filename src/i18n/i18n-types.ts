@@ -54,12 +54,9 @@ type RootTranslation = {
 			 * R​e​s​p​o​n​s​a​b​l​e
 			 */
 			responsible: string
-			/**
-			 * F​r​a​n​ç​a​i​s
-			 */
 			french: string
 			/**
-			 * {​f​r​e​n​c​h​}​ ​–​ ​{​p​a​s​s​i​o​n​a​t​e​}​ ​&​ ​{​r​e​s​p​o​n​s​i​b​l​e​}
+			 * {​f​r​e​n​c​h​}​{​p​a​s​s​i​o​n​a​t​e​}​ ​e​t​ ​{​r​e​s​p​o​n​s​i​b​l​e​}​ ​e​n​ ​t​a​n​t​ ​q​u​e
 			 * @param {string} french
 			 * @param {string} passionate
 			 * @param {string} responsible
@@ -156,12 +153,9 @@ export type TranslationFunctions = {
 			 * Responsable
 			 */
 			responsible: () => LocalizedString
-			/**
-			 * Français
-			 */
 			french: () => LocalizedString
 			/**
-			 * {french} – {passionate} & {responsible}
+			 * {french}{passionate} et {responsible} en tant que
 			 */
 			sentence: (arg: { french: string, passionate: string, responsible: string }) => LocalizedString
 		}
