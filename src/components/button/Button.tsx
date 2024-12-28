@@ -1,6 +1,6 @@
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
 import "./button.scss";
-import { type Icon, IconExternalLink, type IconProps } from "@tabler/icons-react";
+import { type Icon, IconExternalLink, type IconProps, IconSend } from "@tabler/icons-react";
 
 export default function Button({
   text,
@@ -26,7 +26,11 @@ export default function Button({
         {...props}
       >
         <span>
-          <IconExternalLink size={18} strokeWidth={3} />
+          {url.startsWith("mailto:") ? (
+            <IconSend size={18} strokeWidth={3} />
+          ) : (
+            <IconExternalLink size={18} strokeWidth={3} />
+          )}
           {text}
         </span>
       </a>
