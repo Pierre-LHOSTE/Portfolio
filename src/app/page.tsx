@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import "@/styles/app.css";
 import type { SavedTheme } from "@/types/settings";
 import "overlayscrollbars/overlayscrollbars.css";
+import Contact from "@/components/contact/Contact";
 import Footer from "@/components/footer/Footer";
 import ImagePreview from "@/components/image-preview/ImagePreview";
 import Projects from "@/components/projects/ProjectsList";
@@ -72,6 +73,7 @@ export default function Home() {
       <Stacks />
       <Timeline />
       <Projects />
+      <Contact />
       <ImagePreview />
       <Footer />
     </>
