@@ -12,11 +12,12 @@
     border-radius: 8px;
 
     &:hover {
-      background-color: var(--invert-10);
+      // background-color: var(--invert-10);
     }
   }
 
-  .content {
+  > .content {
+    z-index: 43876;
     position: absolute;
     bottom: 32px;
     left: 50%;

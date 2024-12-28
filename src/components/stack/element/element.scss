@@ -77,3 +77,18 @@
     font-size: 14px;
   }
 }
+
+.stack-group .tooltip > .content {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+
+  h3 {
+    font-size: 18px;
+    color: var(--text-color);
+  }
+
+  p {
+    color: var(--text-color-secondary);
+  }
+}

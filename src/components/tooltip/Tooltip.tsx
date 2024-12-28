@@ -7,14 +7,24 @@ const PADDING = 24 + 16 * 2;
 export default function Tooltip({
   children,
   content,
+  forceOpen,
+  setForceOpen,
 }: {
   children: ReactNode;
   content: ReactNode;
+  forceOpen?: boolean;
+  setForceOpen?: (open: boolean) => void;
 }) {
   const [open, setOpen] = useState(false);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const tooltipContentRef = useRef<HTMLDivElement>(null);
   const [translate, setTranslate] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    if (forceOpen !== undefined) {
+      setOpen(forceOpen);
+    }
+  }, [forceOpen]);
 
   function handleOpen() {
     setOpen(true);
@@ -24,6 +34,7 @@ export default function Tooltip({
     function handleClickOutside(e: MouseEvent) {
       if (tooltipRef.current && !tooltipRef.current.contains(e.target as Node)) {
         setOpen(false);
+        if (setForceOpen) setForceOpen(false);
       }
     }
 
@@ -32,7 +43,7 @@ export default function Tooltip({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [open]);
+  }, [open, setForceOpen]);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
@@ -46,11 +57,16 @@ export default function Tooltip({
         const diff = lastPoint - screenWidth;
         setTranslate({ x: -diff - PADDING, y: 0 });
       }
+
+      const firstPoint = Math.floor(tooltipRef.current.getBoundingClientRect().left);
+      if (firstPoint - PADDING < 0) {
+        const diff = firstPoint - PADDING;
+        setTranslate({ x: -diff, y: 0 });
+      }
     }
 
     if (tooltipContentRef.current) {
       const tooltipContentTop = tooltipContentRef.current.getBoundingClientRect().height;
-      console.log("🚀 ~ tooltipContentTop:", tooltipContentTop);
       setTranslate((prev) => ({ ...prev, y: -(tooltipContentTop / 2) }));
     }
 
@@ -64,7 +80,15 @@ export default function Tooltip({
       {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
       {/* biome-ignore lint/a11y/noNoninteractiveTabindex: <explanation> */}
       {/* biome-ignore lint/nursery/noStaticElementInteractions: <explanation> */}
-      <div className="tap-area" onClick={handleOpen} tabIndex={0} ref={tooltipContentRef} />
+      <div
+        className="tap-area"
+        onClick={handleOpen}
+        tabIndex={0}
+        ref={tooltipContentRef}
+        style={{
+          pointerEvents: forceOpen !== undefined ? "none" : "auto",
+        }}
+      />
       <AnimatePresence>
         {open && (
           <motion.div

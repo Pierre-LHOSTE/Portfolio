@@ -2,7 +2,8 @@ import { IconAlertTriangle, IconLivePhoto, IconWritingSign } from "@tabler/icons
 import StackIcon from "../icon/StackIcon";
 import type { StackIdType, StackType } from "../stack.d";
 import "./element.scss";
-import type { ReactElement } from "react";
+import Tooltip from "@/components/tooltip/Tooltip";
+import { type ReactElement, useState } from "react";
 import { stackItem } from "../list";
 
 const ICON_SIZE = 18;
@@ -13,6 +14,11 @@ export default function Stack({
   stack: StackType;
 }) {
   const icons: ReactElement[] = [];
+  const [open, setOpen] = useState(false);
+
+  function handleOpen() {
+    setOpen(true);
+  }
 
   if (stack.tags?.includes("learning"))
     icons.push(
@@ -47,17 +53,30 @@ export default function Stack({
   }
 
   return (
-    <div className="stack">
-      <div>
-        <StackIcon stack={stack} />
-        <div className="content">
-          <h4>
-            <span className="name">{stack.name}</span>
-            {icons.length > 0 ? <span className="icons">{icons.map((icon) => icon)}</span> : null}
-          </h4>
-          <p>{stack.reason}</p>
+    <Tooltip
+      content={
+        <>
+          <h3>{stack.name}</h3>
+          <p>{stack.description}</p>
+        </>
+      }
+      forceOpen={open}
+      setForceOpen={setOpen}
+    >
+      {/* biome-ignore lint/nursery/noStaticElementInteractions: <explanation> */}
+      {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+      <div className="stack" onClick={handleOpen}>
+        <div>
+          <StackIcon stack={stack} />
+          <div className="content">
+            <h4>
+              <span className="name">{stack.name}</span>
+              {icons.length > 0 ? <span className="icons">{icons.map((icon) => icon)}</span> : null}
+            </h4>
+            <p>{stack.reason}</p>
+          </div>
         </div>
       </div>
-    </div>
+    </Tooltip>
   );
 }
