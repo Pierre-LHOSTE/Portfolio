@@ -22,6 +22,9 @@
       var(--invert-10)
     );
   }
+  &.text {
+    background: none;
+  }
 
   span {
     display: flex;
@@ -51,6 +54,12 @@
       var(--main-10)
     );
     color: var(--text-color);
+  }
+
+  &.text span {
+    background: none;
+    color: var(--text-color-secondary);
+    font-weight: normal;
   }
 
   // &:hover {

@@ -12,7 +12,7 @@ export default function Button({
   text?: string;
   // biome-ignore lint/style/useNamingConvention: <explanation>
   Icon?: ForwardRefExoticComponent<IconProps & RefAttributes<Icon>>;
-  type?: "primary" | "secondary" | "submit";
+  type?: "primary" | "secondary" | "submit" | "text";
   url?: string;
   props?: unknown;
 }) {

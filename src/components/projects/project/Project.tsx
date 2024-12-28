@@ -54,6 +54,7 @@ export default function Project({
 
           <div className="actions">
             {project.url && <Button text="Visiter" url={project.url} />}
+            {project.repo && <Button text="Github repo" url={project.repo} type="text" />}
           </div>
         </div>
       </div>
