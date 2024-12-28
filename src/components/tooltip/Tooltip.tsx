@@ -63,16 +63,21 @@ export default function Tooltip({
           <motion.div
             ref={tooltipRef}
             className="content"
-            initial={{ opacity: 0, scale: 0.95, y: 10 }}
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 10 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.4, type: "spring", stiffness: 400, damping: 20 }}
             style={{
               translate: `calc(-50% + ${translate.x}px) 0.1px`,
             }}
           >
             {content}
-            <div className="tooltip-arrow" />
+            <div
+              className="tooltip-arrow"
+              style={{
+                translate: `calc(-50% - ${translate.x}px) 0.1px`,
+              }}
+            />
           </motion.div>
         )}
       </AnimatePresence>
