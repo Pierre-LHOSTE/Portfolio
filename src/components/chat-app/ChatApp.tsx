@@ -1,4 +1,5 @@
 import "./chat-app.scss";
+import useSectionObserver from "@/hooks/useSectionObserver.hook";
 import { useChat } from "ai/react";
 import { motion, useDragControls } from "framer-motion";
 import ChatAside from "./components/aside/ChatAside";
@@ -8,6 +9,7 @@ import ChatInput from "./components/input/ChatInput";
 
 export default function ChatApp() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
+  const ref = useSectionObserver("chat");
 
   const controls = useDragControls();
 
@@ -24,7 +26,7 @@ export default function ChatApp() {
 
   return (
     <motion.div
-      id="chat-app-wrapper"
+      id="chat-section"
       initial={{
         opacity: 0,
         translateY: 80,
@@ -38,6 +40,7 @@ export default function ChatApp() {
           damping: 20,
         },
       }}
+      ref={ref}
     >
       <motion.section
         id="chat-app"

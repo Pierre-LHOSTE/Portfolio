@@ -19,6 +19,9 @@ interface SettingsStoreType {
 
   imagePreview: ImagePreviewType | null;
   setImagePreview: SetStateFunction<ImagePreviewType | null>;
+
+  activeSection: string;
+  setActiveSection: SetStateFunction<string>;
 }
 
 export const useSettingsStore = create<SettingsStoreType>((set) => ({
@@ -36,4 +39,7 @@ export const useSettingsStore = create<SettingsStoreType>((set) => ({
 
   imagePreview: null,
   setImagePreview: (imagePreview) => set({ imagePreview }),
+
+  activeSection: "",
+  setActiveSection: (activeSection) => set({ activeSection }),
 }));

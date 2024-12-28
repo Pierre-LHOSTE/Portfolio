@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactNode, RefObject } from "react";
 import "./article.scss";
 
 export default function Article({
@@ -6,14 +6,16 @@ export default function Article({
   title,
   description,
   id,
+  ref,
 }: {
   children?: ReactNode;
   title: string;
   description: string;
   id?: string;
+  ref?: RefObject<HTMLDivElement | null>;
 }) {
   return (
-    <article>
+    <article id={`${id}-section`} ref={ref}>
       <section className="article-header">
         <h2>{title}</h2>
         <p>{description}</p>
