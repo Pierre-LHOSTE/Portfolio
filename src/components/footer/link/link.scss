@@ -1,0 +1,10 @@
+.footer-link {
+  color: var(--text-color);
+}
+
+a.footer-link,
+.footer-link a {
+  &:hover {
+    text-decoration: underline;
+  }
+}

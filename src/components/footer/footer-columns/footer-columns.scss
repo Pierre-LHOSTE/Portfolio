@@ -1,0 +1,17 @@
+.footer-columns {
+  --gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+
+  h5 {
+    color: var(--text-color-secondary);
+    font-size: 16px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+}

@@ -1,0 +1,22 @@
+#pixel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  span {
+    color: var(--text-color-secondary);
+    margin-left: 8px;
+  }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 8px;
+
+    td {
+      --size: 16px;
+      background-color: var(--invert-05);
+      width: var(--size);
+      height: var(--size);
+    }
+  }
+}
