@@ -52,7 +52,9 @@ export default function Project({
 
           <p>{project.description}</p>
 
-          <div className="actions">{project.url && <Button text="Visiter" />}</div>
+          <div className="actions">
+            {project.url && <Button text="Visiter" url={project.url} />}
+          </div>
         </div>
       </div>
     </div>
