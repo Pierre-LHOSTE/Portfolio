@@ -1,4 +1,4 @@
-import generateProjectTranslations from "@/utils/generateProjectTranslations";
+import generateProjectTranslations from "../../utils/generateProjectTranslations";
 import type { Translation } from "../i18n-types";
 
 const en = {
