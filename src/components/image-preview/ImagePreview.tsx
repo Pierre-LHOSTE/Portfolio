@@ -2,7 +2,7 @@ import { useSettingsStore } from "@/stores/settings.store";
 import Image from "next/image";
 import "./image-preview.scss";
 import { IconArrowLeft, IconArrowRight, IconX } from "@tabler/icons-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 const ICON_SIZE = 24;

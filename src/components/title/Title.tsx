@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import "./title.scss";
+import { useI18nContext } from "@/i18n/i18n-react";
 
 const variants = {
   hidden: {
@@ -30,10 +31,23 @@ const animationBold = {
 };
 
 export function Title() {
+  const { LL } = useI18nContext();
+
   return (
     <section className="mono">
-      <motion.h2 {...animation}>A Passionate and Responsible French</motion.h2>
-      <motion.h1 {...animationBold}>Web Developer & Designer</motion.h1>
+      <motion.h2 {...animation}>
+        {LL.hero.subtitle.sentence({
+          french: LL.hero.subtitle.french(),
+          passionate: LL.hero.subtitle.passionate(),
+          responsible: LL.hero.subtitle.responsible(),
+        })}
+      </motion.h2>
+      <motion.h1 {...animationBold}>
+        {LL.hero.title.sentence({
+          developer: LL.hero.title.developer(),
+          designer: LL.hero.title.designer(),
+        })}
+      </motion.h1>
     </section>
   );
 }

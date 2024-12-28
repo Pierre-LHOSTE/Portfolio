@@ -1,7 +1,7 @@
 import "./chat-app.scss";
 import useSectionObserver from "@/hooks/useSectionObserver.hook";
 import { useChat } from "ai/react";
-import { motion, useDragControls } from "framer-motion";
+import { motion, useDragControls } from "motion/react";
 import ChatAside from "./components/aside/ChatAside";
 import ChatContent from "./components/content/ChatContent";
 import ChatHeader from "./components/header/ChatHeader";

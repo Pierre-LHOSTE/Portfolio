@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
 import "@/styles/reset.css";
 import "@/styles/index.css";
 import type { ReactNode } from "react";
-
-export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "",
-};
+import Locale from "./i18n";
 
 export default function RootLayout({
   children,
@@ -15,7 +11,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Locale>{children}</Locale>
+      </body>
     </html>
   );
 }

@@ -1,6 +1,6 @@
 import Stack from "../element/Element";
 import "./group.scss";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useState } from "react";
 import type { StackGroupType } from "../stack.d";
 
