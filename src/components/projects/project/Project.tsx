@@ -57,8 +57,14 @@ export default function Project({
           <p>{LL.projects[id].description()}</p>
 
           <div className="actions">
-            {project.url && <Button text="Visiter" url={project.url} />}
-            {project.repo && <Button text="Github repo" url={project.repo} type="text" />}
+            {project.url && <Button text={LL.section.projects.visitButton()} url={project.url} />}
+            {project.repo && (
+              <Button
+                text={LL.section.projects.repositoryButton()}
+                url={project.repo}
+                type="text"
+              />
+            )}
           </div>
         </div>
       </div>

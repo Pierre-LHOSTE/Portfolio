@@ -51,6 +51,8 @@ const fr = {
       title: "Mes projets",
       description:
         "Découvrez une sélection non exhaustive de projets open source sur lesquels j'ai travaillé, choisis pour représenter mes compétences actuelles. Chaque projet est accompagné de son repo distant, ainsi que de la liste des outils et technologies utilisés.",
+      visitButton: "Visiter",
+      repositoryButton: "Dépôt distant",
     },
     contact: {
       title: "Me contacter",
@@ -59,6 +61,34 @@ const fr = {
     },
   },
   projects: generateProjectTranslations("fr"),
+  contact: {
+    form: {
+      title: "Formulaire",
+      description: "Le moyen le plus simple de me joindre directement sur ce site",
+      actionTitle: "Envoyer un message",
+      pros: ["Rapide & simple"],
+      cons: ["Moins professionnel", "Flexibilité limitée", "Uniquement pour des messages simples"],
+    },
+    mail: {
+      title: "Email",
+      description: "Le meilleur moyen de me contacter pour n'importe quelle demande",
+      actionTitle: "Envoyer un email",
+      pros: [
+        "Professionnel & crédible",
+        "Notifications instantanées",
+        "Facile à utiliser",
+        "Suivi facile & support des pièces jointes",
+      ],
+      cons: ["Aucun"],
+    },
+    socialNetworks: {
+      title: "LinkedIn",
+      description: "Connectez-vous avec moi sur LinkedIn ou consultez mon profil",
+      actionTitle: "Voir le profil",
+      pros: ["Personnel & relationnel", "Rapide et direct"],
+      cons: ["Peut ne pas être vérifié souvent"],
+    },
+  },
 } satisfies BaseTranslation;
 
 console.log(fr);

@@ -51,6 +51,8 @@ const en = {
       title: "My projects",
       description:
         "Discover a non-exhaustive selection of open source projects I've worked on, chosen to represent my current skills. Each project is accompanied by its remote repo, as well as a list of the tools and technologies used.",
+      visitButton: "Visit",
+      repositoryButton: "Remote repository",
     },
     contact: {
       title: "Contact me",
@@ -59,6 +61,34 @@ const en = {
     },
   },
   projects: generateProjectTranslations("en"),
+  contact: {
+    form: {
+      title: "Form",
+      description: "The simplest way to reach me directly on this site",
+      actionTitle: "Send a message",
+      pros: ["Quick & simple"],
+      cons: ["Less professional", "Limited flexibility", "Only for simple messages"],
+    },
+    mail: {
+      title: "Email",
+      description: "The best way to contact me for any request",
+      actionTitle: "Send email",
+      pros: [
+        "Professional & credible",
+        "Instant notifications",
+        "Easy to use",
+        "Easy follow-up & attachment support",
+      ],
+      cons: ["None"],
+    },
+    socialNetworks: {
+      title: "LinkedIn",
+      description: "Connect with me on LinkedIn or check out my profile",
+      actionTitle: "Visit profile",
+      pros: ["Personal & relational", "Fast and direct"],
+      cons: ["May not be checked often"],
+    },
+  },
 } satisfies Translation;
 
 export default en;

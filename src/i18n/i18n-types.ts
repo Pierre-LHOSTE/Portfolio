@@ -140,6 +140,14 @@ type RootTranslation = {
 			 * D​é​c​o​u​v​r​e​z​ ​u​n​e​ ​s​é​l​e​c​t​i​o​n​ ​n​o​n​ ​e​x​h​a​u​s​t​i​v​e​ ​d​e​ ​p​r​o​j​e​t​s​ ​o​p​e​n​ ​s​o​u​r​c​e​ ​s​u​r​ ​l​e​s​q​u​e​l​s​ ​j​'​a​i​ ​t​r​a​v​a​i​l​l​é​,​ ​c​h​o​i​s​i​s​ ​p​o​u​r​ ​r​e​p​r​é​s​e​n​t​e​r​ ​m​e​s​ ​c​o​m​p​é​t​e​n​c​e​s​ ​a​c​t​u​e​l​l​e​s​.​ ​C​h​a​q​u​e​ ​p​r​o​j​e​t​ ​e​s​t​ ​a​c​c​o​m​p​a​g​n​é​ ​d​e​ ​s​o​n​ ​r​e​p​o​ ​d​i​s​t​a​n​t​,​ ​a​i​n​s​i​ ​q​u​e​ ​d​e​ ​l​a​ ​l​i​s​t​e​ ​d​e​s​ ​o​u​t​i​l​s​ ​e​t​ ​t​e​c​h​n​o​l​o​g​i​e​s​ ​u​t​i​l​i​s​é​s​.
 			 */
 			description: string
+			/**
+			 * V​i​s​i​t​e​r
+			 */
+			visitButton: string
+			/**
+			 * D​é​p​ô​t​ ​d​i​s​t​a​n​t
+			 */
+			repositoryButton: string
 		}
 		contact: {
 			/**
@@ -159,7 +167,7 @@ type RootTranslation = {
 			 */
 			name: string
 			/**
-			 * L​o​r​e​m​ ​i​p​s​u​m​ ​d​o​l​o​r​ ​s​i​t​ ​a​m​e​t​,​ ​c​o​n​s​e​c​t​e​t​u​r​ ​a​d​i​p​i​s​c​i​n​g​ ​e​l​i​t​.​ ​S​e​d​ ​d​o​ ​e​i​u​s​m​o​d​ ​t​e​m​p​o​r​ ​i​n​c​i​d​i​d​u​n​t​ ​u​t​ ​l​a​b​o​r​e​ ​e​t​ ​d​o​l​o​r​e​ ​m​a​g​n​a​ ​a​l​i​q​u​a​.
+			 * N​e​ ​r​e​f​l​é​t​a​n​t​ ​p​l​u​s​ ​m​e​s​ ​c​o​m​p​é​t​e​n​c​e​s​ ​a​c​t​u​e​l​l​e​s​ ​e​t​ ​n​e​ ​m​e​ ​p​l​a​i​s​a​n​t​ ​p​l​u​s​ ​v​r​a​i​m​e​n​t​,​ ​m​o​n​ ​a​n​c​i​e​n​ ​p​o​r​t​f​o​l​i​o​ ​m​’​a​ ​p​o​u​s​s​é​ ​à​ ​e​n​ ​c​r​é​e​r​ ​u​n​ ​n​o​u​v​e​a​u​.​ ​J​’​a​i​ ​v​o​u​l​u​ ​y​ ​i​n​t​é​g​r​e​r​ ​t​o​u​t​ ​m​o​n​ ​s​a​v​o​i​r​-​f​a​i​r​e​ ​d​a​n​s​ ​l​e​s​ ​m​o​i​n​d​r​e​s​ ​d​é​t​a​i​l​s​,​ ​s​a​n​s​ ​c​o​m​p​r​o​m​i​s​,​ ​a​v​e​c​ ​u​n​e​ ​a​t​t​e​n​t​i​o​n​ ​p​a​r​t​i​c​u​l​i​è​r​e​ ​s​u​r​ ​l​e​ ​d​e​s​i​g​n​.​ ​P​o​u​r​ ​r​e​l​e​v​e​r​ ​l​e​ ​d​é​f​i​,​ ​j​’​a​i​ ​d​é​l​i​b​é​r​é​m​e​n​t​ ​c​h​o​i​s​i​ ​d​e​ ​n​e​ ​p​a​s​ ​m​’​a​p​p​u​y​e​r​ ​s​u​r​ ​A​n​t​ ​D​e​s​i​g​n​,​ ​l​a​ ​l​i​b​r​a​i​r​i​e​ ​d​e​ ​c​o​m​p​o​s​a​n​t​s​ ​q​u​e​ ​j​’​u​t​i​l​i​s​e​ ​h​a​b​i​t​u​e​l​l​e​m​e​n​t​.
 			 */
 			description: string
 		}
@@ -169,7 +177,7 @@ type RootTranslation = {
 			 */
 			name: string
 			/**
-			 * L​o​r​e​m​ ​i​p​s​u​m​ ​d​o​l​o​r​ ​s​i​t​ ​a​m​e​t​,​ ​c​o​n​s​e​c​t​e​t​u​r​ ​a​d​i​p​i​s​c​i​n​g​ ​e​l​i​t​.​ ​S​e​d​ ​d​o​ ​e​i​u​s​m​o​d​ ​t​e​m​p​o​r​ ​i​n​c​i​d​i​d​u​n​t​ ​u​t​ ​l​a​b​o​r​e​ ​e​t​ ​d​o​l​o​r​e​ ​m​a​g​n​a​ ​a​l​i​q​u​a​.
+			 * C​e​ ​p​r​o​j​e​t​ ​d​e​ ​f​o​r​m​a​t​i​o​n​ ​a​ ​é​t​é​ ​d​é​v​e​l​o​p​p​é​ ​t​o​u​t​ ​a​u​ ​l​o​n​g​ ​d​e​ ​m​o​n​ ​a​l​t​e​r​n​a​n​c​e​ ​e​t​ ​p​r​é​s​e​n​t​é​ ​l​o​r​s​ ​d​e​ ​m​a​ ​s​e​s​s​i​o​n​ ​d​'​e​x​a​m​e​n​ ​p​o​u​r​ ​l​'​o​b​t​e​n​t​i​o​n​ ​d​u​ ​d​i​p​l​ô​m​e​.​ ​J​'​y​ ​a​i​ ​d​é​c​o​u​v​e​r​t​ ​d​e​s​ ​t​e​c​h​n​o​l​o​g​i​e​s​ ​c​o​m​m​e​ ​N​e​x​t​.​j​s​,​ ​P​o​s​t​g​r​e​s​,​ ​P​r​i​s​m​a​,​ ​T​y​p​e​S​c​r​i​p​t​ ​e​t​ ​b​i​e​n​ ​d​’​a​u​t​r​e​s​.​ ​I​l​ ​p​e​r​m​e​t​ ​d​e​ ​s​t​o​c​k​e​r​ ​d​e​s​ ​c​o​u​l​e​u​r​s​ ​e​t​ ​d​e​ ​c​r​é​e​r​ ​d​e​s​ ​t​h​è​m​e​s​.​ ​S​o​n​ ​c​o​n​c​e​p​t​ ​e​s​t​ ​n​é​ ​d​e​ ​m​o​n​ ​b​e​s​o​i​n​ ​p​e​r​s​o​n​n​e​l​ ​d​’​o​r​g​a​n​i​s​e​r​ ​l​e​s​ ​p​a​l​e​t​t​e​s​ ​d​e​ ​c​o​u​l​e​u​r​s​ ​q​u​e​ ​j​e​ ​r​é​u​t​i​l​i​s​e​ ​d​a​n​s​ ​c​h​a​c​u​n​ ​d​e​ ​m​e​s​ ​p​r​o​j​e​t​s​.
 			 */
 			description: string
 		}
@@ -179,9 +187,113 @@ type RootTranslation = {
 			 */
 			name: string
 			/**
-			 * L​o​r​e​m​ ​i​p​s​u​m​ ​d​o​l​o​r​ ​s​i​t​ ​a​m​e​t​,​ ​c​o​n​s​e​c​t​e​t​u​r​ ​a​d​i​p​i​s​c​i​n​g​ ​e​l​i​t​.​ ​S​e​d​ ​d​o​ ​e​i​u​s​m​o​d​ ​t​e​m​p​o​r​ ​i​n​c​i​d​i​d​u​n​t​ ​u​t​ ​l​a​b​o​r​e​ ​e​t​ ​d​o​l​o​r​e​ ​m​a​g​n​a​ ​a​l​i​q​u​a​.
+			 * V​o​i​c​i​ ​m​o​n​ ​t​o​u​t​ ​p​r​e​m​i​e​r​ ​p​o​r​t​f​o​l​i​o​,​ ​r​é​a​l​i​s​é​ ​a​v​e​c​ ​R​e​a​c​t​ ​e​t​ ​i​m​a​g​i​n​é​ ​s​o​u​s​ ​l​a​ ​f​o​r​m​e​ ​d​'​u​n​ ​s​y​s​t​è​m​e​ ​d​'​e​x​p​l​o​i​t​a​t​i​o​n​.​ ​I​l​ ​s​'​a​g​i​t​ ​d​'​u​n​ ​s​i​t​e​ ​s​t​a​t​i​q​u​e​ ​h​é​b​e​r​g​é​ ​s​u​r​ ​G​i​t​H​u​b​ ​P​a​g​e​s​.​ ​M​a​l​h​e​u​r​e​u​s​e​m​e​n​t​,​ ​s​e​u​l​ ​l​e​ ​c​o​d​e​ ​s​o​u​r​c​e​ ​d​u​ ​f​i​c​h​i​e​r​ ​b​u​i​l​d​ ​e​s​t​ ​a​c​c​e​s​s​i​b​l​e​ ​p​o​u​r​ ​l​e​ ​m​o​m​e​n​t​.
 			 */
 			description: string
+		}
+	}
+	contact: {
+		form: {
+			/**
+			 * F​o​r​m​u​l​a​i​r​e
+			 */
+			title: string
+			/**
+			 * L​e​ ​m​o​y​e​n​ ​l​e​ ​p​l​u​s​ ​s​i​m​p​l​e​ ​d​e​ ​m​e​ ​j​o​i​n​d​r​e​ ​d​i​r​e​c​t​e​m​e​n​t​ ​s​u​r​ ​c​e​ ​s​i​t​e
+			 */
+			description: string
+			/**
+			 * E​n​v​o​y​e​r​ ​u​n​ ​m​e​s​s​a​g​e
+			 */
+			actionTitle: string
+			pros: {
+				/**
+				 * R​a​p​i​d​e​ ​&​ ​s​i​m​p​l​e
+				 */
+				'0': string
+			}
+			cons: {
+				/**
+				 * M​o​i​n​s​ ​p​r​o​f​e​s​s​i​o​n​n​e​l
+				 */
+				'0': string
+				/**
+				 * F​l​e​x​i​b​i​l​i​t​é​ ​l​i​m​i​t​é​e
+				 */
+				'1': string
+				/**
+				 * U​n​i​q​u​e​m​e​n​t​ ​p​o​u​r​ ​d​e​s​ ​m​e​s​s​a​g​e​s​ ​s​i​m​p​l​e​s
+				 */
+				'2': string
+			}
+		}
+		mail: {
+			/**
+			 * E​m​a​i​l
+			 */
+			title: string
+			/**
+			 * L​e​ ​m​e​i​l​l​e​u​r​ ​m​o​y​e​n​ ​d​e​ ​m​e​ ​c​o​n​t​a​c​t​e​r​ ​p​o​u​r​ ​n​'​i​m​p​o​r​t​e​ ​q​u​e​l​l​e​ ​d​e​m​a​n​d​e
+			 */
+			description: string
+			/**
+			 * E​n​v​o​y​e​r​ ​u​n​ ​e​m​a​i​l
+			 */
+			actionTitle: string
+			pros: {
+				/**
+				 * P​r​o​f​e​s​s​i​o​n​n​e​l​ ​&​ ​c​r​é​d​i​b​l​e
+				 */
+				'0': string
+				/**
+				 * N​o​t​i​f​i​c​a​t​i​o​n​s​ ​i​n​s​t​a​n​t​a​n​é​e​s
+				 */
+				'1': string
+				/**
+				 * F​a​c​i​l​e​ ​à​ ​u​t​i​l​i​s​e​r
+				 */
+				'2': string
+				/**
+				 * S​u​i​v​i​ ​f​a​c​i​l​e​ ​&​ ​s​u​p​p​o​r​t​ ​d​e​s​ ​p​i​è​c​e​s​ ​j​o​i​n​t​e​s
+				 */
+				'3': string
+			}
+			cons: {
+				/**
+				 * A​u​c​u​n
+				 */
+				'0': string
+			}
+		}
+		socialNetworks: {
+			/**
+			 * L​i​n​k​e​d​I​n
+			 */
+			title: string
+			/**
+			 * C​o​n​n​e​c​t​e​z​-​v​o​u​s​ ​a​v​e​c​ ​m​o​i​ ​s​u​r​ ​L​i​n​k​e​d​I​n​ ​o​u​ ​c​o​n​s​u​l​t​e​z​ ​m​o​n​ ​p​r​o​f​i​l
+			 */
+			description: string
+			/**
+			 * V​o​i​r​ ​l​e​ ​p​r​o​f​i​l
+			 */
+			actionTitle: string
+			pros: {
+				/**
+				 * P​e​r​s​o​n​n​e​l​ ​&​ ​r​e​l​a​t​i​o​n​n​e​l
+				 */
+				'0': string
+				/**
+				 * R​a​p​i​d​e​ ​e​t​ ​d​i​r​e​c​t
+				 */
+				'1': string
+			}
+			cons: {
+				/**
+				 * P​e​u​t​ ​n​e​ ​p​a​s​ ​ê​t​r​e​ ​v​é​r​i​f​i​é​ ​s​o​u​v​e​n​t
+				 */
+				'0': string
+			}
 		}
 	}
 }
@@ -308,6 +420,14 @@ export type TranslationFunctions = {
 			 * Découvrez une sélection non exhaustive de projets open source sur lesquels j'ai travaillé, choisis pour représenter mes compétences actuelles. Chaque projet est accompagné de son repo distant, ainsi que de la liste des outils et technologies utilisés.
 			 */
 			description: () => LocalizedString
+			/**
+			 * Visiter
+			 */
+			visitButton: () => LocalizedString
+			/**
+			 * Dépôt distant
+			 */
+			repositoryButton: () => LocalizedString
 		}
 		contact: {
 			/**
@@ -327,7 +447,7 @@ export type TranslationFunctions = {
 			 */
 			name: () => LocalizedString
 			/**
-			 * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			 * Ne reflétant plus mes compétences actuelles et ne me plaisant plus vraiment, mon ancien portfolio m’a poussé à en créer un nouveau. J’ai voulu y intégrer tout mon savoir-faire dans les moindres détails, sans compromis, avec une attention particulière sur le design. Pour relever le défi, j’ai délibérément choisi de ne pas m’appuyer sur Ant Design, la librairie de composants que j’utilise habituellement.
 			 */
 			description: () => LocalizedString
 		}
@@ -337,7 +457,7 @@ export type TranslationFunctions = {
 			 */
 			name: () => LocalizedString
 			/**
-			 * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			 * Ce projet de formation a été développé tout au long de mon alternance et présenté lors de ma session d'examen pour l'obtention du diplôme. J'y ai découvert des technologies comme Next.js, Postgres, Prisma, TypeScript et bien d’autres. Il permet de stocker des couleurs et de créer des thèmes. Son concept est né de mon besoin personnel d’organiser les palettes de couleurs que je réutilise dans chacun de mes projets.
 			 */
 			description: () => LocalizedString
 		}
@@ -347,9 +467,113 @@ export type TranslationFunctions = {
 			 */
 			name: () => LocalizedString
 			/**
-			 * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			 * Voici mon tout premier portfolio, réalisé avec React et imaginé sous la forme d'un système d'exploitation. Il s'agit d'un site statique hébergé sur GitHub Pages. Malheureusement, seul le code source du fichier build est accessible pour le moment.
 			 */
 			description: () => LocalizedString
+		}
+	}
+	contact: {
+		form: {
+			/**
+			 * Formulaire
+			 */
+			title: () => LocalizedString
+			/**
+			 * Le moyen le plus simple de me joindre directement sur ce site
+			 */
+			description: () => LocalizedString
+			/**
+			 * Envoyer un message
+			 */
+			actionTitle: () => LocalizedString
+			pros: {
+				/**
+				 * Rapide & simple
+				 */
+				'0': () => LocalizedString
+			}
+			cons: {
+				/**
+				 * Moins professionnel
+				 */
+				'0': () => LocalizedString
+				/**
+				 * Flexibilité limitée
+				 */
+				'1': () => LocalizedString
+				/**
+				 * Uniquement pour des messages simples
+				 */
+				'2': () => LocalizedString
+			}
+		}
+		mail: {
+			/**
+			 * Email
+			 */
+			title: () => LocalizedString
+			/**
+			 * Le meilleur moyen de me contacter pour n'importe quelle demande
+			 */
+			description: () => LocalizedString
+			/**
+			 * Envoyer un email
+			 */
+			actionTitle: () => LocalizedString
+			pros: {
+				/**
+				 * Professionnel & crédible
+				 */
+				'0': () => LocalizedString
+				/**
+				 * Notifications instantanées
+				 */
+				'1': () => LocalizedString
+				/**
+				 * Facile à utiliser
+				 */
+				'2': () => LocalizedString
+				/**
+				 * Suivi facile & support des pièces jointes
+				 */
+				'3': () => LocalizedString
+			}
+			cons: {
+				/**
+				 * Aucun
+				 */
+				'0': () => LocalizedString
+			}
+		}
+		socialNetworks: {
+			/**
+			 * LinkedIn
+			 */
+			title: () => LocalizedString
+			/**
+			 * Connectez-vous avec moi sur LinkedIn ou consultez mon profil
+			 */
+			description: () => LocalizedString
+			/**
+			 * Voir le profil
+			 */
+			actionTitle: () => LocalizedString
+			pros: {
+				/**
+				 * Personnel & relationnel
+				 */
+				'0': () => LocalizedString
+				/**
+				 * Rapide et direct
+				 */
+				'1': () => LocalizedString
+			}
+			cons: {
+				/**
+				 * Peut ne pas être vérifié souvent
+				 */
+				'0': () => LocalizedString
+			}
 		}
 	}
 }
