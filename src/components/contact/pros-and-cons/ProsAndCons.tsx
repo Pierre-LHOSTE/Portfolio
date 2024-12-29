@@ -1,11 +1,13 @@
 import { IconMinus, IconPlus } from "@tabler/icons-react";
 import "./pros-and-cons.scss";
+import { useI18nContext } from "@/i18n/i18n-react";
 
 export default function ProsAndCons({ pros, cons }: { pros: string[]; cons: string[] }) {
+  const { LL } = useI18nContext();
   return (
     <div className="pros-and-cons">
       <div className="pros">
-        <h3>Pros</h3>
+        <h3>{LL.section.contact.pros()}</h3>
         <ul>
           {pros.map((pro) => (
             <li key={pro}>
@@ -16,7 +18,7 @@ export default function ProsAndCons({ pros, cons }: { pros: string[]; cons: stri
         </ul>
       </div>
       <div className="cons">
-        <h3>Cons</h3>
+        <h3>{LL.section.contact.cons()}</h3>
         <ul>
           {cons.map((con) => (
             <li key={con}>

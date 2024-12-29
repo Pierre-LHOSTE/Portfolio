@@ -63,6 +63,8 @@ const en = {
       title: "Contact me",
       description:
         "To contact me, use the form below by clicking on ‘Send a message’, or contact me directly by email or via social networks. For your information, I prefer email for an initial contact.",
+      pros: "Pros",
+      cons: "Cons",
     },
   },
   projects: generateProjectTranslations("en"),
@@ -94,6 +96,17 @@ const en = {
       pros: ["Personal & relational", "Fast and direct"],
       cons: ["May not be checked often"],
     },
+  },
+  footer: {
+    actions: {
+      lang: "Language",
+      theme: "Theme",
+    },
+  },
+  locale: {
+    en: "English",
+    fr: "Français",
+    debug: "▩▩▩▩▩",
   },
 } satisfies Translation;
 

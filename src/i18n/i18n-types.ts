@@ -167,6 +167,14 @@ type RootTranslation = {
 			 * P​o​u​r​ ​m​e​ ​c​o​n​t​a​c​t​e​r​,​ ​u​t​i​l​i​s​e​z​ ​l​e​ ​f​o​r​m​u​l​a​i​r​e​ ​c​i​-​d​e​s​s​o​u​s​ ​e​n​ ​c​l​i​q​u​a​n​t​ ​s​u​r​ ​"​E​n​v​o​y​e​r​ ​u​n​ ​m​e​s​s​a​g​e​"​,​ ​o​u​ ​c​o​n​t​a​c​t​e​z​-​m​o​i​ ​d​i​r​e​c​t​e​m​e​n​t​ ​p​a​r​ ​m​a​i​l​ ​o​u​ ​v​i​a​ ​l​e​s​ ​r​é​s​e​a​u​x​ ​s​o​c​i​a​u​x​.​ ​À​ ​t​i​t​r​e​ ​d​'​i​n​f​o​r​m​a​t​i​o​n​,​ ​j​e​ ​p​r​i​v​i​l​é​g​i​e​ ​l​e​s​ ​m​a​i​l​s​ ​p​o​u​r​ ​u​n​e​ ​p​r​e​m​i​è​r​e​ ​p​r​i​s​e​ ​d​e​ ​c​o​n​t​a​c​t
 			 */
 			description: string
+			/**
+			 * A​v​a​n​t​a​g​e​s
+			 */
+			pros: string
+			/**
+			 * I​n​c​o​n​v​é​n​i​e​n​t​s
+			 */
+			cons: string
 		}
 	}
 	projects: {
@@ -376,6 +384,32 @@ type RootTranslation = {
 			}
 		}
 	}
+	footer: {
+		actions: {
+			/**
+			 * L​a​n​g​u​e
+			 */
+			lang: string
+			/**
+			 * T​h​è​m​e
+			 */
+			theme: string
+		}
+	}
+	locale: {
+		/**
+		 * E​n​g​l​i​s​h
+		 */
+		en: string
+		/**
+		 * F​r​a​n​ç​a​i​s
+		 */
+		fr: string
+		/**
+		 * ▩​▩​▩​▩​▩
+		 */
+		debug: string
+	}
 }
 
 export type TranslationFunctions = {
@@ -526,6 +560,14 @@ export type TranslationFunctions = {
 			 * Pour me contacter, utilisez le formulaire ci-dessous en cliquant sur "Envoyer un message", ou contactez-moi directement par mail ou via les réseaux sociaux. À titre d'information, je privilégie les mails pour une première prise de contact
 			 */
 			description: () => LocalizedString
+			/**
+			 * Avantages
+			 */
+			pros: () => LocalizedString
+			/**
+			 * Inconvénients
+			 */
+			cons: () => LocalizedString
 		}
 	}
 	projects: {
@@ -734,6 +776,32 @@ export type TranslationFunctions = {
 				'0': () => LocalizedString
 			}
 		}
+	}
+	footer: {
+		actions: {
+			/**
+			 * Langue
+			 */
+			lang: () => LocalizedString
+			/**
+			 * Thème
+			 */
+			theme: () => LocalizedString
+		}
+	}
+	locale: {
+		/**
+		 * English
+		 */
+		en: () => LocalizedString
+		/**
+		 * Français
+		 */
+		fr: () => LocalizedString
+		/**
+		 * ▩▩▩▩▩
+		 */
+		debug: () => LocalizedString
 	}
 }
 

@@ -63,6 +63,8 @@ const fr = {
       title: "Me contacter",
       description:
         'Pour me contacter, utilisez le formulaire ci-dessous en cliquant sur "Envoyer un message", ou contactez-moi directement par mail ou via les réseaux sociaux. À titre d\'information, je privilégie les mails pour une première prise de contact',
+      pros: "Avantages",
+      cons: "Inconvénients",
     },
   },
   projects: generateProjectTranslations("fr"),
@@ -94,6 +96,17 @@ const fr = {
       pros: ["Personnel & relationnel", "Rapide et direct"],
       cons: ["Peut ne pas être vérifié souvent"],
     },
+  },
+  footer: {
+    actions: {
+      lang: "Langue",
+      theme: "Thème",
+    },
+  },
+  locale: {
+    en: "English",
+    fr: "Français",
+    debug: "▩▩▩▩▩",
   },
 } satisfies BaseTranslation;
 
