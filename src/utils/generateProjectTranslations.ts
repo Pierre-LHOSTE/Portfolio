@@ -11,5 +11,5 @@ export default function generateProjectTranslations(lang: "en" | "fr") {
       },
     ])
   );
-  return projectsTranslations;
+  return projectsTranslations as Record<ProjectIdType, { name: string; description: string }>;
 }

@@ -10,8 +10,8 @@ export const projectsList = {
       return stack.tags.includes("active");
     }) as (keyof typeof stackItem)[],
     description: {
-      en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      fr: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      en: "My old portfolio no longer reflected my current skills or really appealed to me, so I decided to create a new one. I wanted to incorporate all my expertise down to the last detail, without compromise, with a particular focus on design. To meet the challenge, I deliberately chose not to rely on Ant Design, the component library I usually use.",
+      fr: "Ne reflétant plus mes compétences actuelles et ne me plaisant plus vraiment, mon ancien portfolio m’a poussé à en créer un nouveau. J’ai voulu y intégrer tout mon savoir-faire dans les moindres détails, sans compromis, avec une attention particulière sur le design. Pour relever le défi, j’ai délibérément choisi de ne pas m’appuyer sur Ant Design, la librairie de composants que j’utilise habituellement.",
     },
     images: [
       "https://qg007gk6n2popinf.public.blob.vercel-storage.com/project-thumbnail/portfolio/main.png",
@@ -27,8 +27,8 @@ export const projectsList = {
   "212-colors": {
     name: { en: "212-Colors", fr: "212-Colors" },
     description: {
-      en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      fr: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      en: "This training project was developed throughout my work-study period and presented at my diploma examination session. It introduced me to technologies such as Next.js, Postgres, Prisma, TypeScript and many others. It lets you store colours and create themes. Its concept grew out of my personal need to organise the colour palettes that I reuse in each of my projects.",
+      fr: "Ce projet de formation a été développé tout au long de mon alternance et présenté lors de ma session d'examen pour l'obtention du diplôme. J'y ai découvert des technologies comme Next.js, Postgres, Prisma, TypeScript et bien d’autres. Il permet de stocker des couleurs et de créer des thèmes. Son concept est né de mon besoin personnel d’organiser les palettes de couleurs que je réutilise dans chacun de mes projets.",
     },
     technologies: [
       "react",
@@ -75,8 +75,8 @@ export const projectsList = {
   "first-portfolio": {
     name: { en: "Old Portfolio", fr: "Ancien Portfolio" },
     description: {
-      en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      fr: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      fr: "Voici mon tout premier portfolio, réalisé avec React et imaginé sous la forme d'un système d'exploitation. Il s'agit d'un site statique hébergé sur GitHub Pages. Malheureusement, seul le code source du fichier build est accessible pour le moment.",
+      en: "This is my very first portfolio, created with React and imagined in the form of an operating system. It's a static site hosted on GitHub Pages. Unfortunately, only the source code of the build file is available at the moment.",
     },
     technologies: [
       "html",
