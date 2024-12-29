@@ -130,6 +130,14 @@ type RootTranslation = {
 			 * U​n​e​ ​p​r​é​s​e​n​t​a​t​i​o​n​ ​c​h​r​o​n​o​l​o​g​i​q​u​e​ ​d​e​ ​m​o​n​ ​p​a​r​c​o​u​r​s​ ​p​r​o​f​e​s​s​i​o​n​n​e​l​,​ ​m​e​s​ ​e​x​p​é​r​i​e​n​c​e​s​,​ ​m​e​s​ ​c​o​m​p​é​t​e​n​c​e​s​ ​e​t​ ​m​e​s​ ​f​o​r​m​a​t​i​o​n​s​ ​a​c​c​o​m​p​a​g​n​é​e​ ​d​e​ ​q​u​e​l​q​u​e​s​ ​i​n​f​o​r​m​a​t​i​o​n​s​ ​b​o​n​u​s​.​ ​L​a​ ​d​u​r​é​e​ ​d​e​ ​c​h​a​q​u​e​ ​é​t​a​p​e​ ​e​s​t​ ​r​e​p​r​é​s​e​n​t​é​e​ ​d​e​ ​m​a​n​i​è​r​e​ ​p​r​o​p​o​r​t​i​o​n​n​e​l​l​e​.
 			 */
 			description: string
+			/**
+			 * D​i​p​l​ô​m​é
+			 */
+			graduated: string
+			/**
+			 * E​n​ ​c​o​u​r​s
+			 */
+			inProgress: string
 		}
 		projects: {
 			/**
@@ -190,6 +198,77 @@ type RootTranslation = {
 			 * V​o​i​c​i​ ​m​o​n​ ​t​o​u​t​ ​p​r​e​m​i​e​r​ ​p​o​r​t​f​o​l​i​o​,​ ​r​é​a​l​i​s​é​ ​a​v​e​c​ ​R​e​a​c​t​ ​e​t​ ​i​m​a​g​i​n​é​ ​s​o​u​s​ ​l​a​ ​f​o​r​m​e​ ​d​'​u​n​ ​s​y​s​t​è​m​e​ ​d​'​e​x​p​l​o​i​t​a​t​i​o​n​.​ ​I​l​ ​s​'​a​g​i​t​ ​d​'​u​n​ ​s​i​t​e​ ​s​t​a​t​i​q​u​e​ ​h​é​b​e​r​g​é​ ​s​u​r​ ​G​i​t​H​u​b​ ​P​a​g​e​s​.​ ​M​a​l​h​e​u​r​e​u​s​e​m​e​n​t​,​ ​s​e​u​l​ ​l​e​ ​c​o​d​e​ ​s​o​u​r​c​e​ ​d​u​ ​f​i​c​h​i​e​r​ ​b​u​i​l​d​ ​e​s​t​ ​a​c​c​e​s​s​i​b​l​e​ ​p​o​u​r​ ​l​e​ ​m​o​m​e​n​t​.
 			 */
 			description: string
+		}
+	}
+	timelines: {
+		bac: {
+			/**
+			 * B​a​c​ ​s​c​i​e​n​t​i​f​i​q​u​e
+			 */
+			name: string
+			type: string
+			/**
+			 * S​a​l​o​n​-​d​e​-​P​r​o​v​e​n​c​e
+			 */
+			location: string
+			/**
+			 * L​y​c​é​e​ ​d​e​ ​l​’​E​m​p​e​r​i
+			 */
+			school: string
+		}
+		dut: {
+			/**
+			 * G​é​n​i​e​ ​É​l​e​c​t​r​i​q​u​e​ ​e​t​ ​I​n​f​o​r​m​a​t​i​q​u​e​ ​I​n​d​u​s​t​r​i​e​l​l​e
+			 */
+			name: string
+			/**
+			 * D​i​p​l​ô​m​e​ ​U​n​i​v​e​r​s​i​t​a​i​r​e​ ​d​e​ ​T​e​c​h​n​o​l​o​g​i​e​ ​(​D​U​T​)
+			 */
+			type: string
+			/**
+			 * S​a​l​o​n​-​d​e​-​P​r​o​v​e​n​c​e
+			 */
+			location: string
+			/**
+			 * U​I​T​ ​A​i​x​-​M​a​r​s​e​i​l​l​e
+			 */
+			school: string
+		}
+		fsd: {
+			/**
+			 * D​é​v​e​l​o​p​p​e​u​r​ ​W​e​b​ ​F​u​l​l​ ​S​t​a​c​k
+			 */
+			name: string
+			/**
+			 * R​N​C​P​ ​3​7​2​7​3​ ​—​ ​A​l​t​e​r​n​a​n​c​e
+			 */
+			type: string
+			/**
+			 * D​i​s​t​a​n​c​i​e​l
+			 */
+			location: string
+			/**
+			 * 3​W​ ​A​c​a​d​e​m​y
+			 */
+			school: string
+		}
+		app: {
+			/**
+			 * C​o​n​c​e​p​t​e​u​r​ ​d​é​v​e​l​o​p​p​e​u​r​ ​d​'​a​p​p​l​i​c​a​t​i​o​n​s
+			 */
+			name: string
+			/**
+			 * R​N​C​P​ ​3​6​4​9​0​ ​—​ ​A​l​t​e​r​n​a​n​c​e
+			 */
+			type: string
+			/**
+			 * D​i​s​t​a​n​c​i​e​l
+			 */
+			location: string
+			/**
+			 * 3​W​ ​A​c​a​d​e​m​y
+			 */
+			school: string
 		}
 	}
 	contact: {
@@ -410,6 +489,14 @@ export type TranslationFunctions = {
 			 * Une présentation chronologique de mon parcours professionnel, mes expériences, mes compétences et mes formations accompagnée de quelques informations bonus. La durée de chaque étape est représentée de manière proportionnelle.
 			 */
 			description: () => LocalizedString
+			/**
+			 * Diplômé
+			 */
+			graduated: () => LocalizedString
+			/**
+			 * En cours
+			 */
+			inProgress: () => LocalizedString
 		}
 		projects: {
 			/**
@@ -470,6 +557,77 @@ export type TranslationFunctions = {
 			 * Voici mon tout premier portfolio, réalisé avec React et imaginé sous la forme d'un système d'exploitation. Il s'agit d'un site statique hébergé sur GitHub Pages. Malheureusement, seul le code source du fichier build est accessible pour le moment.
 			 */
 			description: () => LocalizedString
+		}
+	}
+	timelines: {
+		bac: {
+			/**
+			 * Bac scientifique
+			 */
+			name: () => LocalizedString
+			type: () => LocalizedString
+			/**
+			 * Salon-de-Provence
+			 */
+			location: () => LocalizedString
+			/**
+			 * Lycée de l’Emperi
+			 */
+			school: () => LocalizedString
+		}
+		dut: {
+			/**
+			 * Génie Électrique et Informatique Industrielle
+			 */
+			name: () => LocalizedString
+			/**
+			 * Diplôme Universitaire de Technologie (DUT)
+			 */
+			type: () => LocalizedString
+			/**
+			 * Salon-de-Provence
+			 */
+			location: () => LocalizedString
+			/**
+			 * UIT Aix-Marseille
+			 */
+			school: () => LocalizedString
+		}
+		fsd: {
+			/**
+			 * Développeur Web Full Stack
+			 */
+			name: () => LocalizedString
+			/**
+			 * RNCP 37273 — Alternance
+			 */
+			type: () => LocalizedString
+			/**
+			 * Distanciel
+			 */
+			location: () => LocalizedString
+			/**
+			 * 3W Academy
+			 */
+			school: () => LocalizedString
+		}
+		app: {
+			/**
+			 * Concepteur développeur d'applications
+			 */
+			name: () => LocalizedString
+			/**
+			 * RNCP 36490 — Alternance
+			 */
+			type: () => LocalizedString
+			/**
+			 * Distanciel
+			 */
+			location: () => LocalizedString
+			/**
+			 * 3W Academy
+			 */
+			school: () => LocalizedString
 		}
 	}
 	contact: {

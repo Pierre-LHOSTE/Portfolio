@@ -78,18 +78,37 @@
       gap: 12px;
       flex-direction: column;
 
-      h3 {
-        font-size: 18px;
-        font-weight: bold;
+      > span {
+        color: var(--text-color-secondary);
       }
 
-      p {
-        color: var(--invert-80);
+      > h3 {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      > div {
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        align-items: center;
+        color: var(--text-color);
+
+        &.details {
+          margin-left: 2px;
+          gap: 8px;
+        }
 
         &.status {
-          display: flex;
-          gap: 6px;
-          align-items: center;
+          font-weight: 600;
+
+          &.graduated {
+            color: hsl(147, 67.2%, 35.9%);
+          }
+
+          &.in-progress {
+            color: hsl(204, 86.7%, 53.1%);
+          }
         }
       }
     }

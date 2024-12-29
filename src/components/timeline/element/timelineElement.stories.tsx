@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { app, bac, dut, fsd } from "../timeline-data";
+import { timelineElementList } from "../data";
 import TimelineElement from "./TimelineElement";
 
 const meta = {
@@ -22,28 +22,32 @@ type Story = StoryObj<typeof meta>;
 
 export const Default1: Story = {
   args: {
-    element: bac,
+    element: timelineElementList.bac,
     height: 0,
+    id: "bac",
   },
 };
 
 export const Default2: Story = {
   args: {
-    element: dut,
-    height: 300,
+    element: timelineElementList.dut,
+    height: 0,
+    id: "dut",
   },
 };
 
 export const Default3: Story = {
   args: {
-    element: fsd,
-    height: 300,
+    element: timelineElementList.fsd,
+    height: 0,
+    id: "fsd",
   },
 };
 
 export const Default4: Story = {
   args: {
-    element: app,
-    height: 300,
+    element: timelineElementList.app,
+    height: 0,
+    id: "app",
   },
 };

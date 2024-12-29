@@ -1,4 +1,7 @@
-import generateProjectTranslations from "../../utils/generateProjectTranslations";
+import {
+  generateProjectTranslations,
+  generateTimelineTranslations,
+} from "../../utils/generateProjectTranslations";
 import type { Translation } from "../i18n-types";
 
 const en = {
@@ -46,6 +49,8 @@ const en = {
       title: "My journey",
       description:
         "A chronological presentation of my career path, experience, skills and training, along with some bonus information. The duration of each stage is represented proportionally.",
+      graduated: "Graduated",
+      inProgress: "In progress",
     },
     projects: {
       title: "My projects",
@@ -61,6 +66,7 @@ const en = {
     },
   },
   projects: generateProjectTranslations("en"),
+  timelines: generateTimelineTranslations("en"),
   contact: {
     form: {
       title: "Form",

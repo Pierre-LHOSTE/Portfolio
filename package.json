@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack -p 8060",
+    "dev": "concurrently \"pnpm run next\" \"pnpm run storybook\" \"pnpm run typesafe-i18n\" --kill-others",
+    "next": "next dev --turbopack -p 8060",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 --no-open --quiet",
     "build-storybook": "storybook build",
     "typesafe-i18n": "typesafe-i18n"
   },
@@ -39,6 +40,7 @@
     "@types/node": "^20",
     "@types/react": "19.0.1",
     "@types/react-dom": "19.0.2",
+    "concurrently": "^9.1.1",
     "storybook": "^8.4.7",
     "typescript": "^5"
   }

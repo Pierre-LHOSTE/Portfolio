@@ -1,4 +1,7 @@
-import generateProjectTranslations from "../../utils/generateProjectTranslations";
+import {
+  generateProjectTranslations,
+  generateTimelineTranslations,
+} from "../../utils/generateProjectTranslations";
 import type { BaseTranslation } from "../i18n-types";
 
 const fr = {
@@ -46,6 +49,8 @@ const fr = {
       title: "Mon parcours",
       description:
         "Une présentation chronologique de mon parcours professionnel, mes expériences, mes compétences et mes formations accompagnée de quelques informations bonus. La durée de chaque étape est représentée de manière proportionnelle.",
+      graduated: "Diplômé",
+      inProgress: "En cours",
     },
     projects: {
       title: "Mes projets",
@@ -61,6 +66,7 @@ const fr = {
     },
   },
   projects: generateProjectTranslations("fr"),
+  timelines: generateTimelineTranslations("fr"),
   contact: {
     form: {
       title: "Formulaire",
