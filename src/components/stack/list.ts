@@ -554,6 +554,38 @@ export const stackItem = {
     },
   },
 
+  reactRedux: {
+    name: "React Redux",
+    description: "A JS library for predictable and maintainable global state management.",
+    reason: "Lorem ipsum dolor sit amet",
+    category: "frontend",
+    homepage: "https://react-redux.js.org/",
+    tags: [],
+    replacement: { name: "zustand", reason: "So much simpler" },
+
+    styles: {
+      icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/react-redux.svg",
+      invert: "white",
+      color: "#764abc",
+      background: "#fff",
+    },
+  },
+
+  electron: {
+    name: "Electron",
+    description: "Build cross-platform desktop apps with JavaScript, HTML, and CSS.",
+    reason: "Lorem ipsum dolor sit amet",
+    category: "framework",
+    homepage: "https://www.electronjs.org/",
+    tags: [],
+
+    styles: {
+      icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/electron.svg",
+      color: "#47848f",
+      background: "#fff",
+    },
+  },
+
   localForage: {
     name: "localForage",
     description:

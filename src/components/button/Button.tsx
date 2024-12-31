@@ -27,9 +27,9 @@ export default function Button({
       >
         <span>
           {url.startsWith("mailto:") ? (
-            <IconSend size={18} strokeWidth={3} />
+            <IconSend size={18} strokeWidth={2.5} />
           ) : (
-            <IconExternalLink size={18} strokeWidth={3} />
+            <IconExternalLink size={18} strokeWidth={2.5} />
           )}
           {text}
         </span>

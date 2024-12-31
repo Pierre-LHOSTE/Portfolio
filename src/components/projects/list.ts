@@ -72,6 +72,32 @@ export const projectsList = {
     tags: ["web-app", "for-school", "fullstack"],
   },
 
+  "212-collections": {
+    name: { en: "212-Collections", fr: "212-Collections" },
+    description: {
+      fr: "C’était un projet personnel que j’ai réalisé pour m’entraîner et découvrir le développement fullstack. Mon objectif était de créer une application avec Electron, entièrement respectueuse de la vie privée, en intégrant le backend directement et en laissant l’utilisateur créer et gérer sa base de données. Je me suis cependant rendu compte que je ne maîtrisais pas tout. J’ai donc mis ce projet de côté pour en commencer un autre dans le cadre de l’école que je venais de rejoindre, bien que l’application fonctionnait malgré tout.",
+      en: "It was a personal project that I carried out to train myself and discover fullstack development. My aim was to create an application with Electron that was completely privacy-friendly, integrating the backend directly and letting the user create and manage their own database. However, I realised that I hadn't mastered everything. So I put that project on hold to start another at the school I'd just joined, although the application still worked.",
+    },
+    technologies: [
+      "antDesign",
+      "dndKit",
+      "reactRedux",
+      "react",
+      "dartSass",
+      "typescript",
+      "fastify",
+      "mongodb",
+      "electron",
+    ],
+    images: [],
+    thumbnail:
+      "https://qg007gk6n2popinf.public.blob.vercel-storage.com/project-thumbnail/212-collections/thumbnail.png",
+    url: "https://github.com/212-Collections/212-Collections",
+    repo: "https://github.com/212-Collections/212-Collections",
+    endDate: "2023-10-13",
+    tags: ["for-training", "web-app", "fullstack"],
+  },
+
   "first-portfolio": {
     name: { en: "Old Portfolio", fr: "Ancien Portfolio" },
     description: {

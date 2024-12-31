@@ -18,7 +18,7 @@ export default function Project({
   project: ProjectType;
   id: ProjectIdType;
 }) {
-  const selectedStacks = ["nextJs", "typescript", "javascript", "prisma"];
+  const selectedStacks = ["nextJs", "typescript", "javascript", "prisma", "electron", "fastify"];
   const { LL } = useI18nContext();
 
   return (

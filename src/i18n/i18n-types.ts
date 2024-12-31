@@ -201,6 +201,16 @@ type RootTranslation = {
 			 */
 			description: string
 		}
+		'212-collections': {
+			/**
+			 * 2​1​2​-​C​o​l​l​e​c​t​i​o​n​s
+			 */
+			name: string
+			/**
+			 * C​’​é​t​a​i​t​ ​u​n​ ​p​r​o​j​e​t​ ​p​e​r​s​o​n​n​e​l​ ​q​u​e​ ​j​’​a​i​ ​r​é​a​l​i​s​é​ ​p​o​u​r​ ​m​’​e​n​t​r​a​î​n​e​r​ ​e​t​ ​d​é​c​o​u​v​r​i​r​ ​l​e​ ​d​é​v​e​l​o​p​p​e​m​e​n​t​ ​f​u​l​l​s​t​a​c​k​.​ ​M​o​n​ ​o​b​j​e​c​t​i​f​ ​é​t​a​i​t​ ​d​e​ ​c​r​é​e​r​ ​u​n​e​ ​a​p​p​l​i​c​a​t​i​o​n​ ​a​v​e​c​ ​E​l​e​c​t​r​o​n​,​ ​e​n​t​i​è​r​e​m​e​n​t​ ​r​e​s​p​e​c​t​u​e​u​s​e​ ​d​e​ ​l​a​ ​v​i​e​ ​p​r​i​v​é​e​,​ ​e​n​ ​i​n​t​é​g​r​a​n​t​ ​l​e​ ​b​a​c​k​e​n​d​ ​d​i​r​e​c​t​e​m​e​n​t​ ​e​t​ ​e​n​ ​l​a​i​s​s​a​n​t​ ​l​’​u​t​i​l​i​s​a​t​e​u​r​ ​c​r​é​e​r​ ​e​t​ ​g​é​r​e​r​ ​s​a​ ​b​a​s​e​ ​d​e​ ​d​o​n​n​é​e​s​.​ ​J​e​ ​m​e​ ​s​u​i​s​ ​c​e​p​e​n​d​a​n​t​ ​r​e​n​d​u​ ​c​o​m​p​t​e​ ​q​u​e​ ​j​e​ ​n​e​ ​m​a​î​t​r​i​s​a​i​s​ ​p​a​s​ ​t​o​u​t​.​ ​J​’​a​i​ ​d​o​n​c​ ​m​i​s​ ​c​e​ ​p​r​o​j​e​t​ ​d​e​ ​c​ô​t​é​ ​p​o​u​r​ ​e​n​ ​c​o​m​m​e​n​c​e​r​ ​u​n​ ​a​u​t​r​e​ ​d​a​n​s​ ​l​e​ ​c​a​d​r​e​ ​d​e​ ​l​’​é​c​o​l​e​ ​q​u​e​ ​j​e​ ​v​e​n​a​i​s​ ​d​e​ ​r​e​j​o​i​n​d​r​e​,​ ​b​i​e​n​ ​q​u​e​ ​l​’​a​p​p​l​i​c​a​t​i​o​n​ ​f​o​n​c​t​i​o​n​n​a​i​t​ ​m​a​l​g​r​é​ ​t​o​u​t​.
+			 */
+			description: string
+		}
 		'first-portfolio': {
 			/**
 			 * A​n​c​i​e​n​ ​P​o​r​t​f​o​l​i​o
@@ -612,6 +622,16 @@ export type TranslationFunctions = {
 			name: () => LocalizedString
 			/**
 			 * Ce projet de formation a été développé tout au long de mon alternance et présenté lors de ma session d'examen pour l'obtention du diplôme. J'y ai découvert des technologies comme Next.js, Postgres, Prisma, TypeScript et bien d’autres. Il permet de stocker des couleurs et de créer des thèmes. Son concept est né de mon besoin personnel d’organiser les palettes de couleurs que je réutilise dans chacun de mes projets.
+			 */
+			description: () => LocalizedString
+		}
+		'212-collections': {
+			/**
+			 * 212-Collections
+			 */
+			name: () => LocalizedString
+			/**
+			 * C’était un projet personnel que j’ai réalisé pour m’entraîner et découvrir le développement fullstack. Mon objectif était de créer une application avec Electron, entièrement respectueuse de la vie privée, en intégrant le backend directement et en laissant l’utilisateur créer et gérer sa base de données. Je me suis cependant rendu compte que je ne maîtrisais pas tout. J’ai donc mis ce projet de côté pour en commencer un autre dans le cadre de l’école que je venais de rejoindre, bien que l’application fonctionnait malgré tout.
 			 */
 			description: () => LocalizedString
 		}
