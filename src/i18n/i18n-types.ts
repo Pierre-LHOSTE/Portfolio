@@ -400,6 +400,10 @@ type RootTranslation = {
 	footer: {
 		actions: {
 			/**
+			 * A​c​t​i​o​n​s
+			 */
+			title: string
+			/**
 			 * L​a​n​g​u​e
 			 */
 			lang: string
@@ -407,6 +411,46 @@ type RootTranslation = {
 			 * T​h​è​m​e
 			 */
 			theme: string
+		}
+		/**
+		 * J​e​ ​s​u​i​s​ ​u​n​ ​d​é​v​e​l​o​p​p​e​u​r​ ​e​t​ ​d​e​s​i​g​n​e​r​ ​w​e​b​ ​f​r​a​n​ç​a​i​s​ ​p​a​s​s​i​o​n​n​é​ ​e​t​ ​r​e​s​p​o​n​s​a​b​l​e​,​ ​q​u​i​ ​a​i​m​e​ ​c​r​é​e​r​ ​d​e​s​ ​s​i​t​e​s​ ​w​e​b​ ​e​s​t​h​é​t​i​q​u​e​s​ ​e​t​ ​f​o​n​c​t​i​o​n​n​e​l​s​ ​♥​︎
+		 */
+		profile: string
+		contact: {
+			/**
+			 * C​o​n​t​a​c​t
+			 */
+			title: string
+			/**
+			 * P​r​o​f​i​l​ ​L​i​n​k​e​d​I​n
+			 */
+			social1: string
+			/**
+			 * P​r​o​f​i​l​ ​B​l​u​e​s​k​y
+			 */
+			social2: string
+		}
+		build: {
+			/**
+			 * C​o​n​ç​u​ ​e​t​ ​c​o​n​s​t​r​u​i​t
+			 */
+			title: string
+			/**
+			 * À​ ​p​a​r​t​i​r​ ​d​e​ ​z​é​r​o
+			 */
+			from: string
+			/**
+			 * A​v​e​c​ ​N​e​x​t​.​j​s
+			 */
+			'with': string
+			/**
+			 * e​t​ ​b​i​e​n​ ​d​'​a​u​t​r​e​s
+			 */
+			and: string
+			/**
+			 * H​é​b​e​r​g​é​ ​s​u​r​ ​V​e​r​c​e​l
+			 */
+			hosted: string
 		}
 	}
 	locale: {
@@ -824,6 +868,10 @@ export type TranslationFunctions = {
 	footer: {
 		actions: {
 			/**
+			 * Actions
+			 */
+			title: () => LocalizedString
+			/**
 			 * Langue
 			 */
 			lang: () => LocalizedString
@@ -831,6 +879,46 @@ export type TranslationFunctions = {
 			 * Thème
 			 */
 			theme: () => LocalizedString
+		}
+		/**
+		 * Je suis un développeur et designer web français passionné et responsable, qui aime créer des sites web esthétiques et fonctionnels ♥︎
+		 */
+		profile: () => LocalizedString
+		contact: {
+			/**
+			 * Contact
+			 */
+			title: () => LocalizedString
+			/**
+			 * Profil LinkedIn
+			 */
+			social1: () => LocalizedString
+			/**
+			 * Profil Bluesky
+			 */
+			social2: () => LocalizedString
+		}
+		build: {
+			/**
+			 * Conçu et construit
+			 */
+			title: () => LocalizedString
+			/**
+			 * À partir de zéro
+			 */
+			from: () => LocalizedString
+			/**
+			 * Avec Next.js
+			 */
+			'with': () => LocalizedString
+			/**
+			 * et bien d'autres
+			 */
+			and: () => LocalizedString
+			/**
+			 * Hébergé sur Vercel
+			 */
+			hosted: () => LocalizedString
 		}
 	}
 	locale: {

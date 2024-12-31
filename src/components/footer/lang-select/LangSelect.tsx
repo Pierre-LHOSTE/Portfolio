@@ -6,6 +6,10 @@ import { useEffect, useState } from "react";
 
 const locales = ["en", "fr"] as Locales[];
 
+if (process.env.NODE_ENV === "development") {
+  locales.push("debug");
+}
+
 export default function LangSelect() {
   const { LL } = useI18nContext();
   const [selectedLocale, setSelectedLocale] = useState<string | null>(null);

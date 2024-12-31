@@ -99,8 +99,23 @@ const en = {
   },
   footer: {
     actions: {
+      title: "Actions",
       lang: "Language",
       theme: "Theme",
+    },
+    profile:
+      "I'm a passionate and responsible french web developer and designer who loves to create beautiful and functional websites ♥︎",
+    build: {
+      title: "Designed and built",
+      from: "From scratch",
+      with: "With Next.js",
+      and: "and many more",
+      hosted: "Hosted on Vercel",
+    },
+    contact: {
+      title: "Contact",
+      social1: "LinkedIn profile",
+      social2: "Bluesky profile",
     },
   },
   locale: {

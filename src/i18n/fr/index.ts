@@ -99,8 +99,23 @@ const fr = {
   },
   footer: {
     actions: {
+      title: "Actions",
       lang: "Langue",
       theme: "Thème",
+    },
+    profile:
+      "Je suis un développeur et designer web français passionné et responsable, qui aime créer des sites web esthétiques et fonctionnels ♥︎",
+    contact: {
+      title: "Contact",
+      social1: "Profil LinkedIn",
+      social2: "Profil Bluesky",
+    },
+    build: {
+      title: "Conçu et construit",
+      from: "À partir de zéro",
+      with: "Avec Next.js",
+      and: "et bien d'autres",
+      hosted: "Hébergé sur Vercel",
     },
   },
   locale: {

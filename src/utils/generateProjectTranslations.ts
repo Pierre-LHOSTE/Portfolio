@@ -17,8 +17,6 @@ export function generateProjectTranslations(lang: "en" | "fr") {
 }
 
 export function generateTimelineTranslations(lang: "en" | "fr") {
-  console.log("generateTimelineTranslations");
-
   const timelinesTranslations = Object.fromEntries(
     (Object.keys(timelineElementList) as TimelineIdType[]).map((key) => [
       key,
@@ -30,8 +28,6 @@ export function generateTimelineTranslations(lang: "en" | "fr") {
       },
     ])
   );
-  console.log(timelinesTranslations);
-
   return timelinesTranslations as Record<
     TimelineIdType,
     { name: string; location: string; school: string; type: string }
