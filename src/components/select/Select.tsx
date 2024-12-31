@@ -5,11 +5,14 @@ import { AnimatePresence, motion } from "motion/react";
 export default function Select({
   options,
   handleChange,
+  value,
+  setValue,
 }: {
   options: { value: string; label: string }[];
   handleChange: (e: string) => void;
+  value: string;
+  setValue: (e: string) => void;
 }) {
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
   const optionsContainerRef = useRef<HTMLDivElement>(null);
 
@@ -29,7 +32,7 @@ export default function Select({
 
   function handleSelectOption(option: { value: string; label: string }) {
     handleChange(option.value);
-    setSelectedOption(option.value);
+    setValue(option.value);
     setOpen(false);
   }
 
@@ -40,9 +43,7 @@ export default function Select({
   return (
     <div className="select">
       <button onClick={handleSwitchOpen} type="button">
-        {selectedOption
-          ? options.find((option) => option.value === selectedOption)?.label
-          : "Select an option"}
+        {value ? options.find((option) => option.value === value)?.label : "Select an option"}
       </button>
       {open && (
         <AnimatePresence>
@@ -57,7 +58,7 @@ export default function Select({
             {options.map((option) => (
               <button
                 key={option.value}
-                className={`option${option.value === selectedOption ? " selected" : ""}`}
+                className={`option${option.value === value ? " selected" : ""}`}
                 onClick={() => handleSelectOption(option)}
                 onKeyDown={(e) => e.key === "Enter" && handleSelectOption(option)}
                 type="button"

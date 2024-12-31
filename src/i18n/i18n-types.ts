@@ -409,6 +409,24 @@ type RootTranslation = {
 		 * ▩​▩​▩​▩​▩
 		 */
 		debug: string
+		/**
+		 * A​u​t​o
+		 */
+		auto: string
+	}
+	theme: {
+		/**
+		 * S​o​m​b​r​e
+		 */
+		dark: string
+		/**
+		 * C​l​a​i​r
+		 */
+		light: string
+		/**
+		 * A​u​t​o
+		 */
+		auto: string
 	}
 }
 
@@ -802,6 +820,24 @@ export type TranslationFunctions = {
 		 * ▩▩▩▩▩
 		 */
 		debug: () => LocalizedString
+		/**
+		 * Auto
+		 */
+		auto: () => LocalizedString
+	}
+	theme: {
+		/**
+		 * Sombre
+		 */
+		dark: () => LocalizedString
+		/**
+		 * Clair
+		 */
+		light: () => LocalizedString
+		/**
+		 * Auto
+		 */
+		auto: () => LocalizedString
 	}
 }
 

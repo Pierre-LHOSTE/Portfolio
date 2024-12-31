@@ -25,13 +25,13 @@ interface SettingsStoreType {
 }
 
 export const useSettingsStore = create<SettingsStoreType>((set) => ({
-  savedTheme: "light",
+  savedTheme: "auto",
   setSavedTheme: (savedTheme) => set({ savedTheme }),
 
-  activeTheme: "light",
+  activeTheme: "dark",
   setActiveTheme: (activeTheme) => set({ activeTheme }),
 
-  savedLanguage: "en",
+  savedLanguage: "auto",
   setSavedLanguage: (savedLanguage) => set({ savedLanguage }),
 
   activeLanguage: "en",

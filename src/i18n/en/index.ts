@@ -107,6 +107,13 @@ const en = {
     en: "English",
     fr: "Français",
     debug: "▩▩▩▩▩",
+    auto: "Auto",
+  },
+
+  theme: {
+    dark: "Dark",
+    light: "Light",
+    auto: "Auto",
   },
 } satisfies Translation;
 

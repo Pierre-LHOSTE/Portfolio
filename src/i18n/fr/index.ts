@@ -107,6 +107,12 @@ const fr = {
     en: "English",
     fr: "Français",
     debug: "▩▩▩▩▩",
+    auto: "Auto",
+  },
+  theme: {
+    dark: "Sombre",
+    light: "Clair",
+    auto: "Auto",
   },
 } satisfies BaseTranslation;
 

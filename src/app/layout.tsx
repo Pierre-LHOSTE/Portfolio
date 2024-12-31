@@ -3,6 +3,7 @@ import "@/styles/reset.css";
 import "@/styles/index.css";
 import type { ReactNode } from "react";
 import Locale from "./i18n";
+import Theme from "./theme";
 
 export default function RootLayout({
   children,
@@ -12,7 +13,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Locale>{children}</Locale>
+        <Locale>
+          <Theme>{children}</Theme>
+        </Locale>
       </body>
     </html>
   );

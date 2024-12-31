@@ -3,6 +3,7 @@ import FooterColumns from "./footer-columns/FooterColumns";
 import "./footer.scss";
 import LangSelect from "./lang-select/LangSelect";
 import { contactFooter, portfolioFooter } from "./list";
+import ThemeSelect from "./theme-select/ThemeSelect";
 
 export default function Footer() {
   return (
@@ -20,8 +21,16 @@ export default function Footer() {
         </div>
         <FooterColumns {...portfolioFooter} />
         <FooterColumns {...contactFooter} />
-        <div id="actions">
-          <LangSelect />
+        <div id="actions" className="footer-columns">
+          <h5>Actions</h5>
+          <div>
+            <span>Language :</span>
+            <LangSelect />
+          </div>
+          <div>
+            <span>Theme :</span>
+            <ThemeSelect />
+          </div>
         </div>
       </div>
     </footer>
