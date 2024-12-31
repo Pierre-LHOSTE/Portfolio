@@ -18,13 +18,13 @@ const fr = {
     subtitle: {
       passionate: "Passionné",
       responsible: "Responsable",
-      french: "",
-      sentence: "{french: string}{passionate: string} et {responsible: string} en tant que",
+      french: "Français",
+      sentence: "{french: string}, {passionate: string} et {responsible: string}",
     },
     title: {
       developer: "Développeur",
       designer: "Designer",
-      sentence: "{developer: string} & {designer: string} web",
+      sentence: "Un {developer: string} & {designer: string} web",
     },
     details: {
       key: {

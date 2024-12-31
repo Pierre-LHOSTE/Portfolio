@@ -55,9 +55,12 @@ type RootTranslation = {
 			 * R​e​s​p​o​n​s​a​b​l​e
 			 */
 			responsible: string
+			/**
+			 * F​r​a​n​ç​a​i​s
+			 */
 			french: string
 			/**
-			 * {​f​r​e​n​c​h​}​{​p​a​s​s​i​o​n​a​t​e​}​ ​e​t​ ​{​r​e​s​p​o​n​s​i​b​l​e​}​ ​e​n​ ​t​a​n​t​ ​q​u​e
+			 * {​f​r​e​n​c​h​}​,​ ​{​p​a​s​s​i​o​n​a​t​e​}​ ​e​t​ ​{​r​e​s​p​o​n​s​i​b​l​e​}
 			 * @param {string} french
 			 * @param {string} passionate
 			 * @param {string} responsible
@@ -74,7 +77,7 @@ type RootTranslation = {
 			 */
 			designer: string
 			/**
-			 * {​d​e​v​e​l​o​p​e​r​}​ ​&​ ​{​d​e​s​i​g​n​e​r​}​ ​w​e​b
+			 * U​n​ ​{​d​e​v​e​l​o​p​e​r​}​ ​&​ ​{​d​e​s​i​g​n​e​r​}​ ​w​e​b
 			 * @param {string} designer
 			 * @param {string} developer
 			 */
@@ -471,9 +474,12 @@ export type TranslationFunctions = {
 			 * Responsable
 			 */
 			responsible: () => LocalizedString
+			/**
+			 * Français
+			 */
 			french: () => LocalizedString
 			/**
-			 * {french}{passionate} et {responsible} en tant que
+			 * {french}, {passionate} et {responsible}
 			 */
 			sentence: (arg: { french: string, passionate: string, responsible: string }) => LocalizedString
 		}
@@ -487,7 +493,7 @@ export type TranslationFunctions = {
 			 */
 			designer: () => LocalizedString
 			/**
-			 * {developer} & {designer} web
+			 * Un {developer} & {designer} web
 			 */
 			sentence: (arg: { designer: string, developer: string }) => LocalizedString
 		}

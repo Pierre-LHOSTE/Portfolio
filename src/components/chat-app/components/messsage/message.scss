@@ -17,6 +17,12 @@
       border-radius: 50%;
       background: var(--invert-25);
     }
+
+    span {
+      font-size: 16px;
+      color: var(--text-color);
+      text-transform: capitalize;
+    }
   }
 
   &.user-user .avatar-wrapper {
