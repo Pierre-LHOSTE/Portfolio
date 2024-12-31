@@ -656,12 +656,12 @@ export const stackGroup = {
     icon: IconSettings,
   },
   frameworks: {
-    name: "Frameworks",
+    name: "Framework",
     stack: Object.values(stackItem).filter((item) => item.category === "framework"),
     icon: IconBrush,
   },
   deployment: {
-    name: "Hosting & Deployment",
+    name: "deployment",
     stack: Object.values(stackItem).filter((item) => item.category === "deployment"),
     icon: IconServer,
   },

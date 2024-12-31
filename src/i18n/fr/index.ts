@@ -138,6 +138,16 @@ const fr = {
     user: "Moi",
     type: "Entrez votre message...",
   },
+  stack: {
+    language: "Langages",
+    framework: "Frameworks",
+    libraries: "Librairies",
+    tools: "Outils",
+    database: "Bases de données",
+    backend: "Backend",
+    frontend: "Frontend",
+    deployment: "Hébergement & Déploiement",
+  },
 } satisfies BaseTranslation;
 
 console.log(fr);

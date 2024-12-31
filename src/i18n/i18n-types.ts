@@ -515,6 +515,40 @@ type RootTranslation = {
 		 */
 		type: string
 	}
+	stack: {
+		/**
+		 * L​a​n​g​a​g​e​s
+		 */
+		language: string
+		/**
+		 * F​r​a​m​e​w​o​r​k​s
+		 */
+		framework: string
+		/**
+		 * L​i​b​r​a​i​r​i​e​s
+		 */
+		libraries: string
+		/**
+		 * O​u​t​i​l​s
+		 */
+		tools: string
+		/**
+		 * B​a​s​e​s​ ​d​e​ ​d​o​n​n​é​e​s
+		 */
+		database: string
+		/**
+		 * B​a​c​k​e​n​d
+		 */
+		backend: string
+		/**
+		 * F​r​o​n​t​e​n​d
+		 */
+		frontend: string
+		/**
+		 * H​é​b​e​r​g​e​m​e​n​t​ ​&​ ​D​é​p​l​o​i​e​m​e​n​t
+		 */
+		deployment: string
+	}
 }
 
 export type TranslationFunctions = {
@@ -1012,6 +1046,40 @@ export type TranslationFunctions = {
 		 * Entrez votre message...
 		 */
 		type: () => LocalizedString
+	}
+	stack: {
+		/**
+		 * Langages
+		 */
+		language: () => LocalizedString
+		/**
+		 * Frameworks
+		 */
+		framework: () => LocalizedString
+		/**
+		 * Librairies
+		 */
+		libraries: () => LocalizedString
+		/**
+		 * Outils
+		 */
+		tools: () => LocalizedString
+		/**
+		 * Bases de données
+		 */
+		database: () => LocalizedString
+		/**
+		 * Backend
+		 */
+		backend: () => LocalizedString
+		/**
+		 * Frontend
+		 */
+		frontend: () => LocalizedString
+		/**
+		 * Hébergement & Déploiement
+		 */
+		deployment: () => LocalizedString
 	}
 }
 

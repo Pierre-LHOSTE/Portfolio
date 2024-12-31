@@ -139,6 +139,16 @@ const en = {
     user: "Me",
     type: "Type your message...",
   },
+  stack: {
+    language: "Languages",
+    framework: "Frameworks",
+    libraries: "Libraries",
+    tools: "Tools",
+    database: "Databases",
+    backend: "Backend",
+    frontend: "Frontend",
+    deployment: "Hosting & Deployment",
+  },
 } satisfies Translation;
 
 export default en;

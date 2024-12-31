@@ -1,8 +1,9 @@
 import Stack from "../element/Element";
 import "./group.scss";
+import { useI18nContext } from "@/i18n/i18n-react";
 import { motion } from "motion/react";
 import { useState } from "react";
-import type { StackGroupType } from "../stack.d";
+import type { CategoryType, StackGroupType } from "../stack.d";
 
 export default function StackGroup({
   group,
@@ -11,6 +12,7 @@ export default function StackGroup({
 }) {
   const { name, icon: Icon, stack } = group;
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
+  const { LL } = useI18nContext();
 
   const variants = {
     hidden: {
@@ -47,7 +49,7 @@ export default function StackGroup({
     <motion.div className="stack-group" {...animation}>
       <div>
         <h3>
-          <Icon /> {name}
+          <Icon /> {LL.stack[name.toLowerCase() as CategoryType]()}
         </h3>
         <div>
           {stack.map((s) => {
