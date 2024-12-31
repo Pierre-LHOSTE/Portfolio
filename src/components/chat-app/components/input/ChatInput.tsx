@@ -1,6 +1,7 @@
 import { type ChangeEvent, useRef } from "react";
 import "./input.scss";
 import Button from "@/components/button/Button";
+import { useI18nContext } from "@/i18n/i18n-react";
 import { IconArrowBigUpFilled } from "@tabler/icons-react";
 
 export default function ChatInput({
@@ -13,6 +14,7 @@ export default function ChatInput({
   handleSubmit: any;
 }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const { LL } = useI18nContext();
 
   const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     handleInputChange(event);
@@ -27,7 +29,7 @@ export default function ChatInput({
         <div>
           <textarea
             ref={textareaRef}
-            placeholder="Type a message"
+            placeholder={LL.chat.type()}
             value={input}
             onChange={handleChange}
             rows={1}

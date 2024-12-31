@@ -130,6 +130,15 @@ const en = {
     light: "Light",
     auto: "Auto",
   },
+  chat: {
+    title: "Chat with AI-ME!",
+    search: "Search",
+    today: "Today",
+    yesterday: "yesterday",
+    assistant: "Assistant",
+    user: "Me",
+    type: "Type your message...",
+  },
 } satisfies Translation;
 
 export default en;

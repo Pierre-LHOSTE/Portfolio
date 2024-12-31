@@ -485,6 +485,36 @@ type RootTranslation = {
 		 */
 		auto: string
 	}
+	chat: {
+		/**
+		 * D​i​s​c​u​t​e​z​ ​a​v​e​c​ ​l​'​I​A​-​M​O​I​ ​!
+		 */
+		title: string
+		/**
+		 * R​e​c​h​e​r​c​h​e​r
+		 */
+		search: string
+		/**
+		 * A​u​j​o​u​r​d​'​h​u​i
+		 */
+		today: string
+		/**
+		 * H​i​e​r
+		 */
+		yesterday: string
+		/**
+		 * A​s​s​i​s​t​a​n​t
+		 */
+		assistant: string
+		/**
+		 * M​o​i
+		 */
+		user: string
+		/**
+		 * E​n​t​r​e​z​ ​v​o​t​r​e​ ​m​e​s​s​a​g​e​.​.​.
+		 */
+		type: string
+	}
 }
 
 export type TranslationFunctions = {
@@ -952,6 +982,36 @@ export type TranslationFunctions = {
 		 * Auto
 		 */
 		auto: () => LocalizedString
+	}
+	chat: {
+		/**
+		 * Discutez avec l'IA-MOI !
+		 */
+		title: () => LocalizedString
+		/**
+		 * Rechercher
+		 */
+		search: () => LocalizedString
+		/**
+		 * Aujourd'hui
+		 */
+		today: () => LocalizedString
+		/**
+		 * Hier
+		 */
+		yesterday: () => LocalizedString
+		/**
+		 * Assistant
+		 */
+		assistant: () => LocalizedString
+		/**
+		 * Moi
+		 */
+		user: () => LocalizedString
+		/**
+		 * Entrez votre message...
+		 */
+		type: () => LocalizedString
 	}
 }
 

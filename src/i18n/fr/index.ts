@@ -129,6 +129,15 @@ const fr = {
     light: "Clair",
     auto: "Auto",
   },
+  chat: {
+    title: "Discutez avec l'IA-MOI !",
+    search: "Rechercher",
+    today: "Aujourd'hui",
+    yesterday: "Hier",
+    assistant: "Assistant",
+    user: "Moi",
+    type: "Entrez votre message...",
+  },
 } satisfies BaseTranslation;
 
 console.log(fr);

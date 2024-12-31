@@ -1,5 +1,6 @@
 import "./chat-app.scss";
 import useSectionObserver from "@/hooks/useSectionObserver.hook";
+import { useI18nContext } from "@/i18n/i18n-react";
 import { useChat } from "ai/react";
 import { motion, useDragControls } from "motion/react";
 import ChatAside from "./components/aside/ChatAside";
@@ -9,6 +10,7 @@ import ChatInput from "./components/input/ChatInput";
 
 export default function ChatApp() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
+  const { LL } = useI18nContext();
   const ref = useSectionObserver("chat");
 
   const controls = useDragControls();
@@ -57,7 +59,7 @@ export default function ChatApp() {
         <ChatAside
           chatList={[
             {
-              date: "Today",
+              date: LL.chat.today(),
               elements: [
                 { title: "Problème avec l'API REST", id: "1" },
                 { title: "Discussion sur le design", id: "2" },
@@ -66,7 +68,7 @@ export default function ChatApp() {
               active: "2",
             },
             {
-              date: "Yesterday",
+              date: LL.chat.yesterday(),
               elements: [
                 { title: "Organisation du projet", id: "4" },
                 { title: "Refactoring du code", id: "5" },
