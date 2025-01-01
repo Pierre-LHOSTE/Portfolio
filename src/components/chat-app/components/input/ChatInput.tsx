@@ -1,4 +1,4 @@
-import { type ChangeEvent, useRef } from "react";
+import { type ChangeEvent, type KeyboardEvent, useRef } from "react";
 import "./input.scss";
 import Button from "@/components/button/Button";
 import { useI18nContext } from "@/i18n/i18n-react";
@@ -23,6 +23,13 @@ export default function ChatInput({
     textarea.style.height = `${textarea.scrollHeight + 0}px`;
   };
 
+  const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      handleSubmit(event);
+    }
+  };
+
   return (
     <form id="chat-input" onSubmit={handleSubmit}>
       <div>
@@ -32,6 +39,7 @@ export default function ChatInput({
             placeholder={LL.chat.type()}
             value={input}
             onChange={handleChange}
+            onKeyDown={handleKeyDown}
             rows={1}
             style={{
               overflow: "hidden",
