@@ -2,6 +2,7 @@ import Select from "@/components/select/Select";
 import { useI18nContext } from "@/i18n/i18n-react";
 import { useSettingsStore } from "@/stores/settings.store";
 import type { SavedTheme } from "@/types/settings";
+import localforage from "localforage";
 import { useEffect, useState } from "react";
 
 const themes = ["dark", "light", "auto"] as SavedTheme[];
@@ -19,7 +20,7 @@ export default function LangSelect() {
   useEffect(() => {
     if (selectedTheme === null) return;
     setSavedTheme(selectedTheme as SavedTheme);
-    localStorage.setItem("theme", selectedTheme);
+    localforage.setItem("theme", selectedTheme);
   }, [selectedTheme, setSavedTheme]);
 
   return (

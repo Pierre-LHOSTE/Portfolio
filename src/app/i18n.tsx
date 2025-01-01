@@ -3,6 +3,7 @@ import type { Locales } from "@/i18n/i18n-types";
 import { detectLocale } from "@/i18n/i18n-util";
 import { loadAllLocalesAsync } from "@/i18n/i18n-util.async";
 import { useSettingsStore } from "@/stores/settings.store";
+import localForage from "localforage";
 import { type ReactNode, useEffect, useState } from "react";
 import { navigatorDetector } from "typesafe-i18n/detectors";
 
@@ -27,13 +28,14 @@ export default function Locale({
   }, [savedLocale]);
 
   useEffect(() => {
-    const localLocale = localStorage.getItem("locale") || "";
-    if (!["en", "fr", "auto"].includes(localLocale)) {
-      localStorage.setItem("locale", "auto");
-    }
-    if (["en", "fr", "auto"].includes(localLocale)) {
-      setSavedLocale(localLocale);
-    }
+    localForage.getItem<string>("locale").then((localLocale) => {
+      if (!["en", "fr", "auto"].includes(localLocale || "")) {
+        localForage.setItem("locale", "auto");
+      }
+      if (["en", "fr", "auto"].includes(localLocale || "")) {
+        setSavedLocale(localLocale as Locales);
+      }
+    });
   }, [setSavedLocale]);
 
   useEffect(() => {

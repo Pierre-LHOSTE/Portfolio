@@ -1,5 +1,6 @@
 import { useSettingsStore } from "@/stores/settings.store";
 import type { SavedTheme } from "@/types/settings";
+import localforage from "localforage";
 import { type ReactNode, useEffect, useState } from "react";
 
 export default function Theme({
@@ -15,15 +16,15 @@ export default function Theme({
   const [init, setInit] = useState(false);
 
   useEffect(() => {
-    const localTheme = localStorage.getItem("theme") || "";
-    if (!["dark", "light", "auto"].includes(localTheme)) {
-      localStorage.setItem("theme", "auto");
-    }
-    if (["dark", "light", "auto"].includes(localTheme)) {
-      console.log("1 Setting saved theme to", localTheme);
-
-      setSavedTheme(localTheme as SavedTheme);
-    }
+    localforage.getItem<string>("theme").then((localTheme) => {
+      if (!["dark", "light", "auto"].includes(localTheme || "")) {
+        localforage.setItem("theme", "auto");
+      }
+      if (["dark", "light", "auto"].includes(localTheme || "")) {
+        console.log("1 Setting saved theme to", localTheme);
+        setSavedTheme(localTheme as SavedTheme);
+      }
+    });
   }, [setSavedTheme]);
 
   useEffect(() => {

@@ -2,6 +2,7 @@ import Select from "@/components/select/Select";
 import { useI18nContext } from "@/i18n/i18n-react";
 import type { Locales } from "@/i18n/i18n-types";
 import { useSettingsStore } from "@/stores/settings.store";
+import localforage from "localforage";
 import { useEffect, useState } from "react";
 
 const locales = ["en", "fr"] as Locales[];
@@ -23,7 +24,7 @@ export default function LangSelect() {
   useEffect(() => {
     if (selectedLocale === null) return;
     setSavedLocale(selectedLocale);
-    localStorage.setItem("locale", selectedLocale);
+    localforage.setItem("locale", selectedLocale);
   }, [selectedLocale, setSavedLocale]);
 
   return (

@@ -593,7 +593,7 @@ export const stackItem = {
     reason: "Lorem ipsum dolor sit amet",
     category: "frontend",
     homepage: "https://localforage.github.io/localForage/",
-    tags: ["learning"],
+    tags: ["learning", "active"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/localforage.svg",
