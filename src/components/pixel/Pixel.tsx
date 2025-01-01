@@ -15,7 +15,9 @@ export default function Pixel() {
                 <td
                   // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                   key={columnIndex}
-                />
+                >
+                  <div className="pixel" />
+                </td>
               ))}
             </tr>
           ))}

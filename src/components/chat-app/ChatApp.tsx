@@ -7,10 +7,11 @@ import ChatAside from "./components/aside/ChatAside";
 import ChatContent from "./components/content/ChatContent";
 import ChatHeader from "./components/header/ChatHeader";
 import ChatInput from "./components/input/ChatInput";
+import { initMessagesData } from "./messages";
 
 export default function ChatApp() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
-  const { LL } = useI18nContext();
+  const { LL, locale } = useI18nContext();
   const ref = useSectionObserver("chat");
 
   const controls = useDragControls();
@@ -20,8 +21,8 @@ export default function ChatApp() {
       id: "1",
       role: "assistant",
       content: [
-        "Hello! How can I help you today?",
-        "I'm here to respond to your questions like a real human!",
+        initMessagesData.hi[locale === "fr" ? "fr" : "en"],
+        initMessagesData.chat[locale === "fr" ? "fr" : "en"],
       ],
     },
   ];
