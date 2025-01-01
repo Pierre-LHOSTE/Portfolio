@@ -2,10 +2,12 @@ import "./chat-app.scss";
 import useSectionObserver from "@/hooks/useSectionObserver.hook";
 import { useI18nContext } from "@/i18n/i18n-react";
 import { useChatStore } from "@/stores/chat.store";
+import scrollToButton from "@/utils/scrollToButton";
 import { type Message, useChat } from "ai/react";
 import localforage from "localforage";
 import { motion, useDragControls } from "motion/react";
-import { useEffect } from "react";
+import type { OverlayScrollbarsComponentRef } from "overlayscrollbars-react";
+import { useEffect, useRef } from "react";
 import ChatAside from "./components/aside/ChatAside";
 import ChatContent from "./components/content/ChatContent";
 import ChatHeader from "./components/header/ChatHeader";
@@ -23,8 +25,11 @@ export default function ChatApp() {
   const setActiveChat = useChatStore((state) => state.setActiveChat);
   const activeChat = useChatStore((state) => state.activeChat);
 
+  const chatContentRef = useRef<OverlayScrollbarsComponentRef<"div">>(null);
+
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
+    scrollToButton(chatContentRef);
     const syncMessagesWithLocalForage = async () => {
       try {
         const savedMessages = await localforage.getItem("messages");
@@ -196,11 +201,12 @@ export default function ChatApp() {
         <ChatAside chatList={formattedChats} />
         <main>
           <ChatHeader controls={controls} />
-          <ChatContent chat={[...initMessages, ...messages]} />
+          <ChatContent chat={[...initMessages, ...messages]} ref={chatContentRef} />
           <ChatInput
             input={input}
             handleInputChange={handleInputChange}
             handleSubmit={handleSubmit}
+            ref={chatContentRef}
           />
         </main>
       </motion.section>

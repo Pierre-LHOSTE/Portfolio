@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import LangSelect from "./ThemeSelect";
 const meta = {
-  title: "Footer/Actions/LangSelect",
+  title: "Footer/Actions/ThemeSelect",
   component: LangSelect,
   parameters: {
     layout: "centered",

@@ -1,17 +1,21 @@
-import { type ChangeEvent, type KeyboardEvent, useRef } from "react";
+import { type ChangeEvent, type ForwardedRef, type KeyboardEvent, useRef } from "react";
 import "./input.scss";
 import Button from "@/components/button/Button";
 import { useI18nContext } from "@/i18n/i18n-react";
+import scrollToButton from "@/utils/scrollToButton";
 import { IconArrowBigUpFilled } from "@tabler/icons-react";
+import type { OverlayScrollbarsComponentRef } from "overlayscrollbars-react";
 
 export default function ChatInput({
   input,
   handleInputChange,
   handleSubmit,
+  ref,
 }: {
   input: any;
   handleInputChange: any;
   handleSubmit: any;
+  ref: ForwardedRef<OverlayScrollbarsComponentRef<"div">>;
 }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const { LL } = useI18nContext();
@@ -27,11 +31,18 @@ export default function ChatInput({
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
       handleSubmit(event);
+      scrollToButton(ref);
     }
   };
 
   return (
-    <form id="chat-input" onSubmit={handleSubmit}>
+    <form
+      id="chat-input"
+      onSubmit={(event) => {
+        handleSubmit(event);
+        scrollToButton(ref);
+      }}
+    >
       <div>
         <div>
           <textarea

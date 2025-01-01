@@ -1,5 +1,6 @@
 import { useI18nContext } from "@/i18n/i18n-react";
 import "./message.scss";
+import type { ReactNode } from "react";
 
 export interface ChatMessageProps {
   role: string;
@@ -17,12 +18,17 @@ export default function ChatMessage({ role, content }: ChatMessageProps) {
       </div>
       <div className="content">
         {Array.isArray(content) ? (
-          // biome-ignore lint/suspicious/noArrayIndexKey: Static content
-          content.map((line, index) => <span key={index}>{line}</span>)
+          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          content.map((line, index) => <span key={index}>{formatMessage(line)}</span>)
         ) : (
-          <span>{content}</span>
+          <span>{formatMessage(content)}</span>
         )}
       </div>
     </div>
   );
+}
+
+function formatMessage(text: string): ReactNode {
+  // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+  return text.split("\n").map((line, i) => <p key={i}>{line.trim() || " "}</p>);
 }
