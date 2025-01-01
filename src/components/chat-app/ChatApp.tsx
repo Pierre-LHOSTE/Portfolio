@@ -30,26 +30,35 @@ export default function ChatApp() {
         const savedMessages = await localforage.getItem("messages");
 
         if (!Array.isArray(savedMessages)) {
-          localforage.setItem(
+          await localforage.setItem(
             "messages",
-            messages.map((msg) => ({ ...msg, from: activeChat }))
+            messages.map((msg) => ({
+              ...msg,
+              from: activeChat,
+            }))
           );
           return;
         }
 
-        const newMessages = messages.filter(
-          (msg) => !(savedMessages as Message[]).some((savedMsg) => savedMsg.id === msg.id)
+        interface SavedMessageType extends Message {
+          from: string;
+        }
+
+        const remainingMessages = (savedMessages as SavedMessageType[]).filter(
+          (savedMsg) => savedMsg.from !== activeChat
         );
 
-        if (newMessages.length > 0) {
-          const updatedMessages = [
-            ...savedMessages,
-            ...newMessages.map((msg) => ({ ...msg, from: activeChat })),
-          ];
-          await localforage.setItem("messages", updatedMessages);
-        }
+        const updatedMessages = [
+          ...remainingMessages,
+          ...messages.map((msg) => ({
+            ...msg,
+            from: activeChat,
+          })),
+        ];
+
+        await localforage.setItem("messages", updatedMessages);
       } catch (error) {
-        console.error(error);
+        console.error("Error synchronizing messages:", error);
       }
     };
 
@@ -62,7 +71,10 @@ export default function ChatApp() {
         setMessages(
           savedMessages
             .filter((msg) => msg.from === activeChat)
-            .map((msg) => ({ ...msg, from: undefined }))
+            .map((msg) => ({
+              ...msg,
+              from: undefined,
+            }))
         );
       }
     });
