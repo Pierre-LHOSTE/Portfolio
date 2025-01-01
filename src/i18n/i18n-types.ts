@@ -514,6 +514,10 @@ type RootTranslation = {
 		 * E​n​t​r​e​z​ ​v​o​t​r​e​ ​m​e​s​s​a​g​e​.​.​.
 		 */
 		type: string
+		/**
+		 * N​o​u​v​e​l​l​e​ ​d​i​s​c​u​s​s​i​o​n
+		 */
+		newChat: string
 	}
 	stack: {
 		/**
@@ -1046,6 +1050,10 @@ export type TranslationFunctions = {
 		 * Entrez votre message...
 		 */
 		type: () => LocalizedString
+		/**
+		 * Nouvelle discussion
+		 */
+		newChat: () => LocalizedString
 	}
 	stack: {
 		/**

@@ -21,7 +21,6 @@ export default function Theme({
         localforage.setItem("theme", "auto");
       }
       if (["dark", "light", "auto"].includes(localTheme || "")) {
-        console.log("1 Setting saved theme to", localTheme);
         setSavedTheme(localTheme as SavedTheme);
       }
     });

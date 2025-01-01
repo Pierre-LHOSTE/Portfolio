@@ -1,8 +1,17 @@
 #chat-aside {
+  display: flex;
+  flex-direction: column;
   border-right: var(--invert-05) 1px solid;
+
   main {
+    display: flex;
+    flex: 1;
+    flex: 1;
+    flex-direction: column;
     padding: 8px;
     padding-top: 8px;
+    overflow: hidden;
+    gap: 32px;
   }
 
   > * {
@@ -37,8 +46,8 @@
   input {
     width: 100%;
     padding: 8px 16px;
-    border-radius: 8px;
     border: 1px solid var(--invert-10);
+    border-radius: 8px;
     background-color: var(--invert-02);
 
     &:focus {
@@ -47,9 +56,9 @@
   }
 
   nav {
-    margin-top: 32px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     gap: 32px;
   }
 }

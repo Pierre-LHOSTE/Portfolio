@@ -1,5 +1,6 @@
 import { useI18nContext } from "@/i18n/i18n-react";
 import "./aside.scss";
+import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
 import ChatAsideList, { type ChatAsideListProps } from "./list/ChatAsideList";
 
 export default function ChatAside({
@@ -18,9 +19,16 @@ export default function ChatAside({
       <main>
         <input type="text" placeholder={LL.chat.search()} />
         <nav>
-          {chatList.map((chat) => (
-            <ChatAsideList key={chat.date} {...chat} />
-          ))}
+          <OverlayScrollbarsComponent
+            defer
+            style={{
+              flex: 1,
+            }}
+          >
+            {chatList.map((chat) => (
+              <ChatAsideList key={chat.date} {...chat} />
+            ))}
+          </OverlayScrollbarsComponent>
         </nav>
       </main>
     </aside>

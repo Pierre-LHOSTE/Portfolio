@@ -137,6 +137,7 @@ const fr = {
     assistant: "Assistant",
     user: "Moi",
     type: "Entrez votre message...",
+    newChat: "Nouvelle discussion",
   },
   stack: {
     language: "Langages",
@@ -149,7 +150,5 @@ const fr = {
     deployment: "Hébergement & Déploiement",
   },
 } satisfies BaseTranslation;
-
-console.log(fr);
 
 export default fr;

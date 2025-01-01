@@ -138,6 +138,7 @@ const en = {
     assistant: "Assistant",
     user: "Me",
     type: "Type your message...",
+    newChat: "New chat",
   },
   stack: {
     language: "Languages",
