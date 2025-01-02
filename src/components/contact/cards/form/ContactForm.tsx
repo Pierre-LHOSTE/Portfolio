@@ -1,17 +1,23 @@
+import { useI18nContext } from "@/i18n/i18n-react";
+import { useSettingsStore } from "@/stores/settings.store";
 import { IconForms } from "@tabler/icons-react";
 import ContactCard from "../../card/ContactCard";
 
 export default function ContactForm() {
+  const { LL } = useI18nContext();
+  const setShowForm = useSettingsStore((state) => state.setShowForm);
+
   return (
     <ContactCard
       isBest
-      title="Form"
-      description="The simplest way to reach me directly on this site"
+      title={LL.contact.form.title()}
+      description={LL.contact.form.description()}
       Icon={IconForms}
-      actionTitle="Send message"
+      actionTitle={LL.contact.form.actionTitle()}
       actionType="secondary"
-      pros={["Quick & simple"]}
-      cons={["Less professional", "Limited flexibility", "Only for simple messages"]}
+      pros={Object.values(LL.contact.form.pros).map((fn) => fn())}
+      cons={Object.values(LL.contact.form.cons).map((fn) => fn())}
+      action={() => setShowForm(true)}
     />
   );
 }

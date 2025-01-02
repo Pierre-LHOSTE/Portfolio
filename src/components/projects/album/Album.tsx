@@ -2,7 +2,7 @@ import Image from "next/image";
 import "./album.scss";
 import { useSettingsStore } from "@/stores/settings.store";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useState } from "react";
 
 const IMG_MAX_SIZE = 512;

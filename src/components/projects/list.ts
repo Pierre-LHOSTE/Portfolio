@@ -3,58 +3,16 @@ import type { StackType } from "../stack/stack";
 import type { ProjectType } from "./project";
 
 export const projectsList = {
-  // secret: {
-  //   name: "Coming Soon ...",
-  //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  //   technologies: [
-  //     "ai",
-  //     "antDesign",
-  //     "authJs",
-  //     "bcrypt",
-  //     "biome",
-  //     "chatgpt",
-  //     "dartSass",
-  //     "dndKit",
-  //     "figma",
-  //     "git",
-  //     "github",
-  //     "localForage",
-  //     "nextJs",
-  //     "notion",
-  //     "overlayscrollbars",
-  //     "postgresql",
-  //     "prisma",
-  //     "react",
-  //     "recharts",
-  //     "storybook",
-  //     "tablerIcons",
-  //     "typesafeI18n",
-  //     "typescript",
-  //     "vercel",
-  //     "vscodium",
-  //     "zod",
-  //     "zustand",
-  //   ],
-  //   images: [
-  //     "https://qg007gk6n2popinf.public.blob.vercel-storage.com/project-thumbnail/coming/coming.png",
-  //   ],
-  //   thumbnail:
-  //     "https://qg007gk6n2popinf.public.blob.vercel-storage.com/project-thumbnail/coming/coming.png",
-  //   url: "",
-  //   repo: "",
-  //   tags: ["web-app", "fullstack"],
-  //   endDate: "2025",
-  // },
-
   portfolio: {
-    name: "Actual Portfolio",
+    name: { en: "Actual Portfolio", fr: "Portfolio actuel" },
     technologies: Object.keys(stackItem).filter((stackName) => {
       const stack: StackType = stackItem[stackName as keyof typeof stackItem];
       return stack.tags.includes("active");
     }) as (keyof typeof stackItem)[],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description: {
+      en: "My old portfolio no longer reflected my current skills or really appealed to me, so I decided to create a new one. I wanted to incorporate all my expertise down to the last detail, without compromise, with a particular focus on design. To meet the challenge, I deliberately chose not to rely on Ant Design, the component library I usually use.",
+      fr: "Ne reflétant plus mes compétences actuelles et ne me plaisant plus vraiment, mon ancien portfolio m’a poussé à en créer un nouveau. J’ai voulu y intégrer tout mon savoir-faire dans les moindres détails, sans compromis, avec une attention particulière sur le design. Pour relever le défi, j’ai délibérément choisi de ne pas m’appuyer sur Ant Design, la librairie de composants que j’utilise habituellement.",
+    },
     images: [
       "https://qg007gk6n2popinf.public.blob.vercel-storage.com/project-thumbnail/portfolio/main.png",
     ],
@@ -67,9 +25,11 @@ export const projectsList = {
   },
 
   "212-colors": {
-    name: "212-Colors",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    name: { en: "212-Colors", fr: "212-Colors" },
+    description: {
+      en: "This training project was developed throughout my work-study period and presented at my diploma examination session. It introduced me to technologies such as Next.js, Postgres, Prisma, TypeScript and many others. It lets you store colours and create themes. Its concept grew out of my personal need to organise the colour palettes that I reuse in each of my projects.",
+      fr: "Ce projet de formation a été développé tout au long de mon alternance et présenté lors de ma session d'examen pour l'obtention du diplôme. J'y ai découvert des technologies comme Next.js, Postgres, Prisma, TypeScript et bien d’autres. Il permet de stocker des couleurs et de créer des thèmes. Son concept est né de mon besoin personnel d’organiser les palettes de couleurs que je réutilise dans chacun de mes projets.",
+    },
     technologies: [
       "react",
       "dartSass",
@@ -112,10 +72,38 @@ export const projectsList = {
     tags: ["web-app", "for-school", "fullstack"],
   },
 
+  "212-collections": {
+    name: { en: "212-Collections", fr: "212-Collections" },
+    description: {
+      fr: "C’était un projet personnel que j’ai réalisé pour m’entraîner et découvrir le développement fullstack. Mon objectif était de créer une application avec Electron, entièrement respectueuse de la vie privée, en intégrant le backend directement et en laissant l’utilisateur créer et gérer sa base de données. Je me suis cependant rendu compte que je ne maîtrisais pas tout. J’ai donc mis ce projet de côté pour en commencer un autre dans le cadre de l’école que je venais de rejoindre, bien que l’application fonctionnait malgré tout.",
+      en: "It was a personal project that I carried out to train myself and discover fullstack development. My aim was to create an application with Electron that was completely privacy-friendly, integrating the backend directly and letting the user create and manage their own database. However, I realised that I hadn't mastered everything. So I put that project on hold to start another at the school I'd just joined, although the application still worked.",
+    },
+    technologies: [
+      "antDesign",
+      "dndKit",
+      "reactRedux",
+      "react",
+      "dartSass",
+      "typescript",
+      "fastify",
+      "mongodb",
+      "electron",
+    ],
+    images: [],
+    thumbnail:
+      "https://qg007gk6n2popinf.public.blob.vercel-storage.com/project-thumbnail/212-collections/thumbnail.png",
+    url: "https://github.com/212-Collections/212-Collections",
+    repo: "https://github.com/212-Collections/212-Collections",
+    endDate: "2023-10-13",
+    tags: ["for-training", "web-app", "fullstack"],
+  },
+
   "first-portfolio": {
-    name: "Old Portfolio",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    name: { en: "Old Portfolio", fr: "Ancien Portfolio" },
+    description: {
+      fr: "Voici mon tout premier portfolio, réalisé avec React et imaginé sous la forme d'un système d'exploitation. Il s'agit d'un site statique hébergé sur GitHub Pages. Malheureusement, seul le code source du fichier build est accessible pour le moment.",
+      en: "This is my very first portfolio, created with React and imagined in the form of an operating system. It's a static site hosted on GitHub Pages. Unfortunately, only the source code of the build file is available at the moment.",
+    },
     technologies: [
       "html",
       "dartSass",

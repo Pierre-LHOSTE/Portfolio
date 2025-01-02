@@ -1,11 +1,18 @@
-import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
-import ChatMessage, { type ChatMessageProps } from "../messsage/ChatMessage";
+import {
+  OverlayScrollbarsComponent,
+  type OverlayScrollbarsComponentRef,
+} from "overlayscrollbars-react";
 import "./content.scss";
+import type { ForwardedRef } from "react";
+import type { ChatMessageProps } from "../message/ChatMessage";
+import ChatMessage from "../message/ChatMessage";
 
 export default function ChatContent({
   chat,
+  ref,
 }: {
   chat: ChatMessageProps[];
+  ref: ForwardedRef<OverlayScrollbarsComponentRef<"div">>;
 }) {
   return (
     <OverlayScrollbarsComponent
@@ -13,6 +20,7 @@ export default function ChatContent({
       style={{
         flex: 1,
       }}
+      ref={ref}
     >
       <div id="chat-content">
         {chat.map((chat, index) => (

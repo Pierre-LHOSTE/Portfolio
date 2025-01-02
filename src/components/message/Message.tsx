@@ -1,7 +1,8 @@
 import type {} from "react";
 import "./message.scss";
+import { useI18nContext } from "@/i18n/i18n-react";
 import { IconRocket } from "@tabler/icons-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const reveal = {
   translateX: "100%",
@@ -35,10 +36,12 @@ const animation = {
 };
 
 export default function Message() {
+  const { LL } = useI18nContext();
+
   return (
     <motion.section {...animation}>
       <span>
-        <IconRocket /> Available for hire — ready to contribute!
+        <IconRocket /> {LL.message()}
       </span>
       <div id="message-hider">
         <motion.div animate={reveal} />

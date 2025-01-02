@@ -68,14 +68,9 @@
   --text-color-secondary: rgba(var(--invert-rgb), 0.5);
 }
 
-html,
 body {
-  max-width: 100vw;
+  height: 100vh;
   overflow-x: hidden;
-}
-
-body {
-  /* height: 100vh; */
   background-color: var(--main);
 }
 

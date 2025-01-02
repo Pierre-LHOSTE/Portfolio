@@ -2,7 +2,7 @@ import { useSettingsStore } from "@/stores/settings.store";
 import Image from "next/image";
 import "./image-preview.scss";
 import { IconArrowLeft, IconArrowRight, IconX } from "@tabler/icons-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 const ICON_SIZE = 24;
@@ -16,6 +16,22 @@ export default function ImagePreview() {
   const props = useSettingsStore((state) => state.imagePreview);
   const [index, setIndex] = useState(0);
   const { images } = props || { images: [] };
+
+  useEffect(() => {
+    const rootElement = document.getElementById("root");
+
+    if (images.length > 0) {
+      document.body.style.overflow = "hidden";
+      if (rootElement) rootElement.style.overflowY = "scroll";
+    } else {
+      document.body.style.overflow = "";
+      if (rootElement) rootElement.style.overflowY = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+      if (rootElement) rootElement.style.overflowY = "";
+    };
+  }, [images]);
 
   useEffect(() => {
     const startIndex = props?.index ?? 0;

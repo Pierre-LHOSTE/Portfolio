@@ -3,29 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack -p 8060",
+    "dev": "concurrently \"pnpm run next\" \"pnpm run storybook\" \"pnpm run typesafe-i18n\" --kill-others",
+    "next": "next dev --turbopack -p 8060",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 6006 --no-open --quiet",
+    "build-storybook": "storybook build",
+    "typesafe-i18n": "typesafe-i18n"
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.0.7",
     "@tabler/icons-react": "^3.24.0",
     "ai": "^4.0.13",
-    "framer-motion": "12.0.0-alpha.2",
+    "localforage": "^1.10.0",
+    "motion": "^11.15.0",
     "next": "15.1.0",
     "openai": "^4.76.0",
     "overlayscrollbars": "^2.10.1",
     "overlayscrollbars-react": "^0.5.6",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "resend": "^4.0.1",
     "sass": "^1.82.0",
     "sass-loader": "^16.0.4",
+    "typesafe-i18n": "^5.26.2",
     "zustand": "^5.0.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@chromatic-com/storybook": "^3.2.2",
     "@storybook/addon-essentials": "^8.4.7",
     "@storybook/addon-interactions": "^8.4.7",
@@ -37,6 +43,7 @@
     "@types/node": "^20",
     "@types/react": "19.0.1",
     "@types/react-dom": "19.0.2",
+    "concurrently": "^9.1.1",
     "storybook": "^8.4.7",
     "typescript": "^5"
   }

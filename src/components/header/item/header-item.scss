@@ -10,16 +10,6 @@
   cursor: pointer;
 
   &.active {
-    // background: linear-gradient(
-    //   to bottom left,
-    //   rgba(var(--invert), 0.2),
-    //   rgba(var(--invert), 0.4)
-    // );
-    // background: linear-gradient(
-    //   to bottom left,
-    //   rgba(var(--invert), 0.8),
-    //   rgba(var(--invert), 1)
-    // );
     background: linear-gradient(
       var(--direction-top),
       var(--invert-50),
@@ -41,10 +31,9 @@
       var(--main-50)
     );
     color: var(--text-color);
-    font-weight: bold;
   }
 
-  &:hover {
+  &:not(.active):hover {
     &.active {
       background: linear-gradient(
         to bottom left,

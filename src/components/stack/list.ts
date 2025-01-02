@@ -302,7 +302,7 @@ export const stackItem = {
     reason: "Lorem ipsum dolor sit amet",
     category: "backend",
     homepage: "https://authjs.dev/",
-    tags: [],
+    tags: ["learning"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/authjs.png",
@@ -554,6 +554,38 @@ export const stackItem = {
     },
   },
 
+  reactRedux: {
+    name: "React Redux",
+    description: "A JS library for predictable and maintainable global state management.",
+    reason: "Lorem ipsum dolor sit amet",
+    category: "frontend",
+    homepage: "https://react-redux.js.org/",
+    tags: [],
+    replacement: { name: "zustand", reason: "So much simpler" },
+
+    styles: {
+      icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/react-redux.svg",
+      invert: "white",
+      color: "#764abc",
+      background: "#fff",
+    },
+  },
+
+  electron: {
+    name: "Electron",
+    description: "Build cross-platform desktop apps with JavaScript, HTML, and CSS.",
+    reason: "Lorem ipsum dolor sit amet",
+    category: "framework",
+    homepage: "https://www.electronjs.org/",
+    tags: [],
+
+    styles: {
+      icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/electron.svg",
+      color: "#47848f",
+      background: "#fff",
+    },
+  },
+
   localForage: {
     name: "localForage",
     description:
@@ -561,7 +593,7 @@ export const stackItem = {
     reason: "Lorem ipsum dolor sit amet",
     category: "frontend",
     homepage: "https://localforage.github.io/localForage/",
-    tags: ["learning"],
+    tags: ["learning", "active"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/localforage.svg",
@@ -624,12 +656,12 @@ export const stackGroup = {
     icon: IconSettings,
   },
   frameworks: {
-    name: "Frameworks",
+    name: "Framework",
     stack: Object.values(stackItem).filter((item) => item.category === "framework"),
     icon: IconBrush,
   },
   deployment: {
-    name: "Hosting & Deployment",
+    name: "deployment",
     stack: Object.values(stackItem).filter((item) => item.category === "deployment"),
     icon: IconServer,
   },

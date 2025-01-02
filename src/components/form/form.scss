@@ -1,0 +1,91 @@
+#form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(16px);
+  background-color: var(--main-25);
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    --radius: 12px;
+    padding: 2px;
+    border-radius: var(--radius);
+    background: linear-gradient(
+      var(--direction-top),
+      var(--invert-05),
+      var(--invert-10)
+    );
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      gap: 24px;
+      border-radius: calc(var(--radius) - 2px);
+      background: linear-gradient(
+        var(--direction-top),
+        var(--main-50),
+        var(--main-80)
+      );
+      backdrop-filter: blur(32px);
+
+      h2 {
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--text-color);
+      }
+
+      p {
+        font-size: 16px;
+        color: var(--text-color-secondary);
+      }
+
+      label {
+        font-size: 16px;
+        color: var(--text-color);
+
+        span {
+          color: var(--text-color-secondary);
+          margin-left: 4px;
+        }
+      }
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        input,
+        textarea {
+          padding: 10px;
+          border: 1px solid var(--invert-10);
+          background-color: var(--invert-05);
+          border-radius: 4px;
+          color: var(--invert);
+
+          &:focus {
+            outline: none;
+            border: 1px solid var(--invert-25);
+            background-color: var(--invert-10);
+          }
+        }
+      }
+    }
+  }
+
+  #close-area {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -2,7 +2,8 @@ import Button from "@/components/button/Button";
 import Key from "@/components/key/Key";
 import { IconDownload } from "@tabler/icons-react";
 import "./details.scss";
-import { motion } from "framer-motion";
+import { useI18nContext } from "@/i18n/i18n-react";
+import { motion } from "motion/react";
 
 const variants = {
   hidden: {
@@ -21,7 +22,7 @@ const variants = {
 
 const animation = {
   initial: "hidden",
-  whileInView: "visible",
+  animate: "visible",
   variants,
   viewport: {
     margin: "-200px",
@@ -29,15 +30,17 @@ const animation = {
 };
 
 export default function Details() {
+  const { LL } = useI18nContext();
+
   return (
     <section id="details">
       <motion.p {...animation}>
-        Press <Key k="⌘" /> <Key k="P" /> to instantly print or save the latest version of my CV as
-        a PDF
+        {LL.hero.details.key.p1()} <Key k="⌘" /> <Key k="P" /> {LL.hero.details.key.p2()}
       </motion.p>
       <motion.p {...animation}>
-        Prefer a direct download? Feel free to{" "}
-        <Button Icon={IconDownload} text="Download" type="secondary" /> a pre-saved version
+        {LL.hero.details.download.p1()}{" "}
+        <Button Icon={IconDownload} text={LL.hero.details.download.button()} type="secondary" />{" "}
+        {LL.hero.details.download.p2()}
       </motion.p>
     </section>
   );

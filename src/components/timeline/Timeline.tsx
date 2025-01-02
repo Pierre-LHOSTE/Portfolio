@@ -1,26 +1,35 @@
+import useSectionObserver from "@/hooks/useSectionObserver.hook";
 import Article from "../article/Article";
+import { timelineElementList, timelineList } from "./data";
 import TimelineElement from "./element/TimelineElement";
-import { timelineList } from "./timeline-data";
 import "./timeline.scss";
+import { useI18nContext } from "@/i18n/i18n-react";
+import type { TimelineIdType } from "./types";
 
 export default function Timeline() {
-  const durations = timelineList.map((element) =>
-    calculateDurationInMonths(element.startDate, element.endDate ?? new Date().toISOString())
-  );
+  const ref = useSectionObserver("timeline");
+  const { LL } = useI18nContext();
+
+  const durations = timelineList.map((element) => {
+    const endDate = element.endDate?.trim() || new Date().toISOString();
+    return calculateDurationInMonths(element.startDate, endDate);
+  });
 
   const maxDuration = Math.max(...durations);
 
   return (
     <Article
-      title="Mon parcours"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      title={LL.section.timeline.title()}
+      description={LL.section.timeline.description()}
       id="timeline"
+      ref={ref}
     >
-      {timelineList.map((element, index) => (
+      {(Object.keys(timelineElementList) as TimelineIdType[]).map((timelineId, index) => (
         <TimelineElement
-          key={element.name}
-          element={element}
+          key={timelineElementList[timelineId].name.en}
+          element={timelineElementList[timelineId]}
           height={(durations[index] / maxDuration) * 100 + 200}
+          id={timelineId}
         />
       ))}
     </Article>

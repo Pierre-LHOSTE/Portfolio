@@ -4,19 +4,29 @@
   gap: 8px;
 
   span {
-    color: var(--text-color-secondary);
     margin-left: 8px;
+    color: var(--text-color-secondary);
   }
 
   table {
-    border-collapse: separate;
-    border-spacing: 8px;
+    // border-collapse: separate;
+    // border-spacing: 8px;
 
     td {
-      --size: 16px;
-      background-color: var(--invert-05);
-      width: var(--size);
-      height: var(--size);
+      padding: 4px;
+
+      .pixel {
+        background-color: var(--invert-05);
+        --size: 16px;
+        width: var(--size);
+        height: var(--size);
+        transition: all 2s ease-out;
+      }
+
+      &:hover .pixel {
+        transition: background-color 0s;
+        background-color: var(--invert);
+      }
     }
   }
 }

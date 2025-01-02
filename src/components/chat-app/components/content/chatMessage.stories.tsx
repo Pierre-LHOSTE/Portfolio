@@ -29,5 +29,6 @@ export const Default: Story = {
         ],
       },
     ],
+    ref: null,
   },
 };

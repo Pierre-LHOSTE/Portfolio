@@ -19,16 +19,22 @@ interface SettingsStoreType {
 
   imagePreview: ImagePreviewType | null;
   setImagePreview: SetStateFunction<ImagePreviewType | null>;
+
+  activeSection: string;
+  setActiveSection: SetStateFunction<string>;
+
+  showForm: boolean;
+  setShowForm: SetStateFunction<boolean>;
 }
 
 export const useSettingsStore = create<SettingsStoreType>((set) => ({
-  savedTheme: "light",
+  savedTheme: "auto",
   setSavedTheme: (savedTheme) => set({ savedTheme }),
 
-  activeTheme: "light",
+  activeTheme: "dark",
   setActiveTheme: (activeTheme) => set({ activeTheme }),
 
-  savedLanguage: "en",
+  savedLanguage: "auto",
   setSavedLanguage: (savedLanguage) => set({ savedLanguage }),
 
   activeLanguage: "en",
@@ -36,4 +42,10 @@ export const useSettingsStore = create<SettingsStoreType>((set) => ({
 
   imagePreview: null,
   setImagePreview: (imagePreview) => set({ imagePreview }),
+
+  activeSection: "",
+  setActiveSection: (activeSection) => set({ activeSection }),
+
+  showForm: false,
+  setShowForm: (showForm) => set({ showForm }),
 }));

@@ -1,6 +1,12 @@
 #chat-header {
   padding: 16px;
   border-bottom: solid 1px var(--invert-10);
-  color: var(--text-color-secondary);
   user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > span {
+    color: var(--text-color-secondary);
+  }
 }
