@@ -85,5 +85,5 @@ function generateRandomIndex() {
 }
 
 function generateRandomDelay() {
-  return Math.floor(Math.random() * 100 * (maxChar / 10));
+  return Math.floor(Math.random() * (maxChar * 1));
 }

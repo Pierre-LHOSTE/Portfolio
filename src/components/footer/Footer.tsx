@@ -13,14 +13,14 @@ export default function Footer() {
       <Pixel />
       <hr />
       <div className="content">
-        <div id="profile">
+        <section id="profile">
           <h5 className="mono">vingt-douze</h5>
           <p>{LL.footer.profile()}</p>
           <span>© 2024</span>
-        </div>
+        </section>
         <BuildFooter />
         <ContactFooter />
-        <div id="actions" className="footer-columns">
+        <section id="actions" className="footer-columns">
           <h5>{LL.footer.actions.title()}</h5>
           <div>
             <span>{LL.footer.actions.lang()} :</span>
@@ -30,7 +30,7 @@ export default function Footer() {
             <span>{LL.footer.actions.theme()} :</span>
             <ThemeSelect />
           </div>
-        </div>
+        </section>
       </div>
     </footer>
   );

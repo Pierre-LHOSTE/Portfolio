@@ -4,7 +4,7 @@ import "./footer-columns.scss";
 
 export default function FooterColumns({ title, urls }: FooterColumnsType) {
   return (
-    <div className="footer-columns">
+    <section className="footer-columns">
       <h5>{title}</h5>
       <ul>
         {urls.map(({ title, url }, index) => (
@@ -14,6 +14,6 @@ export default function FooterColumns({ title, urls }: FooterColumnsType) {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 }

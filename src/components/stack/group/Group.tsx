@@ -46,7 +46,7 @@ export default function StackGroup({
   };
 
   return (
-    <motion.div className="stack-group" {...animation}>
+    <motion.section className="stack-group" {...animation}>
       <div>
         <h3>
           <Icon /> {LL.stack[name.toLowerCase() as CategoryType]()}
@@ -57,6 +57,6 @@ export default function StackGroup({
           })}
         </div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 }

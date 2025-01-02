@@ -22,7 +22,7 @@ export default function Project({
   const { LL } = useI18nContext();
 
   return (
-    <div className="project">
+    <section className="project">
       <div>
         <header>
           <h4>
@@ -68,6 +68,6 @@ export default function Project({
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

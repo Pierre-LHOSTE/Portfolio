@@ -48,7 +48,7 @@ export default function TimelineElement({
 
   return (
     <div className={`timeline-element${isLast ? " last" : ""}`} style={{ height }}>
-      <div className="content">
+      <section className="content">
         <div>
           {LL.timelines[id].type().trim() ? <span>{LL.timelines[id].type()}</span> : null}
           <h3 className="mono">{LL.timelines[id].name()}</h3>
@@ -62,11 +62,11 @@ export default function TimelineElement({
           </div>
           <div className={`status ${element.status}`}>{status}</div>
         </div>
-      </div>
-      <div className="dates">
+      </section>
+      <section className="dates">
         <span>{element.startDate}</span>
         <span>{element.endDate ?? "Now"}</span>
-      </div>
+      </section>
     </div>
   );
 }

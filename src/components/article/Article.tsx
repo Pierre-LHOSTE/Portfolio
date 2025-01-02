@@ -21,9 +21,9 @@ export default function Article({
         <p>{description}</p>
       </section>
 
-      <section className="article-content" id={id}>
+      <div className="article-content" id={id}>
         {children}
-      </section>
+      </div>
     </article>
   );
 }

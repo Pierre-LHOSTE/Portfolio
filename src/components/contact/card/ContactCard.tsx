@@ -29,7 +29,7 @@ export default function ContactCard({
   cons: string[];
 }) {
   return (
-    <div className="contact-card">
+    <section className="contact-card">
       <div>
         <header>
           <div>
@@ -50,6 +50,6 @@ export default function ContactCard({
           onClick={action ? action : undefined}
         />
       </div>
-    </div>
+    </section>
   );
 }

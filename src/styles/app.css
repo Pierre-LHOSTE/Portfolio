@@ -22,5 +22,5 @@ section::before {
   filter: blur(14px);
   z-index: -1;
   border-radius: 100px;
-  opacity: 0.8;
+  opacity: 0.95;
 }

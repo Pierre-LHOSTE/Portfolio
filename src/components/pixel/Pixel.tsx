@@ -5,7 +5,7 @@ const ROWS = 18;
 
 export default function Pixel() {
   return (
-    <div id="pixel">
+    <section id="pixel">
       <table>
         <tbody>
           {Array.from({ length: ROWS }).map((_, rowIndex) => (
@@ -25,6 +25,6 @@ export default function Pixel() {
       </table>
       {/* <span>Just a small pixel art game, temporarily available locally only</span>
       <span>Just click on the pixel to change its color!</span> */}
-    </div>
+    </section>
   );
 }
