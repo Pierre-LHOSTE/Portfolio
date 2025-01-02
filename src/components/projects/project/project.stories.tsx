@@ -16,5 +16,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     project: projectsList["first-portfolio"],
+    id: "first-portfolio",
   },
 };

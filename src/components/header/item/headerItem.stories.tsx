@@ -21,14 +21,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: "Home",
+    label: "home",
     active: false,
   },
 };
 
 export const Active: Story = {
   args: {
-    label: "Home",
+    label: "home",
     active: true,
   },
 };

@@ -16,16 +16,17 @@ export const Default: Story = {
   args: {
     chatList: [
       {
-        date: "Today",
+        date: Date.now(),
+        label: "Today",
         elements: [
           { title: "Problème avec l'API REST", id: "1" },
           { title: "Discussion sur le design", id: "2" },
           { title: "Effet text en CSS", id: "3" },
         ],
-        active: "2",
       },
       {
-        date: "Yesterday",
+        date: Date.now() - 86400000,
+        label: "Yesterday",
         elements: [
           { title: "Organisation du projet", id: "4" },
           { title: "Refactoring du code", id: "5" },
@@ -33,7 +34,6 @@ export const Default: Story = {
           { title: "Mise en place de l'authentification", id: "7" },
           { title: "Discussion sur les performances", id: "8" },
         ],
-        active: "",
       },
     ],
   },

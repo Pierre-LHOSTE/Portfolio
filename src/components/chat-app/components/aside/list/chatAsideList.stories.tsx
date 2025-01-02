@@ -14,12 +14,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    date: "Today",
+    date: Date.now(),
+    label: "Today",
     elements: [
       { title: "Probleme avec l'API REST", id: "1" },
       { title: "Discussion sur le design", id: "2" },
       { title: "Effet text en CSS", id: "3" },
     ],
-    active: "2",
   },
 };

@@ -19,5 +19,7 @@ export const Default: Story = {
       { value: "3", label: "Option 3" },
     ],
     handleChange: (e: string) => console.log(e),
+    value: "1",
+    setValue: (e: string) => console.log(e),
   },
 };
