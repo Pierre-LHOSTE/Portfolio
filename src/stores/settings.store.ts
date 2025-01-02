@@ -22,6 +22,9 @@ interface SettingsStoreType {
 
   activeSection: string;
   setActiveSection: SetStateFunction<string>;
+
+  showForm: boolean;
+  setShowForm: SetStateFunction<boolean>;
 }
 
 export const useSettingsStore = create<SettingsStoreType>((set) => ({
@@ -42,4 +45,7 @@ export const useSettingsStore = create<SettingsStoreType>((set) => ({
 
   activeSection: "",
   setActiveSection: (activeSection) => set({ activeSection }),
+
+  showForm: false,
+  setShowForm: (showForm) => set({ showForm }),
 }));

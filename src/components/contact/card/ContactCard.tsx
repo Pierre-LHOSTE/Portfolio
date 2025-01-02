@@ -12,6 +12,7 @@ export default function ContactCard({
   actionTitle,
   actionType,
   actionUrl,
+  action,
   pros,
   cons,
 }: {
@@ -23,6 +24,7 @@ export default function ContactCard({
   actionTitle: string;
   actionType: "primary" | "secondary";
   actionUrl?: string;
+  action?: () => void;
   pros: string[];
   cons: string[];
 }) {
@@ -41,7 +43,12 @@ export default function ContactCard({
           <ProsAndCons pros={pros} cons={cons} />
         </div>
         <hr />
-        <Button type={actionType} text={actionTitle} url={actionUrl ? actionUrl : undefined} />
+        <Button
+          type={actionType}
+          text={actionTitle}
+          url={actionUrl ? actionUrl : undefined}
+          onClick={action ? action : undefined}
+        />
       </div>
     </div>
   );

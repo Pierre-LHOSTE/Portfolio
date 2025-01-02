@@ -150,6 +150,19 @@ const en = {
     frontend: "Frontend",
     deployment: "Hosting & Deployment",
   },
+  form: {
+    title: "Send a message",
+    description:
+      "A question or a special request? Contact me via this form. Name and email are optional for an anonymous message.",
+    name: "Name",
+    namePlaceholder: "Your name",
+    email: "Email",
+    emailPlaceholder: "Your email",
+    message: "Message",
+    messagePlaceholder: "Your message",
+    send: "Send",
+    optional: "optional",
+  },
 } satisfies Translation;
 
 export default en;

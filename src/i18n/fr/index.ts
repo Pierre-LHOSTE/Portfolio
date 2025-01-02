@@ -97,6 +97,19 @@ const fr = {
       cons: ["Peut ne pas être vérifié souvent"],
     },
   },
+  form: {
+    title: "Envoyer un message",
+    description:
+      "Une question ou une demande particulière ? Contactez-moi via ce formulaire. Nom et email sont facultatifs pour un message anonyme.",
+    optional: "facultatif",
+    name: "Nom",
+    namePlaceholder: "Votre nom",
+    email: "Email",
+    emailPlaceholder: "Votre email",
+    message: "Message",
+    messagePlaceholder: "Votre message",
+    send: "Envoyer",
+  },
   footer: {
     actions: {
       title: "Actions",

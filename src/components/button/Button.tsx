@@ -7,6 +7,7 @@ export default function Button({
   Icon,
   type = "primary",
   url,
+  onClick,
   ...props
 }: {
   text?: string;
@@ -14,6 +15,7 @@ export default function Button({
   Icon?: ForwardRefExoticComponent<IconProps & RefAttributes<Icon>>;
   type?: "primary" | "secondary" | "submit" | "text";
   url?: string;
+  onClick?: () => void;
   props?: unknown;
 }) {
   if (url) {
@@ -37,7 +39,12 @@ export default function Button({
     );
   }
   return (
-    <button className={`button ${type}`} type={type === "submit" ? "submit" : "button"} {...props}>
+    <button
+      className={`button ${type}`}
+      type={type === "submit" ? "submit" : "button"}
+      onClick={onClick}
+      {...props}
+    >
       <span>
         {Icon && <Icon size={18} strokeWidth={3} />}
         {text}

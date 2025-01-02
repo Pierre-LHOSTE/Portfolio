@@ -397,6 +397,48 @@ type RootTranslation = {
 			}
 		}
 	}
+	form: {
+		/**
+		 * E​n​v​o​y​e​r​ ​u​n​ ​m​e​s​s​a​g​e
+		 */
+		title: string
+		/**
+		 * U​n​e​ ​q​u​e​s​t​i​o​n​ ​o​u​ ​u​n​e​ ​d​e​m​a​n​d​e​ ​p​a​r​t​i​c​u​l​i​è​r​e​ ​?​ ​C​o​n​t​a​c​t​e​z​-​m​o​i​ ​v​i​a​ ​c​e​ ​f​o​r​m​u​l​a​i​r​e​.​ ​N​o​m​ ​e​t​ ​e​m​a​i​l​ ​s​o​n​t​ ​f​a​c​u​l​t​a​t​i​f​s​ ​p​o​u​r​ ​u​n​ ​m​e​s​s​a​g​e​ ​a​n​o​n​y​m​e​.
+		 */
+		description: string
+		/**
+		 * f​a​c​u​l​t​a​t​i​f
+		 */
+		optional: string
+		/**
+		 * N​o​m
+		 */
+		name: string
+		/**
+		 * V​o​t​r​e​ ​n​o​m
+		 */
+		namePlaceholder: string
+		/**
+		 * E​m​a​i​l
+		 */
+		email: string
+		/**
+		 * V​o​t​r​e​ ​e​m​a​i​l
+		 */
+		emailPlaceholder: string
+		/**
+		 * M​e​s​s​a​g​e
+		 */
+		message: string
+		/**
+		 * V​o​t​r​e​ ​m​e​s​s​a​g​e
+		 */
+		messagePlaceholder: string
+		/**
+		 * E​n​v​o​y​e​r
+		 */
+		send: string
+	}
 	footer: {
 		actions: {
 			/**
@@ -932,6 +974,48 @@ export type TranslationFunctions = {
 				'0': () => LocalizedString
 			}
 		}
+	}
+	form: {
+		/**
+		 * Envoyer un message
+		 */
+		title: () => LocalizedString
+		/**
+		 * Une question ou une demande particulière ? Contactez-moi via ce formulaire. Nom et email sont facultatifs pour un message anonyme.
+		 */
+		description: () => LocalizedString
+		/**
+		 * facultatif
+		 */
+		optional: () => LocalizedString
+		/**
+		 * Nom
+		 */
+		name: () => LocalizedString
+		/**
+		 * Votre nom
+		 */
+		namePlaceholder: () => LocalizedString
+		/**
+		 * Email
+		 */
+		email: () => LocalizedString
+		/**
+		 * Votre email
+		 */
+		emailPlaceholder: () => LocalizedString
+		/**
+		 * Message
+		 */
+		message: () => LocalizedString
+		/**
+		 * Votre message
+		 */
+		messagePlaceholder: () => LocalizedString
+		/**
+		 * Envoyer
+		 */
+		send: () => LocalizedString
 	}
 	footer: {
 		actions: {

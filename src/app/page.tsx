@@ -6,6 +6,7 @@ import ChatApp from "@/components/chat-app/ChatApp";
 import Scroll from "@/components/chat-app/components/scroll/Scroll";
 import Contact from "@/components/contact/Contact";
 import Footer from "@/components/footer/Footer";
+import Form from "@/components/form/Form";
 import Header from "@/components/header/Header";
 import Hero from "@/components/hero/Hero";
 import ImagePreview from "@/components/image-preview/ImagePreview";
@@ -15,8 +16,9 @@ import Timeline from "@/components/timeline/Timeline";
 
 export default function Home() {
   return (
-    <>
+    <div id="root">
       <Background />
+
       <Header />
       <Hero />
       <Scroll />
@@ -25,8 +27,10 @@ export default function Home() {
       <Timeline />
       <Projects />
       <Contact />
+
+      <Form />
       <ImagePreview />
       <Footer />
-    </>
+    </div>
   );
 }

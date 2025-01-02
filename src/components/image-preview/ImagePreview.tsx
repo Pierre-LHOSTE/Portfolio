@@ -18,6 +18,22 @@ export default function ImagePreview() {
   const { images } = props || { images: [] };
 
   useEffect(() => {
+    const rootElement = document.getElementById("root");
+
+    if (images.length > 0) {
+      document.body.style.overflow = "hidden";
+      if (rootElement) rootElement.style.overflowY = "scroll";
+    } else {
+      document.body.style.overflow = "";
+      if (rootElement) rootElement.style.overflowY = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+      if (rootElement) rootElement.style.overflowY = "";
+    };
+  }, [images]);
+
+  useEffect(() => {
     const startIndex = props?.index ?? 0;
     setIndex(startIndex);
   }, [props]);
