@@ -1,6 +1,7 @@
 "use client";
 import "@/styles/reset.css";
 import "@/styles/index.css";
+import "@/styles/fonts.css";
 import type { ReactNode } from "react";
 import Locale from "./i18n";
 import Theme from "./theme";
