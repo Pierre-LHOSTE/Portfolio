@@ -162,6 +162,7 @@ const en = {
     messagePlaceholder: "Your message",
     send: "Send",
     optional: "optional",
+    success: "Message sent successfully!",
   },
 } satisfies Translation;
 

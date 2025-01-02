@@ -438,6 +438,10 @@ type RootTranslation = {
 		 * E​n​v​o​y​e​r
 		 */
 		send: string
+		/**
+		 * M​e​s​s​a​g​e​ ​e​n​v​o​y​é​ ​a​v​e​c​ ​s​u​c​c​è​s​ ​!
+		 */
+		success: string
 	}
 	footer: {
 		actions: {
@@ -1016,6 +1020,10 @@ export type TranslationFunctions = {
 		 * Envoyer
 		 */
 		send: () => LocalizedString
+		/**
+		 * Message envoyé avec succès !
+		 */
+		success: () => LocalizedString
 	}
 	footer: {
 		actions: {

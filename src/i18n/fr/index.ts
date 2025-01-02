@@ -109,6 +109,7 @@ const fr = {
     message: "Message",
     messagePlaceholder: "Votre message",
     send: "Envoyer",
+    success: "Message envoyé avec succès !",
   },
   footer: {
     actions: {

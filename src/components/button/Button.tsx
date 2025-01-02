@@ -8,6 +8,7 @@ export default function Button({
   type = "primary",
   url,
   onClick,
+  className,
   ...props
 }: {
   text?: string;
@@ -16,12 +17,13 @@ export default function Button({
   type?: "primary" | "secondary" | "submit" | "text";
   url?: string;
   onClick?: () => void;
+  className?: string;
   props?: unknown;
 }) {
   if (url) {
     return (
       <a
-        className={`button ${type}`}
+        className={`button ${type}${className ? ` ${className}` : ""}`}
         type={type === "submit" ? "submit" : "button"}
         href={url}
         target="_blank"
@@ -40,7 +42,7 @@ export default function Button({
   }
   return (
     <button
-      className={`button ${type}`}
+      className={`button ${type}${className ? ` ${className}` : ""}`}
       type={type === "submit" ? "submit" : "button"}
       onClick={onClick}
       {...props}

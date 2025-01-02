@@ -1,8 +1,9 @@
-import { type ChangeEvent, useEffect, useState } from "react";
+import { type ChangeEvent, useEffect, useState, useTransition } from "react";
 import "./form.scss";
 import { useI18nContext } from "@/i18n/i18n-react";
 import sendMail from "@/server/sendMail";
 import { useSettingsStore } from "@/stores/settings.store";
+import { IconLoader2, IconSend } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "motion/react";
 import Button from "../button/Button";
 
@@ -15,6 +16,7 @@ function ContactForm() {
     email: "",
     content: "",
   });
+  const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
     const rootElement = document.getElementById("root");
@@ -34,9 +36,17 @@ function ContactForm() {
   }, [showForm]);
 
   function handleSubmit() {
-    console.log(formData);
-    sendMail(formData).then((res) => {
-      console.log(res);
+    startTransition(async () => {
+      const res = await sendMail(formData);
+      if (res.error) {
+        alert(`Error: ${res.error}`);
+      } else {
+        setShowForm(false);
+        setFormData({ name: "", email: "", content: "" });
+        setTimeout(() => {
+          alert(LL.form.success());
+        }, 500);
+      }
     });
   }
 
@@ -103,7 +113,12 @@ function ContactForm() {
                   onChange={(e) => handleChange(e)}
                 />
               </div>
-              <Button type="submit" text={LL.form.send()} />
+              <Button
+                className={isPending ? "loading" : undefined}
+                type="submit"
+                text={LL.form.send()}
+                Icon={isPending ? IconLoader2 : IconSend}
+              />
             </div>
           </form>
           {/* biome-ignore lint/nursery/noStaticElementInteractions: <explanation> */}
