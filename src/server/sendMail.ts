@@ -14,7 +14,7 @@ export default async function sendMail({
 }) {
   const res = await resend.emails.send({
     from: email || "",
-    to: "vingt-douze@protonmail.com",
+    to: "contact@212.lol",
     subject: `Portfolio Contact Form - ${name}`,
     html: `<p>${content}</p>`,
   });
