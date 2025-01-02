@@ -20,7 +20,7 @@
         --size: 16px;
         width: var(--size);
         height: var(--size);
-        transition: all 2s ease-out;
+        transition: background-color 2s ease-out;
       }
 
       &:hover .pixel {

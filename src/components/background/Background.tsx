@@ -5,7 +5,7 @@ import { veryLongText } from "./text";
 
 const fontSize = 16;
 const maxBlur = 2; // Flou maximal (en pixels)
-const maxChar = 800;
+const maxChar = 100;
 
 export default function Background() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -85,5 +85,5 @@ function generateRandomIndex() {
 }
 
 function generateRandomDelay() {
-  return Math.floor(Math.random() * (maxChar * 1));
+  return Math.floor(Math.random() * (maxChar * 1.5));
 }
