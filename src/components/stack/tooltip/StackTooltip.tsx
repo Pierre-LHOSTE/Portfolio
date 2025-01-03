@@ -1,6 +1,7 @@
 import { IconAlertTriangle, IconLivePhoto, IconWritingSign } from "@tabler/icons-react";
 import type { StackType } from "../stack";
 import "./stack-tooltip.scss";
+import Tag from "@/components/tag/Tag";
 import StackIcon from "../icon/StackIcon";
 
 const ICON_SIZE = 18;
@@ -14,41 +15,51 @@ export default function StackTooltip({ stack }: { stack: StackType }) {
       </h3>
       <p>{stack.description}</p>
 
-      <div className="icon-info">
-        {stack.tags.includes("active") && (
-          <p>
-            <IconLivePhoto
-              color="DeepSkyBlue"
-              size={ICON_SIZE}
-              key="active"
-              title="Used on this website"
-            />
-            Used on this website
-          </p>
-        )}
-        {stack.tags.includes("learning") && (
-          <p>
-            <IconWritingSign
-              color="MediumSeaGreen"
-              size={ICON_SIZE}
-              key="love"
-              title="Actually learning"
-            />
-            Actually learning
-          </p>
-        )}
-        {stack.replacement && (
-          <p>
-            <IconAlertTriangle
-              size={ICON_SIZE}
-              color="orange"
-              key="replacement"
-              title={`Replaced by ${stack.replacement.name} because "${stack.replacement.reason}"`}
-            />
-            Replaced by {stack.replacement.name} because "{stack.replacement.reason}"
-          </p>
-        )}
+      <div>
+        <Tag>
+          <a href={stack.homepage} target="_blank" rel="noreferrer">
+            {stack.homepage}
+          </a>
+        </Tag>
       </div>
+
+      {stack.tags.includes("active") || stack.tags.includes("learning") || stack.replacement ? (
+        <div className="icon-info">
+          {stack.tags.includes("active") && (
+            <p>
+              <IconLivePhoto
+                color="DeepSkyBlue"
+                size={ICON_SIZE}
+                key="active"
+                title="Used on this website"
+              />
+              Used on this website
+            </p>
+          )}
+          {stack.tags.includes("learning") && (
+            <p>
+              <IconWritingSign
+                color="MediumSeaGreen"
+                size={ICON_SIZE}
+                key="love"
+                title="Actually learning"
+              />
+              Actually learning
+            </p>
+          )}
+          {stack.replacement && (
+            <p>
+              <IconAlertTriangle
+                size={ICON_SIZE}
+                color="orange"
+                key="replacement"
+                title={`Replaced by ${stack.replacement.name} because "${stack.replacement.reason}"`}
+              />
+              Replaced by {stack.replacement.name} because "{stack.replacement.reason}"
+            </p>
+          )}
+        </div>
+      ) : null}
     </>
   );
 }

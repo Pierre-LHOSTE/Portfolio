@@ -17,6 +17,14 @@
       color: var(--text-color-secondary);
     }
 
+    a {
+      text-transform: lowercase;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
     .icon-info {
       display: flex;
       gap: 8px;
