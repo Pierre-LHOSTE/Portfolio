@@ -5,8 +5,10 @@ import type { StackType } from "../stack.d";
 
 export default function StackIcon({
   stack,
+  size = 48,
 }: {
   stack: StackType;
+  size?: number;
 }) {
   const {
     name,
@@ -22,7 +24,13 @@ export default function StackIcon({
 
   return (
     <div className="stack-icon">
-      <Image src={baseIcon} alt={`${name} icon`} width={128} height={128} style={{ filter }} />
+      <Image
+        src={baseIcon}
+        alt={`${name} icon`}
+        width={size}
+        height={size}
+        style={{ filter, height: size, width: size }}
+      />
     </div>
   );
 }

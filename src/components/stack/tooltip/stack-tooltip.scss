@@ -1,0 +1,33 @@
+.tooltip {
+  > .content {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--invert);
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    p {
+      color: var(--text-color-secondary);
+    }
+
+    .icon-info {
+      display: flex;
+      gap: 8px;
+      flex-direction: column;
+
+      > p {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--text-color);
+      }
+    }
+  }
+}

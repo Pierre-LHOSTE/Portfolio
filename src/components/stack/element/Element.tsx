@@ -5,6 +5,7 @@ import "./element.scss";
 import Tooltip from "@/components/tooltip/Tooltip";
 import { type ReactElement, useState } from "react";
 import { stackItem } from "../list";
+import StackTooltip from "../tooltip/StackTooltip";
 
 const ICON_SIZE = 18;
 
@@ -53,16 +54,7 @@ export default function Stack({
   }
 
   return (
-    <Tooltip
-      content={
-        <>
-          <h3>{stack.name}</h3>
-          <p>{stack.description}</p>
-        </>
-      }
-      forceOpen={open}
-      setForceOpen={setOpen}
-    >
+    <Tooltip content={<StackTooltip stack={stack} />} forceOpen={open} setForceOpen={setOpen}>
       {/* biome-ignore lint/nursery/noStaticElementInteractions: <explanation> */}
       {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
       <div className={`stack${open ? " opened" : ""}`} onClick={handleOpen}>

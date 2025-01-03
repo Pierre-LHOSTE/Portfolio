@@ -2,13 +2,13 @@ import Button from "@/components/button/Button";
 import Tag from "@/components/tag/Tag";
 import type { ProjectIdType, ProjectType } from "../project";
 import "./project.scss";
+import StackIcon from "@/components/stack/icon/StackIcon";
 import { stackItem } from "@/components/stack/list";
 import type { StackType } from "@/components/stack/stack";
 import Tooltip from "@/components/tooltip/Tooltip";
 import { useI18nContext } from "@/i18n/i18n-react";
 import { useSettingsStore } from "@/stores/settings.store";
 import type { ActiveTheme } from "@/types/settings";
-import Image from "next/image";
 import Album from "../album/Album";
 import ProjectStacks from "../stacks/ProjectStacks";
 
@@ -38,14 +38,7 @@ export default function Project({
                 {project.technologies
                   .filter((tech) => selectedStacks.includes(tech))
                   .map((tech) => (
-                    <Image
-                      key={tech}
-                      src={getImageUrl(theme, stackItem[tech])}
-                      style={getFilter(theme, stackItem[tech])}
-                      width={16}
-                      height={16}
-                      alt=""
-                    />
+                    <StackIcon key={tech} stack={stackItem[tech]} size={16} />
                   ))}
               </span>
             </Tooltip>
