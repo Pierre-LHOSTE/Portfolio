@@ -3,8 +3,11 @@ import Tag from "@/components/tag/Tag";
 import type { ProjectIdType, ProjectType } from "../project";
 import "./project.scss";
 import { stackItem } from "@/components/stack/list";
+import type { StackType } from "@/components/stack/stack";
 import Tooltip from "@/components/tooltip/Tooltip";
 import { useI18nContext } from "@/i18n/i18n-react";
+import { useSettingsStore } from "@/stores/settings.store";
+import type { ActiveTheme } from "@/types/settings";
 import Image from "next/image";
 import Album from "../album/Album";
 import ProjectStacks from "../stacks/ProjectStacks";
@@ -20,6 +23,7 @@ export default function Project({
 }) {
   const selectedStacks = ["nextJs", "typescript", "javascript", "prisma", "electron", "fastify"];
   const { LL } = useI18nContext();
+  const theme = useSettingsStore((state) => state.activeTheme);
 
   return (
     <section className="project">
@@ -36,7 +40,8 @@ export default function Project({
                   .map((tech) => (
                     <Image
                       key={tech}
-                      src={stackItem[tech].styles.icon}
+                      src={getImageUrl(theme, stackItem[tech])}
+                      style={getFilter(theme, stackItem[tech])}
                       width={16}
                       height={16}
                       alt=""
@@ -70,4 +75,21 @@ export default function Project({
       </div>
     </section>
   );
+}
+
+function getImageUrl(theme: ActiveTheme, stack: StackType) {
+  return theme === "light" ? stack.styles.iconLight || stack.styles.icon : stack.styles.icon;
+}
+
+function getFilter(theme: ActiveTheme, stack: StackType) {
+  let filter = undefined;
+  if (
+    (theme === "dark" && stack.styles.invert === "black") ||
+    (theme === "light" && stack.styles.invert === "white")
+  ) {
+    filter = "invert(1)";
+  }
+  return {
+    filter,
+  };
 }

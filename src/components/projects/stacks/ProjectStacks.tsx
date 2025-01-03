@@ -21,7 +21,12 @@ export default function ProjectStacks({
               {stacks.map((stack) => {
                 if (stack.category !== category || !stack.styles) return null;
                 return (
-                  <Tag key={stack.name} icon={stack.styles.icon}>
+                  <Tag
+                    key={stack.name}
+                    icon={stack.styles.icon}
+                    invert={stack.styles.invert}
+                    iconLight={stack.styles.iconLight}
+                  >
                     {stack.name}
                   </Tag>
                 );
