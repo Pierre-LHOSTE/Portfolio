@@ -23,11 +23,11 @@ export default function Footer() {
         <section id="actions" className="footer-columns">
           <h5>{LL.footer.actions.title()}</h5>
           <div>
-            <span>{LL.footer.actions.lang()} :</span>
+            <span>{LL.footer.actions.lang()} :</span>
             <LangSelect />
           </div>
           <div>
-            <span>{LL.footer.actions.theme()} :</span>
+            <span>{LL.footer.actions.theme()} :</span>
             <ThemeSelect />
           </div>
         </section>

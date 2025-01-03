@@ -14,8 +14,9 @@ export default function LangSelect() {
   const setSavedTheme = useSettingsStore((state) => state.setSavedTheme);
 
   useEffect(() => {
+    if (selectedTheme !== null) return;
     setSelectedTheme(savedTheme);
-  }, [savedTheme]);
+  }, [savedTheme, selectedTheme]);
 
   useEffect(() => {
     if (selectedTheme === null) return;

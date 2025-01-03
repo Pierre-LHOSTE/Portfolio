@@ -26,7 +26,7 @@
       &:hover .pixel {
         transition: background-color 0s;
         background-color: var(--invert);
-        box-shadow: 0 0 20px 0px var(--invert);
+        box-shadow: 0 0 20px 0px white;
       }
     }
   }
