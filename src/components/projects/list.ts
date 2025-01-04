@@ -1,4 +1,4 @@
-import { stackItem } from "../stack/list";
+import { stackItem } from "../stack/data";
 import type { StackType } from "../stack/stack";
 import type { ProjectType } from "./project";
 

@@ -1,7 +1,8 @@
 import {
   generateProjectTranslations,
+  generateStackTranslations,
   generateTimelineTranslations,
-} from "../../utils/generateProjectTranslations";
+} from "../../utils/generateTranslations";
 import type { BaseTranslation } from "../i18n-types";
 
 const fr = {
@@ -69,6 +70,7 @@ const fr = {
   },
   projects: generateProjectTranslations("fr"),
   timelines: generateTimelineTranslations("fr"),
+  stacks: generateStackTranslations("fr"),
   contact: {
     form: {
       title: "Formulaire",
@@ -162,6 +164,10 @@ const fr = {
     backend: "Backend",
     frontend: "Frontend",
     deployment: "Hébergement & Déploiement",
+    replaced: 'Remplacé par {name: string} car "{reason: string}"',
+    learning: "Récemment expérimenté",
+    active: "Utilisé sur ce site",
+    love: "Coup de cœur",
   },
 } satisfies BaseTranslation;
 

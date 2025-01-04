@@ -1,7 +1,8 @@
 import {
   generateProjectTranslations,
+  generateStackTranslations,
   generateTimelineTranslations,
-} from "../../utils/generateProjectTranslations";
+} from "../../utils/generateTranslations";
 import type { Translation } from "../i18n-types";
 
 const en = {
@@ -69,6 +70,7 @@ const en = {
   },
   projects: generateProjectTranslations("en"),
   timelines: generateTimelineTranslations("en"),
+  stacks: generateStackTranslations("en"),
   contact: {
     form: {
       title: "Form",
@@ -149,6 +151,10 @@ const en = {
     backend: "Backend",
     frontend: "Frontend",
     deployment: "Hosting & Deployment",
+    replaced: 'Replaced by {name} because "{reason}"',
+    learning: "Recently experimented",
+    active: "Used on this website",
+    love: "Favorite",
   },
   form: {
     title: "Send a message",

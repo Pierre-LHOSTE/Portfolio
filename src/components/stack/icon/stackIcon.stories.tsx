@@ -12,7 +12,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-import { stackItem } from "../list";
+import { stackItem } from "../data";
 
 export const Prisma: Story = {
   args: {

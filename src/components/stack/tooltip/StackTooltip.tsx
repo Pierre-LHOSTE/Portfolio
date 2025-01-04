@@ -1,19 +1,30 @@
 import { IconAlertTriangle, IconLivePhoto, IconWritingSign } from "@tabler/icons-react";
-import type { StackType } from "../stack";
+import type { ReplacementType, StackIdType, StackType } from "../stack";
 import "./stack-tooltip.scss";
 import Tag from "@/components/tag/Tag";
+import { useI18nContext } from "@/i18n/i18n-react";
+import { stackItem } from "../data";
 import StackIcon from "../icon/StackIcon";
 
 const ICON_SIZE = 18;
 
-export default function StackTooltip({ stack }: { stack: StackType }) {
+export default function StackTooltip({ stack, id }: { stack: StackType; id: StackIdType }) {
+  const { LL } = useI18nContext();
+
+  let replacedStack: ReplacementType | null = null;
+  let replacedReason = "";
+  if (stack.replacement) {
+    replacedStack = stackItem[stack.replacement.name as StackIdType];
+    replacedReason = LL.stacks[id].replacement();
+  }
+
   return (
     <>
       <h3>
         <StackIcon stack={stack} size={22} />
         {stack.name}
       </h3>
-      <p>{stack.description}</p>
+      <p>{LL.stacks[id].description()}</p>
 
       <div>
         <Tag>
@@ -31,9 +42,9 @@ export default function StackTooltip({ stack }: { stack: StackType }) {
                 color="DeepSkyBlue"
                 size={ICON_SIZE}
                 key="active"
-                title="Used on this website"
+                title={LL.stack.active()}
               />
-              Used on this website
+              {LL.stack.active()}
             </p>
           )}
           {stack.tags.includes("learning") && (
@@ -42,20 +53,26 @@ export default function StackTooltip({ stack }: { stack: StackType }) {
                 color="MediumSeaGreen"
                 size={ICON_SIZE}
                 key="love"
-                title="Actually learning"
+                title={LL.stack.learning()}
               />
-              Actually learning
+              {LL.stack.learning()}
             </p>
           )}
-          {stack.replacement && (
+          {replacedStack && (
             <p>
               <IconAlertTriangle
                 size={ICON_SIZE}
                 color="orange"
                 key="replacement"
-                title={`Replaced by ${stack.replacement.name} because "${stack.replacement.reason}"`}
+                title={LL.stack.replaced({
+                  name: replacedStack.name,
+                  reason: replacedReason,
+                })}
               />
-              Replaced by {stack.replacement.name} because "{stack.replacement.reason}"
+              {LL.stack.replaced({
+                name: replacedStack.name,
+                reason: replacedReason,
+              })}
             </p>
           )}
         </div>

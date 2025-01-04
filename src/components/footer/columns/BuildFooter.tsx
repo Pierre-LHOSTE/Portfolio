@@ -1,6 +1,6 @@
 import { projectsList } from "@/components/projects/list";
 import ProjectStacks from "@/components/projects/stacks/ProjectStacks";
-import { stackItem } from "@/components/stack/list";
+import { stackItem } from "@/components/stack/data";
 import type { StackIdType } from "@/components/stack/stack";
 import Tooltip from "@/components/tooltip/Tooltip";
 import { useI18nContext } from "@/i18n/i18n-react";

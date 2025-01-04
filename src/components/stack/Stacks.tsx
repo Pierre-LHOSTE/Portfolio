@@ -1,7 +1,7 @@
 import useSectionObserver from "@/hooks/useSectionObserver.hook";
 import Article from "../article/Article";
+import { stackList } from "./data";
 import StackGroup from "./group/Group";
-import { stackList } from "./list";
 import "./stack.scss";
 import { useI18nContext } from "@/i18n/i18n-react";
 

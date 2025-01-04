@@ -1,6 +1,6 @@
 import type { IconProps } from "@tabler/icons-react";
 import type { ForwardRefExoticComponent } from "react";
-import type { stackItem } from "./list";
+import type { stackItem } from "./data";
 
 export type StackIdType = keyof typeof stackItem;
 
@@ -23,17 +23,28 @@ export interface StackStyleType {
   invert?: "black" | "white";
 }
 
+export interface ReplacementType {
+  name: string;
+  reason: {
+    en: string;
+    fr: string;
+  };
+}
+
 export interface StackType {
   name: string;
-  description: string;
-  reason: string;
+  description: {
+    en: string;
+    fr: string;
+  };
+  reason: {
+    en: string;
+    fr: string;
+  };
   category: CategoryType;
   homepage: string;
   tags: ("active" | "love" | "learning")[];
-  replacement?: {
-    name: string;
-    reason: string;
-  };
+  replacement?: ReplacementType;
 
   styles: StackStyleType;
 }
@@ -41,5 +52,5 @@ export interface StackType {
 export interface StackGroupType {
   name: string;
   icon: ForwardRefExoticComponent<IconProps>;
-  stack: StackType[];
+  stacks: string[];
 }

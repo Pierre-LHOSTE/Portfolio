@@ -1,4 +1,4 @@
-import { stackItem } from "@/components/stack/list";
+import { stackItem } from "@/components/stack/data";
 import type { Meta, StoryObj } from "@storybook/react";
 import { projectsList } from "../list";
 import ProjectStacks from "./ProjectStacks";

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { stackGroup } from "../list";
+import { stackGroup } from "../data";
 import Group from "./Group";
 
 const meta = {

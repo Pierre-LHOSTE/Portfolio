@@ -293,6 +293,458 @@ type RootTranslation = {
 			school: string
 		}
 	}
+	stacks: {
+		figma: {
+			/**
+			 * F​i​g​m​a​ ​e​s​t​ ​u​n​ ​o​u​t​i​l​ ​d​e​ ​c​o​n​c​e​p​t​i​o​n​ ​e​n​ ​l​i​g​n​e​ ​p​e​r​m​e​t​t​a​n​t​ ​d​e​ ​c​r​é​e​r​ ​d​e​s​ ​i​n​t​e​r​f​a​c​e​s​,​ ​d​e​s​ ​p​r​o​t​o​t​y​p​e​s​ ​e​t​ ​d​e​ ​c​o​l​l​a​b​o​r​e​r​ ​e​n​ ​t​e​m​p​s​ ​r​é​e​l​ ​s​u​r​ ​u​n​e​ ​p​l​a​t​e​f​o​r​m​e​ ​u​n​i​q​u​e​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​o​u​t​i​l​ ​d​e​ ​d​e​s​i​g​n​ ​m​o​d​e​r​n​e​,​ ​c​o​m​p​l​e​t​ ​e​t​ ​p​e​r​f​o​r​m​a​n​t
+			 */
+			reason: string
+			replacement: string
+		}
+		nextJs: {
+			/**
+			 * N​e​x​t​.​j​s​ ​e​s​t​ ​u​n​ ​f​r​a​m​e​w​o​r​k​ ​b​a​s​é​ ​s​u​r​ ​R​e​a​c​t​,​ ​o​f​f​r​a​n​t​ ​l​e​ ​r​e​n​d​u​ ​c​ô​t​é​ ​s​e​r​v​e​u​r​,​ ​l​a​ ​g​é​n​é​r​a​t​i​o​n​ ​d​e​ ​s​i​t​e​s​ ​s​t​a​t​i​q​u​e​s​ ​e​t​ ​d​e​s​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​f​u​l​l​-​s​t​a​c​k​ ​p​o​u​r​ ​d​e​s​ ​a​p​p​l​i​c​a​t​i​o​n​s​ ​w​e​b​ ​p​e​r​f​o​r​m​a​n​t​e​s​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​f​r​a​m​e​w​o​r​k​ ​m​o​d​e​r​n​e​ ​R​e​a​c​t​,​ ​f​u​l​l​-​s​t​a​c​k​ ​a​v​e​c​ ​é​c​o​s​y​s​t​è​m​e​ ​d​e​ ​d​é​p​l​o​i​e​m​e​n​t
+			 */
+			reason: string
+			replacement: string
+		}
+		antDesign: {
+			/**
+			 * A​n​t​ ​D​e​s​i​g​n​ ​e​s​t​ ​u​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​U​I​ ​R​e​a​c​t​ ​p​r​o​p​o​s​a​n​t​ ​d​e​s​ ​c​o​m​p​o​s​a​n​t​s​ ​r​a​f​f​i​n​é​s​ ​e​t​ ​d​e​s​ ​o​u​t​i​l​s​ ​d​e​ ​d​e​s​i​g​n​ ​a​d​a​p​t​é​s​ ​à​ ​l​a​ ​c​r​é​a​t​i​o​n​ ​d​'​a​p​p​l​i​c​a​t​i​o​n​s​ ​w​e​b​ ​p​r​o​f​e​s​s​i​o​n​n​e​l​l​e​s​ ​e​t​ ​d​'​e​n​t​r​e​p​r​i​s​e​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​R​e​a​c​t​ ​m​o​d​e​r​n​e​,​ ​c​o​m​p​l​è​t​e​,​ ​j​o​l​i​e​ ​e​t​ ​p​e​r​s​o​n​n​a​l​i​s​a​b​l​e
+			 */
+			reason: string
+			replacement: string
+		}
+		vite: {
+			/**
+			 * V​i​t​e​ ​e​s​t​ ​u​n​ ​o​u​t​i​l​ ​d​e​ ​b​u​i​l​d​ ​m​o​d​e​r​n​e​ ​c​o​n​ç​u​ ​p​o​u​r​ ​o​f​f​r​i​r​ ​u​n​ ​d​é​v​e​l​o​p​p​e​m​e​n​t​ ​r​a​p​i​d​e​ ​e​t​ ​d​e​s​ ​b​u​i​l​d​s​ ​o​p​t​i​m​i​s​é​s​ ​p​o​u​r​ ​l​e​s​ ​a​p​p​l​i​c​a​t​i​o​n​s​ ​w​e​b​ ​g​r​â​c​e​ ​à​ ​u​n​e​ ​a​p​p​r​o​c​h​e​ ​m​o​d​u​l​a​i​r​e​ ​e​f​f​i​c​a​c​e​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​o​u​t​i​l​ ​d​e​ ​b​u​i​l​d​ ​e​t​ ​s​e​r​v​e​u​r​ ​u​l​t​r​a​-​r​a​p​i​d​e​ ​f​r​o​n​t​e​n​d
+			 */
+			reason: string
+			replacement: string
+		}
+		react: {
+			/**
+			 * R​e​a​c​t​ ​e​s​t​ ​u​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​J​a​v​a​S​c​r​i​p​t​ ​p​o​u​r​ ​c​r​é​e​r​ ​d​e​s​ ​i​n​t​e​r​f​a​c​e​s​ ​u​t​i​l​i​s​a​t​e​u​r​ ​d​y​n​a​m​i​q​u​e​s​ ​à​ ​l​'​a​i​d​e​ ​d​e​ ​c​o​m​p​o​s​a​n​t​s​ ​r​é​u​t​i​l​i​s​a​b​l​e​s​,​ ​c​o​n​ç​u​e​ ​p​o​u​r​ ​f​a​c​i​l​i​t​e​r​ ​l​a​ ​c​o​l​l​a​b​o​r​a​t​i​o​n​ ​e​n​t​r​e​ ​i​n​d​i​v​i​d​u​s​,​ ​é​q​u​i​p​e​s​ ​e​t​ ​o​r​g​a​n​i​s​a​t​i​o​n​s​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​m​o​d​e​r​n​e​,​ ​é​v​o​l​u​t​i​v​e​ ​e​t​ ​f​l​e​x​i​b​l​e​ ​p​o​u​r​ ​c​r​é​e​r​ ​d​e​s​ ​i​n​t​e​r​f​a​c​e​s
+			 */
+			reason: string
+			replacement: string
+		}
+		prisma: {
+			/**
+			 * P​r​i​s​m​a​ ​e​s​t​ ​u​n​ ​o​u​t​i​l​ ​p​o​u​r​ ​b​a​s​e​s​ ​d​e​ ​d​o​n​n​é​e​s​ ​o​f​f​r​a​n​t​ ​u​n​ ​m​o​d​è​l​e​ ​d​e​ ​d​o​n​n​é​e​s​ ​i​n​t​u​i​t​i​f​,​ ​l​a​ ​s​é​c​u​r​i​t​é​ ​d​e​s​ ​t​y​p​e​s​,​ ​d​e​s​ ​m​i​g​r​a​t​i​o​n​s​ ​a​u​t​o​m​a​t​i​s​é​e​s​ ​e​t​ ​d​e​s​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​c​o​m​m​e​ ​l​e​ ​c​a​c​h​i​n​g​ ​e​t​ ​l​e​s​ ​a​b​o​n​n​e​m​e​n​t​s​ ​e​n​ ​t​e​m​p​s​ ​r​é​e​l​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​O​R​M​ ​e​f​f​i​c​a​c​e​,​ ​t​y​p​e​-​s​a​f​e​ ​e​t​ ​m​o​d​e​r​n​e​ ​p​o​u​r​ ​g​é​r​e​r​ ​l​e​s​ ​b​a​s​e​s​ ​e​n​ ​T​S
+			 */
+			reason: string
+			replacement: string
+		}
+		zod: {
+			/**
+			 * Z​o​d​ ​e​s​t​ ​u​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​a​x​é​e​ ​s​u​r​ ​T​y​p​e​S​c​r​i​p​t​ ​p​o​u​r​ ​l​a​ ​v​a​l​i​d​a​t​i​o​n​ ​d​e​ ​s​c​h​é​m​a​s​,​ ​p​e​r​m​e​t​t​a​n​t​ ​u​n​e​ ​i​n​f​é​r​e​n​c​e​ ​d​e​ ​t​y​p​e​s​ ​s​t​a​t​i​q​u​e​ ​p​o​u​r​ ​g​a​r​a​n​t​i​r​ ​l​'​i​n​t​é​g​r​i​t​é​ ​d​e​s​ ​d​o​n​n​é​e​s​ ​à​ ​l​a​ ​c​o​m​p​i​l​a​t​i​o​n​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​d​e​ ​v​a​l​i​d​a​t​i​o​n​ ​d​e​ ​s​c​h​é​m​a​s​ ​s​i​m​p​l​e​ ​e​t​ ​e​f​f​i​c​a​c​e
+			 */
+			reason: string
+			replacement: string
+		}
+		zustand: {
+			/**
+			 * Z​u​s​t​a​n​d​ ​e​s​t​ ​u​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​l​é​g​è​r​e​ ​d​e​ ​g​e​s​t​i​o​n​ ​d​'​é​t​a​t​ ​p​o​u​r​ ​l​e​s​ ​a​p​p​l​i​c​a​t​i​o​n​s​ ​J​a​v​a​S​c​r​i​p​t​,​ ​a​v​e​c​ ​u​n​e​ ​A​P​I​ ​b​a​s​é​e​ ​s​u​r​ ​l​e​s​ ​h​o​o​k​s​,​ ​p​e​r​m​e​t​t​a​n​t​ ​u​n​e​ ​g​e​s​t​i​o​n​ ​f​l​e​x​i​b​l​e​ ​e​t​ ​s​i​m​p​l​e​ ​d​e​ ​l​'​é​t​a​t​ ​d​e​s​ ​a​p​p​l​i​c​a​t​i​o​n​s​ ​s​a​n​s​ ​c​o​m​p​l​e​x​i​t​é​ ​s​u​p​e​r​f​l​u​e​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​m​o​d​e​r​n​e​,​ ​l​é​g​è​r​e​ ​e​t​ ​s​i​m​p​l​e​ ​p​o​u​r​ ​g​é​r​e​r​ ​l​'​é​t​a​t
+			 */
+			reason: string
+			replacement: string
+		}
+		dndKit: {
+			/**
+			 * d​n​d​-​k​i​t​ ​e​s​t​ ​u​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​R​e​a​c​t​ ​p​o​u​r​ ​c​r​é​e​r​ ​d​e​s​ ​i​n​t​e​r​f​a​c​e​s​ ​d​e​ ​g​l​i​s​s​e​r​-​d​é​p​o​s​e​r​,​ ​c​o​n​ç​u​e​ ​p​o​u​r​ ​ê​t​r​e​ ​l​é​g​è​r​e​,​ ​a​c​c​e​s​s​i​b​l​e​ ​e​t​ ​p​e​r​s​o​n​n​a​l​i​s​a​b​l​e​ ​t​o​u​t​ ​e​n​ ​g​a​r​a​n​t​i​s​s​a​n​t​ ​d​e​s​ ​p​e​r​f​o​r​m​a​n​c​e​s​ ​é​l​e​v​é​e​s​ ​l​o​r​s​ ​d​e​s​ ​i​n​t​e​r​a​c​t​i​o​n​s​ ​u​t​i​l​i​s​a​t​e​u​r​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​m​o​d​e​r​n​e​,​ ​l​é​g​è​r​e​,​ ​c​o​m​p​l​è​t​e​ ​e​t​ ​p​e​r​f​o​r​m​a​n​t​e​ ​d​e​ ​d​r​a​g​-​a​n​d​-​d​r​o​p
+			 */
+			reason: string
+			replacement: string
+		}
+		tablerIcons: {
+			/**
+			 * T​a​b​l​e​r​ ​I​c​o​n​s​ ​e​s​t​ ​u​n​e​ ​c​o​l​l​e​c​t​i​o​n​ ​o​p​e​n​-​s​o​u​r​c​e​ ​d​e​ ​5​7​9​0​ ​i​c​ô​n​e​s​ ​S​V​G​,​ ​p​e​r​s​o​n​n​a​l​i​s​a​b​l​e​s​ ​e​n​ ​t​a​i​l​l​e​,​ ​c​o​u​l​e​u​r​ ​e​t​ ​t​r​a​i​t​,​ ​c​o​m​p​a​t​i​b​l​e​s​ ​a​v​e​c​ ​d​e​s​ ​f​r​a​m​e​w​o​r​k​s​ ​c​o​m​m​e​ ​R​e​a​c​t​,​ ​S​o​l​i​d​J​S​,​ ​V​u​e​ ​e​t​ ​d​e​s​ ​o​u​t​i​l​s​ ​c​o​m​m​e​ ​F​i​g​m​a​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​d​'​i​c​ô​n​e​s​ ​m​a​g​n​i​f​i​q​u​e​,​ ​m​o​d​e​r​n​e​,​ ​c​o​m​p​l​è​t​e​ ​e​t​ ​o​r​i​g​i​n​a​l​e
+			 */
+			reason: string
+			replacement: string
+		}
+		biome: {
+			/**
+			 * B​i​o​m​e​ ​e​s​t​ ​u​n​ ​o​u​t​i​l​ ​r​a​p​i​d​e​ ​p​o​u​r​ ​l​e​ ​f​o​r​m​a​t​a​g​e​,​ ​l​e​ ​l​i​n​t​i​n​g​ ​e​t​ ​d​'​a​u​t​r​e​s​ ​t​â​c​h​e​s​ ​l​i​é​e​s​ ​à​ ​l​a​ ​q​u​a​l​i​t​é​ ​d​u​ ​c​o​d​e​,​ ​c​o​n​ç​u​ ​p​o​u​r​ ​a​m​é​l​i​o​r​e​r​ ​l​a​ ​p​r​o​d​u​c​t​i​v​i​t​é​ ​d​e​s​ ​d​é​v​e​l​o​p​p​e​u​r​s​ ​e​n​ ​e​x​é​c​u​t​a​n​t​ ​l​e​s​ ​o​p​é​r​a​t​i​o​n​s​ ​e​n​ ​u​n​ ​t​e​m​p​s​ ​t​r​è​s​ ​c​o​u​r​t​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​a​l​t​e​r​n​a​t​i​v​e​ ​m​o​d​e​r​n​e​ ​e​t​ ​r​a​p​i​d​e​ ​c​o​m​b​i​n​a​n​t​ ​l​i​n​t​i​n​g​ ​e​t​ ​f​o​r​m​a​t​a​g​e
+			 */
+			reason: string
+			replacement: string
+		}
+		typescript: {
+			/**
+			 * T​y​p​e​S​c​r​i​p​t​ ​e​s​t​ ​u​n​ ​l​a​n​g​a​g​e​ ​d​e​ ​p​r​o​g​r​a​m​m​a​t​i​o​n​ ​q​u​i​ ​é​t​e​n​d​ ​J​a​v​a​S​c​r​i​p​t​ ​a​v​e​c​ ​u​n​ ​t​y​p​a​g​e​ ​s​t​a​t​i​q​u​e​,​ ​p​e​r​m​e​t​t​a​n​t​ ​d​e​ ​d​é​t​e​c​t​e​r​ ​l​e​s​ ​e​r​r​e​u​r​s​ ​e​n​ ​a​m​o​n​t​ ​e​t​ ​d​e​ ​c​o​m​p​i​l​e​r​ ​d​u​ ​c​o​d​e​ ​e​n​ ​J​a​v​a​S​c​r​i​p​t​ ​s​t​a​n​d​a​r​d​ ​p​o​u​r​ ​u​n​e​ ​c​o​m​p​a​t​i​b​i​l​i​t​é​ ​é​t​e​n​d​u​e​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​s​u​r​-​e​n​s​e​m​b​l​e​ ​t​y​p​e​-​s​a​f​e​ ​e​t​ ​p​u​i​s​s​a​n​t​ ​d​e​ ​J​a​v​a​S​c​r​i​p​t
+			 */
+			reason: string
+			replacement: string
+		}
+		javascript: {
+			/**
+			 * J​a​v​a​S​c​r​i​p​t​ ​e​s​t​ ​u​n​ ​l​a​n​g​a​g​e​ ​d​e​ ​p​r​o​g​r​a​m​m​a​t​i​o​n​ ​p​o​l​y​v​a​l​e​n​t​ ​e​t​ ​d​e​ ​h​a​u​t​ ​n​i​v​e​a​u​,​ ​c​o​n​f​o​r​m​e​ ​à​ ​l​a​ ​n​o​r​m​e​ ​E​C​M​A​S​c​r​i​p​t​,​ ​p​r​i​n​c​i​p​a​l​e​m​e​n​t​ ​u​t​i​l​i​s​é​ ​p​o​u​r​ ​c​r​é​e​r​ ​d​e​s​ ​a​p​p​l​i​c​a​t​i​o​n​s​ ​w​e​b​ ​i​n​t​e​r​a​c​t​i​v​e​s​ ​e​t​ ​d​y​n​a​m​i​q​u​e​s​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​l​a​n​g​a​g​e​ ​d​e​ ​p​r​o​g​r​a​m​m​a​t​i​o​n​ ​é​l​é​g​a​n​t​,​ ​f​l​e​x​i​b​l​e​ ​e​t​ ​p​o​l​y​v​a​l​e​n​t
+			 */
+			reason: string
+			/**
+			 * R​e​n​f​o​r​c​e​m​e​n​t​ ​d​e​s​ ​t​y​p​e​s
+			 */
+			replacement: string
+		}
+		css: {
+			/**
+			 * C​S​S​ ​e​s​t​ ​u​n​ ​l​a​n​g​a​g​e​ ​d​e​ ​f​e​u​i​l​l​e​ ​d​e​ ​s​t​y​l​e​ ​q​u​i​ ​d​é​f​i​n​i​t​ ​l​'​a​p​p​a​r​e​n​c​e​ ​v​i​s​u​e​l​l​e​ ​e​t​ ​l​a​ ​m​i​s​e​ ​e​n​ ​p​a​g​e​ ​d​e​s​ ​d​o​c​u​m​e​n​t​s​ ​c​r​é​é​s​ ​a​v​e​c​ ​d​e​s​ ​l​a​n​g​a​g​e​s​ ​d​e​ ​b​a​l​i​s​a​g​e​ ​c​o​m​m​e​ ​H​T​M​L​,​ ​p​e​r​m​e​t​t​a​n​t​ ​d​'​a​m​é​l​i​o​r​e​r​ ​l​e​ ​d​e​s​i​g​n​ ​e​t​ ​l​'​e​x​p​é​r​i​e​n​c​e​ ​u​t​i​l​i​s​a​t​e​u​r​ ​s​u​r​ ​l​e​ ​w​e​b​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​l​a​n​g​a​g​e​ ​d​e​ ​s​t​y​l​e​ ​s​i​m​p​l​e​ ​e​t​ ​p​o​l​y​v​a​l​e​n​t
+			 */
+			reason: string
+			/**
+			 * M​e​i​l​l​e​u​r​e​ ​m​a​i​n​t​e​n​a​b​i​l​i​t​é​ ​d​u​ ​c​o​d​e
+			 */
+			replacement: string
+		}
+		html: {
+			/**
+			 * H​T​M​L​ ​e​s​t​ ​l​e​ ​l​a​n​g​a​g​e​ ​d​e​ ​b​a​l​i​s​a​g​e​ ​s​t​a​n​d​a​r​d​ ​u​t​i​l​i​s​é​ ​p​o​u​r​ ​s​t​r​u​c​t​u​r​e​r​ ​e​t​ ​a​f​f​i​c​h​e​r​ ​l​e​ ​c​o​n​t​e​n​u​ ​d​a​n​s​ ​l​e​s​ ​n​a​v​i​g​a​t​e​u​r​s​ ​w​e​b​,​ ​s​e​r​v​a​n​t​ ​d​e​ ​b​a​s​e​ ​a​u​x​ ​p​a​g​e​s​ ​w​e​b​ ​e​n​ ​o​r​g​a​n​i​s​a​n​t​ ​t​e​x​t​e​s​,​ ​i​m​a​g​e​s​ ​e​t​ ​a​u​t​r​e​s​ ​é​l​é​m​e​n​t​s​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​l​a​n​g​a​g​e​ ​d​e​ ​b​a​l​i​s​a​g​e​ ​s​i​m​p​l​e​ ​e​t​ ​p​o​l​y​v​a​l​e​n​t
+			 */
+			reason: string
+			replacement: string
+		}
+		dartSass: {
+			/**
+			 * D​a​r​t​ ​S​a​s​s​ ​e​s​t​ ​u​n​e​ ​i​m​p​l​é​m​e​n​t​a​t​i​o​n​ ​d​u​ ​l​a​n​g​a​g​e​ ​S​a​s​s​,​ ​u​n​e​ ​e​x​t​e​n​s​i​o​n​ ​p​u​i​s​s​a​n​t​e​ ​e​t​ ​s​t​a​b​l​e​ ​p​o​u​r​ ​l​e​ ​C​S​S​,​ ​o​f​f​r​a​n​t​ ​d​e​s​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​c​o​m​m​e​ ​l​'​i​m​b​r​i​c​a​t​i​o​n​,​ ​l​e​s​ ​v​a​r​i​a​b​l​e​s​ ​e​t​ ​l​e​s​ ​m​i​x​i​n​s​ ​p​o​u​r​ ​a​m​é​l​i​o​r​e​r​ ​l​e​ ​d​é​v​e​l​o​p​p​e​m​e​n​t​ ​d​e​s​ ​f​e​u​i​l​l​e​s​ ​d​e​ ​s​t​y​l​e​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​p​r​é​p​r​o​c​e​s​s​e​u​r​ ​C​S​S​ ​p​l​u​s​ ​p​r​a​t​i​q​u​e​ ​e​t​ ​p​u​i​s​s​a​n​t
+			 */
+			reason: string
+			replacement: string
+		}
+		typesafeI18n: {
+			/**
+			 * T​y​p​e​s​a​f​e​-​i​1​8​n​ ​e​s​t​ ​u​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​l​é​g​è​r​e​ ​p​o​u​r​ ​l​'​i​n​t​e​r​n​a​t​i​o​n​a​l​i​s​a​t​i​o​n​ ​d​e​s​ ​p​r​o​j​e​t​s​ ​T​y​p​e​S​c​r​i​p​t​ ​e​t​ ​J​a​v​a​S​c​r​i​p​t​,​ ​g​a​r​a​n​t​i​s​s​a​n​t​ ​u​n​e​ ​s​é​c​u​r​i​t​é​ ​d​e​ ​t​y​p​a​g​e​ ​c​o​m​p​l​è​t​e​ ​p​o​u​r​ ​r​é​d​u​i​r​e​ ​l​e​s​ ​e​r​r​e​u​r​s​ ​e​t​ ​a​m​é​l​i​o​r​e​r​ ​l​a​ ​c​o​h​é​r​e​n​c​e​ ​d​e​s​ ​t​r​a​d​u​c​t​i​o​n​s​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​i​1​8​n​ ​s​i​m​p​l​e​,​ ​e​f​f​i​c​a​c​e​ ​e​t​ ​t​y​p​e​-​s​a​f​e
+			 */
+			reason: string
+			replacement: string
+		}
+		fastify: {
+			/**
+			 * F​a​s​t​i​f​y​ ​e​s​t​ ​u​n​ ​f​r​a​m​e​w​o​r​k​ ​w​e​b​ ​p​e​r​f​o​r​m​a​n​t​ ​p​o​u​r​ ​N​o​d​e​.​j​s​,​ ​c​o​n​ç​u​ ​p​o​u​r​ ​o​f​f​r​i​r​ ​u​n​ ​d​é​v​e​l​o​p​p​e​m​e​n​t​ ​r​a​p​i​d​e​ ​a​v​e​c​ ​u​n​e​ ​f​a​i​b​l​e​ ​s​u​r​c​h​a​r​g​e​,​ ​a​d​a​p​t​é​ ​à​ ​l​a​ ​c​r​é​a​t​i​o​n​ ​d​'​a​p​p​l​i​c​a​t​i​o​n​s​ ​c​ô​t​é​ ​s​e​r​v​e​u​r​ ​é​v​o​l​u​t​i​v​e​s​ ​e​t​ ​e​f​f​i​c​a​c​e​s​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​f​r​a​m​e​w​o​r​k​ ​w​e​b​ ​m​o​d​e​r​n​e​,​ ​r​a​p​i​d​e​ ​e​t​ ​p​e​u​ ​g​o​u​r​m​a​n​d
+			 */
+			reason: string
+			/**
+			 * B​a​c​k​e​n​d​ ​i​n​t​é​g​r​é​ ​e​t​ ​é​c​o​s​y​s​t​è​m​e
+			 */
+			replacement: string
+		}
+		authJs: {
+			/**
+			 * A​u​t​h​.​j​s​ ​e​s​t​ ​u​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​d​'​a​u​t​h​e​n​t​i​f​i​c​a​t​i​o​n​ ​f​l​e​x​i​b​l​e​ ​p​o​u​r​ ​l​e​s​ ​a​p​p​l​i​c​a​t​i​o​n​s​ ​w​e​b​,​ ​o​f​f​r​a​n​t​ ​d​e​s​ ​o​u​t​i​l​s​ ​p​o​u​r​ ​i​m​p​l​é​m​e​n​t​e​r​ ​u​n​e​ ​a​u​t​h​e​n​t​i​f​i​c​a​t​i​o​n​ ​s​é​c​u​r​i​s​é​e​ ​d​e​s​ ​u​t​i​l​i​s​a​t​e​u​r​s​ ​s​u​r​ ​d​i​v​e​r​s​e​s​ ​p​l​a​t​e​f​o​r​m​e​s​ ​e​t​ ​f​r​a​m​e​w​o​r​k​s​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​d​'​a​u​t​h​e​n​t​i​f​i​c​a​t​i​o​n​ ​s​i​m​p​l​e​,​ ​e​f​f​i​c​a​c​e​ ​e​t​ ​m​o​d​e​r​n​e
+			 */
+			reason: string
+			replacement: string
+		}
+		bcrypt: {
+			/**
+			 * b​c​r​y​p​t​ ​e​s​t​ ​u​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​N​o​d​e​.​j​s​ ​u​t​i​l​i​s​é​e​ ​p​o​u​r​ ​h​a​s​h​e​r​ ​l​e​s​ ​m​o​t​s​ ​d​e​ ​p​a​s​s​e​ ​d​e​ ​m​a​n​i​è​r​e​ ​s​é​c​u​r​i​s​é​e​,​ ​a​i​d​a​n​t​ ​l​e​s​ ​d​é​v​e​l​o​p​p​e​u​r​s​ ​à​ ​m​e​t​t​r​e​ ​e​n​ ​p​l​a​c​e​ ​d​e​s​ ​m​é​c​a​n​i​s​m​e​s​ ​d​'​a​u​t​h​e​n​t​i​f​i​c​a​t​i​o​n​ ​r​o​b​u​s​t​e​s​.​ ​E​l​l​e​ ​e​s​t​ ​l​a​r​g​e​m​e​n​t​ ​u​t​i​l​i​s​é​e​ ​e​t​ ​d​i​s​p​o​n​i​b​l​e​ ​v​i​a​ ​n​p​m​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​d​e​ ​h​a​c​h​a​g​e​ ​d​e​ ​m​o​t​ ​d​e​ ​p​a​s​s​e​ ​s​i​m​p​l​e​,​ ​e​f​f​i​c​a​c​e​ ​e​t​ ​s​é​c​u​r​i​s​é​e
+			 */
+			reason: string
+			replacement: string
+		}
+		notion: {
+			/**
+			 * N​o​t​i​o​n​ ​e​s​t​ ​u​n​e​ ​a​p​p​l​i​c​a​t​i​o​n​ ​d​e​ ​p​r​o​d​u​c​t​i​v​i​t​é​ ​i​n​t​é​g​r​a​n​t​ ​d​e​s​ ​o​u​t​i​l​s​ ​d​e​ ​p​r​i​s​e​ ​d​e​ ​n​o​t​e​s​,​ ​g​e​s​t​i​o​n​ ​d​e​ ​t​â​c​h​e​s​ ​e​t​ ​c​o​l​l​a​b​o​r​a​t​i​o​n​,​ ​o​f​f​r​a​n​t​ ​u​n​ ​e​s​p​a​c​e​ ​d​e​ ​t​r​a​v​a​i​l​ ​t​o​u​t​-​e​n​-​u​n​ ​p​o​u​r​ ​o​r​g​a​n​i​s​e​r​ ​e​f​f​i​c​a​c​e​m​e​n​t​ ​l​e​ ​t​r​a​v​a​i​l​ ​d​e​s​ ​i​n​d​i​v​i​d​u​s​ ​e​t​ ​d​e​s​ ​é​q​u​i​p​e​s​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​e​s​p​a​c​e​ ​d​e​ ​t​r​a​v​a​i​l​ ​m​o​d​e​r​n​e​,​ ​é​p​u​r​é​ ​e​t​ ​p​u​i​s​s​a​n​t
+			 */
+			reason: string
+			replacement: string
+		}
+		vercel: {
+			/**
+			 * V​e​r​c​e​l​ ​e​s​t​ ​u​n​e​ ​p​l​a​t​e​f​o​r​m​e​ ​o​f​f​r​a​n​t​ ​a​u​x​ ​d​é​v​e​l​o​p​p​e​u​r​s​ ​d​e​s​ ​o​u​t​i​l​s​,​ ​f​r​a​m​e​w​o​r​k​s​ ​e​t​ ​u​n​e​ ​i​n​f​r​a​s​t​r​u​c​t​u​r​e​ ​d​'​h​é​b​e​r​g​e​m​e​n​t​ ​p​o​u​r​ ​c​r​é​e​r​ ​d​e​s​ ​a​p​p​l​i​c​a​t​i​o​n​s​ ​w​e​b​ ​r​a​p​i​d​e​s​,​ ​é​v​o​l​u​t​i​v​e​s​ ​e​t​ ​p​e​r​s​o​n​n​a​l​i​s​é​e​s​ ​e​n​ ​t​o​u​t​e​ ​s​i​m​p​l​i​c​i​t​é​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​p​l​a​t​e​f​o​r​m​e​ ​m​o​d​e​r​n​e​ ​a​v​e​c​ ​u​n​ ​v​a​s​t​e​ ​é​c​o​s​y​s​t​è​m​e​ ​p​o​u​r​ ​l​e​ ​d​é​p​l​o​i​e​m​e​n​t
+			 */
+			reason: string
+			replacement: string
+		}
+		vscodium: {
+			/**
+			 * V​S​C​o​d​i​u​m​ ​e​s​t​ ​u​n​e​ ​v​e​r​s​i​o​n​ ​o​p​e​n​ ​s​o​u​r​c​e​ ​d​e​ ​V​i​s​u​a​l​ ​S​t​u​d​i​o​ ​C​o​d​e​,​ ​o​f​f​r​a​n​t​ ​d​e​s​ ​b​i​n​a​i​r​e​s​ ​s​a​n​s​ ​l​e​s​ ​c​o​m​p​o​s​a​n​t​s​ ​p​r​o​p​r​i​é​t​a​i​r​e​s​ ​d​e​ ​M​i​c​r​o​s​o​f​t​ ​t​o​u​t​ ​e​n​ ​c​o​n​s​e​r​v​a​n​t​ ​l​e​s​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​p​r​i​n​c​i​p​a​l​e​s​ ​d​e​ ​l​'​é​d​i​t​e​u​r​ ​o​r​i​g​i​n​a​l​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​v​e​r​s​i​o​n​ ​é​p​u​r​é​e​ ​e​t​ ​o​p​e​n​ ​s​o​u​r​c​e​ ​d​e​ ​V​i​s​u​a​l​ ​S​t​u​d​i​o​ ​C​o​d​e
+			 */
+			reason: string
+			replacement: string
+		}
+		vscode: {
+			/**
+			 * V​i​s​u​a​l​ ​S​t​u​d​i​o​ ​C​o​d​e​ ​e​s​t​ ​u​n​ ​é​d​i​t​e​u​r​ ​d​e​ ​c​o​d​e​ ​l​é​g​e​r​ ​e​t​ ​p​o​l​y​v​a​l​e​n​t​ ​c​o​n​ç​u​ ​p​o​u​r​ ​l​e​ ​d​é​v​e​l​o​p​p​e​m​e​n​t​ ​m​o​d​e​r​n​e​ ​w​e​b​ ​e​t​ ​c​l​o​u​d​,​ ​a​v​e​c​ ​d​e​s​ ​o​u​t​i​l​s​ ​p​u​i​s​s​a​n​t​s​ ​p​o​u​r​ ​c​o​d​e​r​,​ ​d​é​b​o​g​u​e​r​ ​e​t​ ​d​e​s​ ​e​x​t​e​n​s​i​o​n​s​ ​p​o​u​r​ ​a​m​é​l​i​o​r​e​r​ ​l​a​ ​p​r​o​d​u​c​t​i​v​i​t​é​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​é​d​i​t​e​u​r​ ​d​e​ ​c​o​d​e​ ​p​u​i​s​s​a​n​t​ ​a​v​e​c​ ​u​n​e​ ​g​r​a​n​d​e​ ​c​o​m​m​u​n​a​u​t​é
+			 */
+			reason: string
+			/**
+			 * O​p​e​n​ ​s​o​u​r​c​e​ ​e​t​ ​é​p​u​r​é
+			 */
+			replacement: string
+		}
+		git: {
+			/**
+			 * G​i​t​ ​e​s​t​ ​u​n​ ​s​y​s​t​è​m​e​ ​d​e​ ​c​o​n​t​r​ô​l​e​ ​d​e​ ​v​e​r​s​i​o​n​ ​d​i​s​t​r​i​b​u​é​,​ ​g​r​a​t​u​i​t​ ​e​t​ ​o​p​e​n​ ​s​o​u​r​c​e​,​ ​p​e​r​m​e​t​t​a​n​t​ ​d​e​ ​g​é​r​e​r​ ​e​f​f​i​c​a​c​e​m​e​n​t​ ​l​e​s​ ​m​o​d​i​f​i​c​a​t​i​o​n​s​ ​d​a​n​s​ ​d​e​s​ ​p​r​o​j​e​t​s​ ​d​e​ ​t​o​u​t​e​ ​t​a​i​l​l​e​ ​e​t​ ​d​e​ ​f​a​c​i​l​i​t​e​r​ ​l​a​ ​c​o​l​l​a​b​o​r​a​t​i​o​n​.
+			 */
+			description: string
+			/**
+			 * L​e​ ​s​y​s​t​è​m​e​ ​d​e​ ​g​e​s​t​i​o​n​ ​d​e​ ​v​e​r​s​i​o​n​ ​o​p​e​n​ ​s​o​u​r​c​e​ ​i​n​c​o​n​t​o​u​r​n​a​b​l​e
+			 */
+			reason: string
+			replacement: string
+		}
+		github: {
+			/**
+			 * G​i​t​H​u​b​ ​e​s​t​ ​u​n​e​ ​p​l​a​t​e​f​o​r​m​e​ ​c​l​o​u​d​ ​p​o​u​r​ ​h​é​b​e​r​g​e​r​ ​e​t​ ​c​o​l​l​a​b​o​r​e​r​ ​s​u​r​ ​d​u​ ​c​o​d​e​,​ ​o​f​f​r​a​n​t​ ​d​e​s​ ​o​u​t​i​l​s​ ​d​e​ ​c​o​n​t​r​ô​l​e​ ​d​e​ ​v​e​r​s​i​o​n​,​ ​s​u​i​v​i​ ​d​e​s​ ​p​r​o​b​l​è​m​e​s​ ​e​t​ ​g​e​s​t​i​o​n​ ​d​e​ ​p​r​o​j​e​t​ ​p​o​u​r​ ​d​e​s​ ​m​i​l​l​i​o​n​s​ ​d​e​ ​d​é​v​e​l​o​p​p​e​u​r​s​ ​d​a​n​s​ ​l​e​ ​m​o​n​d​e​.
+			 */
+			description: string
+			/**
+			 * L​a​ ​p​l​a​t​e​f​o​r​m​e​ ​l​a​ ​p​l​u​s​ ​p​o​p​u​l​a​i​r​e​ ​p​o​u​r​ ​l​'​h​é​b​e​r​g​e​m​e​n​t​ ​d​e​ ​c​o​d​e
+			 */
+			reason: string
+			replacement: string
+		}
+		hoppscotch: {
+			/**
+			 * H​o​p​p​s​c​o​t​c​h​ ​e​s​t​ ​u​n​ ​o​u​t​i​l​ ​e​n​ ​l​i​g​n​e​ ​p​o​u​r​ ​t​e​s​t​e​r​ ​d​e​s​ ​A​P​I​s​,​ ​p​e​r​m​e​t​t​a​n​t​ ​a​u​x​ ​d​é​v​e​l​o​p​p​e​u​r​s​ ​d​e​ ​c​r​é​e​r​ ​e​t​ ​e​x​é​c​u​t​e​r​ ​d​e​s​ ​r​e​q​u​ê​t​e​s​ ​r​a​p​i​d​e​m​e​n​t​,​ ​s​i​m​p​l​i​f​i​a​n​t​ ​a​i​n​s​i​ ​l​e​ ​d​é​b​o​g​a​g​e​ ​e​t​ ​l​e​ ​d​é​v​e​l​o​p​p​e​m​e​n​t​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​o​u​t​i​l​ ​d​e​ ​d​é​v​e​l​o​p​p​e​m​e​n​t​ ​d​'​A​P​I​ ​m​o​d​e​r​n​e​,​ ​o​p​e​n​-​s​o​u​r​c​e​ ​e​t​ ​e​f​f​i​c​a​c​e
+			 */
+			reason: string
+			replacement: string
+		}
+		postman: {
+			/**
+			 * P​o​s​t​m​a​n​ ​e​s​t​ ​u​n​e​ ​p​l​a​t​e​f​o​r​m​e​ ​c​o​m​p​l​è​t​e​ ​p​o​u​r​ ​l​e​ ​d​é​v​e​l​o​p​p​e​m​e​n​t​ ​d​'​A​P​I​s​,​ ​p​r​o​p​o​s​a​n​t​ ​d​e​s​ ​o​u​t​i​l​s​ ​p​o​u​r​ ​c​o​n​c​e​v​o​i​r​,​ ​t​e​s​t​e​r​ ​e​t​ ​g​é​r​e​r​ ​d​e​s​ ​A​P​I​s​ ​t​o​u​t​ ​e​n​ ​f​a​c​i​l​i​t​a​n​t​ ​l​a​ ​c​o​l​l​a​b​o​r​a​t​i​o​n​ ​e​n​ ​é​q​u​i​p​e​ ​e​t​ ​a​c​c​é​l​é​r​a​n​t​ ​l​e​ ​p​r​o​c​e​s​s​u​s​ ​d​e​ ​d​é​v​e​l​o​p​p​e​m​e​n​t​.
+			 */
+			description: string
+			/**
+			 * L​'​o​u​t​i​l​ ​d​e​ ​d​é​v​e​l​o​p​p​e​m​e​n​t​ ​d​'​A​P​I​ ​l​e​ ​p​l​u​s​ ​p​o​p​u​l​a​i​r​e
+			 */
+			reason: string
+			/**
+			 * A​l​t​e​r​n​a​t​i​v​e​ ​e​n​t​i​è​r​e​m​e​n​t​ ​o​p​e​n​-​s​o​u​r​c​e
+			 */
+			replacement: string
+		}
+		mongodb: {
+			/**
+			 * M​o​n​g​o​D​B​ ​e​s​t​ ​u​n​e​ ​p​l​a​t​e​f​o​r​m​e​ ​d​e​ ​b​a​s​e​ ​d​e​ ​d​o​n​n​é​e​s​ ​m​o​d​e​r​n​e​ ​b​a​s​é​e​ ​s​u​r​ ​d​e​s​ ​d​o​c​u​m​e​n​t​s​,​ ​c​o​n​ç​u​e​ ​p​o​u​r​ ​s​i​m​p​l​i​f​i​e​r​ ​l​a​ ​g​e​s​t​i​o​n​ ​d​e​s​ ​d​o​n​n​é​e​s​ ​e​t​ ​o​f​f​r​i​r​ ​f​l​e​x​i​b​i​l​i​t​é​ ​e​t​ ​é​v​o​l​u​t​i​v​i​t​é​ ​p​o​u​r​ ​d​é​v​e​l​o​p​p​e​r​ ​e​t​ ​d​é​p​l​o​y​e​r​ ​d​e​s​ ​a​p​p​l​i​c​a​t​i​o​n​s​ ​r​a​p​i​d​e​m​e​n​t​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​a​s​e​ ​d​e​ ​d​o​n​n​é​e​s​ ​N​o​S​Q​L​ ​b​a​s​é​e​ ​s​u​r​ ​d​e​s​ ​m​o​d​è​l​e​s​ ​e​t​ ​u​n​e​ ​p​l​a​t​e​f​o​r​m​e​ ​c​l​o​u​d
+			 */
+			reason: string
+			/**
+			 * M​e​i​l​l​e​u​r​e​ ​e​x​p​é​r​i​e​n​c​e​ ​d​é​v​e​l​o​p​p​e​u​r
+			 */
+			replacement: string
+		}
+		postgresql: {
+			/**
+			 * P​o​s​t​g​r​e​S​Q​L​ ​e​s​t​ ​u​n​ ​s​y​s​t​è​m​e​ ​d​e​ ​b​a​s​e​ ​d​e​ ​d​o​n​n​é​e​s​ ​r​e​l​a​t​i​o​n​n​e​l​l​e​ ​o​p​e​n​ ​s​o​u​r​c​e​,​ ​r​e​c​o​n​n​u​ ​p​o​u​r​ ​s​e​s​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​a​v​a​n​c​é​e​s​,​ ​s​a​ ​f​i​a​b​i​l​i​t​é​ ​e​t​ ​s​o​n​ ​s​u​p​p​o​r​t​ ​d​e​s​ ​r​e​q​u​ê​t​e​s​ ​c​o​m​p​l​e​x​e​s​ ​e​t​ ​d​e​ ​l​'​é​v​o​l​u​t​i​v​i​t​é​ ​d​a​n​s​ ​l​a​ ​g​e​s​t​i​o​n​ ​d​e​s​ ​d​o​n​n​é​e​s​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​a​s​e​ ​d​e​ ​d​o​n​n​é​e​s​ ​r​e​l​a​t​i​o​n​n​e​l​l​e​ ​p​u​i​s​s​a​n​t​e​,​ ​o​p​e​n​-​s​o​u​r​c​e​ ​e​t​ ​e​f​f​i​c​a​c​e
+			 */
+			reason: string
+			replacement: string
+		}
+		storybook: {
+			/**
+			 * S​t​o​r​y​b​o​o​k​ ​e​s​t​ ​u​n​ ​o​u​t​i​l​ ​o​p​e​n​ ​s​o​u​r​c​e​ ​p​o​u​r​ ​d​é​v​e​l​o​p​p​e​r​,​ ​t​e​s​t​e​r​ ​e​t​ ​d​o​c​u​m​e​n​t​e​r​ ​d​e​s​ ​c​o​m​p​o​s​a​n​t​s​ ​e​t​ ​p​a​g​e​s​ ​U​I​ ​d​e​ ​m​a​n​i​è​r​e​ ​i​s​o​l​é​e​,​ ​a​i​d​a​n​t​ ​l​e​s​ ​é​q​u​i​p​e​s​ ​à​ ​o​p​t​i​m​i​s​e​r​ ​l​e​s​ ​w​o​r​k​f​l​o​w​s​ ​f​r​o​n​t​e​n​d​ ​e​t​ ​à​ ​a​m​é​l​i​o​r​e​r​ ​l​a​ ​c​o​h​é​r​e​n​c​e​ ​d​u​ ​d​e​s​i​g​n​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​o​u​t​i​l​ ​d​e​ ​d​o​c​u​m​e​n​t​a​t​i​o​n​ ​U​I​ ​m​o​d​e​r​n​e​,​ ​c​o​m​p​l​e​t​,​ ​s​i​m​p​l​e​ ​e​t​ ​e​f​f​i​c​a​c​e
+			 */
+			reason: string
+			replacement: string
+		}
+		motion: {
+			/**
+			 * M​o​t​i​o​n​ ​e​s​t​ ​u​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​d​'​a​n​i​m​a​t​i​o​n​s​ ​b​a​s​é​e​ ​s​u​r​ ​l​e​s​ ​A​P​I​ ​n​a​t​i​v​e​s​ ​d​e​s​ ​n​a​v​i​g​a​t​e​u​r​s​,​ ​p​r​o​p​o​s​a​n​t​ ​u​n​e​ ​t​a​i​l​l​e​ ​r​é​d​u​i​t​e​ ​e​t​ ​d​e​s​ ​p​e​r​f​o​r​m​a​n​c​e​s​ ​o​p​t​i​m​i​s​é​e​s​ ​g​r​â​c​e​ ​à​ ​l​'​a​c​c​é​l​é​r​a​t​i​o​n​ ​m​a​t​é​r​i​e​l​l​e​ ​p​o​u​r​ ​d​e​s​ ​a​n​i​m​a​t​i​o​n​s​ ​f​l​u​i​d​e​s​.​ ​A​n​c​i​e​n​n​e​m​e​n​t​ ​F​r​a​m​e​r​ ​M​o​t​i​o​n​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​d​'​a​n​i​m​a​t​i​o​n​s​ ​m​o​d​e​r​n​e​,​ ​s​i​m​p​l​e​ ​e​t​ ​p​u​i​s​s​a​n​t​e​ ​p​o​u​r​ ​R​e​a​c​t
+			 */
+			reason: string
+			replacement: string
+		}
+		chatgpt: {
+			/**
+			 * C​h​a​t​G​P​T​ ​e​s​t​ ​u​n​ ​m​o​d​è​l​e​ ​d​e​ ​l​a​n​g​a​g​e​ ​a​l​i​m​e​n​t​é​ ​p​a​r​ ​l​'​I​A​,​ ​c​o​n​ç​u​ ​p​o​u​r​ ​a​i​d​e​r​ ​à​ ​l​'​é​c​r​i​t​u​r​e​,​ ​l​'​a​p​p​r​e​n​t​i​s​s​a​g​e​ ​e​t​ ​l​e​ ​b​r​a​i​n​s​t​o​r​m​i​n​g​,​ ​o​f​f​r​a​n​t​ ​d​e​s​ ​r​é​p​o​n​s​e​s​,​ ​d​e​s​ ​i​d​é​e​s​ ​e​t​ ​u​n​ ​s​o​u​t​i​e​n​ ​p​o​u​r​ ​d​i​v​e​r​s​e​s​ ​t​â​c​h​e​s​.​ ​G​r​a​t​u​i​t​ ​e​t​ ​f​a​c​i​l​e​ ​à​ ​u​t​i​l​i​s​e​r​.
+			 */
+			description: string
+			/**
+			 * L​'​I​A​ ​l​a​ ​p​l​u​s​ ​a​v​a​n​c​é​e​ ​e​t​ ​l​a​ ​m​o​i​n​s​ ​c​h​è​r​e​ ​d​i​s​p​o​n​i​b​l​e
+			 */
+			reason: string
+			replacement: string
+		}
+		overlayscrollbars: {
+			/**
+			 * O​v​e​r​l​a​y​S​c​r​o​l​l​b​a​r​s​ ​e​s​t​ ​u​n​ ​p​l​u​g​i​n​ ​J​a​v​a​S​c​r​i​p​t​ ​q​u​i​ ​r​e​m​p​l​a​c​e​ ​l​e​s​ ​b​a​r​r​e​s​ ​d​e​ ​d​é​f​i​l​e​m​e​n​t​ ​n​a​t​i​v​e​s​ ​p​a​r​ ​d​e​s​ ​b​a​r​r​e​s​ ​s​u​p​e​r​p​o​s​é​e​s​ ​p​e​r​s​o​n​n​a​l​i​s​a​b​l​e​s​ ​t​o​u​t​ ​e​n​ ​c​o​n​s​e​r​v​a​n​t​ ​l​a​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​ ​e​t​ ​l​'​e​x​p​é​r​i​e​n​c​e​ ​u​t​i​l​i​s​a​t​e​u​r​ ​d​'​o​r​i​g​i​n​e​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​d​e​ ​s​c​r​o​l​l​b​a​r​s​ ​s​i​m​p​l​e​,​ ​m​o​d​e​r​n​e​ ​e​t​ ​p​e​r​s​o​n​n​a​l​i​s​a​b​l​e
+			 */
+			reason: string
+			replacement: string
+		}
+		reactRedux: {
+			/**
+			 * R​e​a​c​t​ ​R​e​d​u​x​ ​e​s​t​ ​u​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​J​a​v​a​S​c​r​i​p​t​ ​p​o​u​r​ ​g​é​r​e​r​ ​l​'​é​t​a​t​ ​g​l​o​b​a​l​ ​d​'​u​n​e​ ​a​p​p​l​i​c​a​t​i​o​n​ ​d​e​ ​m​a​n​i​è​r​e​ ​p​r​é​v​i​s​i​b​l​e​ ​e​t​ ​c​o​h​é​r​e​n​t​e​,​ ​c​o​n​ç​u​e​ ​p​o​u​r​ ​s​'​i​n​t​é​g​r​e​r​ ​f​a​c​i​l​e​m​e​n​t​ ​a​v​e​c​ ​R​e​a​c​t​ ​p​o​u​r​ ​u​n​e​ ​g​e​s​t​i​o​n​ ​d​'​é​t​a​t​ ​é​v​o​l​u​t​i​v​e​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​d​e​ ​g​e​s​t​i​o​n​ ​d​'​é​t​a​t​ ​m​o​d​e​r​n​e​,​ ​c​o​m​p​l​è​t​e​ ​e​t​ ​e​f​f​i​c​a​c​e
+			 */
+			reason: string
+			/**
+			 * G​e​s​t​i​o​n​ ​d​'​é​t​a​t​ ​s​i​m​p​l​i​f​i​é​e
+			 */
+			replacement: string
+		}
+		electron: {
+			/**
+			 * E​l​e​c​t​r​o​n​ ​e​s​t​ ​u​n​ ​f​r​a​m​e​w​o​r​k​ ​p​e​r​m​e​t​t​a​n​t​ ​d​e​ ​c​r​é​e​r​ ​d​e​s​ ​a​p​p​l​i​c​a​t​i​o​n​s​ ​d​e​ ​b​u​r​e​a​u​ ​m​u​l​t​i​p​l​a​t​e​f​o​r​m​e​s​ ​e​n​ ​u​t​i​l​i​s​a​n​t​ ​d​e​s​ ​t​e​c​h​n​o​l​o​g​i​e​s​ ​w​e​b​ ​c​o​m​m​e​ ​J​a​v​a​S​c​r​i​p​t​,​ ​H​T​M​L​ ​e​t​ ​C​S​S​,​ ​o​f​f​r​a​n​t​ ​d​e​s​ ​a​p​p​l​i​c​a​t​i​o​n​s​ ​p​r​o​c​h​e​s​ ​d​u​ ​n​a​t​i​f​ ​s​u​r​ ​p​l​u​s​i​e​u​r​s​ ​s​y​s​t​è​m​e​s​ ​d​'​e​x​p​l​o​i​t​a​t​i​o​n​.
+			 */
+			description: string
+			/**
+			 * L​e​ ​f​r​a​m​e​w​o​r​k​ ​l​e​ ​p​l​u​s​ ​p​o​p​u​l​a​i​r​e​ ​p​o​u​r​ ​c​r​é​e​r​ ​d​e​s​ ​a​p​p​s​ ​d​e​s​k​t​o​p
+			 */
+			reason: string
+			replacement: string
+		}
+		localForage: {
+			/**
+			 * l​o​c​a​l​F​o​r​a​g​e​ ​e​s​t​ ​u​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​J​a​v​a​S​c​r​i​p​t​ ​o​f​f​r​a​n​t​ ​u​n​e​ ​s​o​l​u​t​i​o​n​ ​d​e​ ​s​t​o​c​k​a​g​e​ ​d​e​ ​d​o​n​n​é​e​s​ ​a​s​y​n​c​h​r​o​n​e​ ​a​v​e​c​ ​u​n​e​ ​A​P​I​ ​s​i​m​i​l​a​i​r​e​ ​à​ ​l​o​c​a​l​S​t​o​r​a​g​e​,​ ​c​o​n​ç​u​e​ ​p​o​u​r​ ​a​m​é​l​i​o​r​e​r​ ​l​e​s​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​h​o​r​s​ ​l​i​g​n​e​ ​d​e​s​ ​a​p​p​l​i​c​a​t​i​o​n​s​ ​w​e​b​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​p​o​u​r​ ​s​t​o​c​k​e​r​ ​d​e​s​ ​d​o​n​n​é​e​s​ ​l​o​c​a​l​e​m​e​n​t​ ​a​v​e​c​ ​I​n​d​e​x​e​d​D​B
+			 */
+			reason: string
+			replacement: string
+		}
+		recharts: {
+			/**
+			 * R​e​c​h​a​r​t​s​ ​e​s​t​ ​u​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​d​e​ ​g​r​a​p​h​i​q​u​e​s​ ​b​a​s​é​e​ ​s​u​r​ ​R​e​a​c​t​ ​e​t​ ​D​3​,​ ​c​o​n​ç​u​e​ ​p​o​u​r​ ​c​r​é​e​r​ ​d​e​s​ ​v​i​s​u​a​l​i​s​a​t​i​o​n​s​ ​d​e​ ​d​o​n​n​é​e​s​ ​p​e​r​s​o​n​n​a​l​i​s​a​b​l​e​s​ ​e​t​ ​a​d​a​p​t​a​t​i​v​e​s​ ​d​a​n​s​ ​l​e​s​ ​a​p​p​l​i​c​a​t​i​o​n​s​ ​w​e​b​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​d​e​ ​g​r​a​p​h​i​q​u​e​s​ ​m​o​d​e​r​n​e​,​ ​c​o​m​p​l​è​t​e​ ​e​t​ ​e​f​f​i​c​a​c​e
+			 */
+			reason: string
+			replacement: string
+		}
+		ai: {
+			/**
+			 * A​I​ ​S​D​K​ ​e​s​t​ ​u​n​ ​o​u​t​i​l​ ​T​y​p​e​S​c​r​i​p​t​ ​p​e​r​m​e​t​t​a​n​t​ ​a​u​x​ ​d​é​v​e​l​o​p​p​e​u​r​s​ ​d​e​ ​c​r​é​e​r​ ​d​e​s​ ​a​p​p​l​i​c​a​t​i​o​n​s​ ​a​l​i​m​e​n​t​é​e​s​ ​p​a​r​ ​l​'​I​A​,​ ​c​o​m​p​a​t​i​b​l​e​ ​a​v​e​c​ ​d​e​s​ ​f​r​a​m​e​w​o​r​k​s​ ​t​e​l​s​ ​q​u​e​ ​R​e​a​c​t​,​ ​N​e​x​t​.​j​s​,​ ​V​u​e​,​ ​S​v​e​l​t​e​ ​e​t​ ​N​o​d​e​.​j​s​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​S​D​K​ ​p​o​u​r​ ​i​n​t​é​g​r​e​r​ ​l​'​I​A​ ​f​a​c​i​l​e​m​e​n​t​ ​d​a​n​s​ ​v​o​s​ ​p​r​o​j​e​t​s
+			 */
+			reason: string
+			replacement: string
+		}
+	}
 	contact: {
 		form: {
 			/**
@@ -598,6 +1050,24 @@ type RootTranslation = {
 		 * H​é​b​e​r​g​e​m​e​n​t​ ​&​ ​D​é​p​l​o​i​e​m​e​n​t
 		 */
 		deployment: string
+		/**
+		 * R​e​m​p​l​a​c​é​ ​p​a​r​ ​{​n​a​m​e​}​ ​c​a​r​ ​"​{​r​e​a​s​o​n​}​"
+		 * @param {string} name
+		 * @param {string} reason
+		 */
+		replaced: RequiredParams<'name' | 'reason'>
+		/**
+		 * R​é​c​e​m​m​e​n​t​ ​e​x​p​é​r​i​m​e​n​t​é
+		 */
+		learning: string
+		/**
+		 * U​t​i​l​i​s​é​ ​s​u​r​ ​c​e​ ​s​i​t​e
+		 */
+		active: string
+		/**
+		 * C​o​u​p​ ​d​e​ ​c​œ​u​r
+		 */
+		love: string
 	}
 }
 
@@ -873,6 +1343,458 @@ export type TranslationFunctions = {
 			 * 3W Academy
 			 */
 			school: () => LocalizedString
+		}
+	}
+	stacks: {
+		figma: {
+			/**
+			 * Figma est un outil de conception en ligne permettant de créer des interfaces, des prototypes et de collaborer en temps réel sur une plateforme unique.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un outil de design moderne, complet et performant
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		nextJs: {
+			/**
+			 * Next.js est un framework basé sur React, offrant le rendu côté serveur, la génération de sites statiques et des fonctionnalités full-stack pour des applications web performantes.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un framework moderne React, full-stack avec écosystème de déploiement
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		antDesign: {
+			/**
+			 * Ant Design est une bibliothèque UI React proposant des composants raffinés et des outils de design adaptés à la création d'applications web professionnelles et d'entreprise.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une bibliothèque React moderne, complète, jolie et personnalisable
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		vite: {
+			/**
+			 * Vite est un outil de build moderne conçu pour offrir un développement rapide et des builds optimisés pour les applications web grâce à une approche modulaire efficace.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un outil de build et serveur ultra-rapide frontend
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		react: {
+			/**
+			 * React est une bibliothèque JavaScript pour créer des interfaces utilisateur dynamiques à l'aide de composants réutilisables, conçue pour faciliter la collaboration entre individus, équipes et organisations.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une bibliothèque moderne, évolutive et flexible pour créer des interfaces
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		prisma: {
+			/**
+			 * Prisma est un outil pour bases de données offrant un modèle de données intuitif, la sécurité des types, des migrations automatisées et des fonctionnalités comme le caching et les abonnements en temps réel.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un ORM efficace, type-safe et moderne pour gérer les bases en TS
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		zod: {
+			/**
+			 * Zod est une bibliothèque axée sur TypeScript pour la validation de schémas, permettant une inférence de types statique pour garantir l'intégrité des données à la compilation.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une bibliothèque de validation de schémas simple et efficace
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		zustand: {
+			/**
+			 * Zustand est une bibliothèque légère de gestion d'état pour les applications JavaScript, avec une API basée sur les hooks, permettant une gestion flexible et simple de l'état des applications sans complexité superflue.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une bibliothèque moderne, légère et simple pour gérer l'état
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		dndKit: {
+			/**
+			 * dnd-kit est une bibliothèque React pour créer des interfaces de glisser-déposer, conçue pour être légère, accessible et personnalisable tout en garantissant des performances élevées lors des interactions utilisateur.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une bibliothèque moderne, légère, complète et performante de drag-and-drop
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		tablerIcons: {
+			/**
+			 * Tabler Icons est une collection open-source de 5790 icônes SVG, personnalisables en taille, couleur et trait, compatibles avec des frameworks comme React, SolidJS, Vue et des outils comme Figma.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une bibliothèque d'icônes magnifique, moderne, complète et originale
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		biome: {
+			/**
+			 * Biome est un outil rapide pour le formatage, le linting et d'autres tâches liées à la qualité du code, conçu pour améliorer la productivité des développeurs en exécutant les opérations en un temps très court.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une alternative moderne et rapide combinant linting et formatage
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		typescript: {
+			/**
+			 * TypeScript est un langage de programmation qui étend JavaScript avec un typage statique, permettant de détecter les erreurs en amont et de compiler du code en JavaScript standard pour une compatibilité étendue.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un sur-ensemble type-safe et puissant de JavaScript
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		javascript: {
+			/**
+			 * JavaScript est un langage de programmation polyvalent et de haut niveau, conforme à la norme ECMAScript, principalement utilisé pour créer des applications web interactives et dynamiques.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un langage de programmation élégant, flexible et polyvalent
+			 */
+			reason: () => LocalizedString
+			/**
+			 * Renforcement des types
+			 */
+			replacement: () => LocalizedString
+		}
+		css: {
+			/**
+			 * CSS est un langage de feuille de style qui définit l'apparence visuelle et la mise en page des documents créés avec des langages de balisage comme HTML, permettant d'améliorer le design et l'expérience utilisateur sur le web.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un langage de style simple et polyvalent
+			 */
+			reason: () => LocalizedString
+			/**
+			 * Meilleure maintenabilité du code
+			 */
+			replacement: () => LocalizedString
+		}
+		html: {
+			/**
+			 * HTML est le langage de balisage standard utilisé pour structurer et afficher le contenu dans les navigateurs web, servant de base aux pages web en organisant textes, images et autres éléments.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un langage de balisage simple et polyvalent
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		dartSass: {
+			/**
+			 * Dart Sass est une implémentation du langage Sass, une extension puissante et stable pour le CSS, offrant des fonctionnalités comme l'imbrication, les variables et les mixins pour améliorer le développement des feuilles de style.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un préprocesseur CSS plus pratique et puissant
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		typesafeI18n: {
+			/**
+			 * Typesafe-i18n est une bibliothèque légère pour l'internationalisation des projets TypeScript et JavaScript, garantissant une sécurité de typage complète pour réduire les erreurs et améliorer la cohérence des traductions.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une bibliothèque i18n simple, efficace et type-safe
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		fastify: {
+			/**
+			 * Fastify est un framework web performant pour Node.js, conçu pour offrir un développement rapide avec une faible surcharge, adapté à la création d'applications côté serveur évolutives et efficaces.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un framework web moderne, rapide et peu gourmand
+			 */
+			reason: () => LocalizedString
+			/**
+			 * Backend intégré et écosystème
+			 */
+			replacement: () => LocalizedString
+		}
+		authJs: {
+			/**
+			 * Auth.js est une bibliothèque d'authentification flexible pour les applications web, offrant des outils pour implémenter une authentification sécurisée des utilisateurs sur diverses plateformes et frameworks.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une bibliothèque d'authentification simple, efficace et moderne
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		bcrypt: {
+			/**
+			 * bcrypt est une bibliothèque Node.js utilisée pour hasher les mots de passe de manière sécurisée, aidant les développeurs à mettre en place des mécanismes d'authentification robustes. Elle est largement utilisée et disponible via npm.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une bibliothèque de hachage de mot de passe simple, efficace et sécurisée
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		notion: {
+			/**
+			 * Notion est une application de productivité intégrant des outils de prise de notes, gestion de tâches et collaboration, offrant un espace de travail tout-en-un pour organiser efficacement le travail des individus et des équipes.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un espace de travail moderne, épuré et puissant
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		vercel: {
+			/**
+			 * Vercel est une plateforme offrant aux développeurs des outils, frameworks et une infrastructure d'hébergement pour créer des applications web rapides, évolutives et personnalisées en toute simplicité.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une plateforme moderne avec un vaste écosystème pour le déploiement
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		vscodium: {
+			/**
+			 * VSCodium est une version open source de Visual Studio Code, offrant des binaires sans les composants propriétaires de Microsoft tout en conservant les fonctionnalités principales de l'éditeur original.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une version épurée et open source de Visual Studio Code
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		vscode: {
+			/**
+			 * Visual Studio Code est un éditeur de code léger et polyvalent conçu pour le développement moderne web et cloud, avec des outils puissants pour coder, déboguer et des extensions pour améliorer la productivité.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un éditeur de code puissant avec une grande communauté
+			 */
+			reason: () => LocalizedString
+			/**
+			 * Open source et épuré
+			 */
+			replacement: () => LocalizedString
+		}
+		git: {
+			/**
+			 * Git est un système de contrôle de version distribué, gratuit et open source, permettant de gérer efficacement les modifications dans des projets de toute taille et de faciliter la collaboration.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Le système de gestion de version open source incontournable
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		github: {
+			/**
+			 * GitHub est une plateforme cloud pour héberger et collaborer sur du code, offrant des outils de contrôle de version, suivi des problèmes et gestion de projet pour des millions de développeurs dans le monde.
+			 */
+			description: () => LocalizedString
+			/**
+			 * La plateforme la plus populaire pour l'hébergement de code
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		hoppscotch: {
+			/**
+			 * Hoppscotch est un outil en ligne pour tester des APIs, permettant aux développeurs de créer et exécuter des requêtes rapidement, simplifiant ainsi le débogage et le développement.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un outil de développement d'API moderne, open-source et efficace
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		postman: {
+			/**
+			 * Postman est une plateforme complète pour le développement d'APIs, proposant des outils pour concevoir, tester et gérer des APIs tout en facilitant la collaboration en équipe et accélérant le processus de développement.
+			 */
+			description: () => LocalizedString
+			/**
+			 * L'outil de développement d'API le plus populaire
+			 */
+			reason: () => LocalizedString
+			/**
+			 * Alternative entièrement open-source
+			 */
+			replacement: () => LocalizedString
+		}
+		mongodb: {
+			/**
+			 * MongoDB est une plateforme de base de données moderne basée sur des documents, conçue pour simplifier la gestion des données et offrir flexibilité et évolutivité pour développer et déployer des applications rapidement.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une base de données NoSQL basée sur des modèles et une plateforme cloud
+			 */
+			reason: () => LocalizedString
+			/**
+			 * Meilleure expérience développeur
+			 */
+			replacement: () => LocalizedString
+		}
+		postgresql: {
+			/**
+			 * PostgreSQL est un système de base de données relationnelle open source, reconnu pour ses fonctionnalités avancées, sa fiabilité et son support des requêtes complexes et de l'évolutivité dans la gestion des données.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une base de données relationnelle puissante, open-source et efficace
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		storybook: {
+			/**
+			 * Storybook est un outil open source pour développer, tester et documenter des composants et pages UI de manière isolée, aidant les équipes à optimiser les workflows frontend et à améliorer la cohérence du design.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un outil de documentation UI moderne, complet, simple et efficace
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		motion: {
+			/**
+			 * Motion est une bibliothèque d'animations basée sur les API natives des navigateurs, proposant une taille réduite et des performances optimisées grâce à l'accélération matérielle pour des animations fluides. Anciennement Framer Motion.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une bibliothèque d'animations moderne, simple et puissante pour React
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		chatgpt: {
+			/**
+			 * ChatGPT est un modèle de langage alimenté par l'IA, conçu pour aider à l'écriture, l'apprentissage et le brainstorming, offrant des réponses, des idées et un soutien pour diverses tâches. Gratuit et facile à utiliser.
+			 */
+			description: () => LocalizedString
+			/**
+			 * L'IA la plus avancée et la moins chère disponible
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		overlayscrollbars: {
+			/**
+			 * OverlayScrollbars est un plugin JavaScript qui remplace les barres de défilement natives par des barres superposées personnalisables tout en conservant la fonctionnalité et l'expérience utilisateur d'origine.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une bibliothèque de scrollbars simple, moderne et personnalisable
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		reactRedux: {
+			/**
+			 * React Redux est une bibliothèque JavaScript pour gérer l'état global d'une application de manière prévisible et cohérente, conçue pour s'intégrer facilement avec React pour une gestion d'état évolutive.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une bibliothèque de gestion d'état moderne, complète et efficace
+			 */
+			reason: () => LocalizedString
+			/**
+			 * Gestion d'état simplifiée
+			 */
+			replacement: () => LocalizedString
+		}
+		electron: {
+			/**
+			 * Electron est un framework permettant de créer des applications de bureau multiplateformes en utilisant des technologies web comme JavaScript, HTML et CSS, offrant des applications proches du natif sur plusieurs systèmes d'exploitation.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Le framework le plus populaire pour créer des apps desktop
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		localForage: {
+			/**
+			 * localForage est une bibliothèque JavaScript offrant une solution de stockage de données asynchrone avec une API similaire à localStorage, conçue pour améliorer les fonctionnalités hors ligne des applications web.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une bibliothèque pour stocker des données localement avec IndexedDB
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		recharts: {
+			/**
+			 * Recharts est une bibliothèque de graphiques basée sur React et D3, conçue pour créer des visualisations de données personnalisables et adaptatives dans les applications web.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une bibliothèque de graphiques moderne, complète et efficace
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		ai: {
+			/**
+			 * AI SDK est un outil TypeScript permettant aux développeurs de créer des applications alimentées par l'IA, compatible avec des frameworks tels que React, Next.js, Vue, Svelte et Node.js.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un SDK pour intégrer l'IA facilement dans vos projets
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
 		}
 	}
 	contact: {
@@ -1180,6 +2102,22 @@ export type TranslationFunctions = {
 		 * Hébergement & Déploiement
 		 */
 		deployment: () => LocalizedString
+		/**
+		 * Remplacé par {name} car "{reason}"
+		 */
+		replaced: (arg: { name: string, reason: string }) => LocalizedString
+		/**
+		 * Récemment expérimenté
+		 */
+		learning: () => LocalizedString
+		/**
+		 * Utilisé sur ce site
+		 */
+		active: () => LocalizedString
+		/**
+		 * Coup de cœur
+		 */
+		love: () => LocalizedString
 	}
 }
 

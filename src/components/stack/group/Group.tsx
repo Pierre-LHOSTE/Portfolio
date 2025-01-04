@@ -3,14 +3,15 @@ import "./group.scss";
 import { useI18nContext } from "@/i18n/i18n-react";
 import { motion } from "motion/react";
 import { useState } from "react";
-import type { CategoryType, StackGroupType } from "../stack.d";
+import { stackItem } from "../data";
+import type { CategoryType, StackGroupType, StackIdType } from "../stack.d";
 
 export default function StackGroup({
   group,
 }: {
   group: StackGroupType;
 }) {
-  const { name, icon: Icon, stack } = group;
+  const { name, icon: Icon, stacks } = group;
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
   const { LL } = useI18nContext();
 
@@ -52,8 +53,8 @@ export default function StackGroup({
           <Icon /> {LL.stack[name.toLowerCase() as CategoryType]()}
         </h3>
         <div>
-          {stack.map((s) => {
-            return <Stack key={s.name} stack={s} />;
+          {(stacks as StackIdType[]).map((key) => {
+            return <Stack key={key} stack={stackItem[key]} id={key} />;
           })}
         </div>
       </div>
