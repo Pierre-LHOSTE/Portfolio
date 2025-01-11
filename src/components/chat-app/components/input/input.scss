@@ -1,6 +1,39 @@
 #chat-input {
   padding: 16px;
 
+  &.loading {
+    > div {
+      background: linear-gradient(
+        var(--direction-top),
+        var(--invert-10),
+        var(--invert-05)
+      );
+
+      > div {
+        background: linear-gradient(
+          var(--direction-top),
+          var(--main-25),
+          var(--main-50)
+        );
+
+        textarea {
+          cursor: not-allowed;
+          opacity: 0.5;
+
+          &::placeholder {
+            color: var(--text-color-secondary);
+          }
+        }
+
+        svg {
+          animation: spin 1s linear infinite;
+          opacity: 0.5;
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+
   > div {
     display: flex;
     // height: 64px;
@@ -26,11 +59,11 @@
       );
 
       textarea {
-        resize: none;
         flex: 1;
         height: 100%;
         padding: 24px 16px;
         background: transparent;
+        resize: none;
 
         &:focus {
           outline: none;
@@ -44,5 +77,14 @@
         margin-right: 12px;
       }
     }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

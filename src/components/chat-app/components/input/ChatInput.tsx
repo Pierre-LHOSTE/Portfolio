@@ -3,7 +3,7 @@ import "./input.scss";
 import Button from "@/components/button/Button";
 import { useI18nContext } from "@/i18n/i18n-react";
 import scrollToButton from "@/utils/scrollToButton";
-import { IconArrowBigUpFilled } from "@tabler/icons-react";
+import { IconArrowBigUpFilled, IconLoader2 } from "@tabler/icons-react";
 import type { OverlayScrollbarsComponentRef } from "overlayscrollbars-react";
 
 export default function ChatInput({
@@ -11,11 +11,13 @@ export default function ChatInput({
   handleInputChange,
   handleSubmit,
   ref,
+  isLoading,
 }: {
   input: any;
   handleInputChange: any;
   handleSubmit: any;
   ref: ForwardedRef<OverlayScrollbarsComponentRef<"div">>;
+  isLoading: boolean;
 }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const { LL } = useI18nContext();
@@ -38,6 +40,7 @@ export default function ChatInput({
   return (
     <form
       id="chat-input"
+      className={isLoading ? "loading" : undefined}
       onSubmit={(event) => {
         handleSubmit(event);
         scrollToButton(ref);
@@ -45,8 +48,10 @@ export default function ChatInput({
     >
       <div>
         <div>
+          {isLoading && <IconLoader2 />}
           <textarea
             ref={textareaRef}
+            disabled={isLoading}
             placeholder={LL.chat.type()}
             value={input}
             onChange={handleChange}

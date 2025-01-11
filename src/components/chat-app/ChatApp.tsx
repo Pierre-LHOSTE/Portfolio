@@ -16,7 +16,7 @@ import { initMessagesData } from "./messages";
 import type { ChatListElementType } from "./type";
 
 export default function ChatApp() {
-  const { messages, input, handleInputChange, handleSubmit, setMessages } = useChat();
+  const { messages, input, handleInputChange, handleSubmit, setMessages, isLoading } = useChat();
   const { LL, locale } = useI18nContext();
   const ref = useSectionObserver("chat");
   const controls = useDragControls();
@@ -207,6 +207,7 @@ export default function ChatApp() {
             handleInputChange={handleInputChange}
             handleSubmit={handleSubmit}
             ref={chatContentRef}
+            isLoading={isLoading}
           />
         </main>
       </motion.section>
