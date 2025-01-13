@@ -43,7 +43,7 @@ export interface StackType {
   };
   category: CategoryType;
   homepage: string;
-  tags: ("active" | "love" | "learning")[];
+  tags: ("active" | "love" | "learning" | "important")[];
   replacement?: ReplacementType;
 
   styles: StackStyleType;

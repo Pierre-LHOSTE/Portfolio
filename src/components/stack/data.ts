@@ -14,7 +14,7 @@ export const stackItem = {
     },
     category: "tools",
     homepage: "https://www.figma.com/",
-    tags: ["active"],
+    tags: ["active", "important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/figma.svg",
@@ -35,7 +35,7 @@ export const stackItem = {
     },
     category: "framework",
     homepage: "https://nextjs.org/",
-    tags: ["active", "love"],
+    tags: ["active", "love", "important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/nextjs.svg",
@@ -57,7 +57,7 @@ export const stackItem = {
     },
     category: "frontend",
     homepage: "https://ant.design/",
-    tags: ["love"],
+    tags: ["love", "important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/ant-design.svg",
@@ -103,7 +103,7 @@ export const stackItem = {
     },
     category: "frontend",
     homepage: "https://react.dev/",
-    tags: ["active", "love"],
+    tags: ["active", "love", "important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/react.svg",
@@ -124,12 +124,13 @@ export const stackItem = {
     },
     category: "backend",
     homepage: "https://www.prisma.io/",
-    tags: ["love"],
+    tags: ["love", "important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/prisma.svg",
       color: "#4c51bf",
-      iconLight: "https://github.com/prisma/presskit/raw/main/Assets/Prisma-DarkSymbol.svg",
+      iconLight:
+        "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/prisma-light.svg",
       background: "#2d3748",
       // invert: "white",
     },
@@ -147,7 +148,7 @@ export const stackItem = {
     },
     category: "backend",
     homepage: "https://zod.dev/",
-    tags: ["love"],
+    tags: ["love", "important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/zod.svg",
@@ -252,7 +253,7 @@ export const stackItem = {
     },
     category: "language",
     homepage: "https://www.typescriptlang.org/",
-    tags: ["active", "love"],
+    tags: ["active", "love", "important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/typescript.svg",
@@ -280,7 +281,7 @@ export const stackItem = {
         fr: "Renforcement des types",
       },
     },
-    tags: [],
+    tags: ["important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/javascript.svg",
@@ -302,13 +303,13 @@ export const stackItem = {
     category: "language",
     homepage: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     replacement: {
-      name: "dartSass",
+      name: "sass",
       reason: {
         en: "Improved code maintainability",
         fr: "Meilleure maintenabilité du code",
       },
     },
-    tags: [],
+    tags: ["important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/css.svg",
@@ -329,7 +330,7 @@ export const stackItem = {
     },
     category: "language",
     homepage: "https://developer.mozilla.org/en-US/docs/Web/HTML",
-    tags: ["active"],
+    tags: ["active", "important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/html.svg",
@@ -337,20 +338,19 @@ export const stackItem = {
       background: "#313131",
     },
   },
-
-  dartSass: {
-    name: "Dart Sass",
+  sass: {
+    name: "Sass",
     description: {
-      en: "Dart Sass is an implementation of the Sass language, a powerful and stable extension for CSS, enabling features like nesting, variables, and mixins to enhance stylesheet development.",
-      fr: "Dart Sass est une implémentation du langage Sass, une extension puissante et stable pour le CSS, offrant des fonctionnalités comme l'imbrication, les variables et les mixins pour améliorer le développement des feuilles de style.",
+      en: "Sass is a powerful and stable extension for CSS, enabling features like nesting, variables, and mixins to enhance stylesheet development.",
+      fr: "Sass est une extension puissante et stable pour le CSS, offrant des fonctionnalités comme l'imbrication, les variables et les mixins pour améliorer le développement des feuilles de style.",
     },
     reason: {
-      en: "A more practical and powerful CSS preprocessor",
-      fr: "Un préprocesseur CSS plus pratique et puissant",
+      en: "A practical and powerful CSS preprocessor",
+      fr: "Un préprocesseur CSS pratique et puissant",
     },
     category: "language",
     homepage: "https://sass-lang.com/dart-sass/",
-    tags: ["active"],
+    tags: ["active", "important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/dart-sass.svg",
@@ -396,7 +396,7 @@ export const stackItem = {
       name: "nextJs",
       reason: { en: "Integrated backend and ecosystem", fr: "Backend intégré et écosystème" },
     },
-    tags: [],
+    tags: ["important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/fastify.svg",
@@ -439,7 +439,7 @@ export const stackItem = {
     },
     category: "backend",
     homepage: "https://www.bcrypt.io/",
-    tags: [],
+    tags: ["important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/bcrypt.svg",
@@ -648,7 +648,7 @@ export const stackItem = {
       name: "prisma",
       reason: { en: "Improved developer experience", fr: "Meilleure expérience développeur" },
     },
-    tags: [],
+    tags: ["important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/mongodb.png",
@@ -669,7 +669,7 @@ export const stackItem = {
     },
     category: "database",
     homepage: "https://www.postgresql.org/",
-    tags: [],
+    tags: ["important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/postgresql.png",
@@ -690,7 +690,7 @@ export const stackItem = {
     },
     category: "tools",
     homepage: "https://storybook.js.org/",
-    tags: ["active"],
+    tags: ["active", "important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/storybook.svg",
@@ -711,7 +711,7 @@ export const stackItem = {
     },
     category: "frontend",
     homepage: "https://motion.dev/",
-    tags: ["active", "love", "learning"],
+    tags: ["active", "love", "learning", "important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/motion.png",
@@ -775,7 +775,7 @@ export const stackItem = {
     },
     category: "frontend",
     homepage: "https://react-redux.js.org/",
-    tags: [],
+    tags: ["important"],
     replacement: {
       name: "zustand",
       reason: {
@@ -867,12 +867,110 @@ export const stackItem = {
     },
     category: "backend",
     homepage: "https://sdk.vercel.ai/",
-    tags: ["active", "love", "learning"],
+    tags: ["active", "love", "learning", "important"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/ai-sdk.svg",
       color: "#000",
       background: "#fff",
+    },
+  },
+
+  illustrator: {
+    name: "Illustrator",
+    description: {
+      en: "Illustrator is a vector graphics editor used for creating logos, icons, typography, and complex illustrations with precision and flexibility.",
+      fr: "Illustrator est un éditeur de graphiques vectoriels utilisé pour créer des logos, des icônes, de la typographie et des illustrations complexes avec précision et flexibilité.",
+    },
+    reason: {
+      en: "The most popular vector graphics editor",
+      fr: "L'éditeur de graphiques vectoriels le plus populaire",
+    },
+    category: "tools",
+    homepage: "https://www.adobe.com/products/illustrator.html",
+    tags: ["important"],
+    replacement: {
+      name: "affinityDesigner",
+      reason: {
+        fr: "Meilleure alternative aussi puissante et moins chère",
+        en: "Better alternative as powerful and cheaper",
+      },
+    },
+
+    styles: {
+      icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/illustrator.svg",
+      color: "#ff9a00",
+      background: "#1f1f1f",
+    },
+  },
+
+  photoshop: {
+    name: "Photoshop",
+    description: {
+      en: "Photoshop is a powerful image editing software offering advanced features for photo manipulation, graphic design, and digital art creation.",
+      fr: "Photoshop est un logiciel de retouche d'image puissant offrant des fonctionnalités avancées pour la manipulation de photos, la conception graphique et la création d'art numérique.",
+    },
+    reason: {
+      en: "The most popular and powerful image editing software",
+      fr: "Le logiciel de retouche d'image le plus populaire et le plus puissant",
+    },
+    category: "tools",
+    homepage: "https://www.adobe.com/products/photoshop.html",
+    tags: ["important"],
+    replacement: {
+      name: "affinityPhoto",
+      reason: {
+        en: "Better alternative as powerful and cheaper",
+        fr: "Meilleure alternative aussi puissante et moins chère",
+      },
+    },
+
+    styles: {
+      icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/photoshop.svg",
+      color: "#31a8ff",
+      background: "#001d26",
+    },
+  },
+
+  affinityDesigner: {
+    name: "Affinity Designer",
+    description: {
+      en: "Affinity Designer is a vector graphic design software offering precise tools for creating illustrations, branding, and UI/UX designs with speed and flexibility.",
+      fr: "Affinity Designer est un logiciel de conception graphique vectorielle offrant des outils précis pour créer des illustrations, du branding et des designs UI/UX avec rapidité et flexibilité.",
+    },
+    reason: {
+      en: "A modern, complete, and efficient vector graphic design tool",
+      fr: "Un outil de conception graphique vectorielle moderne, complet et efficace",
+    },
+    category: "tools",
+    homepage: "https://affinity.serif.com/en-us/designer/",
+    tags: [],
+
+    styles: {
+      icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/affinity-designer.svg",
+      color: "#1b72be",
+      background: "#1f1f1f",
+    },
+  },
+
+  affinityPhoto: {
+    name: "Affinity Photo",
+    description: {
+      en: "Affinity Photo is a professional photo editing software offering advanced tools for retouching, editing, and enhancing images with precision and speed.",
+      fr: "Affinity Photo est un logiciel de retouche photo professionnel offrant des outils avancés pour retoucher, éditer et améliorer des images avec précision et rapidité.",
+    },
+    reason: {
+      en: "A modern, complete, and efficient photo editing tool",
+      fr: "Un outil de retouche photo moderne, complet et efficace",
+    },
+    category: "tools",
+    homepage: "https://affinity.serif.com/en-us/photo/",
+    tags: [],
+
+    styles: {
+      icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/affinity-photo.svg",
+      color: "#7e3bb1",
+      background: "#1f1f1f",
     },
   },
 } as const satisfies Record<string, StackType>;
@@ -937,11 +1035,10 @@ export const stackList = (() => {
     smallestColumn.total += stack.stacks.length;
   }
 
-  // change the order of the columns to 2, 1, 3, 0,
   const columnsCopy = [...columns];
-  columnsCopy[0] = columns[2];
-  columnsCopy[1] = columns[1];
-  columnsCopy[2] = columns[3];
+  columnsCopy[0] = columns[1];
+  columnsCopy[1] = columns[3];
+  columnsCopy[2] = columns[2];
   columnsCopy[3] = columns[0];
 
   return columnsCopy.map((col) => col.stacks);

@@ -18,5 +18,6 @@ export const Default: Story = {
     handleInputChange: () => {},
     handleSubmit: () => {},
     ref: null,
+    isLoading: false,
   },
 };

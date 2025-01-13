@@ -5,6 +5,7 @@ import Background from "@/components/background/Background";
 import ChatApp from "@/components/chat-app/ChatApp";
 import Scroll from "@/components/chat-app/components/scroll/Scroll";
 import Contact from "@/components/contact/Contact";
+import CurriculumVitae from "@/components/curriculum-vitae/CurriculumVitae";
 import Footer from "@/components/footer/Footer";
 import Form from "@/components/form/Form";
 import Header from "@/components/header/Header";
@@ -31,6 +32,7 @@ export default function Home() {
       <Form />
       <ImagePreview />
       <Footer />
+      <CurriculumVitae />
     </div>
   );
 }

@@ -38,7 +38,7 @@ const preview: Preview = {
     (Story) => {
       const setActiveTheme = useSettingsStore((state) => state.setActiveTheme);
       setActiveTheme(isDarkTheme ? "dark" : "light");
-      const locale = "debug";
+      const locale = "fr";
       const [localesLoaded, setLocalesLoaded] = useState(false);
 
       useEffect(() => {

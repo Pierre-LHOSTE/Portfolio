@@ -1,7 +1,9 @@
-import type { StackIdType, StackType } from "@/components/stack/stack";
+import { ExperienceList } from "../components/curriculum-vitae/experience/data";
+import type { ExperienceIdType } from "../components/curriculum-vitae/experience/type";
 import { projectsList } from "../components/projects/list";
 import type { ProjectIdType } from "../components/projects/project";
 import { stackItem } from "../components/stack/data";
+import type { StackIdType, StackType } from "../components/stack/stack";
 import { timelineElementList } from "../components/timeline/data";
 import type { TimelineIdType } from "../components/timeline/types";
 
@@ -53,5 +55,33 @@ export function generateStackTranslations(lang: "en" | "fr") {
   return stackTranslations as Record<
     keyof typeof stackItem,
     { name: string; description: string; reason: string; replacement: string }
+  >;
+}
+
+export function generateExperienceTranslations(lang: "en" | "fr") {
+  const experienceTranslations = Object.fromEntries(
+    (Object.keys(ExperienceList) as ExperienceIdType[]).map((key) => [
+      key,
+      {
+        name: ExperienceList[key].name[lang],
+        company: ExperienceList[key].company[lang],
+        location: ExperienceList[key].location[lang],
+        tasks: {
+          "0": ExperienceList[key].tasks[0]?.[lang] || "",
+          "1": ExperienceList[key].tasks[1]?.[lang] || "",
+          "2": ExperienceList[key].tasks[2]?.[lang] || "",
+          "3": ExperienceList[key].tasks[3]?.[lang] || "",
+        },
+      },
+    ])
+  );
+  return experienceTranslations as Record<
+    ExperienceIdType,
+    {
+      name: string;
+      company: string;
+      location: string;
+      tasks: { "0": string; "1": string; "2": string; "3": string };
+    }
   >;
 }

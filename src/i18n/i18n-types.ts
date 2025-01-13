@@ -223,36 +223,21 @@ type RootTranslation = {
 		}
 	}
 	timelines: {
-		bac: {
+		app: {
 			/**
-			 * B​a​c​ ​s​c​i​e​n​t​i​f​i​q​u​e
-			 */
-			name: string
-			type: string
-			/**
-			 * S​a​l​o​n​-​d​e​-​P​r​o​v​e​n​c​e
-			 */
-			location: string
-			/**
-			 * L​y​c​é​e​ ​d​e​ ​l​’​E​m​p​e​r​i
-			 */
-			school: string
-		}
-		dut: {
-			/**
-			 * G​é​n​i​e​ ​É​l​e​c​t​r​i​q​u​e​ ​e​t​ ​I​n​f​o​r​m​a​t​i​q​u​e​ ​I​n​d​u​s​t​r​i​e​l​l​e
+			 * C​o​n​c​e​p​t​e​u​r​ ​d​é​v​e​l​o​p​p​e​u​r​ ​d​'​a​p​p​l​i​c​a​t​i​o​n​s
 			 */
 			name: string
 			/**
-			 * D​i​p​l​ô​m​e​ ​U​n​i​v​e​r​s​i​t​a​i​r​e​ ​d​e​ ​T​e​c​h​n​o​l​o​g​i​e​ ​(​D​U​T​)
+			 * R​N​C​P​ ​3​6​4​9​0​ ​—​ ​A​l​t​e​r​n​a​n​c​e
 			 */
 			type: string
 			/**
-			 * S​a​l​o​n​-​d​e​-​P​r​o​v​e​n​c​e
+			 * D​i​s​t​a​n​c​i​e​l
 			 */
 			location: string
 			/**
-			 * U​I​T​ ​A​i​x​-​M​a​r​s​e​i​l​l​e
+			 * 3​W​ ​A​c​a​d​e​m​y
 			 */
 			school: string
 		}
@@ -274,21 +259,36 @@ type RootTranslation = {
 			 */
 			school: string
 		}
-		app: {
+		dut: {
 			/**
-			 * C​o​n​c​e​p​t​e​u​r​ ​d​é​v​e​l​o​p​p​e​u​r​ ​d​'​a​p​p​l​i​c​a​t​i​o​n​s
+			 * G​é​n​i​e​ ​É​l​e​c​t​r​i​q​u​e​ ​e​t​ ​I​n​f​o​r​m​a​t​i​q​u​e​ ​I​n​d​u​s​t​r​i​e​l​l​e
 			 */
 			name: string
 			/**
-			 * R​N​C​P​ ​3​6​4​9​0​ ​—​ ​A​l​t​e​r​n​a​n​c​e
+			 * D​i​p​l​ô​m​e​ ​U​n​i​v​e​r​s​i​t​a​i​r​e​ ​d​e​ ​T​e​c​h​n​o​l​o​g​i​e​ ​(​D​U​T​)
 			 */
 			type: string
 			/**
-			 * D​i​s​t​a​n​c​i​e​l
+			 * S​a​l​o​n​-​d​e​-​P​r​o​v​e​n​c​e
 			 */
 			location: string
 			/**
-			 * 3​W​ ​A​c​a​d​e​m​y
+			 * U​I​T​ ​A​i​x​-​M​a​r​s​e​i​l​l​e
+			 */
+			school: string
+		}
+		bac: {
+			/**
+			 * B​a​c​ ​s​c​i​e​n​t​i​f​i​q​u​e
+			 */
+			name: string
+			type: string
+			/**
+			 * S​a​l​o​n​-​d​e​-​P​r​o​v​e​n​c​e
+			 */
+			location: string
+			/**
+			 * L​y​c​é​e​ ​d​e​ ​l​’​E​m​p​e​r​i
 			 */
 			school: string
 		}
@@ -465,13 +465,13 @@ type RootTranslation = {
 			reason: string
 			replacement: string
 		}
-		dartSass: {
+		sass: {
 			/**
-			 * D​a​r​t​ ​S​a​s​s​ ​e​s​t​ ​u​n​e​ ​i​m​p​l​é​m​e​n​t​a​t​i​o​n​ ​d​u​ ​l​a​n​g​a​g​e​ ​S​a​s​s​,​ ​u​n​e​ ​e​x​t​e​n​s​i​o​n​ ​p​u​i​s​s​a​n​t​e​ ​e​t​ ​s​t​a​b​l​e​ ​p​o​u​r​ ​l​e​ ​C​S​S​,​ ​o​f​f​r​a​n​t​ ​d​e​s​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​c​o​m​m​e​ ​l​'​i​m​b​r​i​c​a​t​i​o​n​,​ ​l​e​s​ ​v​a​r​i​a​b​l​e​s​ ​e​t​ ​l​e​s​ ​m​i​x​i​n​s​ ​p​o​u​r​ ​a​m​é​l​i​o​r​e​r​ ​l​e​ ​d​é​v​e​l​o​p​p​e​m​e​n​t​ ​d​e​s​ ​f​e​u​i​l​l​e​s​ ​d​e​ ​s​t​y​l​e​.
+			 * S​a​s​s​ ​e​s​t​ ​u​n​e​ ​e​x​t​e​n​s​i​o​n​ ​p​u​i​s​s​a​n​t​e​ ​e​t​ ​s​t​a​b​l​e​ ​p​o​u​r​ ​l​e​ ​C​S​S​,​ ​o​f​f​r​a​n​t​ ​d​e​s​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​c​o​m​m​e​ ​l​'​i​m​b​r​i​c​a​t​i​o​n​,​ ​l​e​s​ ​v​a​r​i​a​b​l​e​s​ ​e​t​ ​l​e​s​ ​m​i​x​i​n​s​ ​p​o​u​r​ ​a​m​é​l​i​o​r​e​r​ ​l​e​ ​d​é​v​e​l​o​p​p​e​m​e​n​t​ ​d​e​s​ ​f​e​u​i​l​l​e​s​ ​d​e​ ​s​t​y​l​e​.
 			 */
 			description: string
 			/**
-			 * U​n​ ​p​r​é​p​r​o​c​e​s​s​e​u​r​ ​C​S​S​ ​p​l​u​s​ ​p​r​a​t​i​q​u​e​ ​e​t​ ​p​u​i​s​s​a​n​t
+			 * U​n​ ​p​r​é​p​r​o​c​e​s​s​e​u​r​ ​C​S​S​ ​p​r​a​t​i​q​u​e​ ​e​t​ ​p​u​i​s​s​a​n​t
 			 */
 			reason: string
 			replacement: string
@@ -740,6 +740,56 @@ type RootTranslation = {
 			description: string
 			/**
 			 * U​n​ ​S​D​K​ ​p​o​u​r​ ​i​n​t​é​g​r​e​r​ ​l​'​I​A​ ​f​a​c​i​l​e​m​e​n​t​ ​d​a​n​s​ ​v​o​s​ ​p​r​o​j​e​t​s
+			 */
+			reason: string
+			replacement: string
+		}
+		illustrator: {
+			/**
+			 * I​l​l​u​s​t​r​a​t​o​r​ ​e​s​t​ ​u​n​ ​é​d​i​t​e​u​r​ ​d​e​ ​g​r​a​p​h​i​q​u​e​s​ ​v​e​c​t​o​r​i​e​l​s​ ​u​t​i​l​i​s​é​ ​p​o​u​r​ ​c​r​é​e​r​ ​d​e​s​ ​l​o​g​o​s​,​ ​d​e​s​ ​i​c​ô​n​e​s​,​ ​d​e​ ​l​a​ ​t​y​p​o​g​r​a​p​h​i​e​ ​e​t​ ​d​e​s​ ​i​l​l​u​s​t​r​a​t​i​o​n​s​ ​c​o​m​p​l​e​x​e​s​ ​a​v​e​c​ ​p​r​é​c​i​s​i​o​n​ ​e​t​ ​f​l​e​x​i​b​i​l​i​t​é​.
+			 */
+			description: string
+			/**
+			 * L​'​é​d​i​t​e​u​r​ ​d​e​ ​g​r​a​p​h​i​q​u​e​s​ ​v​e​c​t​o​r​i​e​l​s​ ​l​e​ ​p​l​u​s​ ​p​o​p​u​l​a​i​r​e
+			 */
+			reason: string
+			/**
+			 * M​e​i​l​l​e​u​r​e​ ​a​l​t​e​r​n​a​t​i​v​e​ ​a​u​s​s​i​ ​p​u​i​s​s​a​n​t​e​ ​e​t​ ​m​o​i​n​s​ ​c​h​è​r​e
+			 */
+			replacement: string
+		}
+		photoshop: {
+			/**
+			 * P​h​o​t​o​s​h​o​p​ ​e​s​t​ ​u​n​ ​l​o​g​i​c​i​e​l​ ​d​e​ ​r​e​t​o​u​c​h​e​ ​d​'​i​m​a​g​e​ ​p​u​i​s​s​a​n​t​ ​o​f​f​r​a​n​t​ ​d​e​s​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​a​v​a​n​c​é​e​s​ ​p​o​u​r​ ​l​a​ ​m​a​n​i​p​u​l​a​t​i​o​n​ ​d​e​ ​p​h​o​t​o​s​,​ ​l​a​ ​c​o​n​c​e​p​t​i​o​n​ ​g​r​a​p​h​i​q​u​e​ ​e​t​ ​l​a​ ​c​r​é​a​t​i​o​n​ ​d​'​a​r​t​ ​n​u​m​é​r​i​q​u​e​.
+			 */
+			description: string
+			/**
+			 * L​e​ ​l​o​g​i​c​i​e​l​ ​d​e​ ​r​e​t​o​u​c​h​e​ ​d​'​i​m​a​g​e​ ​l​e​ ​p​l​u​s​ ​p​o​p​u​l​a​i​r​e​ ​e​t​ ​l​e​ ​p​l​u​s​ ​p​u​i​s​s​a​n​t
+			 */
+			reason: string
+			/**
+			 * M​e​i​l​l​e​u​r​e​ ​a​l​t​e​r​n​a​t​i​v​e​ ​a​u​s​s​i​ ​p​u​i​s​s​a​n​t​e​ ​e​t​ ​m​o​i​n​s​ ​c​h​è​r​e
+			 */
+			replacement: string
+		}
+		affinityDesigner: {
+			/**
+			 * A​f​f​i​n​i​t​y​ ​D​e​s​i​g​n​e​r​ ​e​s​t​ ​u​n​ ​l​o​g​i​c​i​e​l​ ​d​e​ ​c​o​n​c​e​p​t​i​o​n​ ​g​r​a​p​h​i​q​u​e​ ​v​e​c​t​o​r​i​e​l​l​e​ ​o​f​f​r​a​n​t​ ​d​e​s​ ​o​u​t​i​l​s​ ​p​r​é​c​i​s​ ​p​o​u​r​ ​c​r​é​e​r​ ​d​e​s​ ​i​l​l​u​s​t​r​a​t​i​o​n​s​,​ ​d​u​ ​b​r​a​n​d​i​n​g​ ​e​t​ ​d​e​s​ ​d​e​s​i​g​n​s​ ​U​I​/​U​X​ ​a​v​e​c​ ​r​a​p​i​d​i​t​é​ ​e​t​ ​f​l​e​x​i​b​i​l​i​t​é​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​o​u​t​i​l​ ​d​e​ ​c​o​n​c​e​p​t​i​o​n​ ​g​r​a​p​h​i​q​u​e​ ​v​e​c​t​o​r​i​e​l​l​e​ ​m​o​d​e​r​n​e​,​ ​c​o​m​p​l​e​t​ ​e​t​ ​e​f​f​i​c​a​c​e
+			 */
+			reason: string
+			replacement: string
+		}
+		affinityPhoto: {
+			/**
+			 * A​f​f​i​n​i​t​y​ ​P​h​o​t​o​ ​e​s​t​ ​u​n​ ​l​o​g​i​c​i​e​l​ ​d​e​ ​r​e​t​o​u​c​h​e​ ​p​h​o​t​o​ ​p​r​o​f​e​s​s​i​o​n​n​e​l​ ​o​f​f​r​a​n​t​ ​d​e​s​ ​o​u​t​i​l​s​ ​a​v​a​n​c​é​s​ ​p​o​u​r​ ​r​e​t​o​u​c​h​e​r​,​ ​é​d​i​t​e​r​ ​e​t​ ​a​m​é​l​i​o​r​e​r​ ​d​e​s​ ​i​m​a​g​e​s​ ​a​v​e​c​ ​p​r​é​c​i​s​i​o​n​ ​e​t​ ​r​a​p​i​d​i​t​é​.
+			 */
+			description: string
+			/**
+			 * U​n​ ​o​u​t​i​l​ ​d​e​ ​r​e​t​o​u​c​h​e​ ​p​h​o​t​o​ ​m​o​d​e​r​n​e​,​ ​c​o​m​p​l​e​t​ ​e​t​ ​e​f​f​i​c​a​c​e
 			 */
 			reason: string
 			replacement: string
@@ -1069,6 +1119,103 @@ type RootTranslation = {
 		 */
 		love: string
 	}
+	cv: {
+		/**
+		 * E​x​p​é​r​i​e​n​c​e​s
+		 */
+		experience: string
+		/**
+		 * F​o​r​m​a​t​i​o​n​s
+		 */
+		education: string
+		/**
+		 * C​o​m​p​é​t​e​n​c​e​s
+		 */
+		skills: string
+		/**
+		 * (​l​i​s​t​e​ ​n​o​n​ ​e​x​h​a​u​s​t​i​v​e​)
+		 */
+		skillsDetails: string
+		/**
+		 * C​e​n​t​r​e​s​ ​d​'​i​n​t​é​r​ê​t
+		 */
+		interests: string
+		/**
+		 * D​é​v​e​l​o​p​p​e​u​r​ ​e​t​ ​D​e​s​i​g​n​e​r​ ​W​e​b
+		 */
+		title: string
+		/**
+		 * J​e​ ​s​u​i​s​ ​u​n​ ​d​é​v​e​l​o​p​p​e​u​r​ ​e​t​ ​d​e​s​i​g​n​e​r​ ​w​e​b​ ​f​r​a​n​ç​a​i​s​ ​p​a​s​s​i​o​n​n​é​ ​e​t​ ​r​e​s​p​o​n​s​a​b​l​e​,​ ​q​u​i​ ​a​i​m​e​ ​c​r​é​e​r​ ​d​e​s​ ​s​i​t​e​s​ ​w​e​b​ ​e​s​t​h​é​t​i​q​u​e​s​ ​e​t​ ​f​o​n​c​t​i​o​n​n​e​l​s​ ​e​n​ ​u​t​i​l​i​s​a​n​t​ ​d​e​s​ ​a​p​p​r​o​c​h​e​s​ ​c​r​é​a​t​i​v​e​s​ ​p​o​u​r​ ​p​r​o​p​o​s​e​r​ ​d​e​s​ ​s​o​l​u​t​i​o​n​s​ ​i​n​n​o​v​a​n​t​e​s​.
+		 */
+		description: string
+		/**
+		 * D​e​ ​{​f​r​o​m​}​ ​à​ ​{​t​o​}
+		 * @param {string} from
+		 * @param {string} to
+		 */
+		fromTo: RequiredParams<'from' | 'to'>
+		interest: {
+			/**
+			 * J​e​u​x​ ​c​r​é​a​t​i​f​s​ ​e​t​ ​a​u​t​r​e​s
+			 */
+			game: string
+			/**
+			 * C​o​l​l​e​c​t​i​o​n​ ​(​c​a​r​t​e​s​,​ ​f​i​g​u​r​i​n​e​s​,​ ​e​t​c​)
+			 */
+			collection: string
+			/**
+			 * T​e​c​h​n​o​l​o​g​i​e​ ​e​t​ ​i​n​f​o​r​m​a​t​i​q​u​e
+			 */
+			technology: string
+			/**
+			 * A​r​t​ ​e​t​ ​d​e​s​i​g​n
+			 */
+			art: string
+		}
+		experiences: {
+			coopcycle: {
+				/**
+				 * U​I​/​U​X​ ​D​e​s​i​g​n​e​r​ ​e​t​ ​D​é​v​e​l​o​p​p​e​u​r​ ​F​u​l​l​s​t​a​c​k
+				 */
+				name: string
+				/**
+				 * C​o​o​p​C​y​c​l​e
+				 */
+				company: string
+				/**
+				 * D​i​s​t​a​n​c​i​e​l
+				 */
+				location: string
+				tasks: {
+					/**
+					 * C​o​n​c​e​p​t​i​o​n​ ​d​'​i​n​t​e​r​f​a​c​e​s​ ​u​t​i​l​i​s​a​t​e​u​r​ ​s​u​r​ ​F​i​g​m​a
+					 */
+					'0': string
+					/**
+					 * I​m​p​l​é​m​e​n​t​a​t​i​o​n​ ​d​u​ ​d​e​s​i​g​n​ ​d​a​n​s​ ​l​'​a​p​p​l​i​c​a​t​i​o​n​ ​m​o​b​i​l​e​ ​e​n​ ​R​e​a​c​t​ ​N​a​t​i​v​e
+					 */
+					'1': string
+					/**
+					 * A​j​o​u​t​ ​d​e​ ​n​o​u​v​e​l​l​e​s​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​à​ ​l​'​a​p​p​l​i​c​a​t​i​o​n​ ​m​o​b​i​l​e
+					 */
+					'2': string
+					/**
+					 * P​e​t​i​t​e​s​ ​a​m​é​l​i​o​r​a​t​i​o​n​s​ ​e​t​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​a​j​o​u​t​é​e​s​ ​a​u​ ​s​i​t​e​ ​w​e​b​ ​s​u​r​ ​P​H​P​ ​e​t​ ​T​w​i​g
+					 */
+					'3': string
+				}
+			}
+		}
+		/**
+		 * a​n​s
+		 */
+		yearsOld: string
+		/**
+		 * A​c​t​u​a​l​i​s​é​ ​l​e​ ​{​d​a​t​e​}
+		 * @param {string} date
+		 */
+		updated: RequiredParams<'date'>
+	}
 }
 
 export type TranslationFunctions = {
@@ -1275,36 +1422,21 @@ export type TranslationFunctions = {
 		}
 	}
 	timelines: {
-		bac: {
+		app: {
 			/**
-			 * Bac scientifique
-			 */
-			name: () => LocalizedString
-			type: () => LocalizedString
-			/**
-			 * Salon-de-Provence
-			 */
-			location: () => LocalizedString
-			/**
-			 * Lycée de l’Emperi
-			 */
-			school: () => LocalizedString
-		}
-		dut: {
-			/**
-			 * Génie Électrique et Informatique Industrielle
+			 * Concepteur développeur d'applications
 			 */
 			name: () => LocalizedString
 			/**
-			 * Diplôme Universitaire de Technologie (DUT)
+			 * RNCP 36490 — Alternance
 			 */
 			type: () => LocalizedString
 			/**
-			 * Salon-de-Provence
+			 * Distanciel
 			 */
 			location: () => LocalizedString
 			/**
-			 * UIT Aix-Marseille
+			 * 3W Academy
 			 */
 			school: () => LocalizedString
 		}
@@ -1326,21 +1458,36 @@ export type TranslationFunctions = {
 			 */
 			school: () => LocalizedString
 		}
-		app: {
+		dut: {
 			/**
-			 * Concepteur développeur d'applications
+			 * Génie Électrique et Informatique Industrielle
 			 */
 			name: () => LocalizedString
 			/**
-			 * RNCP 36490 — Alternance
+			 * Diplôme Universitaire de Technologie (DUT)
 			 */
 			type: () => LocalizedString
 			/**
-			 * Distanciel
+			 * Salon-de-Provence
 			 */
 			location: () => LocalizedString
 			/**
-			 * 3W Academy
+			 * UIT Aix-Marseille
+			 */
+			school: () => LocalizedString
+		}
+		bac: {
+			/**
+			 * Bac scientifique
+			 */
+			name: () => LocalizedString
+			type: () => LocalizedString
+			/**
+			 * Salon-de-Provence
+			 */
+			location: () => LocalizedString
+			/**
+			 * Lycée de l’Emperi
 			 */
 			school: () => LocalizedString
 		}
@@ -1517,13 +1664,13 @@ export type TranslationFunctions = {
 			reason: () => LocalizedString
 			replacement: () => LocalizedString
 		}
-		dartSass: {
+		sass: {
 			/**
-			 * Dart Sass est une implémentation du langage Sass, une extension puissante et stable pour le CSS, offrant des fonctionnalités comme l'imbrication, les variables et les mixins pour améliorer le développement des feuilles de style.
+			 * Sass est une extension puissante et stable pour le CSS, offrant des fonctionnalités comme l'imbrication, les variables et les mixins pour améliorer le développement des feuilles de style.
 			 */
 			description: () => LocalizedString
 			/**
-			 * Un préprocesseur CSS plus pratique et puissant
+			 * Un préprocesseur CSS pratique et puissant
 			 */
 			reason: () => LocalizedString
 			replacement: () => LocalizedString
@@ -1792,6 +1939,56 @@ export type TranslationFunctions = {
 			description: () => LocalizedString
 			/**
 			 * Un SDK pour intégrer l'IA facilement dans vos projets
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		illustrator: {
+			/**
+			 * Illustrator est un éditeur de graphiques vectoriels utilisé pour créer des logos, des icônes, de la typographie et des illustrations complexes avec précision et flexibilité.
+			 */
+			description: () => LocalizedString
+			/**
+			 * L'éditeur de graphiques vectoriels le plus populaire
+			 */
+			reason: () => LocalizedString
+			/**
+			 * Meilleure alternative aussi puissante et moins chère
+			 */
+			replacement: () => LocalizedString
+		}
+		photoshop: {
+			/**
+			 * Photoshop est un logiciel de retouche d'image puissant offrant des fonctionnalités avancées pour la manipulation de photos, la conception graphique et la création d'art numérique.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Le logiciel de retouche d'image le plus populaire et le plus puissant
+			 */
+			reason: () => LocalizedString
+			/**
+			 * Meilleure alternative aussi puissante et moins chère
+			 */
+			replacement: () => LocalizedString
+		}
+		affinityDesigner: {
+			/**
+			 * Affinity Designer est un logiciel de conception graphique vectorielle offrant des outils précis pour créer des illustrations, du branding et des designs UI/UX avec rapidité et flexibilité.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un outil de conception graphique vectorielle moderne, complet et efficace
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		affinityPhoto: {
+			/**
+			 * Affinity Photo est un logiciel de retouche photo professionnel offrant des outils avancés pour retoucher, éditer et améliorer des images avec précision et rapidité.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Un outil de retouche photo moderne, complet et efficace
 			 */
 			reason: () => LocalizedString
 			replacement: () => LocalizedString
@@ -2118,6 +2315,100 @@ export type TranslationFunctions = {
 		 * Coup de cœur
 		 */
 		love: () => LocalizedString
+	}
+	cv: {
+		/**
+		 * Expériences
+		 */
+		experience: () => LocalizedString
+		/**
+		 * Formations
+		 */
+		education: () => LocalizedString
+		/**
+		 * Compétences
+		 */
+		skills: () => LocalizedString
+		/**
+		 * (liste non exhaustive)
+		 */
+		skillsDetails: () => LocalizedString
+		/**
+		 * Centres d'intérêt
+		 */
+		interests: () => LocalizedString
+		/**
+		 * Développeur et Designer Web
+		 */
+		title: () => LocalizedString
+		/**
+		 * Je suis un développeur et designer web français passionné et responsable, qui aime créer des sites web esthétiques et fonctionnels en utilisant des approches créatives pour proposer des solutions innovantes.
+		 */
+		description: () => LocalizedString
+		/**
+		 * De {from} à {to}
+		 */
+		fromTo: (arg: { from: string, to: string }) => LocalizedString
+		interest: {
+			/**
+			 * Jeux créatifs et autres
+			 */
+			game: () => LocalizedString
+			/**
+			 * Collection (cartes, figurines, etc)
+			 */
+			collection: () => LocalizedString
+			/**
+			 * Technologie et informatique
+			 */
+			technology: () => LocalizedString
+			/**
+			 * Art et design
+			 */
+			art: () => LocalizedString
+		}
+		experiences: {
+			coopcycle: {
+				/**
+				 * UI/UX Designer et Développeur Fullstack
+				 */
+				name: () => LocalizedString
+				/**
+				 * CoopCycle
+				 */
+				company: () => LocalizedString
+				/**
+				 * Distanciel
+				 */
+				location: () => LocalizedString
+				tasks: {
+					/**
+					 * Conception d'interfaces utilisateur sur Figma
+					 */
+					'0': () => LocalizedString
+					/**
+					 * Implémentation du design dans l'application mobile en React Native
+					 */
+					'1': () => LocalizedString
+					/**
+					 * Ajout de nouvelles fonctionnalités à l'application mobile
+					 */
+					'2': () => LocalizedString
+					/**
+					 * Petites améliorations et fonctionnalités ajoutées au site web sur PHP et Twig
+					 */
+					'3': () => LocalizedString
+				}
+			}
+		}
+		/**
+		 * ans
+		 */
+		yearsOld: () => LocalizedString
+		/**
+		 * Actualisé le {date}
+		 */
+		updated: (arg: { date: string }) => LocalizedString
 	}
 }
 

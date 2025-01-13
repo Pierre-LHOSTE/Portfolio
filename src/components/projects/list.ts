@@ -32,7 +32,7 @@ export const projectsList = {
     },
     technologies: [
       "react",
-      "dartSass",
+      "sass",
       "ai",
       "antDesign",
       "authJs",
@@ -83,7 +83,7 @@ export const projectsList = {
       "dndKit",
       "reactRedux",
       "react",
-      "dartSass",
+      "sass",
       "typescript",
       "fastify",
       "mongodb",
@@ -106,7 +106,7 @@ export const projectsList = {
     },
     technologies: [
       "html",
-      "dartSass",
+      "sass",
       "javascript",
       "git",
       "github",

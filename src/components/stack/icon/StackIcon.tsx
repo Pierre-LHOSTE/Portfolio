@@ -6,21 +6,29 @@ import type { StackType } from "../stack.d";
 export default function StackIcon({
   stack,
   size = 48,
+  forcedTheme,
 }: {
   stack: StackType;
   size?: number;
+  forcedTheme?: "light" | "dark";
 }) {
   const {
     name,
     styles: { icon, iconLight, background, transform, iconHovered, invert },
   } = stack;
   const theme = useSettingsStore((state) => state.activeTheme);
-  const baseIcon = theme === "light" ? iconLight || icon : icon;
+  const themeResult = forcedTheme || theme;
+
+  const baseIcon = themeResult === "light" ? iconLight || icon : icon;
 
   let filter = undefined;
-  if ((theme === "dark" && invert === "black") || (theme === "light" && invert === "white")) {
+  if (
+    (themeResult === "dark" && invert === "black") ||
+    (themeResult === "light" && invert === "white")
+  ) {
     filter = "invert(1)";
   }
+  console.log("🚀 ~ filter:", filter);
 
   return (
     <div className="stack-icon">

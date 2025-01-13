@@ -43,6 +43,7 @@ export const timelineElementList = {
       en: "UIT Aix-Marseille (University)",
     },
   },
+
   fsd: {
     type: {
       fr: "RNCP 37273 — Alternance",

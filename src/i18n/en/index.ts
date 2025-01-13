@@ -1,4 +1,5 @@
 import {
+  generateExperienceTranslations,
   generateProjectTranslations,
   generateStackTranslations,
   generateTimelineTranslations,
@@ -169,6 +170,26 @@ const en = {
     send: "Send",
     optional: "optional",
     success: "Message sent successfully!",
+  },
+  cv: {
+    experience: "Experiences",
+    education: "Education",
+    skills: "Stacks",
+    skillsDetails: "(non-exhaustive list)",
+    interests: "Interests",
+    title: "Web Developer and Designer",
+    description:
+      "I am a passionate and responsible French web developer and designer, who loves to create aesthetic and functional websites using creative approaches to provide innovative solutions.",
+    fromTo: "From {from} to {to}",
+    interest: {
+      game: "Creative games and others",
+      collection: "Collection (cards, figurines, etc)",
+      technology: "Technology and computing",
+      art: "Art and design",
+    },
+    experiences: generateExperienceTranslations("en"),
+    yearsOld: "years old",
+    updated: "Updated on {date}",
   },
 } satisfies Translation;
 

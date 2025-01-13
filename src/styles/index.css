@@ -39,6 +39,12 @@
 
   --text-color: rgba(var(--invert-rgb), 0.8);
   --text-color-secondary: rgba(var(--invert-rgb), 0.5);
+
+  --cv-border-top: #f2f2f2;
+  --cv-border-bottom: #f9f9f9;
+
+  --cv-top: #fdfdfd;
+  --cv-bottom: #fcfcfc;
 }
 
 :root .dark-theme {
@@ -66,12 +72,19 @@
 
   --text-color: rgba(var(--invert-rgb), 0.8);
   --text-color-secondary: rgba(var(--invert-rgb), 0.5);
+
+  --cv-border-top: #1a1a1a;
+  --cv-border-bottom: #0d0d0d;
+
+  --cv-top: #050505;
+  --cv-bottom: #070707;
 }
 
 body {
   height: 100vh;
   overflow-x: hidden;
   background-color: var(--main);
+  position: relative;
 }
 
 #root {
