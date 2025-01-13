@@ -223,39 +223,18 @@ type RootTranslation = {
 		}
 	}
 	timelines: {
-		app: {
+		bac: {
 			/**
-			 * C​o​n​c​e​p​t​e​u​r​ ​d​é​v​e​l​o​p​p​e​u​r​ ​d​'​a​p​p​l​i​c​a​t​i​o​n​s
+			 * B​a​c​ ​s​c​i​e​n​t​i​f​i​q​u​e
 			 */
 			name: string
-			/**
-			 * R​N​C​P​ ​3​6​4​9​0​ ​—​ ​A​l​t​e​r​n​a​n​c​e
-			 */
 			type: string
 			/**
-			 * D​i​s​t​a​n​c​i​e​l
+			 * S​a​l​o​n​-​d​e​-​P​r​o​v​e​n​c​e
 			 */
 			location: string
 			/**
-			 * 3​W​ ​A​c​a​d​e​m​y
-			 */
-			school: string
-		}
-		fsd: {
-			/**
-			 * D​é​v​e​l​o​p​p​e​u​r​ ​W​e​b​ ​F​u​l​l​ ​S​t​a​c​k
-			 */
-			name: string
-			/**
-			 * R​N​C​P​ ​3​7​2​7​3​ ​—​ ​A​l​t​e​r​n​a​n​c​e
-			 */
-			type: string
-			/**
-			 * D​i​s​t​a​n​c​i​e​l
-			 */
-			location: string
-			/**
-			 * 3​W​ ​A​c​a​d​e​m​y
+			 * L​y​c​é​e​ ​d​e​ ​l​’​E​m​p​e​r​i
 			 */
 			school: string
 		}
@@ -277,18 +256,39 @@ type RootTranslation = {
 			 */
 			school: string
 		}
-		bac: {
+		fsd: {
 			/**
-			 * B​a​c​ ​s​c​i​e​n​t​i​f​i​q​u​e
+			 * D​é​v​e​l​o​p​p​e​u​r​ ​W​e​b​ ​F​u​l​l​ ​S​t​a​c​k
 			 */
 			name: string
+			/**
+			 * R​N​C​P​ ​3​7​2​7​3​ ​—​ ​A​l​t​e​r​n​a​n​c​e
+			 */
 			type: string
 			/**
-			 * S​a​l​o​n​-​d​e​-​P​r​o​v​e​n​c​e
+			 * D​i​s​t​a​n​c​i​e​l
 			 */
 			location: string
 			/**
-			 * L​y​c​é​e​ ​d​e​ ​l​’​E​m​p​e​r​i
+			 * 3​W​ ​A​c​a​d​e​m​y
+			 */
+			school: string
+		}
+		app: {
+			/**
+			 * C​o​n​c​e​p​t​e​u​r​ ​d​é​v​e​l​o​p​p​e​u​r​ ​d​'​a​p​p​l​i​c​a​t​i​o​n​s
+			 */
+			name: string
+			/**
+			 * R​N​C​P​ ​3​6​4​9​0​ ​—​ ​A​l​t​e​r​n​a​n​c​e
+			 */
+			type: string
+			/**
+			 * D​i​s​t​a​n​c​i​e​l
+			 */
+			location: string
+			/**
+			 * 3​W​ ​A​c​a​d​e​m​y
 			 */
 			school: string
 		}
@@ -1422,39 +1422,18 @@ export type TranslationFunctions = {
 		}
 	}
 	timelines: {
-		app: {
+		bac: {
 			/**
-			 * Concepteur développeur d'applications
+			 * Bac scientifique
 			 */
 			name: () => LocalizedString
-			/**
-			 * RNCP 36490 — Alternance
-			 */
 			type: () => LocalizedString
 			/**
-			 * Distanciel
+			 * Salon-de-Provence
 			 */
 			location: () => LocalizedString
 			/**
-			 * 3W Academy
-			 */
-			school: () => LocalizedString
-		}
-		fsd: {
-			/**
-			 * Développeur Web Full Stack
-			 */
-			name: () => LocalizedString
-			/**
-			 * RNCP 37273 — Alternance
-			 */
-			type: () => LocalizedString
-			/**
-			 * Distanciel
-			 */
-			location: () => LocalizedString
-			/**
-			 * 3W Academy
+			 * Lycée de l’Emperi
 			 */
 			school: () => LocalizedString
 		}
@@ -1476,18 +1455,39 @@ export type TranslationFunctions = {
 			 */
 			school: () => LocalizedString
 		}
-		bac: {
+		fsd: {
 			/**
-			 * Bac scientifique
+			 * Développeur Web Full Stack
 			 */
 			name: () => LocalizedString
+			/**
+			 * RNCP 37273 — Alternance
+			 */
 			type: () => LocalizedString
 			/**
-			 * Salon-de-Provence
+			 * Distanciel
 			 */
 			location: () => LocalizedString
 			/**
-			 * Lycée de l’Emperi
+			 * 3W Academy
+			 */
+			school: () => LocalizedString
+		}
+		app: {
+			/**
+			 * Concepteur développeur d'applications
+			 */
+			name: () => LocalizedString
+			/**
+			 * RNCP 36490 — Alternance
+			 */
+			type: () => LocalizedString
+			/**
+			 * Distanciel
+			 */
+			location: () => LocalizedString
+			/**
+			 * 3W Academy
 			 */
 			school: () => LocalizedString
 		}
