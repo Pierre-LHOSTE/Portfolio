@@ -28,7 +28,6 @@ export default function StackIcon({
   ) {
     filter = "invert(1)";
   }
-  console.log("🚀 ~ filter:", filter);
 
   return (
     <div className="stack-icon">

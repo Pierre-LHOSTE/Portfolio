@@ -40,8 +40,6 @@ export default function Theme({
     };
 
     const themeChangeListener = (e: MediaQueryListEvent) => {
-      console.log("Theme changed to", e.matches ? "dark" : "light");
-
       if (savedTheme === "auto") {
         setActiveTheme(e.matches ? "dark" : "light");
         setInit(true);

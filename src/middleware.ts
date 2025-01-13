@@ -31,14 +31,13 @@ export default function middleware(request: Request, context: NextFetchEvent) {
           request.headers.get("x-real-ip") ||
           request.headers.get("x-forwarded-for")?.split(",")[0] ||
           "UNKNOWN";
-        const userKey = `visits:${today}:${ip}`;
+        const userKey = `user:${today}:${ip.replace(/:/g, "-")}`;
 
         const alreadyVisited = await kv.get(userKey);
         if (!alreadyVisited) {
           await kv.incr(`visits:${today}`);
           await kv.set(userKey, "1", { ex: 86400 });
         }
-        await kv.incr(`visits:${today}`);
       } catch (error) {
         console.error("Failed to update views:", error);
       }
