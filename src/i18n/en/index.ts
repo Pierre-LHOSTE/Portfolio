@@ -191,6 +191,7 @@ const en = {
     yearsOld: "years old",
     updated: "Updated on {date}",
   },
+  visitors: "{count} visitor{{s}} on {date}",
 } satisfies Translation;
 
 export default en;

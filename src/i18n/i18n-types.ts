@@ -1216,6 +1216,12 @@ type RootTranslation = {
 		 */
 		updated: RequiredParams<'date'>
 	}
+	/**
+	 * {​c​o​u​n​t​}​ ​v​i​s​i​t​e​u​r​{​{​s​}​}​ ​l​e​ ​{​d​a​t​e​}
+	 * @param {number} count
+	 * @param {string} date
+	 */
+	visitors: RequiredParams<'count' | 'date'>
 }
 
 export type TranslationFunctions = {
@@ -2410,6 +2416,10 @@ export type TranslationFunctions = {
 		 */
 		updated: (arg: { date: string }) => LocalizedString
 	}
+	/**
+	 * {count} visiteur{{s}} le {date}
+	 */
+	visitors: (arg: { count: number, date: string }) => LocalizedString
 }
 
 export type Formatters = {}

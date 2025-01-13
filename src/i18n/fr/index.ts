@@ -190,6 +190,7 @@ const fr = {
     yearsOld: "ans",
     updated: "Actualisé le {date: string}",
   },
+  visitors: "{count: number} visiteur{{s}} le {date: string}",
 } satisfies BaseTranslation;
 
 export default fr;
