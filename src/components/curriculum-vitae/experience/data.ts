@@ -6,7 +6,7 @@ export const ExperienceList = {
       en: "UI/UX Designer and Fullstack Developer",
       fr: "UI/UX Designer et Développeur Fullstack",
     },
-    logo: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/assets/coopcycle.svg",
+    logo: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/assets/coopcycle-gray.svg",
     company: {
       en: "CoopCycle",
       fr: "CoopCycle",
