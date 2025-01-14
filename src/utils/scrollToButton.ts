@@ -5,8 +5,6 @@ export default function scrollToButton(
   ref: ForwardedRef<OverlayScrollbarsComponentRef<"div">>,
   force = false
 ) {
-  console.log("Go scroll to bottom");
-
   if (ref && "current" in ref && ref.current) {
     const element = ref.current.getElement();
 

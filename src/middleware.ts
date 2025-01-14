@@ -31,9 +31,15 @@ export default function middleware(request: Request, context: NextFetchEvent) {
           request.headers.get("x-real-ip") ||
           request.headers.get("x-forwarded-for")?.split(",")[0] ||
           "UNKNOWN";
-        const userKey = `user:${today}:${ip.replace(/:/g, "-")}`;
+        const host = request.headers.get("host") || "";
 
+        if (host.includes("localhost") || ip === "127.0.0.1") {
+          return;
+        }
+
+        const userKey = `user:${today}:${ip.replace(/:/g, "-")}`;
         const alreadyVisited = await kv.get(userKey);
+
         if (!alreadyVisited) {
           await kv.incr(`visits:${today}`);
           await kv.set(userKey, "1", { ex: 86400 });
