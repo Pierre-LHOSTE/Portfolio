@@ -25,27 +25,33 @@ export default function middleware(request: Request, context: NextFetchEvent) {
 
   context.waitUntil(
     (async () => {
+      const today = new Date().toISOString().split("T")[0];
+      const ip = (
+        request.headers.get("x-real-ip") ||
+        request.headers.get("x-forwarded-for")?.split(",")[0] ||
+        "UNKNOWN"
+      ).trim();
+      const host = request.headers.get("host") || "";
+
+      if (host.includes("localhost") || ip === "127.0.0.1") return;
+
+      const userKey = `user:${today}:${ip.replace(/:/g, "-")}`;
+      const lockKey = `lock:${userKey}`;
+
       try {
-        const today = new Date().toISOString().split("T")[0];
-        const ip =
-          request.headers.get("x-real-ip") ||
-          request.headers.get("x-forwarded-for")?.split(",")[0] ||
-          "UNKNOWN";
-        const host = request.headers.get("host") || "";
+        const acquired = await kv.set(lockKey, "1", { nx: true, ex: 1 });
+        if (!acquired) return;
 
-        if (host.includes("localhost") || ip === "127.0.0.1") {
-          return;
-        }
-
-        const userKey = `user:${today}:${ip.replace(/:/g, "-")}`;
         const alreadyVisited = await kv.get(userKey);
-
         if (!alreadyVisited) {
+          console.log(`New visitor from ${ip}`);
           await kv.incr(`visits:${today}`);
           await kv.set(userKey, "1", { ex: 86400 });
         }
       } catch (error) {
-        console.error("Failed to update views:", error);
+        console.error("Failed to update visits:", error);
+      } finally {
+        await kv.del(lockKey);
       }
     })()
   );
