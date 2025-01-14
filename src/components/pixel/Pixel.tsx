@@ -5,16 +5,19 @@ import { useI18nContext } from "@/i18n/i18n-react";
 
 const DAYS_IN_WEEK = 7;
 
-function getLevel(count: number) {
+function getLevel(count: number, min: number, max: number) {
   if (count === 0) return 1;
-  if (count < 5) return 2;
-  if (count < 15) return 3;
-  if (count < 30) return 4;
+  const range = max - min || 1;
+  const normalized = (count - min) / range;
+
+  if (normalized <= 0.25) return 2;
+  if (normalized <= 0.5) return 3;
+  if (normalized <= 0.75) return 4;
   return 5;
 }
 
 export default function Pixel() {
-  const [gridData, setGridData] = useState<{ date: string; count: number }[]>([]);
+  const [gridData, setGridData] = useState<{ date: string; count: number; level: number }[]>([]);
   const { LL } = useI18nContext();
 
   useEffect(() => {
@@ -42,7 +45,11 @@ export default function Pixel() {
         grid.push({ date: "", count: 0 });
       }
 
-      setGridData(grid);
+      const counts = grid.map((data) => data.count);
+      const min = Math.min(...counts.filter((c) => c > 0));
+      const max = Math.max(...counts);
+
+      setGridData(grid.map((data) => ({ ...data, level: getLevel(data.count, min, max) })));
     })();
   }, []);
 
@@ -55,7 +62,7 @@ export default function Pixel() {
             <tr key={dayIndex}>
               {gridData
                 .filter((_, index) => index % DAYS_IN_WEEK === dayIndex)
-                .map(({ date, count }, colIndex) => (
+                .map(({ date, count, level }, colIndex) => (
                   <td
                     // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                     key={colIndex}
@@ -69,7 +76,7 @@ export default function Pixel() {
                     }
                     className={date ? "" : "empty"}
                   >
-                    <div className={`pixel level-${getLevel(count)}`} />
+                    <div className={`pixel level-${level}`} />
                   </td>
                 ))}
             </tr>
