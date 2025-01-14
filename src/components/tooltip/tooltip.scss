@@ -3,7 +3,7 @@
   position: relative;
 
   .tap-area {
-    --padding: 8px;
+    --padding: 2px;
     position: absolute;
     top: calc(-1 * var(--padding));
     left: calc(-1 * var(--padding));
@@ -12,7 +12,7 @@
     border-radius: 8px;
 
     &:hover {
-      // background-color: var(--invert-10);
+      background-color: var(--invert-10);
     }
   }
 

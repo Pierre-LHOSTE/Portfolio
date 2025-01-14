@@ -15,7 +15,11 @@ export default function BuildFooter() {
       urls={[
         {
           title: LL.footer.build.from(),
-          url: "https://www.github.com/vingt-douze",
+          url: "https://github.com/Pierre-LHOSTE/Portfolio",
+          icon: {
+            url: stackItem.github.styles.icon,
+            invert: stackItem.github.styles.invert,
+          },
         },
         {
           title: (
@@ -37,10 +41,16 @@ export default function BuildFooter() {
             </>
           ),
           url: "",
+          icon: {
+            url: stackItem.nextJs.styles.icon,
+          },
         },
         {
           title: LL.footer.build.hosted(),
           url: "https://vercel.com/",
+          icon: {
+            url: stackItem.vercel.styles.icon,
+          },
         },
       ]}
     />

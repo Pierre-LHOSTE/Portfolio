@@ -18,8 +18,8 @@ export const projectsList = {
     ],
     thumbnail:
       "https://qg007gk6n2popinf.public.blob.vercel-storage.com/project-thumbnail/portfolio/main.png",
-    url: "",
-    repo: "",
+    url: "https://pierre-lhoste.vercel.app/",
+    repo: "https://github.com/Pierre-LHOSTE/Portfolio",
     tags: ["portfolio", "fullstack"],
     endDate: "2025",
   },
@@ -27,7 +27,7 @@ export const projectsList = {
   "212-colors": {
     name: { en: "212-Colors", fr: "212-Colors" },
     description: {
-      en: "This training project was developed throughout my work-study period and presented at my diploma examination session. It introduced me to technologies such as Next.js, Postgres, Prisma, TypeScript and many others. It lets you store colours and create themes. Its concept grew out of my personal need to organise the colour palettes that I reuse in each of my projects.",
+      en: "This training project was developed throughout my work-study period and presented at my diploma examination session. It introduced me to technologies such as Next.js, Postgres, Prisma, TypeScript and many others. It lets you store colors and create themes. Its concept grew out of my personal need to organise the color palettes that I reuse in each of my projects.",
       fr: "Ce projet de formation a été développé tout au long de mon alternance et présenté lors de ma session d'examen pour l'obtention du diplôme. J'y ai découvert des technologies comme Next.js, Postgres, Prisma, TypeScript et bien d’autres. Il permet de stocker des couleurs et de créer des thèmes. Son concept est né de mon besoin personnel d’organiser les palettes de couleurs que je réutilise dans chacun de mes projets.",
     },
     technologies: [
