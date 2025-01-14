@@ -94,7 +94,7 @@ export default function ChatApp() {
     localforage.getItem("chatList").then((chatList) => {
       if (Array.isArray(chatList) && chatList.length > 0 && chatList[0].title.trim()) {
         setChatList(chatList as ChatListElementType[]);
-        setActiveChat(chatList[0].id);
+        setActiveChat(chatList[chatList.length - 1].id);
       } else {
         const date = new Date().getTime().toString();
         setChatList([

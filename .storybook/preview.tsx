@@ -46,6 +46,10 @@ const preview: Preview = {
         loadLocaleAsync(locale).then(() => setLocalesLoaded(true));
       }, []);
 
+      if (!localesLoaded) {
+        return null;
+      }
+
       return (
         <div className={isDarkTheme ? "dark-theme" : "light-theme"}>
           <TypesafeI18n locale={locale}>

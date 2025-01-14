@@ -33,7 +33,7 @@ export default function ChatInput({
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
       handleSubmit(event);
-      scrollToButton(ref);
+      scrollToButton(ref, true);
     }
   };
 
@@ -44,7 +44,7 @@ export default function ChatInput({
       className="loading"
       onSubmit={(event) => {
         handleSubmit(event);
-        scrollToButton(ref);
+        scrollToButton(ref, true);
       }}
     >
       <div>
