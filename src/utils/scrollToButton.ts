@@ -5,21 +5,31 @@ export default function scrollToButton(
   ref: ForwardedRef<OverlayScrollbarsComponentRef<"div">>,
   force = false
 ) {
-  if (ref && "current" in ref && ref.current) {
-    const osInstance = ref.current.osInstance();
-    const viewport = osInstance?.elements().viewport;
+  console.log("Go scroll to bottom");
 
-    if (viewport) {
-      const currentScrollTop = viewport.scrollTop;
-      const scrollHeight = viewport.scrollHeight;
-      const distanceToBottom = scrollHeight - currentScrollTop - viewport.clientHeight;
+  if (ref && "current" in ref && ref.current) {
+    const element = ref.current.getElement();
+
+    if (element) {
+      const scrollHeight = element.scrollHeight;
+      const currentScrollTop = element.scrollTop;
+      const distanceToBottom = scrollHeight - currentScrollTop - element.clientHeight;
 
       if (force || distanceToBottom > 32) {
-        viewport.scroll({
-          top: scrollHeight,
-          behavior: "smooth",
-        });
+        element.scrollTop = scrollHeight;
       }
+    }
+  }
+
+  const el = document.querySelector("#chat-app > main div[data-overlayscrollbars-contents]");
+
+  if (el) {
+    const scrollHeight = el.scrollHeight;
+    const currentScrollTop = el.scrollTop;
+    const distanceToBottom = scrollHeight - currentScrollTop - el.clientHeight;
+
+    if (force || distanceToBottom > 32) {
+      el.scrollTop = scrollHeight;
     }
   }
 }

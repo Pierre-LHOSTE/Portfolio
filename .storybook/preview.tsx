@@ -8,6 +8,7 @@ import "../src/styles/app.css";
 import "../src/styles/reset.css";
 import TypesafeI18n from "../src/i18n/i18n-react";
 import { loadLocaleAsync } from "../src/i18n/i18n-util.async";
+import "overlayscrollbars/overlayscrollbars.css";
 
 const preview: Preview = {
   parameters: {
