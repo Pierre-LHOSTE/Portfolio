@@ -19,5 +19,6 @@ export const Default: Story = {
     handleSubmit: () => {},
     ref: null,
     isLoading: false,
+    activeChat: "",
   },
 };
