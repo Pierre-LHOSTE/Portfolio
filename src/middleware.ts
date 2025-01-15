@@ -21,21 +21,27 @@ export const config = {
 };
 
 export default function middleware(request: Request, context: NextFetchEvent) {
+  console.log("----------");
+  console.log("Request to", request.url);
   const response = NextResponse.next();
 
   context.waitUntil(
     (async () => {
       const today = new Date().toISOString().split("T")[0];
+      console.log("🚀 ~ today:", today);
       const ip = (
         request.headers.get("x-real-ip") ||
         request.headers.get("x-forwarded-for")?.split(",")[0] ||
         "UNKNOWN"
       ).trim();
+      console.log("🚀 ~ ip:", ip);
       const host = request.headers.get("host") || "";
+      console.log("🚀 ~ host:", host);
 
       if (host.includes("localhost") || ip === "127.0.0.1") return;
 
       const userKey = `user:${today}:${ip.replace(/:/g, "-")}`;
+      console.log("🚀 ~ userKey:", userKey);
       const lockKey = `lock:${userKey}`;
 
       try {
@@ -43,6 +49,7 @@ export default function middleware(request: Request, context: NextFetchEvent) {
         if (!acquired) return;
 
         const alreadyVisited = await kv.get(userKey);
+        console.log("🚀 ~ alreadyVisited:", alreadyVisited);
         if (!alreadyVisited) {
           console.log(`New visitor from ${ip}`);
           await kv.incr(`visits:${today}`);
