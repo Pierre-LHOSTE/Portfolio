@@ -75,6 +75,9 @@ export default function middleware(request: Request, context: NextFetchEvent) {
   context.waitUntil(
     (async () => {
       try {
+        const userAgent = request.headers.get("user-agent") || "";
+        console.log("🚀 ~ userAgent:", userAgent);
+
         const today = new Date().toISOString().split("T")[0];
         const ip = (
           request.headers.get("x-real-ip") ||
