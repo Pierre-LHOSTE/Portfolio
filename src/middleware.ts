@@ -27,7 +27,7 @@ export default async function middleware(request: NextRequest, context: NextFetc
   const response = NextResponse.next();
 
   try {
-    if (request.method !== "GET") return response;
+    if (request.method !== "GET" || request.nextUrl.pathname === "/") return response;
 
     const userAgent = request.headers.get("user-agent") || "";
     console.log("🚀 ~ userAgent:", userAgent);
