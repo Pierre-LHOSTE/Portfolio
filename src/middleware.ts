@@ -46,6 +46,7 @@ export default function middleware(request: Request, context: NextFetchEvent) {
 
       try {
         const acquired = await kv.set(lockKey, "1", { nx: true, ex: 1 });
+        console.log("🚀 ~ acquired:", acquired);
         if (!acquired) return;
 
         const alreadyVisited = await kv.get(userKey);
