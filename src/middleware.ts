@@ -20,59 +20,55 @@ export const config = {
   ],
 };
 
-export default function middleware(request: Request, context: NextFetchEvent) {
+export default async function middleware(request: Request, context: NextFetchEvent) {
   console.log("---------");
   console.log("Request to", request.url);
   const response = NextResponse.next();
-  context.waitUntil(
-    (async () => {
-      console.log("Starting async task...");
-      try {
-        const testKey = await kv.get("visits:2025-01-15");
-        console.log("🚀 ~ Test Key:", testKey);
 
-        const userAgent = request.headers.get("user-agent") || "";
-        console.log("🚀 ~ userAgent:", userAgent);
-        if (userAgent.includes("vercel-screenshot")) return;
+  try {
+    const testKey = await kv.get("visits:2025-01-15");
+    console.log("🚀 ~ Test Key:", testKey);
 
-        const today = new Date().toISOString().split("T")[0];
-        const ip = (
-          request.headers.get("x-real-ip") ||
-          request.headers.get("x-forwarded-for")?.split(",")[0] ||
-          "UNKNOWN"
-        ).trim();
+    const userAgent = request.headers.get("user-agent") || "";
+    console.log("🚀 ~ userAgent:", userAgent);
+    if (userAgent.includes("vercel-screenshot")) return;
 
-        const host = request.headers.get("host") || "";
-        console.log("🚀 ~ ip-host:", ip, host);
-        if (host.includes("localhost") || ip === "127.0.0.1") return;
+    const today = new Date().toISOString().split("T")[0];
+    const ip = (
+      request.headers.get("x-real-ip") ||
+      request.headers.get("x-forwarded-for")?.split(",")[0] ||
+      "UNKNOWN"
+    ).trim();
 
-        const userKey = `user:${today}:${ip.replace(/:/g, "-")}`;
-        const visitsKey = `visits:${today}`;
+    const host = request.headers.get("host") || "";
+    console.log("🚀 ~ ip-host:", ip, host);
+    if (host.includes("localhost") || ip === "127.0.0.1") return;
 
-        const alreadyVisited = await kv.get<number>(userKey);
-        console.log("🚀 ~ alreadyVisited:", alreadyVisited);
-        if (alreadyVisited) {
-          console.log("Already visited today");
-          await kv.incr(userKey);
-        } else {
-          console.log("Visiting for the first time today");
-          const alreadyDay = await kv.get<number>(visitsKey);
-          console.log("🚀 ~ alreadyDay:", alreadyDay);
-          if (alreadyDay) {
-            console.log("Not the first visit today");
-            await kv.incr(visitsKey);
-          } else {
-            console.log("First visit today");
-            await kv.set(visitsKey, 1);
-          }
-          await kv.set(userKey, 1, { ex: 86400 });
-        }
-      } catch (error) {
-        console.error("Error in middleware:", error);
+    const userKey = `user:${today}:${ip.replace(/:/g, "-")}`;
+    const visitsKey = `visits:${today}`;
+
+    const alreadyVisited = await kv.get<number>(userKey);
+    console.log("🚀 ~ alreadyVisited:", alreadyVisited);
+    if (alreadyVisited) {
+      console.log("Already visited today");
+      await kv.incr(userKey);
+    } else {
+      console.log("Visiting for the first time today");
+      const alreadyDay = await kv.get<number>(visitsKey);
+      console.log("🚀 ~ alreadyDay:", alreadyDay);
+      if (alreadyDay) {
+        console.log("Not the first visit today");
+        await kv.incr(visitsKey);
+      } else {
+        console.log("First visit today");
+        await kv.set(visitsKey, 1);
       }
-      console.log("Async task finished.");
-    })()
-  );
+      await kv.set(userKey, 1, { ex: 86400 });
+    }
+  } catch (error) {
+    console.error("Error in middleware:", error);
+  }
+  console.log("Async task finished.");
 
   return response;
 }
