@@ -2,6 +2,7 @@ import { type ChangeEvent, type ForwardedRef, type KeyboardEvent, useRef } from 
 import "./input.scss";
 import Button from "@/components/button/Button";
 import { useI18nContext } from "@/i18n/i18n-react";
+import { useChatStore } from "@/stores/chat.store";
 import scrollToButton from "@/utils/scrollToButton";
 import { IconArrowBigUpFilled, IconLoader2 } from "@tabler/icons-react";
 import type { OverlayScrollbarsComponentRef } from "overlayscrollbars-react";
@@ -10,16 +11,19 @@ export default function ChatInput({
   input,
   handleInputChange,
   handleSubmit,
+  activeChat,
   ref,
   isLoading,
 }: {
   input: any;
   handleInputChange: any;
   handleSubmit: any;
+  activeChat: string;
   ref: ForwardedRef<OverlayScrollbarsComponentRef<"div">>;
   isLoading: boolean;
 }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const updateUpdatedAt = useChatStore((state) => state.updateUpdatedAt);
   const { LL } = useI18nContext();
 
   const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -34,6 +38,7 @@ export default function ChatInput({
       event.preventDefault();
       handleSubmit(event);
       scrollToButton(ref, true);
+      updateUpdatedAt(activeChat);
     }
   };
 
@@ -45,6 +50,7 @@ export default function ChatInput({
       onSubmit={(event) => {
         handleSubmit(event);
         scrollToButton(ref, true);
+        updateUpdatedAt(activeChat);
       }}
     >
       <div>

@@ -7,7 +7,7 @@ import { type Message, useChat } from "ai/react";
 import localforage from "localforage";
 import { motion, useDragControls } from "motion/react";
 import type { OverlayScrollbarsComponentRef } from "overlayscrollbars-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import ChatAside from "./components/aside/ChatAside";
 import ChatContent from "./components/content/ChatContent";
 import ChatHeader from "./components/header/ChatHeader";
@@ -24,8 +24,14 @@ export default function ChatApp() {
   const chatList = useChatStore((state) => state.chatList);
   const setActiveChat = useChatStore((state) => state.setActiveChat);
   const activeChat = useChatStore((state) => state.activeChat);
-
   const chatContentRef = useRef<OverlayScrollbarsComponentRef<"div">>(null);
+  const [formattedChats, setFormattedChats] = useState<
+    {
+      date: number;
+      label: string;
+      elements: ChatListElementType[];
+    }[]
+  >([]);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
@@ -121,53 +127,49 @@ export default function ChatApp() {
     },
   ];
 
-  const formattedChats: {
-    date: number;
-    label: string;
-    elements: ChatListElementType[];
-  }[] = [];
-
-  for (const chat of chatList) {
-    const updatedAtDate = new Date(Number(chat.updatedAt));
+  useEffect(() => {
     const today = new Date().getTime();
-    const isToday = updatedAtDate.getTime() > today - 24 * 60 * 60 * 1000;
-    const isYesterday = updatedAtDate.getTime() > today - 48 * 60 * 60 * 1000;
-    const date = updatedAtDate.toLocaleDateString(locale, {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    });
+    const newFormattedChats: {
+      date: number;
+      label: string;
+      elements: ChatListElementType[];
+    }[] = [];
 
-    // Définir la date formatée
-    let label: string;
-    if (isToday) {
-      label = LL.chat.today();
-    } else if (isYesterday) {
-      label = LL.chat.yesterday();
-    } else {
-      label = date;
+    for (const chat of chatList) {
+      const updatedAtDate = new Date(Number(chat.updatedAt));
+      const isToday = updatedAtDate.getTime() > today - 24 * 60 * 60 * 1000;
+      const isYesterday = updatedAtDate.getTime() > today - 48 * 60 * 60 * 1000;
+      const date = updatedAtDate.toLocaleDateString(locale, {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      });
+
+      let label: string;
+      if (isToday) {
+        label = LL.chat.today();
+      } else if (isYesterday) {
+        label = LL.chat.yesterday();
+      } else {
+        label = date;
+      }
+
+      let formattedChat = newFormattedChats.find((fc) => fc.label === label);
+      if (!formattedChat) {
+        formattedChat = { label, date: updatedAtDate.getTime(), elements: [] };
+        newFormattedChats.push(formattedChat);
+      }
+
+      formattedChat.elements.push(chat);
     }
 
-    // Trouver ou créer l'entrée correspondante
-    let formattedChat = formattedChats.find((fc) => fc.label === label);
-    if (!formattedChat) {
-      formattedChat = { label, date: updatedAtDate.getTime(), elements: [] };
-      formattedChats.push(formattedChat);
+    for (const fc of newFormattedChats) {
+      fc.elements.sort((a, b) => Number(b.updatedAt) - Number(a.updatedAt));
     }
 
-    formattedChat.elements.push(chat);
-  }
-
-  for (const fc of formattedChats) {
-    fc.elements.sort((a, b) => Number(b.updatedAt) - Number(a.updatedAt));
-  }
-
-  formattedChats.sort((a, b) => {
-    const dateA = new Date(a.date).getTime();
-    const dateB = new Date(b.date).getTime();
-    return dateB - dateA;
-  });
-
+    newFormattedChats.sort((a, b) => b.date - a.date);
+    setFormattedChats(newFormattedChats);
+  }, [chatList, LL, locale]);
   return (
     <motion.div
       id="chat-section"
@@ -208,6 +210,7 @@ export default function ChatApp() {
             handleSubmit={handleSubmit}
             ref={chatContentRef}
             isLoading={isLoading}
+            activeChat={activeChat}
           />
         </main>
       </motion.section>
