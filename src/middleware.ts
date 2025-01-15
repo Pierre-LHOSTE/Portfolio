@@ -22,18 +22,16 @@ export const config = {
 
 export default async function middleware(request: NextRequest, context: NextFetchEvent) {
   console.log("---------");
-  console.log("Request to", request.url);
-  console.log(request.nextUrl.pathname);
+  console.log(request.url);
 
   const response = NextResponse.next();
 
   try {
-    const testKey = await kv.get("visits:2025-01-15");
-    console.log("🚀 ~ Test Key:", testKey);
+    if (request.method !== "GET") return response;
 
     const userAgent = request.headers.get("user-agent") || "";
     console.log("🚀 ~ userAgent:", userAgent);
-    if (userAgent.includes("vercel-screenshot")) return;
+    if (userAgent.includes("vercel-screenshot")) return response;
 
     const today = new Date().toISOString().split("T")[0];
     const ip = (
@@ -44,25 +42,19 @@ export default async function middleware(request: NextRequest, context: NextFetc
 
     const host = request.headers.get("host") || "";
     console.log("🚀 ~ ip-host:", ip, host);
-    if (host.includes("localhost") || ip === "127.0.0.1") return;
+    if (host.includes("localhost") || ip === "127.0.0.1") return response;
 
     const userKey = `user:${today}:${ip.replace(/:/g, "-")}`;
     const visitsKey = `visits:${today}`;
 
     const alreadyVisited = await kv.get<number>(userKey);
-    console.log("🚀 ~ alreadyVisited:", alreadyVisited);
     if (alreadyVisited) {
-      console.log("Already visited today");
       await kv.incr(userKey);
     } else {
-      console.log("Visiting for the first time today");
       const alreadyDay = await kv.get<number>(visitsKey);
-      console.log("🚀 ~ alreadyDay:", alreadyDay);
       if (alreadyDay) {
-        console.log("Not the first visit today");
         await kv.incr(visitsKey);
       } else {
-        console.log("First visit today");
         await kv.set(visitsKey, 1);
       }
       await kv.set(userKey, 1, { ex: 86400 });
