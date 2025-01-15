@@ -47,12 +47,14 @@ export default function middleware(request: Request, context: NextFetchEvent) {
         const visitsKey = `visits:${today}`;
 
         const alreadyVisited = await kv.get<number>(userKey);
+        console.log("🚀 ~ alreadyVisited:", alreadyVisited);
         if (alreadyVisited) {
           console.log("Already visited today");
           await kv.incr(userKey);
         } else {
           console.log("Visiting for the first time today");
           const alreadyDay = await kv.get<number>(visitsKey);
+          console.log("🚀 ~ alreadyDay:", alreadyDay);
           if (alreadyDay) {
             console.log("Not the first visit today");
             await kv.incr(visitsKey);
