@@ -1,5 +1,5 @@
 import { kv } from "@vercel/kv";
-import { type NextFetchEvent, NextResponse } from "next/server";
+import { type NextFetchEvent, type NextRequest, NextResponse } from "next/server";
 
 export const config = {
   matcher: [
@@ -20,9 +20,11 @@ export const config = {
   ],
 };
 
-export default async function middleware(request: Request, context: NextFetchEvent) {
+export default async function middleware(request: NextRequest, context: NextFetchEvent) {
   console.log("---------");
   console.log("Request to", request.url);
+  console.log(request.nextUrl.pathname);
+
   const response = NextResponse.next();
 
   try {
