@@ -24,10 +24,13 @@ export default function middleware(request: Request, context: NextFetchEvent) {
   console.log("---------");
   console.log("Request to", request.url);
   const response = NextResponse.next();
-
   context.waitUntil(
     (async () => {
+      console.log("Starting async task...");
       try {
+        const testKey = await kv.get("visits:2025-01-15");
+        console.log("🚀 ~ Test Key:", testKey);
+
         const userAgent = request.headers.get("user-agent") || "";
         console.log("🚀 ~ userAgent:", userAgent);
         if (userAgent.includes("vercel-screenshot")) return;
@@ -67,6 +70,7 @@ export default function middleware(request: Request, context: NextFetchEvent) {
       } catch (error) {
         console.error("Error in middleware:", error);
       }
+      console.log("Async task finished.");
     })()
   );
 
