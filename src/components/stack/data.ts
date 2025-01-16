@@ -338,18 +338,40 @@ export const stackItem = {
       background: "#313131",
     },
   },
-  sass: {
-    name: "Sass",
+
+  dartSass: {
+    name: "Dart Sass",
     description: {
-      en: "Sass is a powerful and stable extension for CSS, enabling features like nesting, variables, and mixins to enhance stylesheet development.",
-      fr: "Sass est une extension puissante et stable pour le CSS, offrant des fonctionnalités comme l'imbrication, les variables et les mixins pour améliorer le développement des feuilles de style.",
+      en: "Dart Sass is a powerful and stable extension for CSS, enabling features like nesting, variables, and mixins to enhance stylesheet development.",
+      fr: "Dart Sass est une extension puissante et stable pour le CSS, offrant des fonctionnalités comme l'imbrication, les variables et les mixins pour améliorer le développement des feuilles de style.",
     },
     reason: {
       en: "A practical and powerful CSS preprocessor",
       fr: "Un préprocesseur CSS pratique et puissant",
     },
-    category: "language",
+    category: "frontend",
     homepage: "https://sass-lang.com/dart-sass/",
+    tags: ["active"],
+
+    styles: {
+      icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/dart-sass.svg",
+      color: "#c6538c",
+      background: "#313131",
+    },
+  },
+
+  scss: {
+    name: "SCSS",
+    description: {
+      en: "SCSS is a modern and CSS-compatible syntax for Sass, offering features like variables, nesting, and mixins to streamline and enhance stylesheet creation.",
+      fr: "Le SCSS est une syntaxe moderne et compatible avec Sass, offrant des fonctionnalités telles que les variables, l'imbrication et les mixins pour simplifier et enrichir la création de feuilles de style.",
+    },
+    reason: {
+      en: "A flexible and CSS-compatible syntax for advanced styling",
+      fr: "Une syntaxe flexible et compatible avec le CSS pour un style avancé",
+    },
+    category: "language",
+    homepage: "https://sass-lang.com/",
     tags: ["active", "important"],
 
     styles: {

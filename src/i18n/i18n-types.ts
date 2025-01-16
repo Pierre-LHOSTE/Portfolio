@@ -465,13 +465,24 @@ type RootTranslation = {
 			reason: string
 			replacement: string
 		}
-		sass: {
+		dartSass: {
 			/**
-			 * S​a​s​s​ ​e​s​t​ ​u​n​e​ ​e​x​t​e​n​s​i​o​n​ ​p​u​i​s​s​a​n​t​e​ ​e​t​ ​s​t​a​b​l​e​ ​p​o​u​r​ ​l​e​ ​C​S​S​,​ ​o​f​f​r​a​n​t​ ​d​e​s​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​c​o​m​m​e​ ​l​'​i​m​b​r​i​c​a​t​i​o​n​,​ ​l​e​s​ ​v​a​r​i​a​b​l​e​s​ ​e​t​ ​l​e​s​ ​m​i​x​i​n​s​ ​p​o​u​r​ ​a​m​é​l​i​o​r​e​r​ ​l​e​ ​d​é​v​e​l​o​p​p​e​m​e​n​t​ ​d​e​s​ ​f​e​u​i​l​l​e​s​ ​d​e​ ​s​t​y​l​e​.
+			 * D​a​r​t​ ​S​a​s​s​ ​e​s​t​ ​u​n​e​ ​e​x​t​e​n​s​i​o​n​ ​p​u​i​s​s​a​n​t​e​ ​e​t​ ​s​t​a​b​l​e​ ​p​o​u​r​ ​l​e​ ​C​S​S​,​ ​o​f​f​r​a​n​t​ ​d​e​s​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​c​o​m​m​e​ ​l​'​i​m​b​r​i​c​a​t​i​o​n​,​ ​l​e​s​ ​v​a​r​i​a​b​l​e​s​ ​e​t​ ​l​e​s​ ​m​i​x​i​n​s​ ​p​o​u​r​ ​a​m​é​l​i​o​r​e​r​ ​l​e​ ​d​é​v​e​l​o​p​p​e​m​e​n​t​ ​d​e​s​ ​f​e​u​i​l​l​e​s​ ​d​e​ ​s​t​y​l​e​.
 			 */
 			description: string
 			/**
 			 * U​n​ ​p​r​é​p​r​o​c​e​s​s​e​u​r​ ​C​S​S​ ​p​r​a​t​i​q​u​e​ ​e​t​ ​p​u​i​s​s​a​n​t
+			 */
+			reason: string
+			replacement: string
+		}
+		scss: {
+			/**
+			 * L​e​ ​S​C​S​S​ ​e​s​t​ ​u​n​e​ ​s​y​n​t​a​x​e​ ​m​o​d​e​r​n​e​ ​e​t​ ​c​o​m​p​a​t​i​b​l​e​ ​a​v​e​c​ ​l​e​ ​C​S​S​ ​p​o​u​r​ ​S​a​s​s​,​ ​o​f​f​r​a​n​t​ ​d​e​s​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​t​e​l​l​e​s​ ​q​u​e​ ​l​e​s​ ​v​a​r​i​a​b​l​e​s​,​ ​l​'​i​m​b​r​i​c​a​t​i​o​n​ ​e​t​ ​l​e​s​ ​m​i​x​i​n​s​ ​p​o​u​r​ ​s​i​m​p​l​i​f​i​e​r​ ​e​t​ ​e​n​r​i​c​h​i​r​ ​l​a​ ​c​r​é​a​t​i​o​n​ ​d​e​ ​f​e​u​i​l​l​e​s​ ​d​e​ ​s​t​y​l​e​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​s​y​n​t​a​x​e​ ​f​l​e​x​i​b​l​e​ ​e​t​ ​c​o​m​p​a​t​i​b​l​e​ ​a​v​e​c​ ​l​e​ ​C​S​S​ ​p​o​u​r​ ​u​n​ ​s​t​y​l​e​ ​a​v​a​n​c​é
 			 */
 			reason: string
 			replacement: string
@@ -1670,13 +1681,24 @@ export type TranslationFunctions = {
 			reason: () => LocalizedString
 			replacement: () => LocalizedString
 		}
-		sass: {
+		dartSass: {
 			/**
-			 * Sass est une extension puissante et stable pour le CSS, offrant des fonctionnalités comme l'imbrication, les variables et les mixins pour améliorer le développement des feuilles de style.
+			 * Dart Sass est une extension puissante et stable pour le CSS, offrant des fonctionnalités comme l'imbrication, les variables et les mixins pour améliorer le développement des feuilles de style.
 			 */
 			description: () => LocalizedString
 			/**
 			 * Un préprocesseur CSS pratique et puissant
+			 */
+			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		scss: {
+			/**
+			 * Le SCSS est une syntaxe moderne et compatible avec le CSS pour Sass, offrant des fonctionnalités telles que les variables, l'imbrication et les mixins pour simplifier et enrichir la création de feuilles de style.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une syntaxe flexible et compatible avec le CSS pour un style avancé
 			 */
 			reason: () => LocalizedString
 			replacement: () => LocalizedString
