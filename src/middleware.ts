@@ -42,7 +42,8 @@ export default async function middleware(request: NextRequest, context: NextFetc
 
     const host = request.headers.get("host") || "";
     console.log("🚀 ~ ip-host:", ip, host);
-    if (host.includes("localhost") || ip === "127.0.0.1") return response;
+    if (host.includes("localhost") || ip === "127.0.0.1" || host !== "pierre-lhoste.vercel.app")
+      return response;
 
     const userKey = `user:${today}:${ip.replace(/:/g, "-")}`;
     const visitsKey = `visits:${today}`;
