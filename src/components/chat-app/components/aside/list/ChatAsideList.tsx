@@ -37,11 +37,7 @@ export default function ChatAsideList({ label, elements }: ChatAsideListProps) {
           <li key={element.id} className={element.id === active ? "active" : ""}>
             <button type="button" onClick={() => setActiveChat(element.id)}>
               {element.title}
-              <span
-                type="button"
-                className="delete"
-                onClick={(e) => handleDeleteChat(e, element.id)}
-              >
+              <span className="delete" onClick={(e) => handleDeleteChat(e, element.id)}>
                 <IconTrash size={16} />
               </span>
             </button>
