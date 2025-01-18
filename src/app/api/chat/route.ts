@@ -15,13 +15,21 @@ export async function POST(req: Request) {
     message: string;
   } = await req.json();
 
+  // Append the date to the user's message if it's the first message
+  const today = new Date().toLocaleDateString("en", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+  const messageWithDate = input.threadId ? input.message : `${input.message}\n(Today is: ${today})`;
+
   // Create a thread if needed
   const threadId = input.threadId ?? (await openai.beta.threads.create({})).id;
 
   // Add a message to the thread
   const createdMessage = await openai.beta.threads.messages.create(threadId, {
     role: "user",
-    content: input.message,
+    content: messageWithDate,
   });
 
   return AssistantResponse(

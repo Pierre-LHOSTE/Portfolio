@@ -25,6 +25,7 @@ export default function ChatApp() {
   const setChatList = useChatStore((state) => state.setChatList);
   const chatList = useChatStore((state) => state.chatList);
   const setActiveChat = useChatStore((state) => state.setActiveChat);
+  const setLastActiveChat = useChatStore((state) => state.setLastActiveChat);
   const activeChat = useChatStore((state) => state.activeChat);
   const chatContentRef = useRef<OverlayScrollbarsComponentRef<"div">>(null);
   const [formattedChats, setFormattedChats] = useState<
@@ -102,7 +103,7 @@ export default function ChatApp() {
     localforage.getItem("chatList").then((chatList) => {
       if (Array.isArray(chatList) && chatList.length > 0 && chatList[0].title.trim()) {
         setChatList(chatList as ChatListElementType[]);
-        setActiveChat(chatList[chatList.length - 1].id);
+        setLastActiveChat();
       } else {
         const date = new Date().getTime().toString();
         setChatList([

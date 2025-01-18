@@ -12,6 +12,8 @@ interface ChatStoreType {
   setActiveChat: SetStateFunction<string>;
   renameChat: (id: string, title: string) => void;
   updateUpdatedAt: (id: string) => void;
+  deleteChat: (id: string) => void;
+  setLastActiveChat: () => void;
 }
 
 export const useChatStore = create<ChatStoreType>((set) => ({
@@ -32,4 +34,8 @@ export const useChatStore = create<ChatStoreType>((set) => ({
         chat.id === id ? { ...chat, updatedAt: new Date().getTime().toString() } : chat
       ),
     })),
+  deleteChat: (id) =>
+    set((state) => ({ chatList: state.chatList.filter((chat) => chat.id !== id) })),
+  setLastActiveChat: () =>
+    set((state) => ({ activeChat: state.chatList[state.chatList.length - 1].id })),
 }));

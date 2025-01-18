@@ -1,5 +1,5 @@
 const hi = {
-  fr: "Bonjour ! Je suis ravi de vous accueillir sur mon portfolio.  Bonne visite et discutons ensemble si nécessaire !",
+  fr: "Bonjour ! Je suis ravi de vous accueillir sur mon portfolio. Bonne visite et discutons ensemble si nécessaire !",
   en: "Hello! I am delighted to welcome you to my portfolio. Enjoy your visit and let's chat if needed!",
 };
 
