@@ -45,8 +45,8 @@ export default function ChatInput({
   return (
     <form
       id="chat-input"
-      // className={isLoading ? "loading" : undefined}
-      className="loading"
+      className={isLoading ? "loading" : undefined}
+      // className="loading"
       onSubmit={(event) => {
         handleSubmit(event);
         scrollToButton(ref, true);
@@ -58,10 +58,10 @@ export default function ChatInput({
           {isLoading && <IconLoader2 />}
           <textarea
             ref={textareaRef}
-            // disabled={isLoading}
-            disabled={true}
-            // placeholder={LL.chat.type()}
-            placeholder="Not available at the moment"
+            disabled={isLoading}
+            // disabled={true}
+            placeholder={LL.chat.type()}
+            // placeholder="Not available at the moment"
             value={input}
             onChange={handleChange}
             onKeyDown={handleKeyDown}

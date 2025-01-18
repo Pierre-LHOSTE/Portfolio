@@ -3,7 +3,7 @@ import useSectionObserver from "@/hooks/useSectionObserver.hook";
 import { useI18nContext } from "@/i18n/i18n-react";
 import { useChatStore } from "@/stores/chat.store";
 import scrollToButton from "@/utils/scrollToButton";
-import { type Message, useChat } from "ai/react";
+import { type Message, useAssistant } from "ai/react";
 import localforage from "localforage";
 import { motion, useDragControls } from "motion/react";
 import type { OverlayScrollbarsComponentRef } from "overlayscrollbars-react";
@@ -16,7 +16,9 @@ import { initMessagesData } from "./messages";
 import type { ChatListElementType } from "./type";
 
 export default function ChatApp() {
-  const { messages, input, handleInputChange, handleSubmit, setMessages, isLoading } = useChat();
+  const { messages, input, handleInputChange, submitMessage, setMessages, status } = useAssistant({
+    api: "/api/chat",
+  });
   const { LL, locale } = useI18nContext();
   const ref = useSectionObserver("chat");
   const controls = useDragControls();
@@ -207,9 +209,9 @@ export default function ChatApp() {
           <ChatInput
             input={input}
             handleInputChange={handleInputChange}
-            handleSubmit={handleSubmit}
+            handleSubmit={submitMessage}
             ref={chatContentRef}
-            isLoading={isLoading}
+            isLoading={status === "in_progress"}
             activeChat={activeChat}
           />
         </main>

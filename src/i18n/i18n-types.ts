@@ -478,7 +478,7 @@ type RootTranslation = {
 		}
 		scss: {
 			/**
-			 * L​e​ ​S​C​S​S​ ​e​s​t​ ​u​n​e​ ​s​y​n​t​a​x​e​ ​m​o​d​e​r​n​e​ ​e​t​ ​c​o​m​p​a​t​i​b​l​e​ ​a​v​e​c​ ​l​e​ ​C​S​S​ ​p​o​u​r​ ​S​a​s​s​,​ ​o​f​f​r​a​n​t​ ​d​e​s​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​t​e​l​l​e​s​ ​q​u​e​ ​l​e​s​ ​v​a​r​i​a​b​l​e​s​,​ ​l​'​i​m​b​r​i​c​a​t​i​o​n​ ​e​t​ ​l​e​s​ ​m​i​x​i​n​s​ ​p​o​u​r​ ​s​i​m​p​l​i​f​i​e​r​ ​e​t​ ​e​n​r​i​c​h​i​r​ ​l​a​ ​c​r​é​a​t​i​o​n​ ​d​e​ ​f​e​u​i​l​l​e​s​ ​d​e​ ​s​t​y​l​e​.
+			 * L​e​ ​S​C​S​S​ ​e​s​t​ ​u​n​e​ ​s​y​n​t​a​x​e​ ​m​o​d​e​r​n​e​ ​e​t​ ​c​o​m​p​a​t​i​b​l​e​ ​a​v​e​c​ ​S​a​s​s​,​ ​o​f​f​r​a​n​t​ ​d​e​s​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​t​e​l​l​e​s​ ​q​u​e​ ​l​e​s​ ​v​a​r​i​a​b​l​e​s​,​ ​l​'​i​m​b​r​i​c​a​t​i​o​n​ ​e​t​ ​l​e​s​ ​m​i​x​i​n​s​ ​p​o​u​r​ ​s​i​m​p​l​i​f​i​e​r​ ​e​t​ ​e​n​r​i​c​h​i​r​ ​l​a​ ​c​r​é​a​t​i​o​n​ ​d​e​ ​f​e​u​i​l​l​e​s​ ​d​e​ ​s​t​y​l​e​.
 			 */
 			description: string
 			/**
@@ -1694,7 +1694,7 @@ export type TranslationFunctions = {
 		}
 		scss: {
 			/**
-			 * Le SCSS est une syntaxe moderne et compatible avec le CSS pour Sass, offrant des fonctionnalités telles que les variables, l'imbrication et les mixins pour simplifier et enrichir la création de feuilles de style.
+			 * Le SCSS est une syntaxe moderne et compatible avec Sass, offrant des fonctionnalités telles que les variables, l'imbrication et les mixins pour simplifier et enrichir la création de feuilles de style.
 			 */
 			description: () => LocalizedString
 			/**
