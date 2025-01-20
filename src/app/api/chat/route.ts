@@ -15,13 +15,23 @@ export async function POST(req: Request) {
     message: string;
   } = await req.json();
 
-  // Append the date to the user's message if it's the first message
-  const today = new Date().toLocaleDateString("en", {
+  if (input.threadId === "temp") {
+    input.threadId = null;
+  }
+  const today = new Date().toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
     year: "numeric",
   });
-  const messageWithDate = input.threadId ? input.message : `${input.message}\n(Today is: ${today})`;
+  const datePrompt = `(Today is: ${today})`;
+  const titlePrompt =
+    "Please provide a title a short (max 25 chars) and descriptive title for the chat thread at the end of the message, in the language provided by the user, following the format after a new line: 'Title: Your Title Here'";
+  const noTitlePrompt =
+    "Please Does't end the message with a 'Title', only need for the first message";
+  const finalMessage = `\n\n${datePrompt}\n${titlePrompt}`;
+  const messageWithDate = input.threadId
+    ? `${input.message}\n${noTitlePrompt}`
+    : `${input.message}${finalMessage}`;
 
   // Create a thread if needed
   const threadId = input.threadId ?? (await openai.beta.threads.create({})).id;

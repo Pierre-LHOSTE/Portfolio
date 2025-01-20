@@ -1,41 +1,33 @@
-import type { ChatListElementType } from "@/components/chat-app/type";
+import type { ChannelType } from "@/components/chat-app/type";
 import { create } from "zustand";
 
 type SetStateFunction<type> = (state: type) => void;
 
 interface ChatStoreType {
-  chatList: ChatListElementType[];
-  setChatList: SetStateFunction<ChatListElementType[]>;
-  addChat: SetStateFunction<ChatListElementType>;
+  channels: ChannelType[];
+  setChannels: SetStateFunction<ChannelType[]>;
+  addChannel: SetStateFunction<ChannelType>;
 
-  activeChat: string;
-  setActiveChat: SetStateFunction<string>;
-  renameChat: (id: string, title: string) => void;
-  updateUpdatedAt: (id: string) => void;
-  deleteChat: (id: string) => void;
-  setLastActiveChat: () => void;
+  renameChannel: (id: string, title: string) => void;
+  updateChannel: (channel: { threadId: string } & Partial<ChannelType>) => void;
+  deleteChannel: (id: string) => void;
 }
 
 export const useChatStore = create<ChatStoreType>((set) => ({
-  chatList: [],
-  setChatList: (chatList) => set({ chatList }),
-  addChat: (chat) => set((state) => ({ chatList: [...state.chatList, chat] })),
+  channels: [],
+  setChannels: (channels) => set({ channels }),
+  addChannel: (newChannel) => set((state) => ({ channels: [...state.channels, newChannel] })),
 
-  activeChat: "1",
-  setActiveChat: (activeChat) => set({ activeChat }),
-
-  renameChat: (id, title) =>
+  renameChannel: (id, title) =>
     set((state) => ({
-      chatList: state.chatList.map((chat) => (chat.id === id ? { ...chat, title } : chat)),
+      channels: state.channels.map((chat) => (chat.threadId === id ? { ...chat, title } : chat)),
     })),
-  updateUpdatedAt: (id) =>
+  updateChannel: (channel) =>
     set((state) => ({
-      chatList: state.chatList.map((chat) =>
-        chat.id === id ? { ...chat, updatedAt: new Date().getTime().toString() } : chat
+      channels: state.channels.map((chat) =>
+        chat.threadId === channel.threadId ? { ...chat, ...channel, threadId: chat.threadId } : chat
       ),
     })),
-  deleteChat: (id) =>
-    set((state) => ({ chatList: state.chatList.filter((chat) => chat.id !== id) })),
-  setLastActiveChat: () =>
-    set((state) => ({ activeChat: state.chatList[state.chatList.length - 1].id })),
+  deleteChannel: (id) =>
+    set((state) => ({ channels: state.channels.filter((chat) => chat.threadId !== id) })),
 }));

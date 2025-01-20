@@ -1,9 +1,11 @@
 import "./chat-app.scss";
+import useSaveChannels from "@/hooks/useSaveChannels.hook";
+import useSaveMessages from "@/hooks/useSaveMessages.hook";
 import useSectionObserver from "@/hooks/useSectionObserver.hook";
 import { useI18nContext } from "@/i18n/i18n-react";
 import { useChatStore } from "@/stores/chat.store";
 import scrollToButton from "@/utils/scrollToButton";
-import { type Message, useAssistant } from "ai/react";
+import { useAssistant } from "ai/react";
 import localforage from "localforage";
 import { motion, useDragControls } from "motion/react";
 import type { OverlayScrollbarsComponentRef } from "overlayscrollbars-react";
@@ -13,132 +15,111 @@ import ChatContent from "./components/content/ChatContent";
 import ChatHeader from "./components/header/ChatHeader";
 import ChatInput from "./components/input/ChatInput";
 import { initMessagesData } from "./messages";
-import type { ChatListElementType } from "./type";
+import type { ChannelType, DatedChannelType, SavedMessageType } from "./type";
+
+const titleRegex = /Title: (.+)/;
 
 export default function ChatApp() {
-  const { messages, input, handleInputChange, submitMessage, setMessages, status } = useAssistant({
+  const {
+    messages,
+    input,
+    handleInputChange,
+    submitMessage,
+    status,
+    threadId,
+    setThreadId,
+    setMessages,
+  } = useAssistant({
     api: "/api/chat",
   });
   const { LL, locale } = useI18nContext();
   const ref = useSectionObserver("chat");
-  const controls = useDragControls();
-  const setChatList = useChatStore((state) => state.setChatList);
-  const chatList = useChatStore((state) => state.chatList);
-  const setActiveChat = useChatStore((state) => state.setActiveChat);
-  const setLastActiveChat = useChatStore((state) => state.setLastActiveChat);
-  const activeChat = useChatStore((state) => state.activeChat);
   const chatContentRef = useRef<OverlayScrollbarsComponentRef<"div">>(null);
-  const [formattedChats, setFormattedChats] = useState<
-    {
-      date: number;
-      label: string;
-      elements: ChatListElementType[];
-    }[]
-  >([]);
+  const controls = useDragControls();
+  const [datedChannelList, setDatedChannelList] = useState<DatedChannelType[]>([]);
+  const channels = useChatStore((state) => state.channels);
+  const setChannels = useChatStore((state) => state.setChannels);
+  const addChannel = useChatStore((state) => state.addChannel);
+  const updateChannel = useChatStore((state) => state.updateChannel);
+  const [oldMessages, setOldMessages] = useState<SavedMessageType[]>([]);
+  const [savedMessages, setSavedMessages] = useState<SavedMessageType[]>([]);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+  useSaveMessages({ messages, threadId });
+  useSaveChannels({ channels });
+
+  async function deleteMessages(id: string) {
+    setMessages([]);
+    setOldMessages([]);
+    const savedMsg = await localforage.getItem<SavedMessageType[]>("messages");
+    if (!savedMsg) return;
+    const newMessages = savedMsg.filter((m) => m.threadId !== id);
+    const res = await localforage.setItem("messages", newMessages);
+  }
+
+  // Load saved channels
   useEffect(() => {
-    scrollToButton(chatContentRef);
-    const syncMessagesWithLocalForage = async () => {
-      try {
-        const savedMessages = await localforage.getItem("messages");
-
-        if (!Array.isArray(savedMessages)) {
-          await localforage.setItem(
-            "messages",
-            messages.map((msg) => ({
-              ...msg,
-              from: activeChat,
-            }))
-          );
-          return;
-        }
-
-        interface SavedMessageType extends Message {
-          from: string;
-        }
-
-        const remainingMessages = (savedMessages as SavedMessageType[]).filter(
-          (savedMsg) => savedMsg.from !== activeChat
-        );
-
-        const updatedMessages = [
-          ...remainingMessages,
-          ...messages.map((msg) => ({
-            ...msg,
-            from: activeChat,
-          })),
-        ];
-
-        await localforage.setItem("messages", updatedMessages);
-      } catch (error) {
-        console.error("Error synchronizing messages:", error);
-      }
-    };
-
-    syncMessagesWithLocalForage();
-  }, [messages]);
-
-  useEffect(() => {
-    localforage.getItem("messages").then((savedMessages) => {
-      if (Array.isArray(savedMessages)) {
-        setMessages(
-          savedMessages
-            .filter((msg) => msg.from === activeChat)
-            .map((msg) => ({
-              ...msg,
-              from: undefined,
-            }))
-        );
-      }
-    });
-  }, [activeChat, setMessages]);
-
-  useEffect(() => {
-    localforage.setItem("chatList", chatList);
-  }, [chatList]);
-
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-  useEffect(() => {
-    localforage.getItem("chatList").then((chatList) => {
-      if (Array.isArray(chatList) && chatList.length > 0 && chatList[0].title.trim()) {
-        setChatList(chatList as ChatListElementType[]);
-        setLastActiveChat();
+    (async () => {
+      const savedChannels = (await localforage.getItem("channels")) as ChannelType[];
+      if (Array.isArray(savedChannels) && savedChannels.length > 0) {
+        setChannels(savedChannels);
+        setThreadId(savedChannels[savedChannels.length - 1].threadId);
       } else {
-        const date = new Date().getTime().toString();
-        setChatList([
+        setChannels([
           {
             title: LL.chat.newChat(),
-            updatedAt: new Date().getTime().toString(),
-            id: date,
+            updatedAt: new Date().getTime(),
+            threadId: "temp",
           },
         ]);
-        setActiveChat(date);
-        localforage.setItem("chatList", []);
       }
-    });
-  }, [setChatList]);
+    })();
+  }, []);
 
-  const initMessages = [
-    {
-      id: "1",
-      role: "assistant",
-      content: [
-        initMessagesData.hi[locale === "fr" ? "fr" : "en"],
-        initMessagesData.chat[locale === "fr" ? "fr" : "en"],
-      ],
-    },
-  ];
+  // Load saved messages
+  useEffect(() => {
+    (async () => {
+      const localSavedMessages = (await localforage.getItem("messages")) as SavedMessageType[];
+      if (Array.isArray(localSavedMessages) && localSavedMessages.length > 0) {
+        setSavedMessages(localSavedMessages);
+      } else {
+        setSavedMessages([]);
+      }
+    })();
+  }, [threadId]);
 
+  // Get active old messages
+  useEffect(() => {
+    const oldMsgs = savedMessages.filter((m) => m.threadId === threadId);
+    setOldMessages(oldMsgs);
+    scrollToButton(chatContentRef, true);
+  }, [threadId, savedMessages]);
+
+  // Create a new chat when there is no chat
+  useEffect(() => {
+    if (!threadId) return;
+    const channel = channels.find((c) => c.threadId === threadId);
+    if (!channel) {
+      setChannels(
+        channels.map((c) => {
+          if (c.threadId === "temp") {
+            return {
+              title: LL.chat.newChat(),
+              updatedAt: new Date().getTime(),
+              threadId,
+            };
+          }
+          return c;
+        })
+      );
+    }
+  }, [threadId]);
+
+  // Update aside list
   useEffect(() => {
     const today = new Date().getTime();
-    const newFormattedChats: {
-      date: number;
-      label: string;
-      elements: ChatListElementType[];
-    }[] = [];
+    const newFormattedChats: DatedChannelType[] = [];
 
-    for (const chat of chatList) {
+    for (const chat of channels) {
       const updatedAtDate = new Date(Number(chat.updatedAt));
       const isToday = updatedAtDate.getTime() > today - 24 * 60 * 60 * 1000;
       const isYesterday = updatedAtDate.getTime() > today - 48 * 60 * 60 * 1000;
@@ -171,8 +152,38 @@ export default function ChatApp() {
     }
 
     newFormattedChats.sort((a, b) => b.date - a.date);
-    setFormattedChats(newFormattedChats);
-  }, [chatList, LL, locale]);
+    setDatedChannelList(newFormattedChats);
+  }, [channels]);
+
+  const initMessages = [
+    {
+      id: "1",
+      role: "assistant",
+      content: [
+        initMessagesData.hi[locale === "fr" ? "fr" : "en"],
+        initMessagesData.chat[locale === "fr" ? "fr" : "en"],
+      ],
+    },
+  ];
+
+  // Update channel title
+  useEffect(() => {
+    if (status !== "in_progress" && messages.length > 1 && threadId) {
+      const firstResponse = messages[1].content;
+      const match = firstResponse.match(titleRegex);
+      if (match?.[1])
+        updateChannel({
+          threadId,
+          title: match[1].trim(),
+        });
+    }
+  }, [status]);
+
+  function setLastActiveThread() {
+    const lastActiveThread = channels[channels.length - 1];
+    setThreadId(lastActiveThread.threadId);
+  }
+
   return (
     <motion.div
       id="chat-section"
@@ -203,17 +214,24 @@ export default function ChatApp() {
           bottom: 0,
         }}
       >
-        <ChatAside chatList={formattedChats} />
+        {
+          <ChatAside
+            datedChannelList={datedChannelList}
+            setThreadId={setThreadId}
+            threadId={threadId ?? ""}
+            deleteMessages={deleteMessages}
+          />
+        }
         <main>
-          <ChatHeader controls={controls} />
-          <ChatContent chat={[...initMessages, ...messages]} ref={chatContentRef} />
+          <ChatHeader controls={controls} setThreadId={setThreadId} />
+          <ChatContent chat={[...initMessages, ...oldMessages, ...messages]} ref={chatContentRef} />
           <ChatInput
             input={input}
             handleInputChange={handleInputChange}
             handleSubmit={submitMessage}
             ref={chatContentRef}
             isLoading={status === "in_progress"}
-            activeChat={activeChat}
+            threadId={threadId ?? ""}
           />
         </main>
       </motion.section>

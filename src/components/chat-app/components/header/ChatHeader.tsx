@@ -6,23 +6,27 @@ import { motion } from "motion/react";
 
 export default function ChatHeader({
   controls,
+  setThreadId,
 }: {
   controls: any;
+  setThreadId: (threadId: string) => void;
 }) {
   const { LL } = useI18nContext();
-  const addChat = useChatStore((state) => state.addChat);
-  const setActiveChat = useChatStore((state) => state.setActiveChat);
-
-  const twoRandomNumbers = Math.floor(Math.random() * 59);
+  const addChannel = useChatStore((state) => state.addChannel);
+  const channels = useChatStore((state) => state.channels);
 
   function createNewChat() {
-    const date = new Date().getTime().toString();
-    addChat({
-      id: date,
+    const isTempChannel = channels.some((channel) => channel.threadId === "temp");
+    if (isTempChannel) {
+      setThreadId("temp");
+      return;
+    }
+    addChannel({
+      threadId: "temp",
       title: LL.chat.newChat(),
-      updatedAt: date,
+      updatedAt: new Date().getTime(),
     });
-    setActiveChat(date);
+    setThreadId("temp");
   }
 
   return (

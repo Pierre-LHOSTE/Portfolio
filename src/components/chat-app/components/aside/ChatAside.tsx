@@ -1,12 +1,19 @@
 import { useI18nContext } from "@/i18n/i18n-react";
 import "./aside.scss";
 import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
-import ChatAsideList, { type ChatAsideListProps } from "./list/ChatAsideList";
+import type { DatedChannelType } from "../../type";
+import ChatAsideList from "./list/ChatAsideList";
 
 export default function ChatAside({
-  chatList,
+  datedChannelList,
+  setThreadId,
+  threadId,
+  deleteMessages,
 }: {
-  chatList: ChatAsideListProps[];
+  datedChannelList: DatedChannelType[];
+  setThreadId: (threadId: string | undefined) => void;
+  threadId: string;
+  deleteMessages: (threadId: string) => void;
 }) {
   const { LL } = useI18nContext();
   return (
@@ -25,8 +32,14 @@ export default function ChatAside({
               flex: 1,
             }}
           >
-            {chatList.map((chat) => (
-              <ChatAsideList key={chat.date} {...chat} />
+            {datedChannelList.map((chat) => (
+              <ChatAsideList
+                key={chat.date}
+                {...chat}
+                setThreadId={setThreadId}
+                threadId={threadId}
+                deleteMessages={deleteMessages}
+              />
             ))}
           </OverlayScrollbarsComponent>
         </nav>

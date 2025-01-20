@@ -7,6 +7,8 @@ export interface ChatMessageProps {
   content: string | string[];
 }
 
+const titleRegexp = /[\n\b]T(?:i(?:t(?:l(?:e(?:\:(?: (?:.*?)?)?)?)?)?)?)?$/;
+
 export default function ChatMessage({ role, content }: ChatMessageProps) {
   const { LL } = useI18nContext();
 
@@ -29,6 +31,7 @@ export default function ChatMessage({ role, content }: ChatMessageProps) {
 }
 
 function formatMessage(text: string): ReactNode {
+  const textClean = text.replace(titleRegexp, "").trim();
   // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-  return text.split("\n").map((line, i) => <p key={i}>{line.trim() || " "}</p>);
+  return textClean.split("\n").map((line, i) => <p key={i}>{line.trim() || " "}</p>);
 }

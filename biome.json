@@ -30,7 +30,8 @@
         "noUndeclaredDependencies": "warn",
         "noUnusedImports": "info",
         "noUnusedFunctionParameters": "info",
-        "noUnusedVariables": "off"
+        "noUnusedVariables": "off",
+        "useExhaustiveDependencies": "off"
       },
       "performance": {
         "noAccumulatingSpread": "error",
