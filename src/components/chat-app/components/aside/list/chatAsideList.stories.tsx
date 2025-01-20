@@ -14,12 +14,15 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    threadId: "1",
+    setThreadId: (threadId: string | undefined) => {},
+    deleteMessages: (threadId: string) => {},
     date: Date.now(),
     label: "Today",
     elements: [
-      { title: "Probleme avec l'API REST", id: "1" },
-      { title: "Discussion sur le design", id: "2" },
-      { title: "Effet text en CSS", id: "3" },
+      { title: "Probleme avec l'API REST", threadId: "1", updatedAt: Date.now() },
+      { title: "Discussion sur le design", threadId: "2", updatedAt: Date.now() },
+      { title: "Effet text en CSS", threadId: "3", updatedAt: Date.now() },
     ],
   },
 };

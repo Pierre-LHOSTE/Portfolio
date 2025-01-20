@@ -16,9 +16,9 @@ export const Default: Story = {
   args: {
     input: "",
     handleInputChange: () => {},
-    handleSubmit: () => {},
+    handleSubmit: async () => {},
     ref: null,
     isLoading: false,
-    activeChat: "",
+    threadId: "1",
   },
 };

@@ -14,25 +14,36 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    chatList: [
+    threadId: "1",
+    setThreadId: (threadId: string | undefined) => console.log(threadId),
+    deleteMessages: (threadId: string) => console.log(`Deleted messages for thread ${threadId}`),
+    datedChannelList: [
       {
         date: Date.now(),
         label: "Today",
         elements: [
-          { title: "Problème avec l'API REST", id: "1" },
-          { title: "Discussion sur le design", id: "2" },
-          { title: "Effet text en CSS", id: "3" },
+          { title: "Problème avec l'API REST", threadId: "1", updatedAt: Date.now() },
+          { title: "Discussion sur le design", threadId: "2", updatedAt: Date.now() },
+          { title: "Effet text en CSS", threadId: "3", updatedAt: Date.now() },
         ],
       },
       {
         date: Date.now() - 86400000,
         label: "Yesterday",
         elements: [
-          { title: "Organisation du projet", id: "4" },
-          { title: "Refactoring du code", id: "5" },
-          { title: "Discussion sur les tests", id: "6" },
-          { title: "Mise en place de l'authentification", id: "7" },
-          { title: "Discussion sur les performances", id: "8" },
+          { title: "Organisation du projet", threadId: "4", updatedAt: Date.now() - 86400000 },
+          { title: "Refactoring du code", threadId: "5", updatedAt: Date.now() - 86400000 },
+          { title: "Discussion sur les tests", threadId: "6", updatedAt: Date.now() - 86400000 },
+          {
+            title: "Mise en place de l'authentification",
+            threadId: "7",
+            updatedAt: Date.now() - 86400000,
+          },
+          {
+            title: "Discussion sur les performances",
+            threadId: "8",
+            updatedAt: Date.now() - 86400000,
+          },
         ],
       },
     ],
