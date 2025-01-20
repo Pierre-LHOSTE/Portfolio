@@ -9,11 +9,15 @@ export default function ChatAside({
   setThreadId,
   threadId,
   deleteMessages,
+  searchQuery,
+  setSearchQuery,
 }: {
   datedChannelList: DatedChannelType[];
   setThreadId: (threadId: string | undefined) => void;
   threadId: string;
   deleteMessages: (threadId: string) => void;
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
 }) {
   const { LL } = useI18nContext();
   return (
@@ -24,7 +28,12 @@ export default function ChatAside({
         <span id="green" />
       </header>
       <main>
-        <input type="text" placeholder={LL.chat.search()} />
+        <input
+          type="text"
+          placeholder={LL.chat.search()}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
         <nav>
           <OverlayScrollbarsComponent
             defer

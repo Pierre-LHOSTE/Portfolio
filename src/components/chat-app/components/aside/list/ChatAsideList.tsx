@@ -21,7 +21,8 @@ export default function ChatAsideList({
   const addChannel = useChatStore((state) => state.addChannel);
   const { LL } = useI18nContext();
 
-  function handleDeleteChat(e: MouseEvent<HTMLSpanElement>) {
+  function handleDeleteChat(e: MouseEvent<HTMLSpanElement>, id: string) {
+    if (threadId !== id) return;
     e.stopPropagation();
     const lastActiveThread = channels[channels.length - 1];
     if (channels.length === 1) {
@@ -51,14 +52,15 @@ export default function ChatAsideList({
           >
             <button
               type="button"
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation();
                 if (threadId !== element.threadId) setThreadId(element.threadId);
               }}
             >
               {element.title}
               {/* biome-ignore lint/nursery/noStaticElementInteractions: <explanation> */}
               {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-              <span className="delete" onClick={(e) => handleDeleteChat(e)}>
+              <span className="delete" onClick={(e) => handleDeleteChat(e, element.threadId)}>
                 <IconTrash size={16} />
               </span>
             </button>

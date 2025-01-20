@@ -43,6 +43,7 @@ export default function ChatApp() {
   const updateChannel = useChatStore((state) => state.updateChannel);
   const [oldMessages, setOldMessages] = useState<SavedMessageType[]>([]);
   const [savedMessages, setSavedMessages] = useState<SavedMessageType[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useSaveMessages({ messages, threadId });
   useSaveChannels({ channels });
@@ -55,6 +56,10 @@ export default function ChatApp() {
     const newMessages = savedMsg.filter((m) => m.threadId !== id);
     const res = await localforage.setItem("messages", newMessages);
   }
+
+  useEffect(() => {
+    scrollToButton(chatContentRef);
+  }, [messages]);
 
   // Load saved channels
   useEffect(() => {
@@ -116,10 +121,19 @@ export default function ChatApp() {
 
   // Update aside list
   useEffect(() => {
+    if (!channels) return;
     const today = new Date().getTime();
     const newFormattedChats: DatedChannelType[] = [];
 
-    for (const chat of channels) {
+    console.log("🚀 ~ channels:", channels);
+    console.log("🚀 ~ searchQuery:", searchQuery);
+
+    const filteredChannels = channels.filter((c) => {
+      return c.title.toLowerCase().includes(searchQuery.toLowerCase());
+    });
+    console.log("🚀 ~ filteredChannels:", filteredChannels);
+
+    for (const chat of filteredChannels) {
       const updatedAtDate = new Date(Number(chat.updatedAt));
       const isToday = updatedAtDate.getTime() > today - 24 * 60 * 60 * 1000;
       const isYesterday = updatedAtDate.getTime() > today - 48 * 60 * 60 * 1000;
@@ -153,7 +167,7 @@ export default function ChatApp() {
 
     newFormattedChats.sort((a, b) => b.date - a.date);
     setDatedChannelList(newFormattedChats);
-  }, [channels]);
+  }, [channels, searchQuery]);
 
   const initMessages = [
     {
@@ -220,6 +234,8 @@ export default function ChatApp() {
             setThreadId={setThreadId}
             threadId={threadId ?? ""}
             deleteMessages={deleteMessages}
+            setSearchQuery={setSearchQuery}
+            searchQuery={searchQuery}
           />
         }
         <main>

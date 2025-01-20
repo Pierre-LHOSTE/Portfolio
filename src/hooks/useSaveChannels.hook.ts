@@ -8,6 +8,7 @@ export default function useSaveChannels({
   channels: ChannelType[];
 }) {
   useEffect(() => {
+    if (!channels) return;
     (async () => {
       await localforage.setItem("channels", channels);
     })();
