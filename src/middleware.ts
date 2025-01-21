@@ -20,6 +20,8 @@ export const config = {
   ],
 };
 
+const excludedUserAgents = ["vercel-screenshot", "Google-PageRenderer"];
+
 export default async function middleware(request: NextRequest, context: NextFetchEvent) {
   console.log("---------");
   console.log(request.url);
@@ -31,7 +33,7 @@ export default async function middleware(request: NextRequest, context: NextFetc
 
     const userAgent = request.headers.get("user-agent") || "";
     console.log("🚀 ~ userAgent:", userAgent);
-    if (userAgent.includes("vercel-screenshot")) return response;
+    if (excludedUserAgents.some((ua) => userAgent.includes(ua))) return response;
 
     const today = new Date().toISOString().split("T")[0];
     const ip = (

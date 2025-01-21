@@ -8,6 +8,7 @@ export interface ChatMessageProps {
 }
 
 const titleRegexp = /[\n\b]T(?:i(?:t(?:l(?:e(?:\:(?: (?:.*?)?)?)?)?)?)?)?$/;
+const fileRegexp = /【\d*:?(?:\d*[^】]*)?\.?\w*】?/;
 
 export default function ChatMessage({ role, content }: ChatMessageProps) {
   const { LL } = useI18nContext();
@@ -31,7 +32,7 @@ export default function ChatMessage({ role, content }: ChatMessageProps) {
 }
 
 function formatMessage(text: string): ReactNode {
-  const textClean = text.replace(titleRegexp, "").trim();
+  const textClean = text.replace(titleRegexp, "").replace(fileRegexp, "").trim();
   // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
   return textClean.split("\n").map((line, i) => <p key={i}>{line.trim() || " "}</p>);
 }
