@@ -124,14 +124,9 @@ export default function ChatApp() {
     if (!channels) return;
     const today = new Date().getTime();
     const newFormattedChats: DatedChannelType[] = [];
-
-    console.log("🚀 ~ channels:", channels);
-    console.log("🚀 ~ searchQuery:", searchQuery);
-
     const filteredChannels = channels.filter((c) => {
       return c.title.toLowerCase().includes(searchQuery.toLowerCase());
     });
-    console.log("🚀 ~ filteredChannels:", filteredChannels);
 
     for (const chat of filteredChannels) {
       const updatedAtDate = new Date(Number(chat.updatedAt));
