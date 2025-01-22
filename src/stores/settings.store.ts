@@ -43,7 +43,7 @@ export const useSettingsStore = create<SettingsStoreType>((set) => ({
   imagePreview: null,
   setImagePreview: (imagePreview) => set({ imagePreview }),
 
-  activeSection: "",
+  activeSection: "home",
   setActiveSection: (activeSection) => set({ activeSection }),
 
   showForm: false,

@@ -6,8 +6,8 @@ import "./timeline.scss";
 import { useI18nContext } from "@/i18n/i18n-react";
 import type { TimelineIdType } from "./types";
 
-export default function Timeline() {
-  const ref = useSectionObserver("timeline");
+export default function Timeline({ id }: { id: string }) {
+  const ref = useSectionObserver(id);
   const { LL } = useI18nContext();
 
   const durations = timelineList.map((element) => {
@@ -21,7 +21,7 @@ export default function Timeline() {
     <Article
       title={LL.section.timeline.title()}
       description={LL.section.timeline.description()}
-      id="timeline"
+      id={id}
       ref={ref}
     >
       {(Object.keys(timelineElementList) as TimelineIdType[]).map((timelineId, index) => (

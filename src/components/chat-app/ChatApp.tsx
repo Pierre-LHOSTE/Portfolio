@@ -19,7 +19,7 @@ import type { ChannelType, DatedChannelType, SavedMessageType } from "./type";
 
 const titleRegex = /Title: (.+)/;
 
-export default function ChatApp() {
+export default function ChatApp({ id }: { id: string }) {
   const {
     messages,
     input,
@@ -33,7 +33,7 @@ export default function ChatApp() {
     api: "/api/chat",
   });
   const { LL, locale } = useI18nContext();
-  const ref = useSectionObserver("chat");
+  const ref = useSectionObserver(id);
   const chatContentRef = useRef<OverlayScrollbarsComponentRef<"div">>(null);
   const controls = useDragControls();
   const [datedChannelList, setDatedChannelList] = useState<DatedChannelType[]>([]);
@@ -195,7 +195,8 @@ export default function ChatApp() {
 
   return (
     <motion.div
-      id="chat-section"
+      id={`${id}-section`}
+      ref={ref}
       initial={{
         opacity: 0,
         translateY: 80,
@@ -209,7 +210,6 @@ export default function ChatApp() {
           damping: 20,
         },
       }}
-      ref={ref}
     >
       <motion.section
         id="chat-app"

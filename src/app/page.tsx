@@ -21,13 +21,13 @@ export default function Home() {
       <Background />
 
       <Header />
-      <Hero />
+      <Hero id="home" />
       <Scroll />
-      <ChatApp />
-      <Stacks />
-      <Timeline />
-      <Projects />
-      <Contact />
+      <ChatApp id="chat" />
+      <Stacks id="stacks" />
+      <Timeline id="timeline" />
+      <Projects id="projects" />
+      <Contact id="contact" />
 
       <Form />
       <ImagePreview />

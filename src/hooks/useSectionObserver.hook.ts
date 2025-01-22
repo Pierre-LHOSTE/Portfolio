@@ -1,28 +1,27 @@
 import { useSettingsStore } from "@/stores/settings.store";
 import { useEffect, useRef } from "react";
 
+const PADDING = 0.4;
+
 export default function useSectionObserver(id: string) {
-  const setActiveSection = useSettingsStore((state) => state.setActiveSection);
   const ref = useRef<HTMLDivElement>(null);
+  const setActiveSection = useSettingsStore((state) => state.setActiveSection);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+    const handleScroll = () => {
+      if (ref.current) {
+        const rect = ref.current.getBoundingClientRect();
+        const height = window.innerHeight * PADDING;
+        const isVisible = rect.bottom >= height && rect.top <= height;
+        if (isVisible) {
           setActiveSection(id);
         }
-      },
-      { threshold: 0.5 } // La section est visible à 50 % ou plus
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
       }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [id, setActiveSection]);
 

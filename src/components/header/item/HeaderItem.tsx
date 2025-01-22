@@ -17,14 +17,12 @@ export default function HeaderItem({
   function scrollToSection() {
     if (label === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
-      setActiveSection(label);
       return;
     }
 
     const section = document.getElementById(`${label}-section`);
 
     if (section) {
-      setActiveSection(label);
       const yOffset = -192;
       const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });

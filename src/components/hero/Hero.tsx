@@ -4,11 +4,11 @@ import { Title } from "@/components/title/Title";
 import "./hero.scss";
 import useSectionObserver from "@/hooks/useSectionObserver.hook";
 
-export default function Hero() {
-  const ref = useSectionObserver("home");
+export default function Hero({ id }: { id: string }) {
+  const ref = useSectionObserver(id);
 
   return (
-    <div id="hero" ref={ref}>
+    <div id={id} ref={ref}>
       <Message />
       <Title />
       <Details />

@@ -5,15 +5,15 @@ import StackGroup from "./group/Group";
 import "./stack.scss";
 import { useI18nContext } from "@/i18n/i18n-react";
 
-export default function Stacks() {
-  const ref = useSectionObserver("stacks");
+export default function Stacks({ id }: { id: string }) {
+  const ref = useSectionObserver(id);
   const { LL } = useI18nContext();
 
   return (
     <Article
       title={LL.section.stacks.title()}
       description={LL.section.stacks.description()}
-      id="stacks"
+      id={id}
       ref={ref}
     >
       {stackList.map((group) => (

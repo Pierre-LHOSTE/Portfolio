@@ -6,15 +6,15 @@ import "./projects.scss";
 import { useI18nContext } from "@/i18n/i18n-react";
 import type { ProjectIdType } from "./project";
 
-export default function Projects() {
-  const ref = useSectionObserver("projects");
+export default function Projects({ id }: { id: string }) {
+  const ref = useSectionObserver(id);
   const { LL } = useI18nContext();
 
   return (
     <Article
       title={LL.section.projects.title()}
       description={LL.section.projects.description()}
-      id="projects"
+      id={id}
       ref={ref}
     >
       {(Object.keys(projectsList) as ProjectIdType[]).map((projectId) => (
