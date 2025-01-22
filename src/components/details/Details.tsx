@@ -39,10 +39,12 @@ export default function Details() {
     window.open(DOWNLOAD_LINK, "_blank");
   }
 
+  const key = navigator.userAgent.includes("Mac") ? "⌘" : "CTRL";
+
   return (
     <section id="details">
       <motion.p {...animation}>
-        {LL.hero.details.key.p1()} <Key k="⌘" /> <Key k="P" /> {LL.hero.details.key.p2()}
+        {LL.hero.details.key.p1()} <Key k={key} /> <Key k="P" /> {LL.hero.details.key.p2()}
       </motion.p>
       <motion.p {...animation}>
         {LL.hero.details.download.p1()}{" "}
