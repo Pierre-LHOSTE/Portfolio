@@ -17,6 +17,8 @@ export const Default: Story = {
     threadId: "1",
     setThreadId: (threadId: string | undefined) => console.log(threadId),
     deleteMessages: (threadId: string) => console.log(`Deleted messages for thread ${threadId}`),
+    searchQuery: "",
+    setSearchQuery: (query: string) => console.log(`Search query set to ${query}`),
     datedChannelList: [
       {
         date: Date.now(),
