@@ -1,3 +1,4 @@
+"use client";
 import { useSettingsStore } from "@/stores/settings.store";
 import type { SavedTheme } from "@/types/settings";
 import localforage from "localforage";

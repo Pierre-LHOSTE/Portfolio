@@ -1,3 +1,4 @@
+"use client";
 import TypesafeI18n from "@/i18n/i18n-react";
 import type { Locales } from "@/i18n/i18n-types";
 import { detectLocale } from "@/i18n/i18n-util";

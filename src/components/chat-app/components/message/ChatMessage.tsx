@@ -16,7 +16,7 @@ export default function ChatMessage({ role, content }: ChatMessageProps) {
   return (
     <div className={`chat-message user-${role}`}>
       <div className="avatar-wrapper">
-        <img src="https://placehold.co/32x32/EEE/31343C" alt={role} />
+        <img src="/icon.svg" alt={role} />
         <span>{role === "assistant" ? LL.chat.assistant() : LL.chat.user()}</span>
       </div>
       <div className="content">
