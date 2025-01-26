@@ -8,6 +8,8 @@ import Theme from "./theme";
 
 export const metadata: Metadata = {
   title: "Pierre LHOSTE",
+  description:
+    "I’m Pierre LHOSTE, a Developer and Designer web based in France. I’m passionate about crafting beautiful, functional websites and solving problems through creative thinking",
 };
 
 export default async function RootLayout({
