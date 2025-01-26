@@ -12,6 +12,11 @@ export const metadata: Metadata = {
     "I’m Pierre LHOSTE, a Developer and Designer web based in France. I’m passionate about crafting beautiful, functional websites and solving problems through creative thinking",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 0.25,
+};
+
 export default async function RootLayout({
   children,
 }: Readonly<{
