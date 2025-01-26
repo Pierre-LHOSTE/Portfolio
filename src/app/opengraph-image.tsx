@@ -1,6 +1,11 @@
 import { veryLongText } from "@/components/background/text";
 import { ImageResponse } from "next/og";
 
+import fs from "fs";
+const fontBoldBuffer = fs.readFileSync("./src/fonts/inter/Inter-Bold.ttf");
+const fontRegularBuffer = fs.readFileSync("./src/fonts/inter/Inter-Regular.ttf");
+const fontMonoBuffer = fs.readFileSync("./src/fonts/JetBrainsMono/JetBrainsMono-Regular.ttf");
+
 export const alt = "Dynamic Thumbnail";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -14,7 +19,7 @@ export default function Image() {
   const slicedText = veryLongText.slice(0, maxChar);
   const characters = Array.from(slicedText).map((char, index) => {
     const randomValue = Math.random();
-    const opacity = randomValue ** 200;
+    const opacity = randomValue ** 300;
 
     const x = (index % charsPerRow) * fontSize;
     const y = Math.floor(index / charsPerRow) * fontSize;
@@ -29,6 +34,7 @@ export default function Image() {
           top: `${y}px`,
           fontSize: `${fontSize}px`,
           opacity,
+          fontFamily: "JetBrainsMono",
         }}
       >
         {char}
@@ -62,6 +68,7 @@ export default function Image() {
           backdropFilter: "blur(16px)",
           backgroundColor: "#fff",
           display: "flex",
+          fontFamily: "Inter-Bold",
         }}
       >
         Pierre LHOSTE
@@ -76,6 +83,7 @@ export default function Image() {
           backdropFilter: "blur(16px)",
           backgroundColor: "#fff",
           maxWidth: "400px",
+          fontFamily: "JetBrainsMono",
         }}
       >
         A French Developer & Designer Web
@@ -270,6 +278,26 @@ export default function Image() {
     </div>,
     {
       ...size,
+      fonts: [
+        {
+          name: "Inter-Bold",
+          data: fontBoldBuffer,
+          weight: 800,
+          style: "normal",
+        },
+        {
+          name: "Inter",
+          data: fontRegularBuffer,
+          weight: 400,
+          style: "normal",
+        },
+        {
+          name: "JetBrainsMono",
+          data: fontMonoBuffer,
+          weight: 400,
+          style: "normal",
+        },
+      ],
     }
   );
 }
