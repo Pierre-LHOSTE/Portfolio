@@ -34,6 +34,7 @@ export default async function middleware(request: NextRequest, context: NextFetc
 
     const userKey = `user:${ip}`;
     const isVisited = (await kv.get<number>(userKey)) ?? 0;
+    console.log("🚀 ~ userKey:", userKey);
 
     const now = new Date();
     const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
