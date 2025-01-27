@@ -1,15 +1,18 @@
+import { Client } from "@neondatabase/serverless";
 import { kv } from "@vercel/kv";
+import { hashSync } from "bcryptjs";
 import { type NextFetchEvent, type NextRequest, NextResponse } from "next/server";
+import { excludedPatterns } from "./utils/excludedUserAgentPatterns";
+
+const RATE_LIMIT_PER_SECOND = 10;
+const RATE_LIMIT_PER_MINUTE = 60;
+const EXPIRATION_SECONDS = 1;
+const EXPIRATION_MINUTES = 60;
+
+const botRegex = new RegExp(excludedPatterns.join("|"), "i");
 
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     */
     {
       source: "/((?!api|_next/static|_next/image|favicon.ico).*)",
       missing: [
@@ -20,55 +23,83 @@ export const config = {
   ],
 };
 
-const excludedUserAgents = ["vercel-screenshot", "Google-PageRenderer"];
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+});
 
-const botRegex = /[\w\s]bot[\/\s]/i;
+(async () => {
+  try {
+    await client.connect();
+  } catch (error) {
+    console.error("Failed to connect to database:", error);
+  }
+})();
 
+async function addUser(userAgent: string, ip: string, isBot: boolean) {
+  const id = hashSync(ip, 10);
+  try {
+    const query = "INSERT INTO users (user_agent, ip, date, is_bot) VALUES ($1, $2, NOW(), $3)";
+    await client.query(query, [userAgent, id, isBot]);
+  } catch (error) {
+    console.error("Error adding user:", error);
+  }
+}
+
+async function incrementVisitToday() {
+  try {
+    const today = new Date().toISOString().split("T")[0];
+    const query = `
+      INSERT INTO visits (date, count) 
+      VALUES ($1, 1)
+      ON CONFLICT (date)
+      DO UPDATE SET count = visits.count + 1
+    `;
+    await client.query(query, [today]);
+  } catch (error) {
+    console.error("Error incrementing visit count:", error);
+  }
+}
+
+// biome-ignore lint/correctness/noUnusedFunctionParameters: <explanation>
 export default async function middleware(request: NextRequest, context: NextFetchEvent) {
-  console.log("---------");
-  console.log(request.url);
-
   const response = NextResponse.next();
-
   try {
     if (request.method !== "GET" || request.nextUrl.pathname !== "/") return response;
 
-    const userAgent = request.headers.get("user-agent") || "";
-    console.log("🚀 ~ userAgent:", userAgent);
-    if (excludedUserAgents.some((ua) => userAgent.includes(ua))) return response;
-    if (botRegex.test(userAgent)) return response;
-
-    const today = new Date().toISOString().split("T")[0];
     const ip = (
       request.headers.get("x-real-ip") ||
       request.headers.get("x-forwarded-for")?.split(",")[0] ||
       "UNKNOWN"
     ).trim();
 
-    const host = request.headers.get("host") || "";
-    console.log("🚀 ~ ip-host:", ip, host);
-    if (host.includes("localhost") || ip === "127.0.0.1" || host !== "pierre-lhoste.vercel.app")
-      return response;
-
-    const userKey = `user:${today}:${ip.replace(/:/g, "-")}`;
-    const visitsKey = `visits:${today}`;
-
-    const alreadyVisited = await kv.get<number>(userKey);
-    if (alreadyVisited) {
-      await kv.incr(userKey);
-    } else {
-      const alreadyDay = await kv.get<number>(visitsKey);
-      if (alreadyDay) {
-        await kv.incr(visitsKey);
-      } else {
-        await kv.set(visitsKey, 1);
-      }
-      await kv.set(userKey, 1, { ex: 86400 });
+    const rateLimitKeySecond = `rate_limit_second:${ip.replace(/:/g, "-")}`;
+    const rateLimitKeyMinute = `rate_limit_minute:${ip.replace(/:/g, "-")}`;
+    const requestCountSecond = (await kv.get<number>(rateLimitKeySecond)) || 0;
+    const requestCountMinute = (await kv.get<number>(rateLimitKeyMinute)) || 0;
+    if (
+      requestCountSecond >= RATE_LIMIT_PER_SECOND ||
+      requestCountMinute >= RATE_LIMIT_PER_MINUTE
+    ) {
+      return new NextResponse("Too Many Requests", { status: 429 });
     }
+    await kv.set(rateLimitKeySecond, requestCountSecond + 1, { ex: EXPIRATION_SECONDS });
+    await kv.set(rateLimitKeyMinute, requestCountMinute + 1, { ex: EXPIRATION_MINUTES });
+
+    const userAgent = request.headers.get("user-agent") || "";
+
+    const isBot = botRegex.test(userAgent);
+    addUser(userAgent, ip, isBot);
+    if (isBot) return response;
+
+    const host = request.headers.get("host") || "";
+    if (host.includes("localhost") || ip === "127.0.0.1" || host !== "pierre-lhoste.vercel.app") {
+      return response;
+    }
+
+    await incrementVisitToday();
   } catch (error) {
     console.error("Error in middleware:", error);
   }
-  console.log("Async task finished.");
 
   return response;
 }
