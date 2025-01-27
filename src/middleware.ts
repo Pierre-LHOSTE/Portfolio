@@ -1,33 +1,17 @@
 import { Client } from "@neondatabase/serverless";
-import { kv } from "@vercel/kv";
-import { hashSync } from "bcryptjs";
 import { type NextFetchEvent, type NextRequest, NextResponse } from "next/server";
 import { excludedPatterns } from "./utils/excludedUserAgentPatterns";
 
-const RATE_LIMIT_PER_SECOND = 10;
-const RATE_LIMIT_PER_MINUTE = 60;
-const EXPIRATION_SECONDS = 1;
-const EXPIRATION_MINUTES = 60;
-
 const botRegex = new RegExp(excludedPatterns.join("|"), "i");
 
-export const config = {
-  matcher: [
-    {
-      source: "/((?!api|_next/static|_next/image|favicon.ico).*)",
-      missing: [
-        { type: "header", key: "next-router-prefetch" },
-        { type: "header", key: "purpose", value: "prefetch" },
-      ],
-    },
-  ],
-};
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+});
 
 async function addUser(client: Client, userAgent: string, ip: string, isBot: boolean) {
   try {
-    const id = hashSync(ip, 10);
     const query = "INSERT INTO users (user_agent, ip, date, is_bot) VALUES ($1, $2, NOW(), $3)";
-    await client.query(query, [userAgent, id, isBot]);
+    await client.query(query, [userAgent, ip, isBot]);
   } catch (error) {
     console.error("Error adding user:", error);
   }
@@ -60,24 +44,9 @@ export default async function middleware(request: NextRequest, context: NextFetc
       "UNKNOWN"
     ).trim();
 
-    const rateLimitKeySecond = `rate_limit_second:${ip.replace(/:/g, "-")}`;
-    const rateLimitKeyMinute = `rate_limit_minute:${ip.replace(/:/g, "-")}`;
-    const requestCountSecond = (await kv.get<number>(rateLimitKeySecond)) || 0;
-    const requestCountMinute = (await kv.get<number>(rateLimitKeyMinute)) || 0;
-    if (
-      requestCountSecond >= RATE_LIMIT_PER_SECOND ||
-      requestCountMinute >= RATE_LIMIT_PER_MINUTE
-    ) {
-      return new NextResponse("Too Many Requests", { status: 429 });
-    }
-    await kv.set(rateLimitKeySecond, requestCountSecond + 1, { ex: EXPIRATION_SECONDS });
-    await kv.set(rateLimitKeyMinute, requestCountMinute + 1, { ex: EXPIRATION_MINUTES });
-
-    const client = new Client({
-      connectionString: process.env.DATABASE_URL,
-    });
-
-    client.connect().catch((error) => console.error("Error connecting to the database:", error));
+    await client
+      .connect()
+      .catch((error) => console.error("Error connecting to the database:", error));
 
     const userAgent = request.headers.get("user-agent") || "";
 
@@ -91,9 +60,22 @@ export default async function middleware(request: NextRequest, context: NextFetc
     }
 
     await incrementVisitToday(client);
+    await client.end();
   } catch (error) {
     console.error("Error in middleware:", error);
   }
 
   return response;
 }
+
+export const config = {
+  matcher: [
+    {
+      source: "/((?!api|_next/static|_next/image|favicon.ico).*)",
+      missing: [
+        { type: "header", key: "next-router-prefetch" },
+        { type: "header", key: "purpose", value: "prefetch" },
+      ],
+    },
+  ],
+};
