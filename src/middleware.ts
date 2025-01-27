@@ -27,19 +27,13 @@ const client = new Client({
   connectionString: process.env.DATABASE_URL,
 });
 
-(async () => {
-  try {
-    await client.connect();
-  } catch (error) {
-    console.error("Failed to connect to database:", error);
-  }
-})();
-
 async function addUser(userAgent: string, ip: string, isBot: boolean) {
-  const id = hashSync(ip, 10);
   try {
+    const id = hashSync(ip, 10);
+    await client.connect();
     const query = "INSERT INTO users (user_agent, ip, date, is_bot) VALUES ($1, $2, NOW(), $3)";
     await client.query(query, [userAgent, id, isBot]);
+    await client.end();
   } catch (error) {
     console.error("Error adding user:", error);
   }
@@ -47,6 +41,7 @@ async function addUser(userAgent: string, ip: string, isBot: boolean) {
 
 async function incrementVisitToday() {
   try {
+    await client.connect();
     const today = new Date().toISOString().split("T")[0];
     const query = `
       INSERT INTO visits (date, count) 
@@ -55,6 +50,7 @@ async function incrementVisitToday() {
       DO UPDATE SET count = visits.count + 1
     `;
     await client.query(query, [today]);
+    await client.end();
   } catch (error) {
     console.error("Error incrementing visit count:", error);
   }
