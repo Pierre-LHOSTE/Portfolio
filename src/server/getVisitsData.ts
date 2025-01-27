@@ -1,18 +1,27 @@
 "use server";
-import { kv } from "@vercel/kv";
+import { Client } from "@neondatabase/serverless";
+
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+});
+
+(async () => {
+  try {
+    await client.connect();
+  } catch (error) {
+    console.error("Failed to connect to database:", error);
+  }
+})();
 
 export async function getVisitsData(): Promise<{ [date: string]: number }> {
-  const keys = await kv.keys("visits:*");
-  const data = await Promise.all(
-    keys.map(async (key) => {
-      const count = await kv.get<number>(key);
-      const date = key.split(":")[1];
-      return { date, count: count || 0 };
-    })
-  );
+  const res = await client.query("SELECT date::timestamptz, count FROM visits");
+  const data = res.rows;
 
-  return data.reduce((acc: { [date: string]: number }, { date, count }) => {
-    acc[date] = count;
+  const visits = data.reduce((acc: { [date: string]: number }, { date, count }) => {
+    const d = new Date(date);
+    acc[d.toISOString().split("T")[0]] = count;
     return acc;
   }, {});
+
+  return visits;
 }
