@@ -4,21 +4,23 @@ import { excludedPatterns } from "./utils/excludedUserAgentPatterns";
 
 const botRegex = new RegExp(excludedPatterns.join("|"), "i");
 
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-});
-
-async function addUser(client: Client, userAgent: string, ip: string, isBot: boolean) {
+async function addUser(userAgent: string, ip: string, isBot: boolean) {
+  const client = new Client({ connectionString: process.env.DATABASE_URL });
   try {
+    await client.connect();
     const query = "INSERT INTO users (user_agent, ip, date, is_bot) VALUES ($1, $2, NOW(), $3)";
     await client.query(query, [userAgent, ip, isBot]);
   } catch (error) {
     console.error("Error adding user:", error);
+  } finally {
+    await client.end();
   }
 }
 
-async function incrementVisitToday(client: Client) {
+async function incrementVisitToday() {
+  const client = new Client({ connectionString: process.env.DATABASE_URL });
   try {
+    await client.connect();
     const today = new Date().toISOString().split("T")[0];
     const query = `
     INSERT INTO visits (date, count)
@@ -29,10 +31,11 @@ async function incrementVisitToday(client: Client) {
     await client.query(query, [today]);
   } catch (error) {
     console.error("Error incrementing visit count:", error);
+  } finally {
+    await client.end();
   }
 }
 
-// biome-ignore lint/correctness/noUnusedFunctionParameters: <explanation>
 export default async function middleware(request: NextRequest, context: NextFetchEvent) {
   const response = NextResponse.next();
   try {
@@ -44,14 +47,10 @@ export default async function middleware(request: NextRequest, context: NextFetc
       "UNKNOWN"
     ).trim();
 
-    await client
-      .connect()
-      .catch((error) => console.error("Error connecting to the database:", error));
-
     const userAgent = request.headers.get("user-agent") || "";
 
     const isBot = botRegex.test(userAgent);
-    addUser(client, userAgent, ip, isBot);
+    addUser(userAgent, ip, isBot);
     if (isBot) return response;
 
     const host = request.headers.get("host") || "";
@@ -59,8 +58,7 @@ export default async function middleware(request: NextRequest, context: NextFetc
       return response;
     }
 
-    await incrementVisitToday(client);
-    await client.end();
+    await incrementVisitToday();
   } catch (error) {
     console.error("Error in middleware:", error);
   }
