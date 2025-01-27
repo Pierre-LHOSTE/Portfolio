@@ -46,7 +46,7 @@ export default async function middleware(request: NextRequest, context: NextFetc
 
     await kv.set(userKey, 1, { ex: secondsUntilMidnight });
 
-    await fetch(`${request.nextUrl.origin}/api/addVisit`);
+    await fetch(`${request.nextUrl.origin}/api/addVisit`, { method: "POST" });
   } catch (error) {
     console.error("Error in middleware:", error);
   }
