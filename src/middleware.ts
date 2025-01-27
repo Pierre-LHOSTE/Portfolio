@@ -23,13 +23,7 @@ export const config = {
   ],
 };
 
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-});
-
-client.connect().catch((error) => console.error("Error connecting to the database:", error));
-
-async function addUser(userAgent: string, ip: string, isBot: boolean) {
+async function addUser(client: Client, userAgent: string, ip: string, isBot: boolean) {
   try {
     const id = hashSync(ip, 10);
     const query = "INSERT INTO users (user_agent, ip, date, is_bot) VALUES ($1, $2, NOW(), $3)";
@@ -39,7 +33,7 @@ async function addUser(userAgent: string, ip: string, isBot: boolean) {
   }
 }
 
-async function incrementVisitToday() {
+async function incrementVisitToday(client: Client) {
   try {
     const today = new Date().toISOString().split("T")[0];
     const query = `
@@ -79,10 +73,16 @@ export default async function middleware(request: NextRequest, context: NextFetc
     await kv.set(rateLimitKeySecond, requestCountSecond + 1, { ex: EXPIRATION_SECONDS });
     await kv.set(rateLimitKeyMinute, requestCountMinute + 1, { ex: EXPIRATION_MINUTES });
 
+    const client = new Client({
+      connectionString: process.env.DATABASE_URL,
+    });
+
+    client.connect().catch((error) => console.error("Error connecting to the database:", error));
+
     const userAgent = request.headers.get("user-agent") || "";
 
     const isBot = botRegex.test(userAgent);
-    addUser(userAgent, ip, isBot);
+    addUser(client, userAgent, ip, isBot);
     if (isBot) return response;
 
     const host = request.headers.get("host") || "";
@@ -90,7 +90,7 @@ export default async function middleware(request: NextRequest, context: NextFetc
       return response;
     }
 
-    await incrementVisitToday();
+    await incrementVisitToday(client);
   } catch (error) {
     console.error("Error in middleware:", error);
   }
