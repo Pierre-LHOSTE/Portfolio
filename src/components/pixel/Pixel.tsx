@@ -23,7 +23,6 @@ export default function Pixel() {
   useEffect(() => {
     (async () => {
       const visitsData = await getVisitsData();
-      console.log("🚀 ~ visitsData:", visitsData);
       const today = new Date();
       const startDate = new Date(Date.UTC(today.getFullYear(), 0, 1));
       const endDate = new Date(Date.UTC(today.getFullYear(), 11, 31));
