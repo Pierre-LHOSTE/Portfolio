@@ -17,7 +17,11 @@ export default async function middleware(request: NextRequest, context: NextFetc
     ).trim();
 
     const host = request.headers.get("host") || "";
-    if (host.includes("localhost") || ip === "127.0.0.1" || host !== "pierre-lhoste.vercel.app")
+    if (
+      host.includes("localhost") ||
+      ip === "127.0.0.1" ||
+      (host !== "pierre-lhoste.vercel.app" && host !== "vingt-douze.com")
+    )
       return response;
 
     const userAgent = request.headers.get("user-agent") || "";
