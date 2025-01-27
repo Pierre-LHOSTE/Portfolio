@@ -1,24 +1,26 @@
 import { Client } from "@neondatabase/serverless";
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 
-export default async function handler(_: NextApiRequest, res: NextApiResponse) {
+export async function POST() {
   const client = new Client({ connectionString: process.env.DATABASE_URL });
 
   try {
     await client.connect();
     const today = new Date().toISOString().split("T")[0];
     const query = `
-    INSERT INTO visits (date, count)
-    VALUES ($1, 1)
-    ON CONFLICT (date)
-    DO UPDATE SET count = visits.count + 1
+      INSERT INTO visits (date, count)
+      VALUES ($1, 1)
+      ON CONFLICT (date)
+      DO UPDATE SET count = visits.count + 1
     `;
     await client.query(query, [today]);
-    res.status(200).json({ success: true });
+    return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
     console.error("Error incrementing visit count:", error);
-    res.status(500).json({ success: false });
+    return NextResponse.json({ success: false }, { status: 500 });
   } finally {
-    await client.end();
+    if (client) {
+      await client.end();
+    }
   }
 }

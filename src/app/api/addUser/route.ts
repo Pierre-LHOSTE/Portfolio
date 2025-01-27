@@ -1,27 +1,29 @@
 import { Client } from "@neondatabase/serverless";
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { userAgent, ip, isBot } = req.body;
-  if (!userAgent || !ip || typeof isBot !== "boolean") {
-    return res.status(400).json({ success: false, error: "Invalid data" });
-  }
+export async function POST() {
+  let client: Client | null = null;
 
-  const client = new Client({ connectionString: process.env.DATABASE_URL });
   try {
+    client = new Client({ connectionString: process.env.DATABASE_URL });
     await client.connect();
+
+    const today = new Date().toISOString().split("T")[0];
     const query = `
-      INSERT INTO users (user_agent, ip, date, is_bot, count)
-      VALUES ($1, $2, NOW(), $3, 1)
-      ON CONFLICT (ip)
-      DO UPDATE SET count = users.count + 1
+      INSERT INTO visits (date, count)
+      VALUES ($1, 1)
+      ON CONFLICT (date)
+      DO UPDATE SET count = visits.count + 1
     `;
-    await client.query(query, [userAgent, ip, isBot]);
-    res.status(200).json({ success: true });
+    await client.query(query, [today]);
+
+    return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
-    console.error("Error adding user:", error);
-    res.status(500).json({ success: false });
+    console.error("Error incrementing visit count:", error);
+    return NextResponse.json({ success: false }, { status: 500 });
   } finally {
-    await client.end();
+    if (client) {
+      await client.end();
+    }
   }
 }
