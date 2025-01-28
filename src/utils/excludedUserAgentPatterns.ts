@@ -589,4 +589,5 @@ export const excludedPatterns = [
   "iaskspider",
   "img2dataset",
   "Datadog\\/{0,1}Synthetics",
+  "CensysInspect\\/",
 ];
