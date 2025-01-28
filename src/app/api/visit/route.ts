@@ -24,3 +24,28 @@ export async function POST() {
     }
   }
 }
+
+export async function GET() {
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+  });
+
+  try {
+    await client.connect();
+    const res = await client.query("SELECT date::timestamptz, count FROM visits");
+    const data = res.rows;
+
+    const visits = data.reduce((acc: { [date: string]: number }, { date, count }) => {
+      const d = new Date(date);
+      acc[d.toISOString().split("T")[0]] = count;
+      return acc;
+    }, {});
+
+    return NextResponse.json({ success: true, visits }, { status: 200 });
+  } catch (error) {
+    console.error("Error getting visits data:", error);
+    return NextResponse.json({ success: false, error: "Error fetching data" }, { status: 500 });
+  } finally {
+    await client.end();
+  }
+}

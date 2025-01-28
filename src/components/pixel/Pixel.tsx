@@ -1,4 +1,3 @@
-import { getVisitsData } from "@/server/getVisitsData";
 import { useEffect, useState } from "react";
 import "./pixel.scss";
 import { useI18nContext } from "@/i18n/i18n-react";
@@ -22,7 +21,9 @@ export default function Pixel() {
 
   useEffect(() => {
     (async () => {
-      const visitsData = await getVisitsData();
+      const visitsData = await fetch("/api/visit", { method: "GET" })
+        .then((res) => res.json())
+        .then((data) => data.visits);
       const today = new Date();
       const startDate = new Date(Date.UTC(today.getFullYear(), 0, 1));
       const endDate = new Date(Date.UTC(today.getFullYear(), 11, 31));

@@ -10,7 +10,6 @@ export async function POST(request: Request) {
 
   try {
     await client.connect();
-    const today = new Date().toISOString().split("T")[0];
     const query = `
       INSERT INTO users (user_agent, ip, date, is_bot, count)
       VALUES ($1, $2, NOW(), $3, 1)

@@ -28,7 +28,7 @@ export default async function middleware(request: NextRequest, context: NextFetc
 
     const isBot = botRegex.test(userAgent);
 
-    await fetch(`${request.nextUrl.origin}/api/addUser`, {
+    await fetch(`${request.nextUrl.origin}/api/user`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userAgent, ip, isBot }),
@@ -50,7 +50,7 @@ export default async function middleware(request: NextRequest, context: NextFetc
 
     await kv.set(userKey, 1, { ex: secondsUntilMidnight });
 
-    await fetch(`${request.nextUrl.origin}/api/addVisit`, { method: "POST" });
+    await fetch(`${request.nextUrl.origin}/api/visit`, { method: "POST" });
   } catch (error) {
     console.error("Error in middleware:", error);
   }
