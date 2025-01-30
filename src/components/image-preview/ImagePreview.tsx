@@ -60,7 +60,17 @@ export default function ImagePreview() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
         >
-          <Image src={images[index]} alt="preview" layout="responsive" width={100} height={100} />
+          <Image
+            src={images[index]}
+            alt="preview"
+            // layout="responsive"
+            width={window.innerWidth}
+            height={window.innerHeight}
+            style={{
+              width: "auto",
+              height: "auto",
+            }}
+          />
           <div id="controls">
             <div>
               <motion.button type="button" onClick={prev} {...tapAnimation}>
