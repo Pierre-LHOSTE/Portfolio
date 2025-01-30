@@ -6,7 +6,7 @@ import { useI18nContext } from "@/i18n/i18n-react";
 import { motion } from "motion/react";
 
 const DOWNLOAD_LINK =
-  "https://qg007gk6n2popinf.public.blob.vercel-storage.com/cv/pierre-lhoste-13-01-2025-rWO996UsK1mHU9GLq1ZFabKO57gxQ0.pdf";
+  "https://qg007gk6n2popinf.public.blob.vercel-storage.com/cv/Pierre-LHOSTE-CV.pdf";
 
 const variants = {
   hidden: {

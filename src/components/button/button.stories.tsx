@@ -20,3 +20,12 @@ export const Default: Story = {
     Icon: IconDownload,
   },
 };
+
+export const Secondary: Story = {
+  args: {
+    text: "Download",
+    type: "secondary",
+    // biome-ignore lint/style/useNamingConvention: <explanation>
+    Icon: IconDownload,
+  },
+};
