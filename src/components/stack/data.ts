@@ -422,6 +422,8 @@ export const stackItem = {
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/fastify.svg",
+      iconLight:
+        "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/fastify-light.svg",
       color: "#000",
       background: "#fff",
       invert: "white",
@@ -808,6 +810,8 @@ export const stackItem = {
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/react-redux.svg",
+      iconLight:
+        "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/react-redux-light.svg",
       invert: "white",
       color: "#764abc",
       background: "#fff",

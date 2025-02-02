@@ -24,7 +24,7 @@ export default function StackIcon({
   let filter = undefined;
   if (
     (themeResult === "dark" && invert === "black") ||
-    (themeResult === "light" && invert === "white")
+    (themeResult === "light" && invert === "white" && !iconLight)
   ) {
     filter = "invert(1)";
   }
