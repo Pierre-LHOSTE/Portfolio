@@ -15,7 +15,7 @@ const en = {
     projects: "Projects",
     contact: "Contact",
   },
-  message: "Available for hire — ready to contribute!",
+  message: "Looking for a work-study program — ready to contribute!",
   hero: {
     subtitle: {
       passionate: "Passionate",

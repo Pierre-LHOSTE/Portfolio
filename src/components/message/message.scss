@@ -14,6 +14,7 @@
     background: linear-gradient(90deg, transparent, var(--main), var(--main));
     // background: linear-gradient(90deg, transparent, red, red);
   }
+  pointer-events: none;
 }
 
 #message {

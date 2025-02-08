@@ -15,7 +15,7 @@ const fr = {
     projects: "Projets",
     contact: "Contact",
   },
-  message: "Disponible à l'embauche - prêt à contribuer !",
+  message: "En recherche d’alternance – Prêt à contribuer !",
   hero: {
     subtitle: {
       passionate: "Passionné",

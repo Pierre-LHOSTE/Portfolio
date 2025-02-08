@@ -42,7 +42,7 @@ type RootTranslation = {
 		contact: string
 	}
 	/**
-	 * D​i​s​p​o​n​i​b​l​e​ ​à​ ​l​'​e​m​b​a​u​c​h​e​ ​-​ ​p​r​ê​t​ ​à​ ​c​o​n​t​r​i​b​u​e​r​ ​!
+	 * E​n​ ​r​e​c​h​e​r​c​h​e​ ​d​’​a​l​t​e​r​n​a​n​c​e​ ​–​ ​P​r​ê​t​ ​à​ ​c​o​n​t​r​i​b​u​e​r​ ​!
 	 */
 	message: string
 	hero: {
@@ -1263,7 +1263,7 @@ export type TranslationFunctions = {
 		contact: () => LocalizedString
 	}
 	/**
-	 * Disponible à l'embauche - prêt à contribuer !
+	 * En recherche d’alternance – Prêt à contribuer !
 	 */
 	message: () => LocalizedString
 	hero: {

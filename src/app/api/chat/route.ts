@@ -25,9 +25,8 @@ export async function POST(req: Request) {
   });
   const datePrompt = `(Today is: ${today})`;
   const titlePrompt =
-    "Please provide a title a short (max 25 chars) and descriptive title for the chat thread at the end of the message, in the language provided by the user, following the format after a new line: 'Title: Your Title Here'";
-  const noTitlePrompt =
-    "Please Does't end the message with a 'Title', only need for the first message";
+    "Please provide a title a short (max 25 chars) and descriptive title for the chat thread at the end of your FIRST message, in the language provided by the user, following the format after a new line: 'Title: Your Title Here'";
+  const noTitlePrompt = "";
   const finalMessage = `\n\n${datePrompt}\n${titlePrompt}`;
   const messageWithDate = input.threadId
     ? `${input.message}\n${noTitlePrompt}`
