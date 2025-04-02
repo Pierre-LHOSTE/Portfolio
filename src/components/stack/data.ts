@@ -440,6 +440,13 @@ export const stackItem = {
       en: "A simple, efficient, and modern authentication library",
       fr: "Une bibliothèque d'authentification simple, efficace et moderne",
     },
+    replacement: {
+      name: "betterAuth",
+      reason: {
+        en: "More features and better documentation",
+        fr: "Plus de fonctionnalités et meilleure documentation",
+      },
+    },
     category: "backend",
     homepage: "https://authjs.dev/",
     tags: ["learning"],
@@ -997,6 +1004,49 @@ export const stackItem = {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/affinity-photo.svg",
       color: "#7e3bb1",
       background: "#1f1f1f",
+    },
+  },
+
+  betterAuth: {
+    name: "better-auth",
+    description: {
+      en: "better-auth is a TypeScript library for implementing authentication in web applications, providing a simple and efficient way to manage user sessions and permissions.",
+      fr: "better-auth est une bibliothèque TypeScript pour implémenter l'authentification dans les applications web, offrant un moyen simple et efficace de gérer les sessions et les autorisations des utilisateurs.",
+    },
+    reason: {
+      en: "A simple, efficient, and modern authentication library",
+      fr: "Une bibliothèque d'authentification simple, efficace et moderne",
+    },
+    category: "backend",
+    homepage: "https://better-auth.vercel.app/",
+    tags: ["love", "learning"],
+    styles: {
+      icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/better-auth-light.svg",
+      color: "#000",
+      background: "#fff",
+      invert: "black",
+    },
+  },
+
+  jest: {
+    name: "Jest",
+    description: {
+      en: "Jest is a JavaScript testing framework designed for simplicity and speed, providing a zero-config setup and powerful features for unit and integration testing.",
+      fr: "Jest est un framework de test JavaScript conçu pour la simplicité et la rapidité, offrant une configuration zéro et des fonctionnalités puissantes pour les tests unitaires et d'intégration.",
+    },
+    reason: {
+      en: "The most popular testing framework for JavaScript",
+      fr: "Le framework de test le plus populaire pour JavaScript",
+    },
+    category: "tools",
+    homepage: "https://jestjs.io/",
+    tags: [],
+
+    styles: {
+      icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/jest.svg",
+      color: "#000",
+      background: "#fff",
+      invert: "black",
     },
   },
 } as const satisfies Record<string, StackType>;

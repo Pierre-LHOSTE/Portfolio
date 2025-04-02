@@ -805,6 +805,20 @@ type RootTranslation = {
 			reason: string
 			replacement: string
 		}
+		betterAuth: {
+			/**
+			 * b​e​t​t​e​r​-​a​u​t​h​ ​e​s​t​ ​u​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​T​y​p​e​S​c​r​i​p​t​ ​p​o​u​r​ ​i​m​p​l​é​m​e​n​t​e​r​ ​l​'​a​u​t​h​e​n​t​i​f​i​c​a​t​i​o​n​ ​d​a​n​s​ ​l​e​s​ ​a​p​p​l​i​c​a​t​i​o​n​s​ ​w​e​b​,​ ​o​f​f​r​a​n​t​ ​u​n​ ​m​o​y​e​n​ ​s​i​m​p​l​e​ ​e​t​ ​e​f​f​i​c​a​c​e​ ​d​e​ ​g​é​r​e​r​ ​l​e​s​ ​s​e​s​s​i​o​n​s​ ​e​t​ ​l​e​s​ ​a​u​t​o​r​i​s​a​t​i​o​n​s​ ​d​e​s​ ​u​t​i​l​i​s​a​t​e​u​r​s​.
+			 */
+			description: string
+			/**
+			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​d​'​a​u​t​h​e​n​t​i​f​i​c​a​t​i​o​n​ ​s​i​m​p​l​e​,​ ​e​f​f​i​c​a​c​e​ ​e​t​ ​m​o​d​e​r​n​e
+			 */
+			reason: string
+			/**
+			 * P​l​u​s​ ​d​e​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​e​t​ ​m​e​i​l​l​e​u​r​e​ ​d​o​c​u​m​e​n​t​a​t​i​o​n
+			 */
+			replacement: string
+		}
 	}
 	contact: {
 		form: {
@@ -2019,6 +2033,20 @@ export type TranslationFunctions = {
 			 * Un outil de retouche photo moderne, complet et efficace
 			 */
 			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		betterAuth: {
+			/**
+			 * better-auth est une bibliothèque TypeScript pour implémenter l'authentification dans les applications web, offrant un moyen simple et efficace de gérer les sessions et les autorisations des utilisateurs.
+			 */
+			description: () => LocalizedString
+			/**
+			 * Une bibliothèque d'authentification simple, efficace et moderne
+			 */
+			reason: () => LocalizedString
+			/**
+			 * Plus de fonctionnalités et meilleure documentation
+			 */
 			replacement: () => LocalizedString
 		}
 	}
