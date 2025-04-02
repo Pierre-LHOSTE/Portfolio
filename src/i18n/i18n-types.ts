@@ -521,6 +521,9 @@ type RootTranslation = {
 			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​d​'​a​u​t​h​e​n​t​i​f​i​c​a​t​i​o​n​ ​s​i​m​p​l​e​,​ ​e​f​f​i​c​a​c​e​ ​e​t​ ​m​o​d​e​r​n​e
 			 */
 			reason: string
+			/**
+			 * P​l​u​s​ ​d​e​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​e​t​ ​m​e​i​l​l​e​u​r​e​ ​d​o​c​u​m​e​n​t​a​t​i​o​n
+			 */
 			replacement: string
 		}
 		bcrypt: {
@@ -814,9 +817,17 @@ type RootTranslation = {
 			 * U​n​e​ ​b​i​b​l​i​o​t​h​è​q​u​e​ ​d​'​a​u​t​h​e​n​t​i​f​i​c​a​t​i​o​n​ ​s​i​m​p​l​e​,​ ​e​f​f​i​c​a​c​e​ ​e​t​ ​m​o​d​e​r​n​e
 			 */
 			reason: string
+			replacement: string
+		}
+		jest: {
 			/**
-			 * P​l​u​s​ ​d​e​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​e​t​ ​m​e​i​l​l​e​u​r​e​ ​d​o​c​u​m​e​n​t​a​t​i​o​n
+			 * J​e​s​t​ ​e​s​t​ ​u​n​ ​f​r​a​m​e​w​o​r​k​ ​d​e​ ​t​e​s​t​ ​J​a​v​a​S​c​r​i​p​t​ ​c​o​n​ç​u​ ​p​o​u​r​ ​l​a​ ​s​i​m​p​l​i​c​i​t​é​ ​e​t​ ​l​a​ ​r​a​p​i​d​i​t​é​,​ ​o​f​f​r​a​n​t​ ​u​n​e​ ​c​o​n​f​i​g​u​r​a​t​i​o​n​ ​z​é​r​o​ ​e​t​ ​d​e​s​ ​f​o​n​c​t​i​o​n​n​a​l​i​t​é​s​ ​p​u​i​s​s​a​n​t​e​s​ ​p​o​u​r​ ​l​e​s​ ​t​e​s​t​s​ ​u​n​i​t​a​i​r​e​s​ ​e​t​ ​d​'​i​n​t​é​g​r​a​t​i​o​n​.
 			 */
+			description: string
+			/**
+			 * L​e​ ​f​r​a​m​e​w​o​r​k​ ​d​e​ ​t​e​s​t​ ​l​e​ ​p​l​u​s​ ​p​o​p​u​l​a​i​r​e​ ​p​o​u​r​ ​J​a​v​a​S​c​r​i​p​t
+			 */
+			reason: string
 			replacement: string
 		}
 	}
@@ -1751,6 +1762,9 @@ export type TranslationFunctions = {
 			 * Une bibliothèque d'authentification simple, efficace et moderne
 			 */
 			reason: () => LocalizedString
+			/**
+			 * Plus de fonctionnalités et meilleure documentation
+			 */
 			replacement: () => LocalizedString
 		}
 		bcrypt: {
@@ -2044,9 +2058,17 @@ export type TranslationFunctions = {
 			 * Une bibliothèque d'authentification simple, efficace et moderne
 			 */
 			reason: () => LocalizedString
+			replacement: () => LocalizedString
+		}
+		jest: {
 			/**
-			 * Plus de fonctionnalités et meilleure documentation
+			 * Jest est un framework de test JavaScript conçu pour la simplicité et la rapidité, offrant une configuration zéro et des fonctionnalités puissantes pour les tests unitaires et d'intégration.
 			 */
+			description: () => LocalizedString
+			/**
+			 * Le framework de test le plus populaire pour JavaScript
+			 */
+			reason: () => LocalizedString
 			replacement: () => LocalizedString
 		}
 	}
