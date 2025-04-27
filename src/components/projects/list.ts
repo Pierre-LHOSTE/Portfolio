@@ -3,6 +3,38 @@ import type { StackType } from "../stack/stack";
 import type { ProjectType } from "./project";
 
 export const projectsList = {
+  rectifaid: {
+    name: { en: "Rectifaid", fr: "Rectifaid" },
+    description: {
+      fr: "Il s’agit d’un petit SaaS sous la forme d’une web-app dédiée à la correction et à l'amélioration de texte par intelligence artificielle.",
+      en: "This is a small SaaS in the form of a web app dedicated to correcting and improving text using artificial intelligence.",
+    },
+    technologies: [
+      "react",
+      "ai",
+      "antDesign",
+      "typescript",
+      "nextJs",
+      "betterAuth",
+      "storybook",
+      "vscodium",
+      "git",
+      "github",
+      "overlayscrollbars",
+      "zustand",
+      "biome",
+      "css",
+      "figma",
+      "prisma",
+      "vercel",
+    ],
+    thumbnail:
+      "https://qg007gk6n2popinf.public.blob.vercel-storage.com/project-thumbnail/rectifaid/thumbnail.png",
+    images: [],
+    url: "https://rectifaid.vercel.app/",
+    tags: ["web-app", "saas", "fullstack"],
+  },
+
   portfolio: {
     name: { en: "Actual Portfolio", fr: "Portfolio actuel" },
     technologies: Object.keys(stackItem).filter((stackName) => {
