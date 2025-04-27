@@ -33,6 +33,8 @@ export const projectsList = {
     images: [],
     url: "https://rectifaid.vercel.app/",
     tags: ["web-app", "saas", "fullstack"],
+    endDate: "",
+    repo: "",
   },
 
   portfolio: {

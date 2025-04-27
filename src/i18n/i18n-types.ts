@@ -181,6 +181,16 @@ type RootTranslation = {
 		}
 	}
 	projects: {
+		rectifaid: {
+			/**
+			 * R​e​c​t​i​f​a​i​d
+			 */
+			name: string
+			/**
+			 * I​l​ ​s​’​a​g​i​t​ ​d​’​u​n​ ​p​e​t​i​t​ ​S​a​a​S​ ​s​o​u​s​ ​l​a​ ​f​o​r​m​e​ ​d​’​u​n​e​ ​w​e​b​-​a​p​p​ ​d​é​d​i​é​e​ ​à​ ​l​a​ ​c​o​r​r​e​c​t​i​o​n​ ​e​t​ ​à​ ​l​'​a​m​é​l​i​o​r​a​t​i​o​n​ ​d​e​ ​t​e​x​t​e​ ​p​a​r​ ​i​n​t​e​l​l​i​g​e​n​c​e​ ​a​r​t​i​f​i​c​i​e​l​l​e​.
+			 */
+			description: string
+		}
 		portfolio: {
 			/**
 			 * P​o​r​t​f​o​l​i​o​ ​a​c​t​u​e​l
@@ -1422,6 +1432,16 @@ export type TranslationFunctions = {
 		}
 	}
 	projects: {
+		rectifaid: {
+			/**
+			 * Rectifaid
+			 */
+			name: () => LocalizedString
+			/**
+			 * Il s’agit d’un petit SaaS sous la forme d’une web-app dédiée à la correction et à l'amélioration de texte par intelligence artificielle.
+			 */
+			description: () => LocalizedString
+		}
 		portfolio: {
 			/**
 			 * Portfolio actuel
