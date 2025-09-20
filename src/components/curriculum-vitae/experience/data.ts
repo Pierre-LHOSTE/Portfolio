@@ -11,7 +11,7 @@ export const ExperienceList = {
       en: "CoopCycle",
       fr: "CoopCycle",
     },
-    startDate: "2024",
+    startDate: "2022",
     endDate: "2025",
     location: {
       en: "Remote",

@@ -16,15 +16,24 @@
     content: "";
   }
 
+
   .date {
     z-index: 1;
     padding: 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: space-between;
 
     > span {
       background-color: var(--main);
       // box-shadow: 0 0 32px 16px var(--main);
       color: var(--text-color);
       font-size: 14px;
+
+      &:last-child {
+        color: var(--text-color-secondary);
+      }
     }
   }
 

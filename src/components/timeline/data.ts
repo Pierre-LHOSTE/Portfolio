@@ -74,9 +74,9 @@ export const timelineElementList = {
       fr: "Concepteur développeur d'applications",
       en: "Application designer and developer",
     },
-    status: "in-progress",
+    status: "attended",
     startDate: "2024",
-    endDate: "",
+    endDate: "2025",
     location: {
       fr: "Distanciel",
       en: "Remote",

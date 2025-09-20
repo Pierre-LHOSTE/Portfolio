@@ -1,5 +1,6 @@
 import {
   IconBuildingCommunity,
+  IconCircleDashedCheck,
   IconMapPin,
   IconProgress,
   IconRosetteDiscountCheckFilled,
@@ -33,6 +34,13 @@ export default function TimelineElement({
           <>
             <IconProgress />
             <span>{LL.section.timeline.inProgress()}</span>
+          </>
+        );
+      case "attended":
+        return (
+          <>
+            <IconCircleDashedCheck />
+            <span>{LL.section.timeline.attended()}</span>
           </>
         );
       case "failed":

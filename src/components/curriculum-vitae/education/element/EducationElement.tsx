@@ -3,6 +3,7 @@ import "./element.scss";
 import { useI18nContext } from "@/i18n/i18n-react";
 import {
   IconBuildingCommunity,
+  IconCircleDashedCheck,
   IconMapPin,
   IconProgress,
   IconRosetteDiscountCheckFilled,
@@ -33,6 +34,13 @@ export default function EducationElement({
             <span>{LL.section.timeline.inProgress()}</span>
           </>
         );
+      case "attended":
+        return (
+          <>
+            <IconCircleDashedCheck />
+            <span>{LL.section.timeline.attended()}</span>
+          </>
+        );
       case "failed":
         throw new Error("Failure is not an option here");
       default:
@@ -46,6 +54,7 @@ export default function EducationElement({
   return (
     <div className="education-element">
       <div className="date">
+        <span>{education.endDate}</span>
         <span>{education.startDate}</span>
       </div>
       <div className="education">

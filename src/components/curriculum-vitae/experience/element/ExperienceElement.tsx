@@ -16,6 +16,7 @@ export default function ExperienceElement({
   return (
     <div className="experience-element">
       <div className="date">
+        <span>{experience.endDate}</span>
         <span>{experience.startDate}</span>
       </div>
       <div className="experience">

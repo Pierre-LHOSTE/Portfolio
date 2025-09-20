@@ -8,6 +8,13 @@
 
     li {
       color: var(--text-color);
+      background-color: var(--invert-10);
+      padding: 2px 8px;
+      border-radius: 8px;
+
+      &:last-child {
+        text-decoration: underline;
+      }
     }
   }
 }

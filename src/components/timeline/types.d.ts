@@ -19,7 +19,7 @@ export interface TimelineElementType {
     en: string;
     fr: string;
   };
-  status: "graduated" | "in-progress";
+  status: "graduated" | "in-progress" | "attended";
 }
 
 export type TimelineIdType = keyof typeof timelineElementList;

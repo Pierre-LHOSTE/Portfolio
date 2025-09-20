@@ -139,6 +139,10 @@ type RootTranslation = {
 			 */
 			graduated: string
 			/**
+			 * S​u​i​v​i
+			 */
+			attended: string
+			/**
 			 * E​n​ ​c​o​u​r​s
 			 */
 			inProgress: string
@@ -1389,6 +1393,10 @@ export type TranslationFunctions = {
 			 * Diplômé
 			 */
 			graduated: () => LocalizedString
+			/**
+			 * Suivi
+			 */
+			attended: () => LocalizedString
 			/**
 			 * En cours
 			 */

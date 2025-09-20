@@ -52,6 +52,7 @@ const fr = {
       description:
         "Une présentation chronologique de mon parcours professionnel, mes expériences, mes compétences et mes formations accompagnée de quelques informations bonus. La durée de chaque étape est représentée de manière proportionnelle.",
       graduated: "Diplômé",
+      attended: "Suivi",
       inProgress: "En cours",
     },
     projects: {

@@ -52,6 +52,7 @@ const en = {
       description:
         "A chronological presentation of my career path, experience, skills and training, along with some bonus information. The duration of each stage is represented proportionally.",
       graduated: "Graduated",
+      attended: "Attended",
       inProgress: "In progress",
     },
     projects: {
