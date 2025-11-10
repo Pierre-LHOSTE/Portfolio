@@ -1,6 +1,7 @@
 import {
   generateExperienceTranslations,
   generateProjectTranslations,
+  generateSkillsTranslations,
   generateStackTranslations,
   generateTimelineTranslations,
 } from "../../utils/generateTranslations";
@@ -15,7 +16,7 @@ const en = {
     projects: "Projects",
     contact: "Contact",
   },
-  message: "Looking for a work-study program — ready to contribute!",
+  message: "Seeking new opportunities — ready to contribute!",
   hero: {
     subtitle: {
       passionate: "Passionate",
@@ -73,6 +74,7 @@ const en = {
   projects: generateProjectTranslations("en"),
   timelines: generateTimelineTranslations("en"),
   stacks: generateStackTranslations("en"),
+  skills: generateSkillsTranslations("en") as unknown as Translation["skills"],
   contact: {
     form: {
       title: "Form",
@@ -175,18 +177,19 @@ const en = {
   cv: {
     experience: "Experiences",
     education: "Education",
-    skills: "Stacks",
-    skillsDetails: "(non-exhaustive list)",
+    skills: "Skills",
+    stacks: "Technical skills",
+    stacksDetails: "(non-exhaustive list)",
     interests: "Interests",
     title: "Web Developer and Designer",
     description:
       "I am a passionate and responsible French web developer and designer, who loves to create aesthetic and functional websites using creative approaches to provide innovative solutions.",
     fromTo: "From {from} to {to}",
     interest: {
-      game: "Creative games and others",
-      collection: "Collection (cards, figurines, etc)",
-      technology: "Technology and computing",
-      art: "Art and design",
+      game: "Creative games",
+      collection: "Collection",
+      technology: "Computing",
+      art: "Design",
     },
     experiences: generateExperienceTranslations("en"),
     yearsOld: "years old",

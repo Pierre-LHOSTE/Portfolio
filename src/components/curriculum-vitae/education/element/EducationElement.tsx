@@ -55,7 +55,7 @@ export default function EducationElement({
     <div className="education-element">
       <div className="date">
         <span>{education.endDate}</span>
-        <span>{education.startDate}</span>
+        {/* <span>{education.startDate}</span> */}
       </div>
       <div className="education">
         <div>

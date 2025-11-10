@@ -1,5 +1,6 @@
 import { ExperienceList } from "../components/curriculum-vitae/experience/data";
 import type { ExperienceIdType } from "../components/curriculum-vitae/experience/type";
+import { skillsList } from "../components/curriculum-vitae/skills/data";
 import { projectsList } from "../components/projects/list";
 import type { ProjectIdType } from "../components/projects/project";
 import { stackItem } from "../components/stack/data";
@@ -84,4 +85,11 @@ export function generateExperienceTranslations(lang: "en" | "fr") {
       tasks: { "0": string; "1": string; "2": string; "3": string };
     }
   >;
+}
+
+export function generateSkillsTranslations(lang: "en" | "fr") {
+  const skillsTranslations = Object.fromEntries(
+    skillsList.map((skill, index) => [String(index), skill[lang]])
+  );
+  return skillsTranslations as Record<string, string>;
 }

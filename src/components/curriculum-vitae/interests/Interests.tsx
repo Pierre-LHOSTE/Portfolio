@@ -1,10 +1,4 @@
-import {
-  IconBrandMinecraft,
-  IconBrandTypescript,
-  IconCards,
-  IconDeviceNintendo,
-  IconPalette,
-} from "@tabler/icons-react";
+import { IconDeviceNintendo } from "@tabler/icons-react";
 import Section from "../section/Section";
 import "./interests.scss";
 import { useI18nContext } from "@/i18n/i18n-react";
@@ -16,20 +10,10 @@ export default function Interests() {
 
   return (
     <Section title={LL.cv.interests()} id="interests" Icon={IconDeviceNintendo}>
-      <ul>
-        <li>
-          <IconBrandMinecraft size={ICON_SIZE} /> {LL.cv.interest.game()}
-        </li>
-        <li>
-          <IconCards size={ICON_SIZE} /> {LL.cv.interest.collection()}
-        </li>
-        <li>
-          <IconBrandTypescript size={ICON_SIZE} /> {LL.cv.interest.technology()}
-        </li>
-        <li>
-          <IconPalette size={ICON_SIZE} /> {LL.cv.interest.art()}
-        </li>
-      </ul>
+      <p>
+        {LL.cv.interest.game()}, {LL.cv.interest.collection()}, {LL.cv.interest.technology()},{" "}
+        {LL.cv.interest.art()}
+      </p>
     </Section>
   );
 }

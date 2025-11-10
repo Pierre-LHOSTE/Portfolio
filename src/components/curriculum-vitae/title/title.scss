@@ -1,27 +1,35 @@
-#title {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-
-  > div {
+#curriculum-vitae {
+  #title {
     display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
+    align-items: center;
+    gap: 15px;
 
-  h1 {
-    color: var(--invert);
-    font-size: 24px;
-    font-weight: 600;
-  }
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
 
-  h2 {
-    color: var(--text-color);
-    font-size: 16px;
-  }
+    h1 {
+      color: var(--invert);
+      font-size: 24px;
+      font-weight: 600;
+    }
 
-  span {
-    color: var(--text-color);
-    font-size: 14px;
+    h2 {
+      color: var(--text-color);
+      font-size: 16px;
+    }
+
+    span {
+      color: var(--text-color);
+      font-size: 14px;
+    }
+
+    img {
+      border-radius: 12px;
+      // background: linear-gradient(var(--direction-top), var(--cv-border-bottom), var(--cv-border-top));
+      // padding: 2px;
+    }
   }
 }

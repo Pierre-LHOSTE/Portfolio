@@ -57,7 +57,7 @@ export const stackItem = {
     },
     category: "frontend",
     homepage: "https://ant.design/",
-    tags: ["love", "important"],
+    tags: ["love"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/ant-design.svg",
@@ -281,7 +281,7 @@ export const stackItem = {
         fr: "Renforcement des types",
       },
     },
-    tags: ["important"],
+    tags: [],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/javascript.svg",
@@ -330,7 +330,7 @@ export const stackItem = {
     },
     category: "language",
     homepage: "https://developer.mozilla.org/en-US/docs/Web/HTML",
-    tags: ["active", "important"],
+    tags: ["active"],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/html.svg",
@@ -470,7 +470,7 @@ export const stackItem = {
     },
     category: "backend",
     homepage: "https://www.bcrypt.io/",
-    tags: ["important"],
+    tags: [],
 
     styles: {
       icon: "https://qg007gk6n2popinf.public.blob.vercel-storage.com/stack-icon/bcrypt.svg",

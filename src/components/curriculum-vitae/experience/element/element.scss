@@ -1,123 +1,125 @@
-.experience-element {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  gap: 16px;
-
-  &::before {
-    z-index: 0;
-    position: absolute;
-    top: -12px;
-    left: 16px;
-    width: 2px;
-    height: calc(100% + 24px);
-    border-radius: 2px;
-    background-color: var(--cv-border-top);
-    content: "";
-  }
-
-  .date {
-    z-index: 1;
-    padding: 32px 0;
+#curriculum-vitae {
+  .experience-element {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
-    justify-content: space-between;
+    position: relative;
+    flex-direction: row;
+    gap: 16px;
 
-    > span {
-      background-color: var(--main);
-      // box-shadow: 0 0 32px 16px var(--main);
-      color: var(--text-color);
-      font-size: 14px;
-
-      &:last-child {
-        color: var(--text-color-secondary);
-      }
+    &::before {
+      z-index: 0;
+      position: absolute;
+      top: -12px;
+      left: 16px;
+      width: 2px;
+      height: calc(100% + 24px);
+      border-radius: 2px;
+      background-color: var(--cv-border-top);
+      content: "";
     }
-  }
 
-  .experience {
-    z-index: 2;
-    --radius: 12px;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    padding: 2px;
-    border-radius: var(--radius);
-    background: linear-gradient(
-      var(--direction-top),
-      var(--cv-border-bottom),
-      var(--cv-border-top)
-    );
-
-    > div {
+    .date {
+      z-index: 1;
+      padding: 32px 0;
       display: flex;
       flex-direction: column;
-      padding: 16px;
-      gap: 12px;
-      border-radius: calc(var(--radius) - 2px);
-      background: linear-gradient(
-        var(--direction-top),
-        var(--cv-bottom),
-        var(--cv-top)
-      );
+      gap: 4px;
+      justify-content: space-between;
 
       > span {
-        &.type {
-          font-size: 14px;
-          color: var(--text-color-secondary);
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: 4px;
-
-          img {
-            // filter: brightness(0);
-            // opacity: 0.5;
-          }
-        }
-      }
-
-      h3 {
-        color: var(--text-color);
-        font-weight: bold;
-        font-size: 18px;
-      }
-
-      .details {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        list-style: initial;
-        padding-left: 16px;
-
-        > div {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          margin-left: 2px;
-          gap: 6px;
-          gap: 8px;
-          color: var(--text-color);
-
-          &.status {
-            font-weight: 600;
-          }
-        }
-      }
-
-      .status {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
-        color: var(--text-color);
-        font-weight: 600;
-      }
-
-      li {
+        background-color: var(--main);
+        // box-shadow: 0 0 32px 16px var(--main);
         color: var(--text-color);
         font-size: 14px;
+
+        &:last-child {
+          color: var(--text-color-secondary);
+        }
+      }
+    }
+
+    .experience {
+      z-index: 2;
+      --radius: 12px;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 2px;
+      border-radius: var(--radius);
+      background: linear-gradient(
+        var(--direction-top),
+        var(--cv-border-bottom),
+        var(--cv-border-top)
+      );
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        gap: 12px;
+        border-radius: calc(var(--radius) - 2px);
+        background: linear-gradient(
+          var(--direction-top),
+          var(--cv-bottom),
+          var(--cv-top)
+        );
+
+        > span {
+          &.type {
+            font-size: 14px;
+            color: var(--text-color-secondary);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 4px;
+
+            img {
+              // filter: brightness(0);
+              // opacity: 0.5;
+            }
+          }
+        }
+
+        h3 {
+          color: var(--text-color);
+          font-weight: bold;
+          font-size: 18px;
+        }
+
+        .details {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          list-style: initial;
+          padding-left: 16px;
+
+          > div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 2px;
+            gap: 6px;
+            gap: 8px;
+            color: var(--text-color);
+
+            &.status {
+              font-weight: 600;
+            }
+          }
+        }
+
+        .status {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 8px;
+          color: var(--text-color);
+          font-weight: 600;
+        }
+
+        li {
+          color: var(--text-color);
+          font-size: 14px;
+        }
       }
     }
   }

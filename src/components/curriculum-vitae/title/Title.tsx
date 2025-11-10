@@ -10,7 +10,7 @@ export default function Title() {
   return (
     <div id="title">
       <Image
-        src="https://qg007gk6n2popinf.public.blob.vercel-storage.com/assets/avatar.png"
+        src="https://qg007gk6n2popinf.public.blob.vercel-storage.com/assets/avatar-6m.png"
         alt="Profile Picture"
         width={IMAGE_SIZE}
         height={IMAGE_SIZE}

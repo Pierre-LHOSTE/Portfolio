@@ -1,0 +1,48 @@
+#cv-skills {
+  > .content {
+    > div {
+      flex-wrap: wrap;
+      --radius: 12px;
+      display: flex;
+      flex-direction: column;
+      padding: 2px;
+      border-radius: var(--radius);
+      background: linear-gradient(
+        var(--direction-top),
+        var(--cv-border-bottom),
+        var(--cv-border-top)
+      );
+
+      > div {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 16px;
+        gap: 18px;
+        flex-direction: column;
+        border-radius: calc(var(--radius) - 2px);
+        background: linear-gradient(
+          var(--direction-top),
+          var(--cv-bottom),
+          var(--cv-top)
+        );
+
+        > div {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-left: 12px;
+
+        li {
+          color: var(--text-color);
+          font-size: 14px;
+        }
+      }
+
+    }
+  }
+}

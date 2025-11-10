@@ -42,7 +42,7 @@ type RootTranslation = {
 		contact: string
 	}
 	/**
-	 * E​n​ ​r​e​c​h​e​r​c​h​e​ ​d​’​a​l​t​e​r​n​a​n​c​e​ ​–​ ​P​r​ê​t​ ​à​ ​c​o​n​t​r​i​b​u​e​r​ ​!
+	 * E​n​ ​r​e​c​h​e​r​c​h​e​ ​d​’​o​p​p​o​r​t​u​n​i​t​é​ ​–​ ​P​r​ê​t​ ​à​ ​c​o​n​t​r​i​b​u​e​r​ ​!
 	 */
 	message: string
 	hero: {
@@ -845,6 +845,20 @@ type RootTranslation = {
 			replacement: string
 		}
 	}
+	skills: {
+		/**
+		 * C​r​é​a​t​i​o​n​ ​e​t​ ​i​n​t​é​g​r​a​t​i​o​n​ ​d​e​ ​d​e​s​i​g​n​s​ ​U​I​/​U​X​ ​i​n​t​u​i​t​i​f​s​ ​e​t​ ​a​t​t​r​a​y​a​n​t​s
+		 */
+		'0': string
+		/**
+		 * D​é​v​e​l​o​p​p​e​m​e​n​t​ ​d​’​A​P​I​ ​e​t​ ​g​e​s​t​i​o​n​ ​d​e​ ​b​a​s​e​s​ ​d​e​ ​d​o​n​n​é​e​s​ ​s​é​c​u​r​i​s​é​e​s
+		 */
+		'1': string
+		/**
+		 * A​n​a​l​y​s​e​ ​d​e​s​ ​b​e​s​o​i​n​s​ ​e​t​ ​g​e​s​t​i​o​n​ ​d​e​ ​p​r​o​j​e​t​s​ ​a​v​e​c​ ​m​é​t​h​o​d​o​l​o​g​i​e​s​ ​a​g​i​l​e​s
+		 */
+		'2': string
+	}
 	contact: {
 		form: {
 			/**
@@ -1183,9 +1197,13 @@ type RootTranslation = {
 		 */
 		skills: string
 		/**
+		 * C​o​m​p​é​t​e​n​c​e​s​ ​t​e​c​h​n​i​q​u​e​s
+		 */
+		stacks: string
+		/**
 		 * (​l​i​s​t​e​ ​n​o​n​ ​e​x​h​a​u​s​t​i​v​e​)
 		 */
-		skillsDetails: string
+		stacksDetails: string
 		/**
 		 * C​e​n​t​r​e​s​ ​d​'​i​n​t​é​r​ê​t
 		 */
@@ -1206,19 +1224,19 @@ type RootTranslation = {
 		fromTo: RequiredParams<'from' | 'to'>
 		interest: {
 			/**
-			 * J​e​u​x​ ​c​r​é​a​t​i​f​s​ ​e​t​ ​a​u​t​r​e​s
+			 * J​e​u​x​ ​c​r​é​a​t​i​f​s
 			 */
 			game: string
 			/**
-			 * C​o​l​l​e​c​t​i​o​n​ ​(​c​a​r​t​e​s​,​ ​f​i​g​u​r​i​n​e​s​,​ ​e​t​c​)
+			 * C​o​l​l​e​c​t​i​o​n
 			 */
 			collection: string
 			/**
-			 * T​e​c​h​n​o​l​o​g​i​e​ ​e​t​ ​i​n​f​o​r​m​a​t​i​q​u​e
+			 * I​n​f​o​r​m​a​t​i​q​u​e
 			 */
 			technology: string
 			/**
-			 * A​r​t​ ​e​t​ ​d​e​s​i​g​n
+			 * D​e​s​i​g​n
 			 */
 			art: string
 		}
@@ -1302,7 +1320,7 @@ export type TranslationFunctions = {
 		contact: () => LocalizedString
 	}
 	/**
-	 * En recherche d’alternance – Prêt à contribuer !
+	 * En recherche d’opportunité – Prêt à contribuer !
 	 */
 	message: () => LocalizedString
 	hero: {
@@ -2100,6 +2118,20 @@ export type TranslationFunctions = {
 			replacement: () => LocalizedString
 		}
 	}
+	skills: {
+		/**
+		 * Création et intégration de designs UI/UX intuitifs et attrayants
+		 */
+		'0': () => LocalizedString
+		/**
+		 * Développement d’API et gestion de bases de données sécurisées
+		 */
+		'1': () => LocalizedString
+		/**
+		 * Analyse des besoins et gestion de projets avec méthodologies agiles
+		 */
+		'2': () => LocalizedString
+	}
 	contact: {
 		form: {
 			/**
@@ -2436,9 +2468,13 @@ export type TranslationFunctions = {
 		 */
 		skills: () => LocalizedString
 		/**
+		 * Compétences techniques
+		 */
+		stacks: () => LocalizedString
+		/**
 		 * (liste non exhaustive)
 		 */
-		skillsDetails: () => LocalizedString
+		stacksDetails: () => LocalizedString
 		/**
 		 * Centres d'intérêt
 		 */
@@ -2457,19 +2493,19 @@ export type TranslationFunctions = {
 		fromTo: (arg: { from: string, to: string }) => LocalizedString
 		interest: {
 			/**
-			 * Jeux créatifs et autres
+			 * Jeux créatifs
 			 */
 			game: () => LocalizedString
 			/**
-			 * Collection (cartes, figurines, etc)
+			 * Collection
 			 */
 			collection: () => LocalizedString
 			/**
-			 * Technologie et informatique
+			 * Informatique
 			 */
 			technology: () => LocalizedString
 			/**
-			 * Art et design
+			 * Design
 			 */
 			art: () => LocalizedString
 		}

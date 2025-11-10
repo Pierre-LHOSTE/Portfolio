@@ -43,8 +43,8 @@ export default function Stacks() {
 
   return (
     <Section
-      title={LL.cv.skills()}
-      details={LL.cv.skillsDetails()}
+      title={LL.cv.stacks()}
+      details={LL.cv.stacksDetails()}
       id="cv-stacks"
       Icon={IconPackages}
     >

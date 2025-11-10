@@ -1,6 +1,7 @@
 import {
   generateExperienceTranslations,
   generateProjectTranslations,
+  generateSkillsTranslations,
   generateStackTranslations,
   generateTimelineTranslations,
 } from "../../utils/generateTranslations";
@@ -15,7 +16,7 @@ const fr = {
     projects: "Projets",
     contact: "Contact",
   },
-  message: "En recherche d’alternance – Prêt à contribuer !",
+  message: "En recherche d’opportunité – Prêt à contribuer !",
   hero: {
     subtitle: {
       passionate: "Passionné",
@@ -73,6 +74,7 @@ const fr = {
   projects: generateProjectTranslations("fr"),
   timelines: generateTimelineTranslations("fr"),
   stacks: generateStackTranslations("fr"),
+  skills: generateSkillsTranslations("fr"),
   contact: {
     form: {
       title: "Formulaire",
@@ -175,17 +177,18 @@ const fr = {
     experience: "Expériences",
     education: "Formations",
     skills: "Compétences",
-    skillsDetails: "(liste non exhaustive)",
+    stacks: "Compétences techniques",
+    stacksDetails: "(liste non exhaustive)",
     interests: "Centres d'intérêt",
     title: "Développeur et Designer Web",
     description:
       "Je suis un développeur et designer web français passionné et responsable, qui aime créer des sites web esthétiques et fonctionnels en utilisant des approches créatives pour proposer des solutions innovantes.",
     fromTo: "De {from: string} à {to: string}",
     interest: {
-      game: "Jeux créatifs et autres",
-      collection: "Collection (cartes, figurines, etc)",
-      technology: "Technologie et informatique",
-      art: "Art et design",
+      game: "Jeux créatifs",
+      collection: "Collection",
+      technology: "Informatique",
+      art: "Design",
     },
     experiences: generateExperienceTranslations("fr"),
     yearsOld: "ans",
